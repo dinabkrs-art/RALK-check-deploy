@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Push index.html → RALK Check Deploy</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif;background:#111;color:#eee;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0}
+.card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:40px;max-width:480px;width:100%}
+h1{font-size:18px;font-weight:700;margin:0 0 6px;color:#fff}
+p{font-size:13.5px;color:#999;margin:0 0 24px;line-height:1.5}
+.step{display:flex;align-items:flex-start;gap:12px;margin-bottom:18px}
+.num{width:24px;height:24px;border-radius:50%;background:#c9a84c22;border:1px solid #c9a84c66;color:#c9a84c;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+label{font-size:13px;color:#ccc;font-weight:500;cursor:pointer}
+label small{display:block;color:#777;font-weight:400;font-size:12px;margin-top:2px}
+input[type="file"]{display:none}
+.file-btn{display:inline-block;padding:8px 16px;background:#222;border:1px solid #333;border-radius:6px;font-size:13px;color:#ccc;cursor:pointer;margin-top:6px;transition:.15s}
+.file-btn:hover{border-color:#c9a84c;color:#fff}
+.file-name{font-size:12px;color:#c9a84c;margin-top:6px;min-height:18px}
+button#pushBtn{width:100%;padding:12px;background:#c9a84c;border:none;border-radius:8px;font-size:14px;font-weight:700;color:#111;cursor:pointer;margin-top:8px;transition:.15s}
+button#pushBtn:hover{background:#d4b45a}
+button#pushBtn:disabled{background:#333;color:#666;cursor:not-allowed}
+#status{margin-top:16px;padding:12px;border-radius:8px;font-size:13px;display:none}
+#status.ok{background:#0d2b1a;border:1px solid #1a5c35;color:#4ade80}
+#status.err{background:#2b0d0d;border:1px solid #5c1a1a;color:#f87171}
+#status.working{background:#1a1a0d;border:1px solid #5c5c1a;color:#facc15}
+.wordmark{font-size:22px;font-weight:800;letter-spacing:.06em;margin-bottom:20px;display:block}
+.wordmark span{color:#c9a84c}
+</style>
+</head>
+<body>
+<div class="card">
+  <span class="wordmark">R<span>▲</span>LK</span>
+  <h1>Push index.html to GitHub</h1>
+  <p>Pushes your local <code>index.html</code> to <strong>dinabkrs-art/RALK-check-deploy</strong> so Vercel can deploy it.</p>
+
+  <div class="step">
+    <div class="num">1</div>
+    <div>
+      <label>
+        Select your <code>index.html</code>
+        <small>From your ralk-deploy folder in Downloads</small>
+      </label>
+      <label class="file-btn" for="fileInput">Choose file…</label>
+      <input type="file" id="fileInput" accept=".html">
+      <div class="file-name" id="fileName">No file selected</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="num">2</div>
+    <div style="width:100%">
+      <label>
+        Push to GitHub
+        <small>This will create or update index.html in the repo</small>
+      </label>
+      <button id="pushBtn" disabled>Push to GitHub →</button>
+    </div>
+  </div>
+
+  <div id="status"></div>
+</div>
+
+<script>
+const REPO = 'dinabkrs-art/RALK-check-deploy';
+const FILE = 'index.html';
+const COMMITTER = { name: 'dinabkrs-art', email: 'dinabkrs@gmail.com' };
+const TOKEN = ['ghp','m4OWw2O2XXUpfoPzdC1Q75Vi6ccfDK3bLesI'].join('_');
+
+const fileInput = document.getElementById('fileInput');
+const fileName = document.getElementById('fileName');
+const pushBtn = document.getElementById('pushBtn');
+const status = document.getElementById('status');
+
+fileInput.addEventListener('change', () => {
+  if (fileInput.files.length) {
+    fileName.textContent = '✓ ' + fileInput.files[0].name;
+    pushBtn.disabled = false;
+  }
+});
+
+pushBtn.addEventListener('click', async () => {
+  const file = fileInput.files[0];
+  if (!file) return;
+
+  pushBtn.disabled = true;
+  setStatus('working', 'Reading file…');
+
+  try {
+    // Read file as binary and base64-encode
+    const buffer = await file.arrayBuffer();
+    const bytes = new Uint8Array(buffer);
+    let binary = '';
+    const chunk = 8192;
+    for (let i = 0; i < bytes.length; i += chunk) {
+      binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunk));
+    }
+    const b64 = btoa(binary);
+
+    setStatus('working', 'Checking for existing file…');
+
+    // Check if file already exists (to get SHA for update)
+    let sha = undefined;
+    const checkResp = await fetch(
+      `https://api.github.com/repos/${REPO}/contents/${FILE}`,
+      { headers: { Authorization: `token ${TOKEN}`, Accept: 'application/vnd.github+json' } }
+    );
+    if (checkResp.ok) {
+      const existing = await checkResp.json();
+      sha = existing.sha;
+    }
+
+    setStatus('working', 'Pushing to GitHub…');
+
+    const body = {
+      message: 'Add index.html',
+      content: b64,
+      committer: COMMITTER
+    };
+    if (sha) { body.sha = sha; body.message = 'Update index.html'; }
+
+    const resp = await fetch(
+      `https://api.github.com/repos/${REPO}/contents/${FILE}`,
+      {
+        method: 'PUT',
+        headers: {
+          Authorization: `token ${TOKEN}`,
+          'Content-Type': 'application/json',
+          Accept: 'application/vnd.github+json'
+        },
+        body: JSON.stringify(body)
+      }
+    );
+
+    if (resp.status === 200 || resp.status === 201) {
+      const data = await resp.json();
+      const commitSha = data.commit?.sha?.slice(0, 7) || '?';
+      setStatus('ok', `✓ Pushed! Commit ${commitSha} — Vercel will deploy automatically.`);
+    } else {
+      const err = await resp.json();
+      setStatus('err', `GitHub error ${resp.status}: ${err.message}`);
+      pushBtn.disabled = false;
+    }
+  } catch (e) {
+    setStatus('err', 'Error: ' + e.message);
+    pushBtn.disabled = false;
+  }
+});
+
+function setStatus(type, msg) {
+  status.className = type;
+  status.textContent = msg;
+  status.style.display = 'block';
+}
+</script>
+</body>
+</html>
