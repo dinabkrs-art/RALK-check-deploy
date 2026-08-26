@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Terms of Use — RALK</title>
+<meta name="description" content="Terms of Use for all RALK services — check.ralk.io and app.ralk.io"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:0 0% 6.7%;--fg:0 0% 96%;--card:0 0% 10.2%;--card2:0 0% 13%;
+  --muted:0 0% 70%;--gold:40 56% 55%;--border:0 0% 16.5%;
+}
+html.light{
+  --bg:0 0% 98%;--fg:0 0% 6%;--card:0 0% 100%;--card2:0 0% 94%;
+  --muted:0 0% 38%;--gold:40 56% 46%;--border:0 0% 86%;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:hsl(var(--bg));color:hsl(var(--fg));
+  -webkit-font-smoothing:antialiased;min-height:100vh;line-height:1.65;
+}
+#starCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+html.light #starCanvas{opacity:.3}
+.wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:32px 24px 80px}
+nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px}
+.back{
+  color:hsl(var(--muted));text-decoration:none;font-size:14px;font-weight:500;
+  display:inline-flex;align-items:center;gap:6px;
+  border:1px solid hsl(var(--border));border-radius:6px;padding:7px 13px;
+  transition:.15s;
+}
+.back:hover{border-color:hsl(var(--gold));color:hsl(var(--fg))}
+.wordmark{display:inline-flex;align-items:baseline;gap:.5px;font-weight:800;letter-spacing:.06em;font-size:18px}
+.wordmark .lt{color:hsl(var(--fg))}
+.wordmark svg{display:block}
+.card{
+  background:hsl(var(--card));border:1px solid hsl(var(--border));border-radius:12px;
+  padding:36px;margin-bottom:18px;
+}
+h1{font-size:28px;font-weight:800;margin:0 0 6px;letter-spacing:-.01em}
+.meta{color:hsl(var(--muted));font-size:13.5px;margin:0 0 28px}
+h2{font-size:17px;font-weight:700;margin:28px 0 10px;color:hsl(var(--fg))}
+h2:first-of-type{margin-top:0}
+p{font-size:15px;margin:0 0 14px;color:hsl(var(--fg))}
+ul{margin:0 0 14px;padding-left:20px}
+li{font-size:15px;margin-bottom:6px}
+strong{font-weight:600}
+a{color:hsl(var(--gold));text-decoration:none}
+a:hover{text-decoration:underline}
+.chip{
+  display:inline-block;background:hsl(var(--card2));border:1px solid hsl(var(--border));
+  color:hsl(var(--gold));border-radius:999px;padding:4px 12px;font-size:12px;font-weight:600;
+  margin-bottom:20px;
+}
+.foot{text-align:center;color:hsl(var(--muted));font-size:12px;margin-top:32px}
+.foot a{color:hsl(var(--muted));opacity:.7}
+.foot a:hover{color:hsl(var(--gold));opacity:1}
+.theme-btn{
+  background:hsl(var(--card));border:1px solid hsl(var(--border));color:hsl(var(--muted));
+  border-radius:6px;padding:6px 11px;font-size:13px;cursor:pointer;font-family:inherit;
+}
+.theme-btn:hover{border-color:hsl(var(--gold));color:hsl(var(--fg))}
+</style>
+</head>
+<body>
+<canvas id="starCanvas"></canvas>
+<div class="wrap">
+  <nav>
+    <a class="back" href="/">← Quick-Check</a>
+    <span class="wordmark">
+      <span class="lt">R</span>
+      <span><svg width="18" height="18" viewBox="0 0 100 100"><polygon points="50,6 96,94 4,94" fill="hsl(var(--gold))"/></svg></span>
+      <span class="lt">LK</span>
+    </span>
+    <button class="theme-btn" onclick="toggleTheme()">☀ Light</button>
+  </nav>
+
+  <div class="card">
+    <span class="chip">check.ralk.io &nbsp;·&nbsp; app.ralk.io</span>
+
+    <h1>Terms of Use</h1>
+    <p class="meta">Last updated: August 2026 &nbsp;·&nbsp; Contact: <a href="mailto:info@ralk.io">info@ralk.io</a></p>
+
+    <h2>1. Service provider</h2>
+    <p>These Terms of Use govern access to and use of all services operated by:</p>
+    <p>
+      <strong>RALK</strong><br/>
+      Einzelunternehmen in Gründung<br/>
+      Inh.: Dina Boyele Kraus<br/>
+      Hafenstraße 25–27<br/>
+      68159 Mannheim<br/>
+      Germany<br/>
+      Email: <a href="mailto:info@ralk.io">info@ralk.io</a>
+    </p>
+
+    <h2>2. Scope of services</h2>
+    <p>These Terms apply to the following services:</p>
+    <ul>
+      <li><strong>check.ralk.io</strong> — RALK Compliance Quick-Check: a free, browser-based AML/FATF risk self-assessment tool. No account is required. Assessment results are generated locally in your browser and are not transmitted to RALK's servers.</li>
+      <li><strong>app.ralk.io</strong> — RALK Training Platform: an AI-powered SaaS platform that generates personalised AML/CFT compliance training programmes for regulated institutions, including quizzes, certificates, and a compliance manager dashboard.</li>
+    </ul>
+
+    <h2>3. Access and permitted use</h2>
+    <p>You may access and use RALK services only for lawful purposes and in accordance with these Terms. You agree not to:</p>
+    <ul>
+      <li>Attempt to gain unauthorised access to any part of the services or their underlying systems</li>
+      <li>Use the services to transmit unlawful, harmful, or fraudulent content</li>
+      <li>Reproduce, resell, or sublicense any part of the services without prior written consent from RALK</li>
+      <li>Reverse-engineer or extract the AI-generated training content for use outside the platform</li>
+    </ul>
+
+    <h2>4. Subscription and payment (app.ralk.io)</h2>
+    <p>Access to the RALK Training Platform requires a valid subscription. Subscription terms, pricing, and payment conditions are agreed individually between RALK and the subscribing institution and are set out in the applicable service agreement.</p>
+    <p>The Quick-Check (check.ralk.io) is free of charge and requires no subscription.</p>
+
+    <h2>5. AI-generated content</h2>
+    <p>Training content on app.ralk.io is generated by artificial intelligence based on the profile information you or your organisation provide (sector, role, country, risk level). RALK makes reasonable efforts to ensure that content is accurate and up to date, but does not guarantee that AI-generated content constitutes legal advice or satisfies all regulatory requirements in every jurisdiction. It is the responsibility of the subscribing institution to verify compliance with applicable local laws and regulations.</p>
+
+    <h2>6. Referral partnership</h2>
+    <p>RALK works with external partners (referral connectors) who introduce institutions to the RALK Training Platform. The terms of any referral arrangement — including the applicable referral fee — are set out in a separate written agreement between RALK and the respective partner. These Terms of Use do not constitute a referral agreement.</p>
+
+    <h2>7. Intellectual property</h2>
+    <p>All content, branding, software, and AI-generated training material accessible through RALK services is the property of RALK or its licensors. Nothing in these Terms grants you any rights over such content beyond the right to use the services as described.</p>
+
+    <h2>8. Limitation of liability</h2>
+    <p>To the extent permitted by applicable law, RALK shall not be liable for indirect, incidental, or consequential damages arising from use of or inability to use RALK services. RALK's total liability shall not exceed the amount paid by the user for the service in the twelve months preceding the claim.</p>
+    <p>This limitation does not apply in cases of wilful misconduct or gross negligence.</p>
+
+    <h2>9. Availability</h2>
+    <p>RALK endeavours to maintain service availability but does not guarantee uninterrupted access. Scheduled or emergency maintenance may temporarily interrupt access. RALK will notify subscribing institutions of planned maintenance where reasonably possible.</p>
+
+    <h2>10. Governing law and jurisdiction</h2>
+    <p>These Terms of Use are governed exclusively by the laws of the <strong>Federal Republic of Germany</strong>, excluding its conflict-of-law provisions and the UN Convention on Contracts for the International Sale of Goods (CISG).</p>
+    <p>Place of jurisdiction for all disputes arising from or in connection with these Terms: <strong>Fellbach, Germany</strong>.</p>
+    <p>If you are a consumer within the European Union, mandatory consumer protection provisions of your country of residence apply in addition.</p>
+
+    <h2>11. Changes to these Terms</h2>
+    <p>RALK reserves the right to update these Terms at any time. The current version is always published at <a href="https://check.ralk.io/terms">check.ralk.io/terms</a>. Continued use of RALK services after an update constitutes acceptance of the revised Terms.</p>
+  </div>
+
+  <div class="foot">
+    <a href="/">← Back to Quick-Check</a>
+    <span style="margin:0 6px;opacity:.4">·</span>
+    <a href="/privacy">Privacy Policy</a>
+    <span style="margin:0 6px;opacity:.4">·</span>
+    <a href="https://app.ralk.io">app.ralk.io</a>
+  </div>
+</div>
+
+<script>
+function toggleTheme(){
+  document.documentElement.classList.toggle("light");
+  document.documentElement.classList.toggle("dark");
+  const btn = document.querySelector(".theme-btn");
+  const light = document.documentElement.classList.contains("light");
+  btn.textContent = light ? "🌙 Dark" : "☀ Light";
+}
+
+(function initStarRain(){
+  const canvas = document.getElementById("starCanvas");
+  const ctx = canvas.getContext("2d");
+  let W, H, particles = [];
+  function resize(){ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; }
+  window.addEventListener("resize", resize); resize();
+  const COUNT=70, GOLD=[201,168,76], WHITE=[255,255,255];
+  function mkParticle(randomY){
+    const isGold=Math.random()<0.72;
+    const [r,g,b]=isGold?GOLD:WHITE;
+    return {
+      x:Math.random()*W,y:randomY?Math.random()*H:H+Math.random()*H*0.4,
+      vy:0.28+Math.random()*0.72,vx:(Math.random()-.5)*0.22,
+      size:0.6+Math.random()*1.5,alpha:0.18+Math.random()*0.55,
+      twinkle:Math.random()*Math.PI*2,twinkleSpeed:0.018+Math.random()*0.04,
+      r,g,b,shimmer:isGold&&Math.random()<0.3
+    };
+  }
+  for(let i=0;i<COUNT;i++) particles.push(mkParticle(true));
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const t=performance.now()/1000;
+    particles.forEach(p=>{
+      p.y-=p.vy; p.x+=p.vx;
+      if(p.x<-4) p.x=W+4;
+      if(p.x>W+4) p.x=-4;
+      if(p.y<-6){ p.y=H+Math.random()*40; p.x=Math.random()*W; }
+      const a=p.alpha*(0.7+0.3*Math.sin(t*(p.twinkleSpeed*60)+p.twinkle));
+      if(p.shimmer){
+        const grd=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.size*4);
+        grd.addColorStop(0,`rgba(${p.r},${p.g},${p.b},${a*.55})`);
+        grd.addColorStop(1,`rgba(${p.r},${p.g},${p.b},0)`);
+        ctx.beginPath(); ctx.arc(p.x,p.y,p.size*4,0,Math.PI*2);
+        ctx.fillStyle=grd; ctx.fill();
+      }
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+      ctx.fillStyle=`rgba(${p.r},${p.g},${p.b},${a})`; ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+</body>
+</html>
