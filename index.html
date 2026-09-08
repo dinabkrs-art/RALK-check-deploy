@@ -566,13 +566,23 @@ const EXPOSURE_FACTORS = [
 ];
 
 const SECTORS = [
-  {v:"bank",  en:"Bank",                 fr:"Banque"},
-  {v:"fintech",en:"FinTech / PSP / EMI", fr:"FinTech / EP / EME"},
-  {v:"msb",   en:"MSB / Money transfer", fr:"Transfert d'argent / EME"},
-  {v:"vasp",  en:"Crypto / VASP",        fr:"Crypto / PSAV"},
-  {v:"micro", en:"Microfinance",         fr:"Microfinance"},
-  {v:"insurance",en:"Insurance",         fr:"Assurance"},
-  {v:"other", en:"Other financial institution", fr:"Autre institution financière"}
+  {v:"bank",       en:"Bank",                          fr:"Banque"},
+  {v:"fintech",    en:"FinTech / PSP / EMI",           fr:"FinTech / EP / EME"},
+  {v:"msb",        en:"MSB / Money transfer",          fr:"Transfert d'argent / EME"},
+  {v:"vasp",       en:"Crypto / VASP",                 fr:"Crypto / PSAV"},
+  {v:"invest",     en:"Investment / Asset management", fr:"Investissement / Gestion d'actifs"},
+  {v:"insurance",  en:"Insurance",                     fr:"Assurance"},
+  {v:"micro",      en:"Microfinance",                  fr:"Microfinance"},
+  {v:"realestate", en:"Real estate / Property",        fr:"Immobilier"},
+  {v:"legal",      en:"Legal (law firm / notary)",     fr:"Juridique (cabinet d'avocats / notaire)"},
+  {v:"accounting", en:"Accounting / Audit / Tax advisory", fr:"Comptabilité / Audit / Conseil fiscal"},
+  {v:"tcsp",       en:"Trust & Company Service Provider", fr:"Prestataire de services aux sociétés et fiducies"},
+  {v:"gaming",     en:"Gaming / Casino / Betting",     fr:"Jeux / Casino / Paris"},
+  {v:"dealer",     en:"Dealer in high-value goods (art, gold, luxury, autos)", fr:"Négociant en biens de grande valeur (art, or, luxe, automobiles)"},
+  {v:"trade",      en:"Trade / Import-export",         fr:"Commerce / Import-export"},
+  {v:"corporate",  en:"Corporate / Other company",     fr:"Entreprise / Autre société"},
+  {v:"public",     en:"Public sector / NGO / Non-profit", fr:"Secteur public / ONG / Association"},
+  {v:"other",      en:"Other",                         fr:"Autre"}
 ];
 
 const COUNTRIES = ["DR Congo (RDC)","Senegal","Côte d'Ivoire","Cameroon","Nigeria","Ghana","Kenya","Cyprus","──────────","Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burundi","Cabo Verde","Cambodia","Canada","Central African Republic","Chad","Chile","China","Colombia","Comoros","Congo (Republic)","Costa Rica","Croatia","Cuba","Czechia","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands","New Zealand","Nicaragua","Niger","North Korea","North Macedonia","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda","Saint Kitts and Nevis","Saint Lucia","Saint Vincent and the Grenadines","Samoa","San Marino","Saudi Arabia","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","Sudan","Suriname","Sweden","Switzerland","Syria","São Tomé and Príncipe","Taiwan","Tajikistan","Tanzania","Thailand","Timor-Leste","Togo","Tonga","Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe","Other"];
@@ -687,11 +697,11 @@ const I18N = {
     heroSub:"A free compliance self-assessment across AML/CFT, sanctions, anti-corruption, fraud, governance, whistleblowing, data protection, virtual assets and AI. Answer 12 short questions to get your compliance score, a domain-by-domain breakdown and a prioritised action plan — and see where your team needs training or process support.",
     pill:"⏱ ~7 minutes · 12 questions · free score",
     start:"Start the check",
-    profileTitle:"Tell us about your institution",
+    profileTitle:"Tell us about your organisation",
     profileSub:"This sets the context for your risk profile. Nothing is published — you control who sees the full report.",
-    company:"Institution name",
+    company:"Organisation name",
     country:"Primary country of operation",
-    sector:"Type of institution",
+    sector:"Type of organisation",
     size:"Number of employees",
     sizes:["1–10","11–50","51–200","201–1000","1000+"],
     exposureTitle:"Which of these apply to your business?",
@@ -762,11 +772,11 @@ const I18N = {
     heroSub:"Une auto-évaluation de conformité gratuite couvrant LBC/FT, sanctions, anti-corruption, fraude, gouvernance, lanceurs d'alerte, protection des données, actifs virtuels et IA. Répondez à 12 questions courtes pour obtenir votre score de conformité, une analyse par domaine et un plan d'action priorisé — et voir où votre équipe a besoin de formation ou d'appui sur les processus.",
     pill:"⏱ ~7 minutes · 12 questions · score gratuit",
     start:"Démarrer le diagnostic",
-    profileTitle:"Parlez-nous de votre institution",
+    profileTitle:"Parlez-nous de votre organisation",
     profileSub:"Cela définit le contexte de votre profil de risque. Rien n'est publié — vous décidez qui voit le rapport complet.",
-    company:"Nom de l'institution",
+    company:"Nom de l'organisation",
     country:"Principal pays d'activité",
-    sector:"Type d'institution",
+    sector:"Type d'organisation",
     size:"Nombre d'employés",
     sizes:["1–10","11–50","51–200","201–1000","1000+"],
     exposureTitle:"Lesquels de ces éléments s'appliquent à votre activité ?",
@@ -990,7 +1000,6 @@ function renderQuestion(){
     <div class="card">
       <div class="qmeta">
         <span class="dtag">${dName(q.domain)}</span>
-        <span class="sev ${q.severity}">${q.severity}</span>
       </div>
       <div class="qtext">${q.text[STATE.lang]}</div>
       ${opts}
@@ -1249,14 +1258,14 @@ function bookDemo(score){
     subj=`Demande RALK — score du Compliance Quick-Check ${score}/100`;
     body=`Bonjour l'équipe RALK,\n\n`+
       `Je viens de réaliser le RALK Compliance Quick-Check et j'aimerais savoir comment RALK peut aider à combler les lacunes identifiées — formation LBC/FT adaptative pour notre équipe et appui au renforcement de nos processus.\n\n`+
-      `Nom : ${l.name||""}\nInstitution : ${company}\nPays : ${country}\n`+
+      `Nom : ${l.name||""}\nOrganisation : ${company}\nPays : ${country}\n`+
       `Score : ${score}/100 (risque ${riskFr})\n\n`+
       `Merci de me communiquer les prochaines étapes et les modalités de licence.`;
   } else {
     subj=`RALK enquiry — Compliance Quick-Check score ${score}/100`;
     body=`Hello RALK team,\n\n`+
       `I just completed the RALK Compliance Quick-Check and would like to learn how RALK can help close the gaps it identified — adaptive AML/CFT training for our team and support in strengthening our processes.\n\n`+
-      `Name: ${l.name||""}\nInstitution: ${company}\nCountry: ${country}\n`+
+      `Name: ${l.name||""}\nOrganisation: ${company}\nCountry: ${country}\n`+
       `Score: ${score}/100 (${riskRaw} risk)\n\n`+
       `Please get in touch with the next steps and licensing details. Thank you.`;
   }
