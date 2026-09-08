@@ -1240,12 +1240,27 @@ function submitLead(){
 
 function bookDemo(score){
   const l=STATE.lead||{};
-  const subj=encodeURIComponent(`RALK consultation — Quick-Check score ${score}/100`);
-  const body=encodeURIComponent(
-    `Hello RALK team,\n\nI completed the Compliance Quick-Check and would like to discuss my remediation roadmap.\n\n`+
-    `Name: ${l.name||""}\nInstitution: ${l.company||STATE.profile.company||""}\nCountry: ${STATE.profile.country||""}\n`+
-    `Score: ${score}/100 (${(STATE.lead&&STATE.lead.risk)||""} risk)\n\nThank you.`);
-  window.location.href=`mailto:${CONFIG.CONTACT_EMAIL}?subject=${subj}&body=${body}`;
+  const company=l.company||STATE.profile.company||"";
+  const country=STATE.profile.country||"";
+  const riskRaw=(STATE.lead&&STATE.lead.risk)||"";
+  const riskFr={high:"élevé",medium:"moyen",low:"faible"}[riskRaw]||riskRaw;
+  let subj, body;
+  if(STATE.lang==="fr"){
+    subj=`Demande RALK — score du Compliance Quick-Check ${score}/100`;
+    body=`Bonjour l'équipe RALK,\n\n`+
+      `Je viens de réaliser le RALK Compliance Quick-Check et j'aimerais savoir comment RALK peut aider à combler les lacunes identifiées — formation LBC/FT adaptative pour notre équipe et appui au renforcement de nos processus.\n\n`+
+      `Nom : ${l.name||""}\nInstitution : ${company}\nPays : ${country}\n`+
+      `Score : ${score}/100 (risque ${riskFr})\n\n`+
+      `Merci de me communiquer les prochaines étapes et les modalités de licence.`;
+  } else {
+    subj=`RALK enquiry — Compliance Quick-Check score ${score}/100`;
+    body=`Hello RALK team,\n\n`+
+      `I just completed the RALK Compliance Quick-Check and would like to learn how RALK can help close the gaps it identified — adaptive AML/CFT training for our team and support in strengthening our processes.\n\n`+
+      `Name: ${l.name||""}\nInstitution: ${company}\nCountry: ${country}\n`+
+      `Score: ${score}/100 (${riskRaw} risk)\n\n`+
+      `Please get in touch with the next steps and licensing details. Thank you.`;
+  }
+  window.location.href=`mailto:${CONFIG.CONTACT_EMAIL}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
 }
 
 function restart(){
