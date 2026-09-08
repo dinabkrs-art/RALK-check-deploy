@@ -1,156 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<title>Push index.html → RALK Check Deploy</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RALK – AML/CFT Training Platform</title>
 <style>
-body{font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif;background:#111;color:#eee;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0}
-.card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:40px;max-width:480px;width:100%}
-h1{font-size:18px;font-weight:700;margin:0 0 6px;color:#fff}
-p{font-size:13.5px;color:#999;margin:0 0 24px;line-height:1.5}
-.step{display:flex;align-items:flex-start;gap:12px;margin-bottom:18px}
-.num{width:24px;height:24px;border-radius:50%;background:#c9a84c22;border:1px solid #c9a84c66;color:#c9a84c;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-label{font-size:13px;color:#ccc;font-weight:500;cursor:pointer}
-label small{display:block;color:#777;font-weight:400;font-size:12px;margin-top:2px}
-input[type="file"]{display:none}
-.file-btn{display:inline-block;padding:8px 16px;background:#222;border:1px solid #333;border-radius:6px;font-size:13px;color:#ccc;cursor:pointer;margin-top:6px;transition:.15s}
-.file-btn:hover{border-color:#c9a84c;color:#fff}
-.file-name{font-size:12px;color:#c9a84c;margin-top:6px;min-height:18px}
-button#pushBtn{width:100%;padding:12px;background:#c9a84c;border:none;border-radius:8px;font-size:14px;font-weight:700;color:#111;cursor:pointer;margin-top:8px;transition:.15s}
-button#pushBtn:hover{background:#d4b45a}
-button#pushBtn:disabled{background:#333;color:#666;cursor:not-allowed}
-#status{margin-top:16px;padding:12px;border-radius:8px;font-size:13px;display:none}
-#status.ok{background:#0d2b1a;border:1px solid #1a5c35;color:#4ade80}
-#status.err{background:#2b0d0d;border:1px solid #5c1a1a;color:#f87171}
-#status.working{background:#1a1a0d;border:1px solid #5c5c1a;color:#facc15}
-.wordmark{font-size:22px;font-weight:800;letter-spacing:.06em;margin-bottom:20px;display:block}
-.wordmark span{color:#c9a84c}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#050505;color:#fff;font-family:'Inter',system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;position:relative}
+  canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+  .content{position:relative;z-index:1;text-align:center;padding:2rem}
+  .logo{display:flex;align-items:center;justify-content:center;gap:0;font-size:2.4rem;font-weight:900;letter-spacing:0.12em;margin-bottom:2.5rem}
+  .logo-r,.logo-l,.logo-k{color:#fff}
+  .logo-tri{display:inline-block;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-bottom:24px solid #e0b84c;margin:0 2px;position:relative;top:-2px}
+  h1{font-size:1.1rem;font-weight:400;color:rgba(255,255,255,0.45);letter-spacing:0.04em;margin-bottom:3rem;line-height:1.6;max-width:380px}
+  .badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(224,184,76,0.08);border:1px solid rgba(224,184,76,0.2);border-radius:999px;padding:0.35rem 1rem;font-size:0.72rem;color:#e0b84c;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:2.5rem}
+  .dot{width:6px;height:6px;border-radius:50%;background:#e0b84c;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+  .cta{display:inline-block;background:linear-gradient(135deg,#e0b84c,#c9963e);color:#050505;font-weight:700;font-size:0.9rem;padding:0.85rem 2.5rem;border-radius:999px;text-decoration:none;letter-spacing:0.04em;transition:transform 0.2s,box-shadow 0.2s}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(224,184,76,0.35)}
+  .sub{margin-top:1.5rem;font-size:0.75rem;color:rgba(255,255,255,0.2)}
+  .sub a{color:rgba(224,184,76,0.5);text-decoration:none}
+  .sub a:hover{color:#e0b84c}
+  .features{display:flex;gap:2rem;margin-top:3rem;flex-wrap:wrap;justify-content:center}
+  .feat{text-align:center}
+  .feat-icon{font-size:1.4rem;margin-bottom:0.4rem}
+  .feat-label{font-size:0.7rem;color:rgba(255,255,255,0.3);letter-spacing:0.06em;text-transform:uppercase}
 </style>
 </head>
 <body>
-<div class="card">
-  <span class="wordmark">R<span>▲</span>LK</span>
-  <h1>Push index.html to GitHub</h1>
-  <p>Pushes your local <code>index.html</code> to <strong>dinabkrs-art/RALK-check-deploy</strong> so Vercel can deploy it.</p>
-
-  <div class="step">
-    <div class="num">1</div>
-    <div>
-      <label>
-        Select your <code>index.html</code>
-        <small>From your ralk-deploy folder in Downloads</small>
-      </label>
-      <label class="file-btn" for="fileInput">Choose file…</label>
-      <input type="file" id="fileInput" accept=".html">
-      <div class="file-name" id="fileName">No file selected</div>
-    </div>
+<canvas id="c"></canvas>
+<div class="content">
+  <div class="logo">
+    <span class="logo-r">R</span><span class="logo-tri"></span><span class="logo-l">L</span><span class="logo-k">K</span>
   </div>
-
-  <div class="step">
-    <div class="num">2</div>
-    <div style="width:100%">
-      <label>
-        Push to GitHub
-        <small>This will create or update index.html in the repo</small>
-      </label>
-      <button id="pushBtn" disabled>Push to GitHub →</button>
-    </div>
+  <div class="badge"><span class="dot"></span>Compliance Platform — Live</div>
+  <h1>AI-powered AML/CFT training.<br>Tailored by role, jurisdiction &amp; sector.</h1>
+  <a href="https://app.ralk.io" class="cta">Access Platform &rarr;</a>
+  <div class="features">
+    <div class="feat"><div class="feat-icon">&#127757;</div><div class="feat-label">Multi-jurisdiction</div></div>
+    <div class="feat"><div class="feat-icon">&#129302;</div><div class="feat-label">AI-generated</div></div>
+    <div class="feat"><div class="feat-icon">&#127942;</div><div class="feat-label">Certified</div></div>
+    <div class="feat"><div class="feat-icon">&#128274;</div><div class="feat-label">Secure</div></div>
   </div>
-
-  <div id="status"></div>
+  <p class="sub">&copy; 2026 RALK by Dina Kraus &nbsp;&bull;&nbsp; <a href="https://app.ralk.io/privacy">Privacy Policy</a> &nbsp;&bull;&nbsp; <a href="mailto:hello@ralk.io">hello@ralk.io</a></p>
 </div>
-
 <script>
-const REPO = 'dinabkrs-art/RALK-check-deploy';
-const FILE = 'index.html';
-const COMMITTER = { name: 'dinabkrs-art', email: 'dinabkrs@gmail.com' };
-const TOKEN = ['ghp','m4OWw2O2XXUpfoPzdC1Q75Vi6ccfDK3bLesI'].join('_');
-
-const fileInput = document.getElementById('fileInput');
-const fileName = document.getElementById('fileName');
-const pushBtn = document.getElementById('pushBtn');
-const status = document.getElementById('status');
-
-fileInput.addEventListener('change', () => {
-  if (fileInput.files.length) {
-    fileName.textContent = '✓ ' + fileInput.files[0].name;
-    pushBtn.disabled = false;
-  }
-});
-
-pushBtn.addEventListener('click', async () => {
-  const file = fileInput.files[0];
-  if (!file) return;
-
-  pushBtn.disabled = true;
-  setStatus('working', 'Reading file…');
-
-  try {
-    // Read file as binary and base64-encode
-    const buffer = await file.arrayBuffer();
-    const bytes = new Uint8Array(buffer);
-    let binary = '';
-    const chunk = 8192;
-    for (let i = 0; i < bytes.length; i += chunk) {
-      binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunk));
-    }
-    const b64 = btoa(binary);
-
-    setStatus('working', 'Checking for existing file…');
-
-    // Check if file already exists (to get SHA for update)
-    let sha = undefined;
-    const checkResp = await fetch(
-      `https://api.github.com/repos/${REPO}/contents/${FILE}`,
-      { headers: { Authorization: `token ${TOKEN}`, Accept: 'application/vnd.github+json' } }
-    );
-    if (checkResp.ok) {
-      const existing = await checkResp.json();
-      sha = existing.sha;
-    }
-
-    setStatus('working', 'Pushing to GitHub…');
-
-    const body = {
-      message: 'Add index.html',
-      content: b64,
-      committer: COMMITTER
-    };
-    if (sha) { body.sha = sha; body.message = 'Update index.html'; }
-
-    const resp = await fetch(
-      `https://api.github.com/repos/${REPO}/contents/${FILE}`,
-      {
-        method: 'PUT',
-        headers: {
-          Authorization: `token ${TOKEN}`,
-          'Content-Type': 'application/json',
-          Accept: 'application/vnd.github+json'
-        },
-        body: JSON.stringify(body)
-      }
-    );
-
-    if (resp.status === 200 || resp.status === 201) {
-      const data = await resp.json();
-      const commitSha = data.commit?.sha?.slice(0, 7) || '?';
-      setStatus('ok', `✓ Pushed! Commit ${commitSha} — Vercel will deploy automatically.`);
-    } else {
-      const err = await resp.json();
-      setStatus('err', `GitHub error ${resp.status}: ${err.message}`);
-      pushBtn.disabled = false;
-    }
-  } catch (e) {
-    setStatus('err', 'Error: ' + e.message);
-    pushBtn.disabled = false;
-  }
-});
-
-function setStatus(type, msg) {
-  status.className = type;
-  status.textContent = msg;
-  status.style.display = 'block';
+const canvas=document.getElementById('c');
+const ctx=canvas.getContext('2d');
+let W,H,stars=[];
+function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;stars=Array.from({length:120},()=>createStar())}
+function createStar(){return{x:Math.random()*W,y:Math.random()*H,vy:-(0.3+Math.random()*1.2),size:Math.random()*1.8+0.3,alpha:Math.random(),pulse:Math.random()*Math.PI*2}}
+function frame(){
+  ctx.clearRect(0,0,W,H);
+  stars.forEach(s=>{
+    s.y+=s.vy;s.pulse+=0.02;
+    const a=0.15+0.35*Math.abs(Math.sin(s.pulse));
+    ctx.beginPath();ctx.arc(s.x,s.y,s.size,0,Math.PI*2);
+    ctx.fillStyle='rgba(224,184,76,'+a+')';ctx.fill();
+    if(s.y<-4){s.y=H+4;s.x=Math.random()*W}
+  });
+  requestAnimationFrame(frame)
 }
+window.addEventListener('resize',resize);resize();frame();
 </script>
 </body>
 </html>
