@@ -590,100 +590,100 @@ const COUNTRIES = ["DR Congo (RDC)","Senegal","Côte d'Ivoire","Cameroon","Niger
 // recommendation templates per domain × tier
 const RECS = {
   sanctions:{
-    urgent:{en:"Stand up sanctions screening now — real-time, automated, against UN/EU/OFAC lists at onboarding and per transaction. A single missed hit can mean license loss.",
-            fr:"Mettez en place un filtrage de sanctions immédiatement — en temps réel, automatisé, contre les listes ONU/UE/OFAC à l'entrée en relation et par transaction. Une seule correspondance manquée peut coûter l'agrément."},
-    improve:{en:"Move from periodic to real-time screening and formalise your freeze-and-report procedure with clear ownership.",
-            fr:"Passez d'un filtrage périodique au temps réel et formalisez votre procédure de gel-et-déclaration avec des responsabilités claires."},
-    strong:{en:"Strong sanctions posture. Keep list-update SLAs and hit-handling evidence audit-ready.",
-            fr:"Posture sanctions solide. Maintenez vos délais de mise à jour et la traçabilité du traitement des correspondances prêts pour l'audit."}
+    urgent:{en:"Your front-line staff aren't equipped to handle a sanctions hit. Train the people who onboard clients and process payments so they can recognise a UN/EU/OFAC match and know exactly how to escalate, freeze and report — RALK delivers adaptive, role-based sanctions training built for this.",
+            fr:"Vos collaborateurs de première ligne ne savent pas gérer une correspondance de sanctions. Formez les personnes qui entrent en relation et traitent les paiements à reconnaître une correspondance ONU/UE/OFAC et à savoir précisément escalader, geler et déclarer — RALK propose une formation sanctions adaptative et par rôle conçue pour cela."},
+    improve:{en:"Knowledge is uneven and depends on the individual. Give the whole team recurring sanctions training so hit-handling is consistent — not reliant on a single expert. RALK keeps this training current as lists and rules change.",
+            fr:"La connaissance est inégale et dépend des personnes. Offrez à toute l'équipe une formation sanctions récurrente pour un traitement des correspondances cohérent — sans dépendre d'un seul expert. RALK maintient cette formation à jour au fil des listes et des règles."},
+    strong:{en:"Your team knows how to handle sanctions. Keep the knowledge fresh with periodic refreshers as lists and typologies evolve — RALK's adaptive refreshers make this effortless.",
+            fr:"Votre équipe sait gérer les sanctions. Gardez la connaissance à jour avec des rappels périodiques au fil de l'évolution des listes et typologies — les rappels adaptatifs de RALK rendent cela simple."}
   },
   aml_kyc:{
-    urgent:{en:"Establish a board-approved AML/CFT program and risk-based KYC with identity verification for every client. This is the foundation everything else rests on.",
-            fr:"Établissez un dispositif LBC/FT approuvé par la direction et un KYC basé sur les risques avec vérification d'identité pour chaque client. C'est le socle de tout le reste."},
-    improve:{en:"Refresh and formally approve your AML program, and strengthen risk-rating at onboarding.",
-            fr:"Actualisez et faites approuver formellement votre dispositif, et renforcez la notation du risque à l'entrée en relation."},
-    strong:{en:"Solid AML/KYC foundation. Focus on keeping risk ratings dynamic as customer behaviour changes.",
-            fr:"Base LBC/KYC solide. Veillez à garder des notations de risque dynamiques quand le comportement client évolue."}
+    urgent:{en:"Staff are onboarding clients without knowing which checks are required. Train your onboarding/sales team on risk-based KYC — what to verify and how to risk-rate each client — so due diligence is done right from day one. RALK's adaptive AML/KYC training is built exactly for this.",
+            fr:"Les collaborateurs entrent en relation sans savoir quelles vérifications sont requises. Formez votre équipe d'entrée en relation/commerciale au KYC fondé sur les risques — quoi vérifier et comment classer chaque client — pour une vigilance correcte dès le premier jour. La formation AML/KYC adaptative de RALK est conçue pour cela."},
+    improve:{en:"Basic know-how exists but risk-rating is inconsistent. Structured, recurring KYC training gives the whole team the same standard — RALK adapts the training to each role and keeps it current.",
+            fr:"Un savoir-faire de base existe mais la notation du risque est inconstante. Une formation KYC structurée et récurrente donne à toute l'équipe le même standard — RALK adapte la formation à chaque rôle et la maintient à jour."},
+    strong:{en:"Your team performs KYC well. Keep their knowledge sharp with refreshers as customer risk and regulation evolve — RALK schedules and adapts these automatically.",
+            fr:"Votre équipe réalise bien le KYC. Gardez ses connaissances affûtées avec des rappels au fil de l'évolution des risques clients et de la réglementation — RALK les planifie et les adapte automatiquement."}
   },
   ubo:{
-    urgent:{en:"Corroborate beneficial ownership by the best available means (supporting documents and registers where they exist) rather than relying on the client's word alone — unverified UBO is a primary route for illicit funds.",
-            fr:"Corroborez les bénéficiaires effectifs par les meilleurs moyens disponibles (documents justificatifs et registres lorsqu'ils existent) plutôt que de vous fier à la seule parole du client — un UBO non corroboré est une voie majeure pour les fonds illicites."},
-    improve:{en:"Add corroboration of UBO where reliable sources are available and document ownership chains to the threshold.",
-            fr:"Ajoutez une corroboration des UBO lorsque des sources fiables existent et documentez les chaînes de détention jusqu'au seuil."},
-    strong:{en:"Beneficial ownership is well handled. Keep ownership chains refreshed on trigger events.",
-            fr:"Les bénéficiaires effectifs sont bien gérés. Rafraîchissez les chaînes de détention lors d'événements déclencheurs."}
+    urgent:{en:"Your team relies on the client's word because they weren't taught what to obtain. Train the people who onboard clients on beneficial ownership — which documents and corroborating sources to collect and how to document ownership chains. RALK turns this into practical, role-based training.",
+            fr:"Votre équipe se fie à la parole du client car elle n'a pas appris quoi obtenir. Formez les personnes qui entrent en relation aux bénéficiaires effectifs — quels documents et sources corroborantes collecter et comment documenter les chaînes de détention. RALK en fait une formation pratique et par rôle."},
+    improve:{en:"They collect UBO information but weren't trained to verify it. Targeted training on corroboration and documenting ownership makes the practice consistent — RALK keeps it aligned with the rules in each jurisdiction.",
+            fr:"Elle collecte les informations UBO mais n'a pas été formée à les vérifier. Une formation ciblée sur la corroboration et la documentation de la détention rend la pratique cohérente — RALK la maintient alignée avec les règles de chaque juridiction."},
+    strong:{en:"Your team handles beneficial ownership well. Keep it current with refreshers when rules or ownership structures change — RALK delivers these adaptively.",
+            fr:"Votre équipe gère bien les bénéficiaires effectifs. Gardez cela à jour avec des rappels lorsque les règles ou les structures de détention changent — RALK les délivre de façon adaptative."}
   },
   pep:{
-    urgent:{en:"Start identifying PEPs so you can risk-rate them. The aim is not to reject PEPs — they are often legitimate, valuable clients — but to onboard them safely with proportionate, risk-based enhanced due diligence (source of funds/wealth, senior sign-off).",
-            fr:"Commencez à identifier les PPE afin de pouvoir les classer par risque. L'objectif n'est pas de refuser les PPE — souvent des clients légitimes et précieux — mais de les accueillir en toute sécurité avec une vigilance renforcée proportionnée et fondée sur les risques (origine des fonds/du patrimoine, approbation de la direction)."},
-    improve:{en:"Move from one-size-fits-all to risk-based PEP tiering: reserve the heaviest EDD for genuinely higher-risk PEPs and keep proportionate controls for the rest, so you can serve PEP clients without over-blocking.",
-            fr:"Passez d'une approche uniforme à une hiérarchisation des PPE par le risque : réservez la vigilance la plus lourde aux PPE réellement à risque élevé et gardez des contrôles proportionnés pour les autres, afin de servir les clients PPE sans sur-bloquer."},
-    strong:{en:"PEP handling is risk-based and proportionate. Keep re-screening the book for newly-exposed persons and refresh risk ratings on trigger events.",
-            fr:"La gestion des PPE est fondée sur les risques et proportionnée. Continuez de re-filtrer le portefeuille et d'actualiser les notations lors d'événements déclencheurs."}
+    urgent:{en:"Staff can't identify PEPs, so they can't handle them. The aim isn't to reject PEPs — they're often valuable clients — but to train your team to recognise them and apply proportionate, risk-based enhanced due diligence (source of funds/wealth, senior sign-off). RALK's adaptive training teaches exactly this.",
+            fr:"Les collaborateurs ne savent pas identifier les PPE, ils ne peuvent donc pas les gérer. L'objectif n'est pas de refuser les PPE — souvent des clients précieux — mais de former votre équipe à les reconnaître et à appliquer une vigilance renforcée proportionnée et fondée sur les risques (origine des fonds/du patrimoine, approbation de la direction). La formation adaptative de RALK enseigne précisément cela."},
+    improve:{en:"Staff flag PEPs but treat them all the same. Train the team to tier PEPs by risk — heaviest EDD only where genuinely warranted — so you serve PEP clients without over-blocking. RALK builds this judgement through scenario-based training.",
+            fr:"Les collaborateurs signalent les PPE mais les traitent tous de la même manière. Formez l'équipe à hiérarchiser les PPE par le risque — la vigilance la plus lourde seulement lorsqu'elle est justifiée — afin de servir les clients PPE sans sur-bloquer. RALK développe ce discernement par une formation par scénarios."},
+    strong:{en:"Your team handles PEPs in a risk-based, proportionate way. Keep the knowledge current with refreshers as exposure and rules change — RALK adapts these to your book.",
+            fr:"Votre équipe gère les PPE de façon proportionnée et fondée sur les risques. Gardez la connaissance à jour avec des rappels au fil de l'évolution de l'exposition et des règles — RALK les adapte à votre portefeuille."}
   },
   monitoring:{
-    urgent:{en:"Deploy ongoing transaction monitoring and a clear STR/SAR filing path to the FIU. Delayed or skipped filings are a direct regulatory breach.",
-            fr:"Déployez une surveillance continue des transactions et un circuit clair de déclaration (DS) à la CRF. Une déclaration tardive ou omise est une infraction directe."},
-    improve:{en:"Automate monitoring beyond periodic reviews and tighten your STR turnaround.",
-            fr:"Automatisez la surveillance au-delà des revues périodiques et raccourcissez vos délais de déclaration."},
-    strong:{en:"Monitoring and reporting are mature. Keep tuning scenarios to cut false positives.",
-            fr:"Surveillance et déclaration matures. Continuez de calibrer les scénarios pour réduire les faux positifs."}
+    urgent:{en:"The staff reviewing transactions aren't trained to spot suspicious activity, so it goes unnoticed. Train them on red flags, escalation and how and when to file an STR/SAR — RALK's adaptive training makes red flags second nature.",
+            fr:"Les collaborateurs qui examinent les transactions ne sont pas formés à repérer les activités suspectes, qui passent inaperçues. Formez-les aux signaux d'alerte, à l'escalade et à comment/quand déclarer un soupçon — la formation adaptative de RALK rend les signaux d'alerte instinctifs."},
+    improve:{en:"Reviews happen but red-flag knowledge is patchy. Give reviewers consistent, recurring training on typologies and alert handling — RALK keeps it current as new typologies emerge.",
+            fr:"Des revues ont lieu mais la connaissance des signaux d'alerte est lacunaire. Offrez aux examinateurs une formation cohérente et récurrente sur les typologies et le traitement des alertes — RALK la maintient à jour au fil des nouvelles typologies."},
+    strong:{en:"Your reviewers know how to spot and escalate suspicious activity. Keep them sharp with refreshers on emerging typologies — RALK delivers these adaptively.",
+            fr:"Vos examinateurs savent repérer et escalader les activités suspectes. Gardez-les affûtés avec des rappels sur les typologies émergentes — RALK les délivre de façon adaptative."}
   },
   crypto:{
-    urgent:{en:"If you touch virtual assets, stand up AML/CFT controls for them now — customer identity, wallet/exposure screening and the Travel Rule for transfers. Unregulated crypto flows are a top enforcement focus.",
-            fr:"Si vous touchez aux actifs virtuels, mettez en place sans délai des contrôles LBC/FT — identité client, filtrage des wallets/expositions et Travel Rule pour les transferts. Les flux crypto non encadrés sont une priorité des autorités."},
-    improve:{en:"Complete your virtual-asset controls — in particular full Travel Rule coverage and counterparty (VASP) due diligence.",
-            fr:"Complétez vos contrôles sur actifs virtuels — notamment une couverture complète de la Travel Rule et la vigilance sur les contreparties (PSAV)."},
-    strong:{en:"Virtual-asset risk is well controlled. Keep monitoring evolving crypto typologies and sanctions exposure.",
-            fr:"Le risque sur actifs virtuels est bien maîtrisé. Continuez de suivre les typologies crypto et l'exposition aux sanctions."}
+    urgent:{en:"If you touch virtual assets, your staff need to know the AML/CFT requirements — customer identity, wallet/exposure screening and the Travel Rule. Train the relevant team now; RALK offers dedicated virtual-asset training that keeps pace with fast-moving crypto rules.",
+            fr:"Si vous touchez aux actifs virtuels, vos collaborateurs doivent connaître les exigences LBC/FT — identité client, filtrage des wallets/expositions et Travel Rule. Formez l'équipe concernée sans délai ; RALK propose une formation dédiée aux actifs virtuels qui suit le rythme des règles crypto en évolution rapide."},
+    improve:{en:"Your team handles virtual assets but training is incomplete — Travel Rule and counterparty checks are applied inconsistently. Fill the gaps with focused training; RALK keeps virtual-asset training current as rules evolve.",
+            fr:"Votre équipe traite des actifs virtuels mais la formation est incomplète — la Travel Rule et les vérifications de contreparties sont appliquées de façon inconstante. Comblez les lacunes par une formation ciblée ; RALK maintient la formation actifs virtuels à jour au fil des règles."},
+    strong:{en:"Your team knows the virtual-asset requirements. Keep the knowledge current with refreshers on evolving crypto typologies and sanctions exposure — RALK adapts these for you.",
+            fr:"Votre équipe connaît les exigences sur actifs virtuels. Gardez la connaissance à jour avec des rappels sur les typologies crypto et l'exposition aux sanctions — RALK les adapte pour vous."}
   },
   fraud:{
-    urgent:{en:"Introduce basic fraud controls with alerting and a documented investigation workflow.",
-            fr:"Introduisez des contrôles anti-fraude de base avec alertes et un processus d'investigation documenté."},
-    improve:{en:"Move fraud handling from reactive to proactive, layered detection.",
-            fr:"Passez d'un traitement réactif de la fraude à une détection proactive en couches."},
-    strong:{en:"Fraud controls are effective. Share fraud/AML signals for a unified financial-crime view.",
-            fr:"Contrôles anti-fraude efficaces. Partagez les signaux fraude/LBC pour une vue unifiée de la criminalité financière."}
+    urgent:{en:"Your employees aren't trained to recognise or report fraud. Train them on fraud red flags and the reporting/investigation process so threats are caught early — RALK's adaptive training covers both internal and external fraud.",
+            fr:"Vos employés ne sont pas formés à reconnaître ou signaler la fraude. Formez-les aux signaux de fraude et au processus de signalement/investigation pour détecter les menaces tôt — la formation adaptative de RALK couvre la fraude interne et externe."},
+    improve:{en:"There's some awareness but no regular training, so fraud is handled reactively. Recurring, role-based fraud training makes detection proactive across the team — RALK keeps it current.",
+            fr:"Il y a une certaine sensibilisation mais aucune formation régulière, la fraude est traitée de façon réactive. Une formation anti-fraude récurrente et par rôle rend la détection proactive dans toute l'équipe — RALK la maintient à jour."},
+    strong:{en:"Your team recognises and reports fraud well. Keep them ahead of new fraud schemes with regular refreshers — RALK delivers these adaptively.",
+            fr:"Votre équipe reconnaît et signale bien la fraude. Gardez-la en avance sur les nouveaux schémas de fraude avec des rappels réguliers — RALK les délivre de façon adaptative."}
   },
   abc:{
-    urgent:{en:"Put an anti-bribery & corruption policy in place and apply due diligence to third parties and intermediaries.",
-            fr:"Mettez en place une politique anti-corruption et appliquez une vigilance aux tiers et intermédiaires."},
-    improve:{en:"Extend your ABC policy with active third-party screening and a gifts register.",
-            fr:"Étendez votre politique anti-corruption au contrôle actif des tiers et à un registre des cadeaux."},
-    strong:{en:"ABC framework is in good shape. Keep third-party risk reviews current.",
-            fr:"Dispositif anti-corruption en bon état. Maintenez à jour les revues de risque des tiers."}
+    urgent:{en:"Staff aren't trained on bribery & corruption risks. Train everyone dealing with third parties and intermediaries on your ABC rules — gifts, hospitality, facilitation payments and third-party due diligence — so they know what is and isn't allowed. RALK makes this practical and role-specific.",
+            fr:"Les collaborateurs ne sont pas formés aux risques de corruption. Formez toute personne en contact avec des tiers/intermédiaires à vos règles anti-corruption — cadeaux, invitations, paiements de facilitation et vigilance sur les tiers — pour qu'elle sache ce qui est permis ou non. RALK rend cela concret et propre à chaque rôle."},
+    improve:{en:"A policy exists but staff aren't regularly trained on it. Recurring ABC training makes the rules real for the people who face bribery risk day to day — RALK keeps it current and tracked.",
+            fr:"Une politique existe mais les collaborateurs n'y sont pas formés régulièrement. Une formation anti-corruption récurrente rend les règles concrètes pour ceux qui font face au risque au quotidien — RALK la maintient à jour et suivie."},
+    strong:{en:"Your team knows the anti-bribery rules. Keep the knowledge current with refreshers, especially for third-party-facing roles — RALK adapts these automatically.",
+            fr:"Votre équipe connaît les règles anti-corruption. Gardez la connaissance à jour avec des rappels, surtout pour les rôles en contact avec des tiers — RALK les adapte automatiquement."}
   },
   dataprotection:{
-    urgent:{en:"Put confidentiality and access controls around compliance data now — especially STR/SAR non-disclosure (no tipping-off) and lawful, GDPR-aligned retention.",
-            fr:"Mettez en place sans délai la confidentialité et des contrôles d'accès sur les données de conformité — surtout la non-divulgation des déclarations de soupçon (pas de « tipping-off ») et une conservation licite conforme au RGPD."},
-    improve:{en:"Tighten data-retention and confidentiality practices and align them with GDPR and tipping-off rules.",
-            fr:"Renforcez la conservation des données et la confidentialité, et alignez-les sur le RGPD et les règles de non-divulgation."},
-    strong:{en:"Compliance-data protection is solid. Keep access reviews and retention schedules current.",
-            fr:"La protection des données de conformité est solide. Maintenez à jour les revues d'accès et les durées de conservation."}
+    urgent:{en:"Staff aren't trained on handling compliance data, creating a tipping-off risk. Train them on confidentiality (no tipping-off), access rules and lawful, GDPR-aligned retention — RALK's adaptive training turns these rules into everyday practice.",
+            fr:"Les collaborateurs ne sont pas formés au traitement des données de conformité, créant un risque de divulgation. Formez-les à la confidentialité (pas de « tipping-off »), aux règles d'accès et à une conservation licite conforme au RGPD — la formation adaptative de RALK transforme ces règles en pratique quotidienne."},
+    improve:{en:"Awareness is inconsistent on confidentiality and data-retention rules. Recurring training gives the whole team a shared standard on tipping-off and lawful data handling — RALK keeps it aligned with GDPR.",
+            fr:"La sensibilisation est inconstante sur la confidentialité et la conservation des données. Une formation récurrente donne à toute l'équipe un standard commun sur la non-divulgation et le traitement licite — RALK la maintient alignée sur le RGPD."},
+    strong:{en:"Your team handles compliance data correctly. Keep confidentiality and data-handling knowledge current with refreshers — RALK delivers these adaptively.",
+            fr:"Votre équipe traite correctement les données de conformité. Gardez à jour la connaissance de la confidentialité et du traitement des données avec des rappels — RALK les délivre de façon adaptative."}
   },
   ai:{
-    urgent:{en:"Before relying on AI in compliance, put basic governance around it (human oversight, validation) and train staff on AI-enabled fraud and deepfakes — a fast-growing attack vector.",
-            fr:"Avant de vous appuyer sur l'IA en conformité, encadrez-la (supervision humaine, validation) et formez le personnel à la fraude et aux deepfakes assistés par IA — un vecteur d'attaque en forte croissance."},
-    improve:{en:"Strengthen AI governance (explainability, model oversight) and staff awareness of AI-driven financial-crime threats.",
-            fr:"Renforcez la gouvernance de l'IA (explicabilité, supervision des modèles) et la sensibilisation aux menaces de criminalité financière liées à l'IA."},
-    strong:{en:"AI risk is well managed. Keep monitoring emerging AI-enabled fraud and deepfake typologies.",
-            fr:"Le risque IA est bien géré. Continuez de suivre les typologies émergentes de fraude et de deepfakes par IA."}
+    urgent:{en:"AI is in use but staff aren't prepared for AI-enabled fraud and deepfakes — a fast-growing attack vector. Train the team on AI oversight (human review, explainability) and on spotting AI-driven threats; RALK's adaptive training covers exactly these emerging risks.",
+            fr:"L'IA est utilisée mais les collaborateurs ne sont pas préparés à la fraude et aux deepfakes assistés par IA — un vecteur d'attaque en forte croissance. Formez l'équipe à la supervision de l'IA (revue humaine, explicabilité) et à la détection des menaces liées à l'IA ; la formation adaptative de RALK couvre précisément ces risques émergents."},
+    improve:{en:"AI is used with limited staff training on its risks. Give the team focused training on AI oversight and AI-driven financial-crime threats — RALK keeps this current as the threat landscape shifts.",
+            fr:"L'IA est utilisée avec une formation limitée du personnel à ses risques. Offrez à l'équipe une formation ciblée sur la supervision de l'IA et les menaces de criminalité financière liées à l'IA — RALK la maintient à jour au fil de l'évolution des menaces."},
+    strong:{en:"Your team is prepared for AI-related risks. Keep them ahead of new AI-enabled fraud and deepfake typologies with refreshers — RALK delivers these adaptively.",
+            fr:"Votre équipe est préparée aux risques liés à l'IA. Gardez-la en avance sur les nouvelles typologies de fraude et de deepfakes par IA avec des rappels — RALK les délivre de façon adaptative."}
   },
   whistleblower:{
-    urgent:{en:"Set up a confidential (ideally anonymous) whistleblowing channel with a written anti-retaliation policy — it's both a regulatory expectation and your best early-warning system.",
-            fr:"Mettez en place un canal de signalement confidentiel (idéalement anonyme) avec une politique écrite anti-représailles — c'est une exigence réglementaire et votre meilleur système d'alerte précoce."},
-    improve:{en:"Formalise and publicise the whistleblowing channel, and guarantee non-retaliation with documented follow-up.",
-            fr:"Formalisez et faites connaître le canal de signalement, et garantissez la non-représaille avec un suivi documenté."},
-    strong:{en:"Whistleblowing is well handled. Keep reminding staff it exists and track case outcomes.",
-            fr:"Le dispositif de signalement est bien géré. Rappelez régulièrement son existence et suivez l'issue des cas."}
+    urgent:{en:"Employees don't know they have a protected way to report misconduct. Train staff on the confidential, retaliation-protected whistleblowing channel and how to use it — RALK's adaptive training builds a genuine speak-up culture, your best early-warning system.",
+            fr:"Les employés ne savent pas qu'ils disposent d'un moyen protégé de signaler des manquements. Formez le personnel au canal de signalement confidentiel et protégé contre les représailles, et à son utilisation — la formation adaptative de RALK bâtit une véritable culture d'alerte, votre meilleur système d'alerte précoce."},
+    improve:{en:"A channel exists but staff aren't clearly informed. Train the whole team so they know the channel, trust the anti-retaliation protection and know how to raise a concern — RALK keeps this awareness alive.",
+            fr:"Un canal existe mais les collaborateurs n'en sont pas clairement informés. Formez toute l'équipe pour qu'elle connaisse le canal, ait confiance dans la protection anti-représailles et sache signaler une préoccupation — RALK entretient cette sensibilisation."},
+    strong:{en:"Your team knows about and trusts the whistleblowing channel. Keep reminding staff it exists with periodic refreshers — RALK delivers these automatically.",
+            fr:"Votre équipe connaît le canal de signalement et lui fait confiance. Rappelez régulièrement son existence avec des rappels périodiques — RALK les délivre automatiquement."}
   },
   governance:{
-    urgent:{en:"Appoint an empowered compliance officer, arrange independent testing and roll out staff training — governance gaps undermine every other control.",
-            fr:"Nommez un responsable conformité doté de moyens, organisez un test indépendant et déployez la formation du personnel — les lacunes de gouvernance minent tous les autres contrôles."},
-    improve:{en:"Formalise the MLRO mandate, schedule independent audits and make training annual and tracked.",
-            fr:"Formalisez le mandat du MLRO, planifiez des audits indépendants et rendez la formation annuelle et suivie."},
-    strong:{en:"Governance, audit and training are well established. Keep remediation tracking visible to the board.",
-            fr:"Gouvernance, audit et formation bien établis. Gardez le suivi des remédiations visible pour la direction."}
+    urgent:{en:"Staff don't know their compliance responsibilities or escalation lines. Alongside a designated compliance lead, train everyone on their own responsibilities and who to turn to — RALK's adaptive training embeds this across the organisation, the foundation every other control rests on.",
+            fr:"Les collaborateurs ne connaissent pas leurs responsabilités en conformité ni les circuits d'escalade. En plus d'un responsable conformité désigné, formez chacun à ses propres responsabilités et à qui s'adresser — la formation adaptative de RALK l'ancre dans toute l'organisation, socle de tous les autres contrôles."},
+    improve:{en:"The compliance role exists but responsibilities are unclear to staff. Make training organisation-wide, annual and tracked so everyone knows their part — RALK adapts it by role and keeps records audit-ready.",
+            fr:"Le rôle conformité existe mais les responsabilités sont floues pour les collaborateurs. Rendez la formation étendue à toute l'organisation, annuelle et suivie pour que chacun connaisse son rôle — RALK l'adapte par rôle et garde des traces prêtes pour l'audit."},
+    strong:{en:"Compliance roles and responsibilities are well understood across the team. Keep training annual and tracked, with board-visible completion — RALK makes this effortless.",
+            fr:"Les rôles et responsabilités de conformité sont bien compris dans l'équipe. Maintenez la formation annuelle et suivie, avec un taux d'achèvement visible par la direction — RALK rend cela simple."}
   }
 };
 
