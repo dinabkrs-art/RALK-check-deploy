@@ -314,7 +314,8 @@ const CRITICAL_FAILURE_PENALTY = 0.12;
 // module weights mirror infer_module_weight() from the backend
 const MODULE_WEIGHTS = {
   sanctions:1.4, aml_kyc:1.35, ubo:1.35, pep:1.35, monitoring:1.35,
-  crypto:1.3, fraud:1.3, abc:1.25, governance:1.15
+  crypto:1.3, fraud:1.3, abc:1.25, dataprotection:1.2, ai:1.15,
+  governance:1.15, whistleblower:1.15
 };
 
 function clampScore(v){ return Math.max(0, Math.min(100, Math.round(v))); }
@@ -401,7 +402,10 @@ const DOMAINS = {
   crypto:     { en:"Crypto / Virtual Assets", fr:"Crypto / Actifs virtuels" },
   fraud:      { en:"Fraud Prevention", fr:"Prévention de la fraude" },
   abc:        { en:"Anti-Bribery & Corruption", fr:"Anti-corruption" },
-  governance: { en:"Governance, Audit & Training", fr:"Gouvernance, Audit & Formation" }
+  dataprotection: { en:"Data Protection & Financial Crime", fr:"Protection des données & Criminalité financière" },
+  ai:         { en:"AI & Financial Crime", fr:"IA & Criminalité financière" },
+  governance: { en:"Governance, Audit & Training", fr:"Gouvernance, Audit & Formation" },
+  whistleblower: { en:"Whistleblower Protection", fr:"Protection des lanceurs d'alerte" }
 };
 
 // each question: id, domain, severity(high|medium), text{en,fr}, opts[{en,fr,quality}]
@@ -506,6 +510,41 @@ const QUESTIONS = [
                           fr:"Le rôle est attribué de façon informelle / à temps partiel sans réelle autorité."},
       {quality:"critical",en:"No designated compliance officer.",
                           fr:"Aucun responsable conformité désigné."}
+    ]},
+  { id:"w1", domain:"whistleblower", severity:"medium",
+    text:{en:"Do employees have a confidential whistleblowing channel, protected against retaliation, to report misconduct?",
+          fr:"Les employés disposent-ils d'un canal de signalement confidentiel, protégé contre les représailles, pour signaler des manquements ?"},
+    opts:[
+      {quality:"secure",  en:"Yes — a confidential/anonymous channel with a clear anti-retaliation policy and documented follow-up.",
+                          fr:"Oui — un canal confidentiel/anonyme, une politique claire anti-représailles et un suivi documenté."},
+      {quality:"partial", en:"A channel exists but is informal, little-known or lacks retaliation protection.",
+                          fr:"Un canal existe mais il est informel, peu connu ou sans protection contre les représailles."},
+      {quality:"critical",en:"No whistleblowing channel.",
+                          fr:"Aucun canal de signalement."}
+    ]},
+  { id:"d1", domain:"dataprotection", severity:"medium",
+    text:{en:"Do you protect personal and compliance data appropriately — e.g. STR/SAR confidentiality (no tipping-off), access controls and lawful retention?",
+          fr:"Protégez-vous correctement les données personnelles et de conformité — p. ex. confidentialité des déclarations de soupçon (pas de « tipping-off »), contrôles d'accès et conservation licite ?"},
+    opts:[
+      {quality:"secure",  en:"Yes — access controls, tipping-off / confidentiality rules and GDPR-aligned retention are in place.",
+                          fr:"Oui — contrôles d'accès, règles de confidentialité/non-divulgation et conservation conforme au RGPD sont en place."},
+      {quality:"partial", en:"Some measures, but confidentiality or data-retention practices are inconsistent.",
+                          fr:"Quelques mesures, mais la confidentialité ou la conservation des données sont inconstantes."},
+      {quality:"critical",en:"No specific protection — compliance data is handled loosely.",
+                          fr:"Aucune protection spécifique — les données de conformité sont gérées de façon négligente."}
+    ]},
+  { id:"ai1", domain:"ai", severity:"medium",
+    text:{en:"If you use AI in compliance or customer operations, do you manage its financial-crime risks — human oversight, explainability, and defences against AI-enabled fraud / deepfakes?",
+          fr:"Si vous utilisez l'IA en conformité ou dans les opérations clients, en gérez-vous les risques de criminalité financière — supervision humaine, explicabilité et défenses contre la fraude/deepfakes assistés par IA ?"},
+    opts:[
+      {quality:"secure",  en:"Yes — AI is governed (human oversight, validation, explainability) and staff are trained on AI-enabled fraud / deepfake risks.",
+                          fr:"Oui — l'IA est encadrée (supervision humaine, validation, explicabilité) et le personnel est formé aux risques de fraude/deepfakes par IA."},
+      {quality:"secure",  en:"Not applicable — we don't use AI in these areas yet.",
+                          fr:"Non applicable — nous n'utilisons pas encore l'IA dans ces domaines."},
+      {quality:"partial", en:"We use AI but with limited governance or staff awareness of AI-driven threats.",
+                          fr:"Nous utilisons l'IA mais avec une gouvernance limitée ou peu de sensibilisation aux menaces liées à l'IA."},
+      {quality:"critical",en:"We use AI with no oversight, and staff aren't prepared for AI-enabled fraud / deepfakes.",
+                          fr:"Nous utilisons l'IA sans supervision, et le personnel n'est pas préparé à la fraude/deepfakes par IA."}
     ]}
 ];
 
@@ -604,6 +643,30 @@ const RECS = {
     strong:{en:"ABC framework is in good shape. Keep third-party risk reviews current.",
             fr:"Dispositif anti-corruption en bon état. Maintenez à jour les revues de risque des tiers."}
   },
+  dataprotection:{
+    urgent:{en:"Put confidentiality and access controls around compliance data now — especially STR/SAR non-disclosure (no tipping-off) and lawful, GDPR-aligned retention.",
+            fr:"Mettez en place sans délai la confidentialité et des contrôles d'accès sur les données de conformité — surtout la non-divulgation des déclarations de soupçon (pas de « tipping-off ») et une conservation licite conforme au RGPD."},
+    improve:{en:"Tighten data-retention and confidentiality practices and align them with GDPR and tipping-off rules.",
+            fr:"Renforcez la conservation des données et la confidentialité, et alignez-les sur le RGPD et les règles de non-divulgation."},
+    strong:{en:"Compliance-data protection is solid. Keep access reviews and retention schedules current.",
+            fr:"La protection des données de conformité est solide. Maintenez à jour les revues d'accès et les durées de conservation."}
+  },
+  ai:{
+    urgent:{en:"Before relying on AI in compliance, put basic governance around it (human oversight, validation) and train staff on AI-enabled fraud and deepfakes — a fast-growing attack vector.",
+            fr:"Avant de vous appuyer sur l'IA en conformité, encadrez-la (supervision humaine, validation) et formez le personnel à la fraude et aux deepfakes assistés par IA — un vecteur d'attaque en forte croissance."},
+    improve:{en:"Strengthen AI governance (explainability, model oversight) and staff awareness of AI-driven financial-crime threats.",
+            fr:"Renforcez la gouvernance de l'IA (explicabilité, supervision des modèles) et la sensibilisation aux menaces de criminalité financière liées à l'IA."},
+    strong:{en:"AI risk is well managed. Keep monitoring emerging AI-enabled fraud and deepfake typologies.",
+            fr:"Le risque IA est bien géré. Continuez de suivre les typologies émergentes de fraude et de deepfakes par IA."}
+  },
+  whistleblower:{
+    urgent:{en:"Set up a confidential (ideally anonymous) whistleblowing channel with a written anti-retaliation policy — it's both a regulatory expectation and your best early-warning system.",
+            fr:"Mettez en place un canal de signalement confidentiel (idéalement anonyme) avec une politique écrite anti-représailles — c'est une exigence réglementaire et votre meilleur système d'alerte précoce."},
+    improve:{en:"Formalise and publicise the whistleblowing channel, and guarantee non-retaliation with documented follow-up.",
+            fr:"Formalisez et faites connaître le canal de signalement, et garantissez la non-représaille avec un suivi documenté."},
+    strong:{en:"Whistleblowing is well handled. Keep reminding staff it exists and track case outcomes.",
+            fr:"Le dispositif de signalement est bien géré. Rappelez régulièrement son existence et suivez l'issue des cas."}
+  },
   governance:{
     urgent:{en:"Appoint an empowered compliance officer, arrange independent testing and roll out staff training — governance gaps undermine every other control.",
             fr:"Nommez un responsable conformité doté de moyens, organisez un test indépendant et déployez la formation du personnel — les lacunes de gouvernance minent tous les autres contrôles."},
@@ -621,8 +684,8 @@ const I18N = {
   en:{
     tagline:"Institutional system for anti-financial crime prevention",
     heroTitle:"Compliance Quick-Check",
-    heroSub:"A free 5-minute compliance self-assessment across AML, sanctions, corruption, fraud and crypto. Answer 9 short questions to get your compliance score, a domain-by-domain breakdown and a prioritised action plan.",
-    pill:"⏱ ~5 minutes · 9 questions · free score",
+    heroSub:"A free compliance self-assessment across AML/CFT, sanctions, anti-corruption, fraud, governance, whistleblowing, data protection, virtual assets and AI. Answer 12 short questions to get your compliance score, a domain-by-domain breakdown and a prioritised action plan — and see where your team needs training or process support.",
+    pill:"⏱ ~7 minutes · 12 questions · free score",
     start:"Start the check",
     profileTitle:"Tell us about your institution",
     profileSub:"This sets the context for your risk profile. Nothing is published — you control who sees the full report.",
@@ -696,8 +759,8 @@ const I18N = {
   fr:{
     tagline:"Système institutionnel de prévention de la criminalité financière",
     heroTitle:"Diagnostic Conformité Express",
-    heroSub:"Une auto-évaluation de conformité gratuite de 5 minutes couvrant LBC/FT, sanctions, corruption, fraude et crypto. Répondez à 9 questions courtes pour obtenir votre score de conformité, une analyse par domaine et un plan d'action priorisé.",
-    pill:"⏱ ~5 minutes · 9 questions · score gratuit",
+    heroSub:"Une auto-évaluation de conformité gratuite couvrant LBC/FT, sanctions, anti-corruption, fraude, gouvernance, lanceurs d'alerte, protection des données, actifs virtuels et IA. Répondez à 12 questions courtes pour obtenir votre score de conformité, une analyse par domaine et un plan d'action priorisé — et voir où votre équipe a besoin de formation ou d'appui sur les processus.",
+    pill:"⏱ ~7 minutes · 12 questions · score gratuit",
     start:"Démarrer le diagnostic",
     profileTitle:"Parlez-nous de votre institution",
     profileSub:"Cela définit le contexte de votre profil de risque. Rien n'est publié — vous décidez qui voit le rapport complet.",
