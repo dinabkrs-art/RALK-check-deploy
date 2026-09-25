@@ -557,12 +557,67 @@ const QUESTION_POOL = [
                           fr:"L'IA est utilisée, mais les collaborateurs sont peu formés à ses risques ou aux menaces liées à l'IA."},
       {quality:"critical",en:"AI is used with no oversight, and staff aren't prepared for AI-enabled fraud / deepfakes.",
                           fr:"L'IA est utilisée sans supervision, et les collaborateurs ne sont pas préparés à la fraude/deepfakes par IA."}
+    ]},
+  { id:"s2", domain:"sanctions", severity:"high",
+    text:{en:"How do you ensure staff know what to do when a customer or payment is a possible sanctions match — before proceeding?",
+          fr:"Comment garantissez-vous que les collaborateurs savent quoi faire lorsqu'un client ou un paiement est une correspondance possible de sanctions — avant de poursuivre ?"},
+    opts:[
+      {quality:"secure",  en:"Staff are trained to pause, escalate to the right person and not proceed until a possible match is cleared or reported.",
+                          fr:"Les collaborateurs sont formés à suspendre, escalader à la bonne personne et ne pas poursuivre tant qu'une correspondance possible n'est pas levée ou déclarée."},
+      {quality:"partial", en:"Staff would escalate informally, but aren't trained on the stop-and-clear process — some might proceed while unsure.",
+                          fr:"Les collaborateurs escaladeraient de façon informelle, mais ne sont pas formés au processus d'arrêt-et-levée — certains pourraient poursuivre dans le doute."},
+      {quality:"critical",en:"Staff aren't trained on what a possible match means — they'd likely proceed and only ask later.",
+                          fr:"Les collaborateurs ne sont pas formés à ce qu'implique une correspondance possible — ils poursuivraient probablement et ne demanderaient qu'ensuite."}
+    ]},
+  { id:"b2", domain:"abc", severity:"medium",
+    text:{en:"How do you ensure staff know how to recognise and refuse an improper request — a bribe, a facilitation payment or an undisclosed conflict of interest?",
+          fr:"Comment garantissez-vous que les collaborateurs savent reconnaître et refuser une demande inappropriée — un pot-de-vin, un paiement de facilitation ou un conflit d'intérêts non déclaré ?"},
+    opts:[
+      {quality:"secure",  en:"Staff are trained to recognise these situations, refuse and report them, and know the line between acceptable and improper.",
+                          fr:"Les collaborateurs sont formés à reconnaître ces situations, à les refuser et les signaler, et connaissent la limite entre acceptable et inapproprié."},
+      {quality:"partial", en:"Staff have a rough idea but aren't trained on grey areas like facilitation payments or conflicts of interest.",
+                          fr:"Les collaborateurs ont une idée vague mais ne sont pas formés aux zones grises comme les paiements de facilitation ou les conflits d'intérêts."},
+      {quality:"critical",en:"Staff aren't trained — an improper request could be accepted without anyone recognising the risk.",
+                          fr:"Les collaborateurs ne sont pas formés — une demande inappropriée pourrait être acceptée sans que personne ne perçoive le risque."}
+    ]},
+  { id:"f2", domain:"fraud", severity:"medium",
+    text:{en:"How do you ensure staff know how to spot and safely report internal fraud — a colleague manipulating records, payments or approvals?",
+          fr:"Comment garantissez-vous que les collaborateurs savent repérer et signaler en toute sécurité la fraude interne — un collègue manipulant des écritures, des paiements ou des approbations ?"},
+    opts:[
+      {quality:"secure",  en:"Staff are trained on internal-fraud red flags and have a safe, known way to report concerns about colleagues or processes.",
+                          fr:"Les collaborateurs sont formés aux signaux de fraude interne et disposent d'un moyen sûr et connu de signaler des préoccupations sur des collègues ou des processus."},
+      {quality:"partial", en:"Staff might notice something off, but aren't trained on internal-fraud signs or how to report them safely.",
+                          fr:"Les collaborateurs pourraient remarquer une anomalie, mais ne sont pas formés aux signes de fraude interne ni à la manière de les signaler en sécurité."},
+      {quality:"critical",en:"Staff aren't trained on internal fraud — manipulation of records or payments could go unreported.",
+                          fr:"Les collaborateurs ne sont pas formés à la fraude interne — une manipulation d'écritures ou de paiements pourrait ne pas être signalée."}
+    ]},
+  { id:"cy2", domain:"cybersecurity", severity:"medium",
+    text:{en:"How do you ensure staff know how to protect credentials and data — strong authentication, not sharing logins, and reporting a suspected breach fast?",
+          fr:"Comment garantissez-vous que les collaborateurs savent protéger identifiants et données — authentification forte, non-partage des accès et signalement rapide d'une violation suspectée ?"},
+    opts:[
+      {quality:"secure",  en:"Staff are trained on credential and data hygiene and know to report a suspected breach or lost device immediately.",
+                          fr:"Les collaborateurs sont formés à l'hygiène des identifiants et des données et savent signaler immédiatement une violation suspectée ou un appareil perdu."},
+      {quality:"partial", en:"There's some awareness, but no regular training — password sharing or slow breach reporting still happen.",
+                          fr:"Il y a une certaine sensibilisation, mais pas de formation régulière — le partage de mots de passe ou un signalement tardif arrivent encore."},
+      {quality:"critical",en:"Staff aren't trained — weak credential habits and unreported incidents leave the door open.",
+                          fr:"Les collaborateurs ne sont pas formés — de mauvaises habitudes d'identifiants et des incidents non signalés laissent la porte ouverte."}
+    ]},
+  { id:"ai2", domain:"ai", severity:"medium",
+    text:{en:"How do you ensure staff know how to handle a suspected deepfake or AI impersonation — a 'CEO' voice/video call or a too-perfect ID at onboarding — before acting on it?",
+          fr:"Comment garantissez-vous que les collaborateurs savent gérer un deepfake ou une usurpation par IA suspectés — un appel voix/vidéo du « PDG » ou une pièce d'identité trop parfaite à l'entrée en relation — avant d'agir ?"},
+    opts:[
+      {quality:"secure",  en:"Staff are trained to independently verify unusual requests and suspicious IDs, and never act on a voice/video instruction alone.",
+                          fr:"Les collaborateurs sont formés à vérifier de façon indépendante les demandes inhabituelles et les pièces d'identité suspectes, et n'agissent jamais sur la seule base d'une instruction voix/vidéo."},
+      {quality:"partial", en:"Staff are vaguely aware of deepfakes but aren't trained on how to verify — a convincing impersonation could work.",
+                          fr:"Les collaborateurs connaissent vaguement les deepfakes mais ne sont pas formés à la vérification — une usurpation convaincante pourrait fonctionner."},
+      {quality:"critical",en:"Staff aren't prepared for AI impersonation — a deepfake 'executive' request or fake ID could succeed.",
+                          fr:"Les collaborateurs ne sont pas préparés à l'usurpation par IA — une demande d'un « dirigeant » deepfake ou une fausse pièce d'identité pourrait aboutir."}
     ]}
 ];
 
-// Active questions for the Quick-Check (kept short to spark interest, not exhaust).
-// Order is intentional; the pool above keeps the full bank for easy re-activation later.
-const ACTIVE_QUESTION_IDS = ["a2","s1","b1","f1","cy1","ai1"];
+// Active questions: 6 core themes × up to 2 decisive questions each (grouped by theme).
+// The pool above keeps the full bank for easy re-activation later.
+const ACTIVE_QUESTION_IDS = ["a2","u1","s1","s2","b1","b2","f1","f2","cy1","cy2","ai1","ai2"];
 const QUESTIONS = ACTIVE_QUESTION_IDS.map(id => QUESTION_POOL.find(q => q.id === id)).filter(Boolean);
 
 const EXPOSURE_FACTORS = [
@@ -719,8 +774,8 @@ const I18N = {
   en:{
     tagline:"Institutional system for anti-financial crime prevention",
     heroTitle:"Compliance Quick-Check",
-    heroSub:"A free self-assessment across the main financial-crime areas — AML/CFT & KYC, sanctions, anti-corruption, fraud, cybersecurity and AI. Answer 6 quick questions to get your compliance score and see where your team most needs training.",
-    pill:"⏱ ~3 minutes · 6 questions · free score",
+    heroSub:"A free self-assessment across the main financial-crime areas — AML/CFT & KYC, sanctions, anti-corruption, fraud, cybersecurity and AI. Answer 12 quick questions (max. 2 per theme) to get your compliance score and see where your team most needs training.",
+    pill:"⏱ ~5 minutes · 12 questions · free score",
     start:"Start the check",
     profileTitle:"Tell us about your organisation",
     profileSub:"This sets the context for your risk profile. Nothing is published — you control who sees the full report.",
@@ -794,8 +849,8 @@ const I18N = {
   fr:{
     tagline:"Système institutionnel de prévention de la criminalité financière",
     heroTitle:"Diagnostic Conformité Express",
-    heroSub:"Une auto-évaluation gratuite sur les principaux domaines de la criminalité financière — LBC/FT & KYC, sanctions, anti-corruption, fraude, cybersécurité et IA. Répondez à 6 questions rapides pour obtenir votre score de conformité et voir où votre équipe a le plus besoin de formation.",
-    pill:"⏱ ~3 minutes · 6 questions · score gratuit",
+    heroSub:"Une auto-évaluation gratuite sur les principaux domaines de la criminalité financière — LBC/FT & KYC, sanctions, anti-corruption, fraude, cybersécurité et IA. Répondez à 12 questions rapides (max. 2 par thème) pour obtenir votre score de conformité et voir où votre équipe a le plus besoin de formation.",
+    pill:"⏱ ~5 minutes · 12 questions · score gratuit",
     start:"Démarrer le diagnostic",
     profileTitle:"Parlez-nous de votre organisation",
     profileSub:"Cela définit le contexte de votre profil de risque. Rien n'est publié — vous décidez qui voit le rapport complet.",
