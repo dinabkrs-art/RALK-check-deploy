@@ -168,6 +168,15 @@ input:focus,select:focus{outline:2px solid hsl(var(--gold));outline-offset:1px;b
 .opt.sel .dot{border-color:hsl(var(--gold));background:radial-gradient(circle,hsl(var(--gold)) 0 45%,transparent 46%)}
 .opt .otext{font-size:14.5px}
 .autohint{font-size:13px;color:hsl(var(--muted-foreground));align-self:center}
+.stakes.high{border-color:hsl(var(--red))}
+.stakes.medium{border-color:hsl(var(--gold))}
+.stakes.low{border-color:hsl(var(--green))}
+.stake{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-top:1px solid hsl(var(--border))}
+.stake:first-of-type{border-top:none;padding-top:2px}
+.stake-ic{font-size:19px;flex:0 0 auto;line-height:1.3}
+.stake-l{font-weight:700;font-size:14.5px;margin-bottom:2px}
+.stake-t{font-size:13.5px;color:hsl(var(--muted-foreground));line-height:1.45}
+.stake-note{font-size:12px;color:hsl(var(--muted-foreground));margin-top:12px;font-style:italic}
 .checkline{display:flex;gap:12px;align-items:flex-start;border:1px solid hsl(var(--border));border-radius:10px;
   padding:13px 15px;margin-bottom:10px;cursor:pointer;background:hsl(var(--card-2));transition:.15s}
 .checkline:hover{border-color:hsl(var(--gold))}
@@ -835,6 +844,28 @@ const I18N = {
     ctaTitle:"Train your team with RALK",
     ctaBodyGaps:"Every gap above comes down to one thing: your people. RALK is adaptive e-learning that trains your staff on exactly these financial-crime topics — role-based, always up to date, and calibrated to your sector. Book RALK for your organisation and turn this score into a trained, audit-ready team.",
     ctaBodyStrong:"A strong score is a snapshot, not a finish line. Sanctions lists, fraud tactics and rules change every week — and every new hire resets your risk. RALK is adaptive e-learning that keeps your whole team continuously trained, refreshed and audit-ready, so a good score today still holds tomorrow. Book RALK for your organisation.",
+    stakesTitle:"What this could cost you",
+    stakesNote:"Illustrative, based on typical financial-crime enforcement and loss patterns — not a prediction for your organisation.",
+    stakes:{
+      high:{ intro:"Gaps like these are where financial-crime losses and regulatory action begin — and untrained staff are the single most common root cause cited in enforcement cases.",
+        points:[
+          {icon:"💶", label:"Regulatory fines & forced remediation", text:"AML, sanctions and anti-corruption failures regularly draw six- to eight-figure fines, plus expensive mandated remediation and monitoring."},
+          {icon:"🛑", label:"Licence, banking access & personal liability", text:"Serious or repeated breaches can mean licence conditions, loss of authorisation, being cut off by banking partners (de-risking) — and personal fines or bans for directors and compliance officers."},
+          {icon:"📉", label:"Reputation & lost business", text:"One public case or leaked failing can end partnerships, financing and client trust that took years to build."}
+        ]},
+      medium:{ intro:"Your controls exist but have gaps — the kind that quietly escalate into an incident or an audit finding at the worst possible moment.",
+        points:[
+          {icon:"💶", label:"Fines & remediation cost", text:"Partial controls fail under pressure; the cost of a single missed case or a regulator finding far exceeds the cost of training your team."},
+          {icon:"⚠", label:"Escalation risk", text:"Today's grey areas become tomorrow's incident when staff aren't sure what to do — and uncertainty is exactly what attackers and launderers exploit."},
+          {icon:"📉", label:"Reputation & partners", text:"Auditors, banks and clients increasingly vet your controls; visible gaps can cost you deals and correspondent relationships."}
+        ]},
+      low:{ intro:"Strong today — but financial-crime risk never sits still, and a single lapse is expensive.",
+        points:[
+          {icon:"💶", label:"The cost of one lapse", text:"It only takes one untrained new hire or one novel scam; the cost of a single incident dwarfs the cost of ongoing training."},
+          {icon:"🔁", label:"Turnover & change erode readiness", text:"Every new joiner and every rule change reopens risk — knowledge decays fast without refreshers."},
+          {icon:"📉", label:"Reputation is fragile", text:"Trust built over years can be lost in one headline; continuous training is the cheapest insurance you can buy."}
+        ]}
+    },
     restart:"Start over",
     preparedFor:"Prepared for",
     assessmentDate:"Assessment date",
@@ -912,6 +943,28 @@ const I18N = {
     ctaTitle:"Formez votre équipe avec RALK",
     ctaBodyGaps:"Chaque lacune ci-dessus tient à une seule chose : vos collaborateurs. RALK est un e-learning adaptatif qui forme votre personnel précisément à ces thèmes de criminalité financière — par rôle, toujours à jour et calibré sur votre secteur. Réservez RALK pour votre organisation et transformez ce score en une équipe formée et prête pour l'audit.",
     ctaBodyStrong:"Un bon score est un instantané, pas une ligne d'arrivée. Les listes de sanctions, les techniques de fraude et les règles changent chaque semaine — et chaque nouvelle recrue remet votre risque à zéro. RALK est un e-learning adaptatif qui garde toute votre équipe formée, mise à jour et prête pour l'audit en continu, pour qu'un bon score aujourd'hui tienne encore demain. Réservez RALK pour votre organisation.",
+    stakesTitle:"Ce que cela pourrait vous coûter",
+    stakesNote:"À titre illustratif, d'après les schémas habituels de sanctions et de pertes en criminalité financière — pas une prédiction pour votre organisation.",
+    stakes:{
+      high:{ intro:"Ce sont précisément ces lacunes qui déclenchent pertes et sanctions réglementaires — et le personnel non formé est la cause première la plus souvent citée dans les affaires d'exécution.",
+        points:[
+          {icon:"💶", label:"Amendes & remédiation imposée", text:"Les manquements LBC/FT, sanctions et anti-corruption entraînent régulièrement des amendes à six à huit chiffres, plus des programmes de remédiation et de surveillance coûteux et imposés."},
+          {icon:"🛑", label:"Agrément, accès bancaire & responsabilité personnelle", text:"Des manquements graves ou répétés peuvent signifier des conditions d'agrément, un retrait d'autorisation, une exclusion par les partenaires bancaires (de-risking) — et des amendes ou interdictions personnelles pour dirigeants et responsables conformité."},
+          {icon:"📉", label:"Réputation & pertes commerciales", text:"Une seule affaire publique ou une défaillance divulguée peut anéantir partenariats, financements et confiance client bâtis en des années."}
+        ]},
+      medium:{ intro:"Vos contrôles existent mais présentent des lacunes — de celles qui dégénèrent discrètement en incident ou en constat d'audit au pire moment.",
+        points:[
+          {icon:"💶", label:"Coût des amendes & remédiation", text:"Des contrôles partiels cèdent sous pression ; le coût d'un seul cas manqué ou d'un constat du régulateur dépasse de loin celui de la formation de votre équipe."},
+          {icon:"⚠", label:"Risque d'escalade", text:"Les zones grises d'aujourd'hui deviennent l'incident de demain quand les collaborateurs ne savent pas quoi faire — et l'incertitude est justement ce qu'exploitent fraudeurs et blanchisseurs."},
+          {icon:"📉", label:"Réputation & partenaires", text:"Auditeurs, banques et clients vérifient de plus en plus vos contrôles ; des lacunes visibles peuvent vous coûter des contrats et des relations de correspondance."}
+        ]},
+      low:{ intro:"Solide aujourd'hui — mais le risque de criminalité financière ne reste jamais immobile, et un seul manquement coûte cher.",
+        points:[
+          {icon:"💶", label:"Le coût d'un seul manquement", text:"Il suffit d'une nouvelle recrue non formée ou d'une arnaque inédite ; le coût d'un seul incident écrase celui d'une formation continue."},
+          {icon:"🔁", label:"Turnover & changements érodent la préparation", text:"Chaque arrivée et chaque changement de règle rouvrent le risque — la connaissance se dégrade vite sans rappels."},
+          {icon:"📉", label:"La réputation est fragile", text:"Une confiance bâtie en des années peut se perdre en un titre de presse ; la formation continue est l'assurance la moins chère qui soit."}
+        ]}
+    },
     restart:"Recommencer",
     preparedFor:"Préparé pour",
     assessmentDate:"Date de l'évaluation",
@@ -1246,6 +1299,18 @@ function renderResults(){
 
   const critNote = snap.criticals>0 ? `<div class="disclaimer" style="border-color:hsl(var(--red));color:hsl(var(--red))">${t("crit")}</div>`:"";
 
+  const stakesData = ((I18N[STATE.lang].stakes)||{})[controlRisk] || {};
+  const stakePoints = (stakesData.points||[]).map(p=>`
+      <div class="stake"><span class="stake-ic">${p.icon}</span>
+        <div><div class="stake-l">${p.label}</div><div class="stake-t">${p.text}</div></div></div>`).join("");
+  const stakesCard = `
+    <div class="card stakes ${controlRisk}">
+      <h1 style="font-size:19px;margin-bottom:4px">${t("stakesTitle")}</h1>
+      <p class="sub" style="text-align:left;margin:0 0 12px">${stakesData.intro||""}</p>
+      ${stakePoints}
+      <div class="stake-note">${t("stakesNote")}</div>
+    </div>`;
+
   const ctaBodyText = (snap.global>=80 && snap.criticals===0) ? t("ctaBodyStrong") : t("ctaBodyGaps");
   const actionRow = STATE.unlocked ? `
     <div class="card no-print" style="text-align:center;border-color:hsl(var(--gold));background:linear-gradient(180deg,hsla(43,62%,45%,.10),transparent)">
@@ -1278,6 +1343,8 @@ function renderResults(){
       </div>
       ${critNote}
     </div>
+
+    ${stakesCard}
 
     <div class="card">
       <h1 style="font-size:19px;margin-bottom:16px">${t("breakdownTitle")}</h1>
