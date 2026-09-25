@@ -314,7 +314,7 @@ const CRITICAL_FAILURE_PENALTY = 0.12;
 // module weights mirror infer_module_weight() from the backend
 const MODULE_WEIGHTS = {
   sanctions:1.4, aml_kyc:1.35, ubo:1.35, pep:1.35, monitoring:1.35,
-  crypto:1.3, fraud:1.3, abc:1.25, dataprotection:1.2, ai:1.15,
+  crypto:1.3, fraud:1.3, abc:1.25, dataprotection:1.2, cybersecurity:1.2, ai:1.15,
   governance:1.15, whistleblower:1.15
 };
 
@@ -403,6 +403,7 @@ const DOMAINS = {
   fraud:      { en:"Fraud Prevention", fr:"Prévention de la fraude" },
   abc:        { en:"Anti-Bribery & Corruption", fr:"Anti-corruption" },
   dataprotection: { en:"Data Protection & Financial Crime", fr:"Protection des données & Criminalité financière" },
+  cybersecurity: { en:"Cybersecurity & Financial Crime", fr:"Cybersécurité & Criminalité financière" },
   ai:         { en:"AI & Financial Crime", fr:"IA & Criminalité financière" },
   governance: { en:"Governance, Audit & Training", fr:"Gouvernance, Audit & Formation" },
   whistleblower: { en:"Whistleblower Protection", fr:"Protection des lanceurs d'alerte" }
@@ -533,6 +534,17 @@ const QUESTIONS = [
       {quality:"critical",en:"Staff aren't trained — compliance data is handled loosely, with tipping-off risk.",
                           fr:"Les collaborateurs ne sont pas formés — les données de conformité sont gérées de façon négligente, avec un risque de divulgation."}
     ]},
+  { id:"cy1", domain:"cybersecurity", severity:"medium",
+    text:{en:"How do you ensure staff know how to defend against cyber-enabled financial crime — phishing, business email compromise (BEC) and account takeover?",
+          fr:"Comment garantissez-vous que les collaborateurs savent se défendre contre la criminalité financière à composante cyber — hameçonnage, fraude au président (BEC) et prise de contrôle de compte ?"},
+    opts:[
+      {quality:"secure",  en:"Staff receive regular cybersecurity awareness training and know how to spot and report phishing, BEC and social-engineering attempts.",
+                          fr:"Les collaborateurs reçoivent une formation régulière de sensibilisation à la cybersécurité et savent repérer et signaler les tentatives d'hameçonnage, de BEC et d'ingénierie sociale."},
+      {quality:"partial", en:"There's some awareness, but no regular training — staff aren't consistently prepared for cyber-enabled fraud.",
+                          fr:"Il y a une certaine sensibilisation, mais pas de formation régulière — les collaborateurs ne sont pas préparés de façon cohérente à la fraude à composante cyber."},
+      {quality:"critical",en:"Staff aren't trained on cyber threats — a phishing or BEC attempt could easily succeed.",
+                          fr:"Les collaborateurs ne sont pas formés aux cybermenaces — une tentative d'hameçonnage ou de BEC pourrait facilement réussir."}
+    ]},
   { id:"ai1", domain:"ai", severity:"medium",
     text:{en:"If you use AI in compliance or customer operations, how do you ensure staff know how to oversee it and defend against AI-enabled fraud / deepfakes?",
           fr:"Si vous utilisez l'IA en conformité ou dans les opérations clients, comment garantissez-vous que les collaborateurs savent la superviser et se défendre contre la fraude/deepfakes assistés par IA ?"},
@@ -661,6 +673,14 @@ const RECS = {
     strong:{en:"Your team handles compliance data correctly. Keep confidentiality and data-handling knowledge current with refreshers — RALK delivers these adaptively.",
             fr:"Votre équipe traite correctement les données de conformité. Gardez à jour la connaissance de la confidentialité et du traitement des données avec des rappels — RALK les délivre de façon adaptative."}
   },
+  cybersecurity:{
+    urgent:{en:"Staff aren't prepared for cyber-enabled financial crime, so a phishing or BEC attempt could succeed. Train the whole team to recognise and report phishing, business email compromise and social engineering — RALK's adaptive training turns your people into the first line of defence.",
+            fr:"Les collaborateurs ne sont pas préparés à la criminalité financière à composante cyber, une tentative d'hameçonnage ou de BEC pourrait donc réussir. Formez toute l'équipe à reconnaître et signaler l'hameçonnage, la fraude au président et l'ingénierie sociale — la formation adaptative de RALK fait de vos collaborateurs la première ligne de défense."},
+    improve:{en:"Awareness exists but isn't reinforced by regular training, leaving gaps attackers exploit. Recurring cybersecurity training keeps the whole team alert to evolving phishing and BEC tactics — RALK keeps it current.",
+            fr:"La sensibilisation existe mais n'est pas renforcée par une formation régulière, laissant des failles exploitées par les attaquants. Une formation cybersécurité récurrente garde toute l'équipe en alerte face aux tactiques d'hameçonnage et de BEC en évolution — RALK la maintient à jour."},
+    strong:{en:"Your team is alert to cyber-enabled fraud. Keep them ahead of new phishing and BEC tactics with regular refreshers — RALK delivers these adaptively.",
+            fr:"Votre équipe est vigilante face à la fraude à composante cyber. Gardez-la en avance sur les nouvelles tactiques d'hameçonnage et de BEC avec des rappels réguliers — RALK les délivre de façon adaptative."}
+  },
   ai:{
     urgent:{en:"AI is in use but staff aren't prepared for AI-enabled fraud and deepfakes — a fast-growing attack vector. Train the team on AI oversight (human review, explainability) and on spotting AI-driven threats; RALK's adaptive training covers exactly these emerging risks.",
             fr:"L'IA est utilisée mais les collaborateurs ne sont pas préparés à la fraude et aux deepfakes assistés par IA — un vecteur d'attaque en forte croissance. Formez l'équipe à la supervision de l'IA (revue humaine, explicabilité) et à la détection des menaces liées à l'IA ; la formation adaptative de RALK couvre précisément ces risques émergents."},
@@ -694,8 +714,8 @@ const I18N = {
   en:{
     tagline:"Institutional system for anti-financial crime prevention",
     heroTitle:"Compliance Quick-Check",
-    heroSub:"A free compliance self-assessment across AML/CFT, sanctions, anti-corruption, fraud, governance, whistleblowing, data protection, virtual assets and AI. Answer 12 short questions to get your compliance score, a domain-by-domain breakdown and a prioritised action plan — and see where your team needs training or process support.",
-    pill:"⏱ ~7 minutes · 12 questions · free score",
+    heroSub:"A free compliance self-assessment across AML/CFT, sanctions, anti-corruption, fraud, governance, whistleblowing, data protection, cybersecurity, virtual assets and AI. Answer 13 short questions to get your compliance score, a domain-by-domain breakdown and a prioritised action plan — and see where your team needs training or process support.",
+    pill:"⏱ ~7 minutes · 13 questions · free score",
     start:"Start the check",
     profileTitle:"Tell us about your organisation",
     profileSub:"This sets the context for your risk profile. Nothing is published — you control who sees the full report.",
@@ -769,8 +789,8 @@ const I18N = {
   fr:{
     tagline:"Système institutionnel de prévention de la criminalité financière",
     heroTitle:"Diagnostic Conformité Express",
-    heroSub:"Une auto-évaluation de conformité gratuite couvrant LBC/FT, sanctions, anti-corruption, fraude, gouvernance, lanceurs d'alerte, protection des données, actifs virtuels et IA. Répondez à 12 questions courtes pour obtenir votre score de conformité, une analyse par domaine et un plan d'action priorisé — et voir où votre équipe a besoin de formation ou d'appui sur les processus.",
-    pill:"⏱ ~7 minutes · 12 questions · score gratuit",
+    heroSub:"Une auto-évaluation de conformité gratuite couvrant LBC/FT, sanctions, anti-corruption, fraude, gouvernance, lanceurs d'alerte, protection des données, cybersécurité, actifs virtuels et IA. Répondez à 13 questions courtes pour obtenir votre score de conformité, une analyse par domaine et un plan d'action priorisé — et voir où votre équipe a besoin de formation ou d'appui sur les processus.",
+    pill:"⏱ ~7 minutes · 13 questions · score gratuit",
     start:"Démarrer le diagnostic",
     profileTitle:"Parlez-nous de votre organisation",
     profileSub:"Cela définit le contexte de votre profil de risque. Rien n'est publié — vous décidez qui voit le rapport complet.",
