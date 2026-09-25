@@ -410,7 +410,7 @@ const DOMAINS = {
 };
 
 // each question: id, domain, severity(high|medium), text{en,fr}, opts[{en,fr,quality}]
-const QUESTIONS = [
+const QUESTION_POOL = [
   { id:"s1", domain:"sanctions", severity:"high",
     text:{en:"How do you ensure the staff who onboard clients and process payments know how to recognise a sanctions/watchlist hit (UN, EU, OFAC) and what to do with it?",
           fr:"Comment garantissez-vous que les collaborateurs qui entrent en relation et traitent les paiements savent reconnaître une correspondance de sanctions (ONU, UE, OFAC) et comment y réagir ?"},
@@ -559,6 +559,11 @@ const QUESTIONS = [
                           fr:"L'IA est utilisée sans supervision, et les collaborateurs ne sont pas préparés à la fraude/deepfakes par IA."}
     ]}
 ];
+
+// Active questions for the Quick-Check (kept short to spark interest, not exhaust).
+// Order is intentional; the pool above keeps the full bank for easy re-activation later.
+const ACTIVE_QUESTION_IDS = ["a2","s1","b1","f1","cy1","ai1"];
+const QUESTIONS = ACTIVE_QUESTION_IDS.map(id => QUESTION_POOL.find(q => q.id === id)).filter(Boolean);
 
 const EXPOSURE_FACTORS = [
   {id:"jur", en:"We serve customers in or from higher-risk / FATF-monitored jurisdictions.",
@@ -714,8 +719,8 @@ const I18N = {
   en:{
     tagline:"Institutional system for anti-financial crime prevention",
     heroTitle:"Compliance Quick-Check",
-    heroSub:"A free compliance self-assessment across AML/CFT, sanctions, anti-corruption, fraud, governance, whistleblowing, data protection, cybersecurity, virtual assets and AI. Answer 13 short questions to get your compliance score, a domain-by-domain breakdown and a prioritised action plan — and see where your team needs training or process support.",
-    pill:"⏱ ~7 minutes · 13 questions · free score",
+    heroSub:"A free self-assessment across the main financial-crime areas — AML/CFT & KYC, sanctions, anti-corruption, fraud, cybersecurity and AI. Answer 6 quick questions to get your compliance score and see where your team most needs training.",
+    pill:"⏱ ~3 minutes · 6 questions · free score",
     start:"Start the check",
     profileTitle:"Tell us about your organisation",
     profileSub:"This sets the context for your risk profile. Nothing is published — you control who sees the full report.",
@@ -760,9 +765,9 @@ const I18N = {
     critFlag:"critical gap",
     download:"Download / print report (PDF)",
     demo:"Request a consultation",
-    getRalk:"Get RALK →",
-    ctaTitle:"Close these gaps with RALK",
-    ctaBody:"RALK turns this roadmap into implemented controls — adaptive AML/CFT training and remediation, calibrated to your risk profile, jurisdiction and sector.",
+    getRalk:"Train my team with RALK →",
+    ctaTitle:"Train your team with RALK",
+    ctaBody:"Every gap above comes down to one thing: your people. RALK is adaptive e-learning that trains your staff on exactly these financial-crime topics — role-based, always up to date, and calibrated to your sector. Book RALK for your organisation and turn this score into a trained, audit-ready team.",
     restart:"Start over",
     preparedFor:"Prepared for",
     assessmentDate:"Assessment date",
@@ -789,8 +794,8 @@ const I18N = {
   fr:{
     tagline:"Système institutionnel de prévention de la criminalité financière",
     heroTitle:"Diagnostic Conformité Express",
-    heroSub:"Une auto-évaluation de conformité gratuite couvrant LBC/FT, sanctions, anti-corruption, fraude, gouvernance, lanceurs d'alerte, protection des données, cybersécurité, actifs virtuels et IA. Répondez à 13 questions courtes pour obtenir votre score de conformité, une analyse par domaine et un plan d'action priorisé — et voir où votre équipe a besoin de formation ou d'appui sur les processus.",
-    pill:"⏱ ~7 minutes · 13 questions · score gratuit",
+    heroSub:"Une auto-évaluation gratuite sur les principaux domaines de la criminalité financière — LBC/FT & KYC, sanctions, anti-corruption, fraude, cybersécurité et IA. Répondez à 6 questions rapides pour obtenir votre score de conformité et voir où votre équipe a le plus besoin de formation.",
+    pill:"⏱ ~3 minutes · 6 questions · score gratuit",
     start:"Démarrer le diagnostic",
     profileTitle:"Parlez-nous de votre organisation",
     profileSub:"Cela définit le contexte de votre profil de risque. Rien n'est publié — vous décidez qui voit le rapport complet.",
@@ -835,9 +840,9 @@ const I18N = {
     critFlag:"lacune critique",
     download:"Télécharger / imprimer le rapport (PDF)",
     demo:"Demander une consultation",
-    getRalk:"Obtenir RALK →",
-    ctaTitle:"Comblez ces lacunes avec RALK",
-    ctaBody:"RALK transforme cette feuille de route en contrôles concrets — formation LBC/FT adaptative et remédiation, calibrées sur votre profil de risque, votre juridiction et votre secteur.",
+    getRalk:"Former mon équipe avec RALK →",
+    ctaTitle:"Formez votre équipe avec RALK",
+    ctaBody:"Chaque lacune ci-dessus tient à une seule chose : vos collaborateurs. RALK est un e-learning adaptatif qui forme votre personnel précisément à ces thèmes de criminalité financière — par rôle, toujours à jour et calibré sur votre secteur. Réservez RALK pour votre organisation et transformez ce score en une équipe formée et prête pour l'audit.",
     restart:"Recommencer",
     preparedFor:"Préparé pour",
     assessmentDate:"Date de l'évaluation",
