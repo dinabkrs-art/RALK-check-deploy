@@ -167,6 +167,7 @@ input:focus,select:focus{outline:2px solid hsl(var(--gold));outline-offset:1px;b
 .opt .dot{width:18px;height:18px;border-radius:50%;border:2px solid hsl(var(--muted-foreground));flex:0 0 auto;margin-top:2px;transition:.15s}
 .opt.sel .dot{border-color:hsl(var(--gold));background:radial-gradient(circle,hsl(var(--gold)) 0 45%,transparent 46%)}
 .opt .otext{font-size:14.5px}
+.autohint{font-size:13px;color:hsl(var(--muted-foreground));align-self:center}
 .checkline{display:flex;gap:12px;align-items:flex-start;border:1px solid hsl(var(--border));border-radius:10px;
   padding:13px 15px;margin-bottom:10px;cursor:pointer;background:hsl(var(--card-2));transition:.15s}
 .checkline:hover{border-color:hsl(var(--gold))}
@@ -620,6 +621,15 @@ const QUESTION_POOL = [
 const ACTIVE_QUESTION_IDS = ["a2","u1","s1","s2","b1","b2","f1","f2","cy1","cy2","ai1","ai2"];
 const QUESTIONS = ACTIVE_QUESTION_IDS.map(id => QUESTION_POOL.find(q => q.id === id)).filter(Boolean);
 
+// Universal "I'm not sure" option on every question. Uncertainty is itself a training signal,
+// so it scores as in-progress (partial) — never as best practice.
+QUESTIONS.forEach(q => {
+  if(!q.opts.some(o => o._unsure)){
+    q.opts = q.opts.concat([{ quality:"partial", _unsure:true,
+      en:"I'm not sure / not applicable", fr:"Je ne suis pas sûr(e) / non applicable" }]);
+  }
+});
+
 const EXPOSURE_FACTORS = [
   {id:"jur", en:"We serve customers in or from higher-risk / FATF-monitored jurisdictions.",
             fr:"Nous servons des clients dans/ depuis des juridictions à risque élevé / sous surveillance du GAFI."},
@@ -790,6 +800,7 @@ const I18N = {
     next:"Next",
     back:"Back",
     seeResults:"See my results",
+    autoHint:"Select an answer to continue →",
     of:"of",
     question:"Question",
     controlMaturity:"Control maturity",
@@ -822,7 +833,8 @@ const I18N = {
     demo:"Request a consultation",
     getRalk:"Train my team with RALK →",
     ctaTitle:"Train your team with RALK",
-    ctaBody:"Every gap above comes down to one thing: your people. RALK is adaptive e-learning that trains your staff on exactly these financial-crime topics — role-based, always up to date, and calibrated to your sector. Book RALK for your organisation and turn this score into a trained, audit-ready team.",
+    ctaBodyGaps:"Every gap above comes down to one thing: your people. RALK is adaptive e-learning that trains your staff on exactly these financial-crime topics — role-based, always up to date, and calibrated to your sector. Book RALK for your organisation and turn this score into a trained, audit-ready team.",
+    ctaBodyStrong:"A strong score is a snapshot, not a finish line. Sanctions lists, fraud tactics and rules change every week — and every new hire resets your risk. RALK is adaptive e-learning that keeps your whole team continuously trained, refreshed and audit-ready, so a good score today still holds tomorrow. Book RALK for your organisation.",
     restart:"Start over",
     preparedFor:"Prepared for",
     assessmentDate:"Assessment date",
@@ -865,6 +877,7 @@ const I18N = {
     next:"Suivant",
     back:"Retour",
     seeResults:"Voir mes résultats",
+    autoHint:"Sélectionnez une réponse pour continuer →",
     of:"sur",
     question:"Question",
     controlMaturity:"Maturité des contrôles",
@@ -897,7 +910,8 @@ const I18N = {
     demo:"Demander une consultation",
     getRalk:"Former mon équipe avec RALK →",
     ctaTitle:"Formez votre équipe avec RALK",
-    ctaBody:"Chaque lacune ci-dessus tient à une seule chose : vos collaborateurs. RALK est un e-learning adaptatif qui forme votre personnel précisément à ces thèmes de criminalité financière — par rôle, toujours à jour et calibré sur votre secteur. Réservez RALK pour votre organisation et transformez ce score en une équipe formée et prête pour l'audit.",
+    ctaBodyGaps:"Chaque lacune ci-dessus tient à une seule chose : vos collaborateurs. RALK est un e-learning adaptatif qui forme votre personnel précisément à ces thèmes de criminalité financière — par rôle, toujours à jour et calibré sur votre secteur. Réservez RALK pour votre organisation et transformez ce score en une équipe formée et prête pour l'audit.",
+    ctaBodyStrong:"Un bon score est un instantané, pas une ligne d'arrivée. Les listes de sanctions, les techniques de fraude et les règles changent chaque semaine — et chaque nouvelle recrue remet votre risque à zéro. RALK est un e-learning adaptatif qui garde toute votre équipe formée, mise à jour et prête pour l'audit en continu, pour qu'un bon score aujourd'hui tienne encore demain. Réservez RALK pour votre organisation.",
     restart:"Recommencer",
     preparedFor:"Préparé pour",
     assessmentDate:"Date de l'évaluation",
@@ -1085,8 +1099,7 @@ function renderQuestion(){
       ${opts}
       <div class="btn-row">
         <button class="btn ghost" onclick="prevQ()">← ${t("back")}</button>
-        <button class="btn" ${answered?"":"disabled"} onclick="nextQ()">
-          ${isLast?t("seeResults"):t("next")} →</button>
+        <span class="autohint">${t("autoHint")}</span>
       </div>
     </div>
   </div>`;
@@ -1095,12 +1108,12 @@ function renderQuestion(){
 function answer(qid,idx){
   const q = QUESTIONS.find(x=>x.id===qid);
   STATE.answers[qid] = {quality:q.opts[idx].quality, idx};
-  // update in place — no full re-render, so the flow does not flicker
+  // highlight the choice in place, then auto-advance to the next question
   document.querySelectorAll('.opt').forEach((el,i)=>el.classList.toggle('sel', i===idx));
-  const nextBtn = document.querySelector('.card .btn:not(.ghost)');
-  if(nextBtn) nextBtn.removeAttribute('disabled');
   const pf = document.querySelector('.pfill');
   if(pf) pf.style.width = Math.round(((STATE.qIndex+1)/QUESTIONS.length)*100)+'%';
+  clearTimeout(STATE._advTimer);
+  STATE._advTimer = setTimeout(()=>nextQ(), 280);
 }
 function nextQ(){
   if(STATE.qIndex < QUESTIONS.length-1){ STATE.qIndex++; render(); }
@@ -1233,10 +1246,11 @@ function renderResults(){
 
   const critNote = snap.criticals>0 ? `<div class="disclaimer" style="border-color:hsl(var(--red));color:hsl(var(--red))">${t("crit")}</div>`:"";
 
+  const ctaBodyText = (snap.global>=80 && snap.criticals===0) ? t("ctaBodyStrong") : t("ctaBodyGaps");
   const actionRow = STATE.unlocked ? `
     <div class="card no-print" style="text-align:center;border-color:hsl(var(--gold));background:linear-gradient(180deg,hsla(43,62%,45%,.10),transparent)">
       <div style="font-weight:800;font-size:19px;margin-bottom:6px">${t("ctaTitle")}</div>
-      <p class="sub" style="text-align:center;margin:0 auto 18px;max-width:540px">${t("ctaBody")}</p>
+      <p class="sub" style="text-align:center;margin:0 auto 18px;max-width:540px">${ctaBodyText}</p>
       <a class="btn" href="${CONFIG.PRODUCT_URL}" target="_blank" rel="noopener" style="font-size:16px;padding:15px 32px;text-decoration:none">${t("getRalk")}</a>
       <div class="btn-row" style="justify-content:center;gap:12px;margin-top:16px">
         <button class="btn ghost" onclick="window.print()">⬇ ${t("download")}</button>
