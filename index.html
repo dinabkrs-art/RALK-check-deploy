@@ -248,6 +248,8 @@ input:focus,select:focus{outline:2px solid hsl(var(--gold));outline-offset:1px;b
 .phase-block{margin-bottom:20px}
 .foot{text-align:center;color:hsl(var(--muted-foreground));font-size:12px;margin-top:26px;line-height:1.6}
 .foot .wordmark{font-size:13px}
+.foot-links{margin-top:6px}
+.foot-links a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 .disclaimer{font-size:11.5px;color:hsl(var(--muted-foreground));background:hsl(var(--card-2));border:1px solid hsl(var(--border));border-radius:8px;padding:12px 14px;margin-top:14px}
 /* white RALK logo sits on a dark plaque on the cream theme (matches ralk.io).
    Padding kept in BOTH themes so the logo size stays identical; only the bg differs. */
@@ -295,6 +297,7 @@ a{color:hsl(var(--gold))}
   <div class="foot">
     <div id="brandFoot"></div>
     <div id="footNote"></div>
+    <div id="footLinks" class="foot-links"></div>
   </div>
 </div>
 
@@ -880,6 +883,8 @@ const I18N = {
     phaseEmpty:"Nothing in this phase.",
     roadmapNote:"This roadmap shows what to prioritise and when. The detailed remediation steps, templates and risk-calibrated training to actually close these gaps are delivered together with RALK.",
     legalRights:"© 2026 RALK. All rights reserved.",
+    privacyLink:"Privacy Policy",
+    termsLink:"Terms of Use",
     legalPurpose:"For compliance self-assessment purposes only. This report is indicative and does not constitute legal, regulatory or audit advice.",
     thanks:"Thanks — your report is unlocked below. We'll be in touch shortly.",
     errName:"Please enter your name.",
@@ -979,6 +984,8 @@ const I18N = {
     phaseEmpty:"Rien dans cette phase.",
     roadmapNote:"Cette feuille de route indique quoi prioriser et quand. Les étapes de remédiation détaillées, les modèles et la formation calibrée sur le risque pour réellement combler ces lacunes sont fournis avec RALK.",
     legalRights:"© 2026 RALK. Tous droits réservés.",
+    privacyLink:"Politique de confidentialité",
+    termsLink:"Conditions d'utilisation",
     legalPurpose:"À des fins d'auto-évaluation de conformité uniquement. Ce rapport est indicatif et ne constitue pas un conseil juridique, réglementaire ou d'audit.",
     thanks:"Merci — votre rapport est débloqué ci-dessous. Nous vous recontacterons prochainement.",
     errName:"Veuillez saisir votre nom.",
@@ -1020,6 +1027,8 @@ function renderChrome(){
   document.getElementById("brandTop").innerHTML = wordmark(24);
   document.getElementById("brandFoot").innerHTML = wordmark(15);
   document.getElementById("footNote").textContent = t("footNote");
+  document.getElementById("footLinks").innerHTML =
+    `<a href="/privacy">${t("privacyLink")}</a> &nbsp;&bull;&nbsp; <a href="/terms">${t("termsLink")}</a> &nbsp;&bull;&nbsp; <a href="mailto:info@ralk.io">info@ralk.io</a>`;
   document.getElementById("langLbl").textContent = STATE.lang==="en" ? "FR" : "EN";
   const dark = document.documentElement.classList.contains("dark");
   document.getElementById("themeLbl").textContent = dark ? "Light" : "Dark";
