@@ -13,21 +13,24 @@ Das wichtigste Werkzeug gibt es schon: **check.ralk.io**. Der Check
 - liefert als Ergebnis genau die Botschaft „Ihre Lücke sind Ihre Mitarbeiter → RALK schult sie“,
 - erfasst bereits Firma, Land, Branche und Größe als Lead.
 
-Statt RALK vor Ort zu erklären, wird **jede Werbung, jede E-Mail und jeder Post auf den
-Quick-Check gelenkt**. Der Kunde überzeugt sich selbst, und wir erfahren dabei, wie
+Der Quick-Check ist **ein** Einstieg, nicht der einzige: Hauptziel ist, dass Kunden direkt
+auf **ralk.io** ein Paket wählen und online einen **Lizenzvertrag** abschließen. Der Check
+dient für alle, die erst ihren Bedarf sehen wollen. Der Kunde überzeugt sich selbst, und wir erfahren dabei, wie
 dringend sein Bedarf ist.
 
 ```
-Anzeige / E-Mail / Post  →  Quick-Check (kostenlos)  →  Ergebnis mit Lücken
-        →  automatische E-Mail-Serie  →  Self-Service-Kauf oder 20-Min-Videocall
+Anzeige / E-Mail / WhatsApp
+   ├─→ ralk.io: Paket wählen → Lizenzvertrag online akzeptieren → zahlen → Zugang
+   └─→ Quick-Check → Ergebnis mit Lücken → E-Mail-Serie → ralk.io (Lizenzvertrag)
 ```
 
 ---
 
 ## 2. Wer RALK „bekanntermaßen“ braucht
 
-Diese Firmen sind **gesetzlich verpflichtet**, ihre Mitarbeiter zu Geldwäsche, Sanktionen
-und KYC zu schulen. Den Bedarf müssen wir also nicht erst wecken:
+RALK deckt Financial-Crime-Compliance breit ab (AML/KYC, Sanktionen, Betrug,
+Korruption, Datenschutz, Cyber, KI, Governance, Whistleblowing). Diese Firmen sind
+**gesetzlich verpflichtet**, ihre Mitarbeiter darin zu schulen. Den Bedarf müssen wir also nicht erst wecken:
 
 | Zielgruppe | Warum sie kaufen müssen |
 |---|---|
@@ -41,6 +44,8 @@ und KYC zu schulen. Den Bedarf müssen wir also nicht erst wecken:
 **Ansprechpartner:** Compliance Officer, MLRO / Geldwäschebeauftragte, Head of Risk,
 HR / L&D, Geschäftsführung bei kleinen Firmen.
 
+**Markt:** Kunden sitzen vor allem in **Subsahara-Afrika**, nicht in der EU.
+
 **Priorität nach Land:** Der Quick-Check stellt bereits DR Kongo, Senegal, Côte d'Ivoire,
 Kamerun, Nigeria, Ghana, Kenia und Zypern ganz oben in die Länderliste. Besonders stark
 ist der Druck in Ländern, die auf der **FATF-„Grauen Liste“** stehen oder gerade eine
@@ -52,30 +57,25 @@ Februar, Juni und Oktober).
 
 ## 3. Kanäle – sortiert nach Aufwand und Wirkung
 
-### A. LinkedIn-Anzeigen (Hauptkanal, fast kein Aufwand im Alltag)
+### A. WhatsApp & Meta (Facebook/Instagram) statt LinkedIn
 
-LinkedIn ist der einzige Kanal, auf dem man genau nach **Berufsbezeichnung + Branche +
-Land** filtern kann. So sehen die Anzeige nur die Leute, die RALK brauchen.
+LinkedIn hat in Subsahara-Afrika wenig Reichweite. Dort laufen Geschäftskontakte
+über **WhatsApp**, Werbung erreicht man über **Meta-Anzeigen**.
 
-- **Targeting:** Jobtitel „Compliance“, „AML“, „MLRO“, „KYC“, „Risk“, „Conformité“,
-  „LBC/FT“ · Branchen Banking, Financial Services, Fintech, Insurance · Länder nach Priorität (s. o.)
-- **Anzeigentext (Beispiel FR):**
-  *„Votre équipe saurait-elle reconnaître une alerte sanctions ? Faites le test gratuit en
-  10 minutes et recevez votre score de conformité LBC/FT.“* → Link auf check.ralk.io
-- **Anzeigentext (Beispiel EN):**
-  *„Would your front-line staff spot a sanctions hit? Free 10-minute AML self-check –
-  get your risk score instantly.“*
-- **Budget-Start:** 20–30 € pro Tag, 2–3 Anzeigenvarianten, nach 2 Wochen die beste behalten.
-- **Retargeting:** Wer den Check gestartet, aber nicht beendet hat, sieht eine
-  Erinnerungsanzeige.
+- **WhatsApp Business** mit Katalog (Pakete + Preise) und Link „Lizenz abschließen“.
+- **Meta-Anzeigen** nach Land + Interessen (Banking, Fintech, Mobile Money) mit
+  „Klick zu WhatsApp“ oder direkt auf ralk.io.
+- LinkedIn nur noch für Glaubwürdigkeit (Firmenseite, Posts), nicht für Anzeigen.
 
 ### B. Google-Suchanzeigen (Kunden, die bereits suchen)
 
-Nur auf Suchbegriffe mit Kaufabsicht bieten, z. B. „formation LBC/FT“, „formation
-anti-blanchiment“, „AML training employees“, „KYC training online“, „formation sanctions
-internationales“. → Anzeige führt direkt auf den Quick-Check.
+Suchbegriffe über **alle RALK-Themen**, nicht nur AML, auf FR und EN, z. B.:
+„formation LBC/FT“, „formation anti-corruption“, „formation lutte contre la fraude“,
+„formation conformité banque“, „sensibilisation cybersécurité employés“,
+„formation protection des données“, „compliance e-learning Africa“, „KYC training online“.
+Anzeige führt je nach Begriff auf die passende Themen-Seite auf ralk.io.
 
-### C. Automatisierte Kalt-E-Mails an öffentliche Register (Recherche einmalig, Versand automatisch)
+### C. Öffentliche Register + automatische Ansprache (bester Kanal)
 
 Zentralbanken und Aufsichtsbehörden veröffentlichen **Listen aller lizenzierten
 Institute** (z. B. BCEAO für die UEMOA-Länder wie Senegal und Côte d'Ivoire, BEAC/COBAC für
@@ -89,20 +89,19 @@ fertige Liste aller Firmen mit Schulungspflicht.
    - Mail 3 (nach 8 Tagen): „Soll ich Ihnen einen Testzugang für 3 Mitarbeiter freischalten?“
 3. Nur wer antwortet oder den Check macht, bekommt persönliche Aufmerksamkeit.
 
-> Datenschutz: B2B-Kaltakquise per E-Mail ist je nach Land unterschiedlich geregelt
-> (in der EU/Zypern streng). Für EU-Kontakte lieber LinkedIn-Nachrichten oder Anzeigen
-> nutzen; immer eine Abmeldemöglichkeit anbieten.
+> Weitere Listen: Mikrofinanz-Register (z. B. BCEAO-SFD), Mobile-Money-Lizenzen,
+> Versicherungsaufsicht (CIMA für die CFA-Zone). Immer eine Abmeldemöglichkeit anbieten.
 
-### D. Partner, die schon Zugang zu den Kunden haben (einmal überzeugen, viele Kunden)
+### D. Partner, die **keine** Konkurrenten sind
 
-Statt jede Firma einzeln zu gewinnen, über Multiplikatoren verkaufen:
+Compliance-Berater und Schulungsanbieter verkaufen selbst Schulungen – also keine
+Partner. Geeignet sind nur Multiplikatoren ohne eigenes Schulungsangebot:
 
-- **Bankenverbände** (z. B. APBEF in den UEMOA-Ländern), Fintech- und Mikrofinanzverbände
-  → RALK als Verbandsangebot mit Rabatt für Mitglieder.
-- **Compliance-Berater & Wirtschaftsprüfer** → empfehlen RALK nach einer Prüfung,
-  erhalten 15–20 % Provision (Affiliate-Link mit eigenem Code).
-- **Kammern** für Notare, Anwälte, Makler → Webinar „Ihre AML-Pflichten 2026“ mit RALK
-  als Lösung.
+- **Bankenverbände** (z. B. APBEF), Fintech- und Mikrofinanzverbände → Mitgliederrabatt.
+- **Anbieter von Screening-/KYC-Software** und Core-Banking-Systemen: Sie verkaufen das
+  Tool, RALK liefert die Schulung dazu (genau die Lücke „Tool vorhanden, aber keine
+  Schulung“ aus dem Quick-Check).
+- **HR-/Lohnsoftware-Anbieter**, die schon in den Firmen sind.
 
 ### E. Inhalte & Webinare (läuft im Hintergrund weiter)
 
@@ -114,30 +113,31 @@ Statt jede Firma einzeln zu gewinnen, über Multiplikatoren verkaufen:
 
 ---
 
-## 4. Den Kauf selbst vereinfachen
+## 4. Den Kauf selbst vereinfachen: Lizenzvertrag direkt auf ralk.io
 
-Damit der Verkauf nicht doch wieder in langen Gesprächen endet:
-
-1. **Klare Preispakete auf der Website** (z. B. pro Mitarbeiter/Jahr, mit Staffeln
-   1–10 / 11–50 / 51–200 / 200+). Kunden in der Ergebnisseite des Checks direkt auf das
-   passende Paket schicken – die Mitarbeiterzahl kennen wir aus dem Check.
-2. **Online bezahlen** über Stripe-Zahlungslinks (Karte, SEPA). Für Afrika zusätzlich
-   Rechnung/Überweisung oder einen lokalen Anbieter (z. B. Flutterwave, Paystack, CinetPay)
-   für Mobile Money anbieten.
-3. **Kostenloser Testzugang** (z. B. 14 Tage, 3 Nutzer) als Zwischenschritt für alle,
-   die nicht sofort kaufen.
-4. **Nur für große Kunden** (ab ca. 200 Mitarbeitern) einen 20-Min-Videocall
-   (Calendly-Link) – nie vor Ort.
-
----
+1. **Preis-Seite auf ralk.io** mit Paketen nach Mitarbeiterzahl (1–10 / 11–50 / 51–200 / 200+).
+2. **Lizenzvertrag online abschließen:** Firmendaten eingeben → Lizenzbedingungen per
+   Klick akzeptieren (mit Name, Funktion, Zeitstempel, PDF-Kopie per E-Mail) → Zahlung →
+   Firmenkonto in app.ralk.io wird automatisch angelegt.
+3. **Zahlung – Stripe allein reicht für Afrika nicht:**
+   - Stripe ist gut für **Kartenzahlung** und **Rechnungen** (über ein Stripe-Konto in
+     Deutschland/EU). In Subsahara-Afrika zahlen Firmen aber meist per **Banküberweisung**
+     oder **Mobile Money**, Firmenkreditkarten sind selten.
+   - Daher: Stripe (Karte + Rechnung) **plus** Rechnung mit Banküberweisung als Standard
+     für B2B, und später einen afrikanischen Zahlungsanbieter für Mobile Money und lokale
+     Währung (XOF/XAF): z. B. **Paystack** (gehört zu Stripe; Nigeria, Ghana, Kenia,
+     Côte d'Ivoire), **Flutterwave** oder **CinetPay** (frankophones Afrika).
+     Voraussetzungen (oft lokale Firma/Konto) vorher prüfen.
+4. **Kostenloser Testzugang** (14 Tage, 3 Nutzer) für alle, die nicht sofort kaufen.
+5. Videocall nur für große Kunden – nie vor Ort.
 
 ## 5. Was am Quick-Check noch fehlt (technische To-dos)
 
 | To-do | Warum |
 |---|---|
-| LinkedIn-Insight-Tag + Google-Tag einbauen (mit Cookie-Einwilligung) | Ohne das ist kein Retargeting und keine Erfolgsmessung der Anzeigen möglich |
+| Meta-Pixel + Google-Tag auf ralk.io und check.ralk.io (mit Cookie-Einwilligung) | Ohne das ist kein Retargeting und keine Erfolgsmessung der Anzeigen möglich |
 | UTM-Parameter (`utm_source`, `utm_campaign`) auslesen und mit dem Lead mitschicken | Damit man sieht, welcher Kanal zahlende Kunden bringt |
-| Ergebnis-Seite: neben „Kontakt“ einen Button **„Kostenlos testen“** und **„Preise ansehen“** | Self-Service statt E-Mail-Ping-Pong |
+| Ergebnis-Seite: neben „Kontakt“ einen Button **„Lizenz auf ralk.io abschließen“** und **„Kostenlos testen“** | Self-Service statt E-Mail-Ping-Pong |
 | Leads automatisch in ein CRM / E-Mail-Tool (z. B. Brevo, HubSpot Free) statt nur per formsubmit in ein Postfach | Basis für automatische Folge-E-Mails |
 | Automatische Folge-E-Mails nach dem Check (Tag 0: PDF-Bericht, Tag 2: Lösung für die schwächste Kategorie, Tag 5: Testzugang, Tag 10: Angebot) | Verkauft ohne persönliches Zutun |
 | Social-Vorschau (`og:image`, `og:title`) ergänzen | Links auf LinkedIn/WhatsApp sehen professionell aus |
@@ -151,10 +151,10 @@ Diese Punkte kann ich auf Wunsch direkt im Quick-Check umsetzen.
 | Woche | Aufgabe |
 |---|---|
 | 1 | Tracking + UTM im Quick-Check einbauen, Preispakete und Testzugang festlegen |
-| 1 | LinkedIn-Kampagne für 2 Prioritätsländer starten (FR + EN Anzeigen) |
+| 1 | Preis-Seite + Online-Lizenzvertrag auf ralk.io; WhatsApp Business einrichten |
 | 2 | Lizenzregister von 2–3 Zentralbanken als Kontaktliste aufbereiten, E-Mail-Sequenz starten |
 | 2 | Automatische Folge-E-Mails nach dem Check aktivieren |
-| 3 | 3 Compliance-Berater / 1 Verband als Partner anschreiben |
+| 3 | 1 Verband + 2 Software-Anbieter (Screening/HR) als Partner anschreiben; Google-Anzeigen starten |
 | 4 | Erstes Webinar; Zahlen auswerten (Kosten pro Check, Kosten pro Kunde) und Budget auf den besten Kanal verschieben |
 
 **Kennzahlen, auf die es ankommt:** abgeschlossene Checks pro Woche · Anteil Checks mit
