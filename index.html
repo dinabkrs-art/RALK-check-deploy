@@ -328,7 +328,9 @@ const CAMPAIGN = (() => {
 })();
 function orderUrl(){
   const seats = {"1–10":10,"11–50":50,"51–200":200,"201–1000":1000}[STATE.profile.size];
-  const q = new URLSearchParams({ lang: STATE.lang, utm_source: "quickcheck", utm_medium: "results" });
+  // Keep the original ad/email campaign; tag as Quick-Check only for direct visits.
+  const q = new URLSearchParams(Object.keys(CAMPAIGN).length ? CAMPAIGN : { utm_source: "quickcheck", utm_medium: "results" });
+  q.set("lang", STATE.lang);
   if(seats) q.set("seats", seats);
   return `${CONFIG.ORDER_URL}?${q}`;
 }
@@ -1021,7 +1023,13 @@ const I18N = {
    STATE + APP
    ===================================================================== */
 const STATE = {
-  lang:"en", theme:"light",
+  // ?lang=fr|en from ads and links wins; otherwise follow the browser language.
+  lang:(() => {
+    const p = new URLSearchParams(location.search).get("lang");
+    if (p === "fr" || p === "en") return p;
+    return (navigator.language || "").toLowerCase().startsWith("fr") ? "fr" : "en";
+  })(),
+  theme:"light",
   step:"hero",     // hero | profile | exposure | q0..qN | results
   qIndex:0,
   profile:{company:"",country:"",sector:"",size:""},

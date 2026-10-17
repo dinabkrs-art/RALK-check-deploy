@@ -102,7 +102,7 @@ Partner. Geeignet sind nur Multiplikatoren ohne eigenes Schulungsangebot:
   Größter Hebel: Berufsverbände und Behörden mit CPD-Pflicht (z. B. Law Society of Kenya,
   ICPAK) über Partner-Anwälte.
 
-- **Bankenverbände** (z. B. APBEF), Fintech- und Mikrofinanzverbände → Mitgliederrabatt.
+- **Bankenverbände** (z. B. APBEF), Fintech- und Mikrofinanzverbände → Hinweis an die Mitglieder (keine Rabatte, die Preise sind fest).
 - **Anbieter von Screening-/KYC-Software** und Core-Banking-Systemen: Sie verkaufen das
   Tool, RALK liefert die Schulung dazu (genau die Lücke „Tool vorhanden, aber keine
   Schulung“ aus dem Quick-Check).
@@ -125,13 +125,12 @@ Partner. Geeignet sind nur Multiplikatoren ohne eigenes Schulungsangebot:
 
    | Unternehmensgröße | Preis pro Mitarbeiter/Jahr |
    |---|---|
-   | bis 4.000 Mitarbeiter | 65 USD |
-   | 4.001–7.999 Mitarbeiter | 50 USD |
-   | ab 8.000 Mitarbeiter | 45 USD |
+   | bis 1.000 Mitarbeiter | 65 USD |
+   | 1.001–10.000 Mitarbeiter | 55 USD |
+   | ab 10.001 Mitarbeiter | 45 USD |
    | Mindest-Jahreslizenz | 5.000 USD |
 
-   Keine Einrichtungsgebühr. Bei Verbänden schlägt der Verband ggf. 20 % Verwaltungsgebühr
-   für seine Mitglieder auf (kostet RALK nichts).
+   Keine Einrichtungsgebühr. Feste, veröffentlichte Preise ohne individuelle Rabatte.
 2. **Lizenzvertrag online abschließen:** Firmendaten eingeben → Lizenzbedingungen per
    Klick akzeptieren (mit Name, Funktion, Zeitstempel, PDF-Kopie per E-Mail) → Zahlung →
    Firmenkonto in app.ralk.io wird automatisch angelegt.
