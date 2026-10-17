@@ -96,20 +96,12 @@
         <h2 data-i18n="priceTitle"></h2>
         <p class="lead" data-i18n="priceLead"></p>
       </div>
-      <div class="tiers">
-        <div class="tier">
-          <div class="size" data-i18n="t1"></div>
-          <div class="price">$65 <small data-i18n="perEmp"></small></div>
-          <ul class="incl"></ul>
-        </div>
+      <div class="grid g2" style="align-items:start">
         <div class="tier hl">
-          <div class="size" data-i18n="t2"></div>
-          <div class="price">$50 <small data-i18n="perEmp"></small></div>
-          <ul class="incl big"></ul>
+          <table class="summary" id="bandTable"></table>
         </div>
         <div class="tier">
-          <div class="size" data-i18n="t3"></div>
-          <div class="price">$45 <small data-i18n="perEmp"></small></div>
+          <div class="size" data-i18n="inclTitle"></div>
           <ul class="incl big"></ul>
         </div>
       </div>
@@ -172,6 +164,9 @@ function renderLists(){
     if(ul.classList.contains("big")) items.push(t("inclBig"));
     ul.innerHTML = items.map(i => `<li>${esc(i)}</li>`).join("");
   });
+  document.getElementById("bandTable").innerHTML =
+    `<tr><td><b>${esc(t("bandHead"))}</b></td><td><b>${esc(t("rateHead"))}</b></td></tr>` +
+    PRICING.tiers.map((x,i) => `<tr><td>${esc(bandLabel(i))}</td><td style="font-size:20px;color:hsl(var(--gold))">${esc(money(x.rate))}</td></tr>`).join("");
   document.getElementById("faqList").innerHTML = t("faq").map(([q,a]) =>
     `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("");
   updateCalc();
