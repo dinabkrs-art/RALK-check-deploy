@@ -117,7 +117,7 @@ const I18N = {
     cmpOld:["One-off, typically 3–5 days","Usually one topic only","Travel and time away from work","Same content for every role","Paper attendance list as evidence"],
     cmpNewT:"RALK licence", cmpNewP:"USD 45–65 per employee per year",
     cmpNew:["All year, short modules on any device","13 financial-crime topics included","No travel, no time away from customers","Adapted to each role, sector and country","Verifiable certificates and audit reports"],
-    faqEyebrow:"FAQ", faqTitle:"Questions before you start", faqAll:"Show all {n} questions", faqLess:"Show fewer questions",
+    faqEyebrow:"FAQ", faqTitle:"Questions before you start", faqAll:"Show the {n} questions", faqLess:"Hide questions", carPrev:"Previous topics", carNext:"Next topics",
     faq:[
       ["How long does the training take?", "Each employee completes short modules of about 10 minutes, each with a real-life scenario and a short test. Training can be paused and continued at any time, on any device."],
       ["Which topics are covered?", "13 risk areas: fraud, bribery and corruption, sanctions, money laundering, data protection, cybersecurity, AI-enabled crime, whistleblowing and more. Each employee receives the modules that matter for their role, sector and country."],
@@ -229,7 +229,7 @@ const I18N = {
     cmpOld:["Ponctuelle, souvent 3 à 5 jours","En général un seul thème","Déplacements et absence du poste","Même contenu pour toutes les fonctions","Feuille de présence papier comme preuve"],
     cmpNewT:"Licence RALK", cmpNewP:"45–65 USD par collaborateur et par an",
     cmpNew:["Toute l'année, modules courts sur tout appareil","13 thèmes de criminalité financière inclus","Sans déplacement, sans quitter les clients","Adapté à chaque fonction, secteur et pays","Certificats vérifiables et rapports d'audit"],
-    faqEyebrow:"FAQ", faqTitle:"Vos questions avant de commencer", faqAll:"Afficher les {n} questions", faqLess:"Afficher moins de questions",
+    faqEyebrow:"FAQ", faqTitle:"Vos questions avant de commencer", faqAll:"Afficher les {n} questions", faqLess:"Masquer les questions", carPrev:"Thèmes précédents", carNext:"Thèmes suivants",
     faq:[
       ["Combien de temps dure la formation ?", "Chaque collaborateur suit des modules courts d'environ 10 minutes, chacun avec un cas réel et un court test. La formation peut être interrompue et reprise à tout moment, sur tout appareil."],
       ["Quels thèmes sont couverts ?", "13 domaines de risque : fraude, corruption, sanctions, blanchiment, protection des données, cybersécurité, criminalité liée à l'IA, lanceurs d'alerte et plus. Chaque collaborateur reçoit les modules pertinents pour sa fonction, son secteur et son pays."],
@@ -296,6 +296,8 @@ function applyI18n(){
     if(v.includes("*")) el.innerHTML = v.split("*").map((p,i) => { const e = p.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); return i % 2 ? `<em class="g">${e}</em>` : e; }).join("");
     else el.textContent = v;
   });
+  document.querySelectorAll("[data-i18n-label]").forEach(el => el.setAttribute("aria-label", t(el.dataset.i18nLabel)));
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => el.setAttribute("aria-label", t(el.dataset.i18nAria).replace(/\*/g, "")));
   document.querySelectorAll("[data-lang]").forEach(el => { el.hidden = el.dataset.lang !== lang; });
   const lb = document.getElementById("langBtn");
   if(lb) lb.textContent = lang === "en" ? "FR" : "EN";
@@ -359,7 +361,7 @@ function motion(){
     const r = el.getBoundingClientRect();
     el.style.setProperty("--mx", (e.clientX - r.left) + "px"); el.style.setProperty("--my", (e.clientY - r.top) + "px");
   }));
-  guilloche(); rotator(); floatCta();
+  guilloche(); rotator(); floatCta(); carousel();
   const hv = document.getElementById("heroVisual");
   if(hv && MOTION_OK && matchMedia("(pointer:fine)").matches){
     hv.addEventListener("pointermove", e => { const r = hv.getBoundingClientRect();
@@ -431,6 +433,25 @@ function guilloche(){
   };
   wave(document.getElementById("guilBand"), 9, 11, 1200, 60);
   document.querySelectorAll('svg[data-guil="wave"]').forEach(svg => wave(svg, 14, 40, 1200, 220));
+}
+
+function carousel(){
+  const track = document.getElementById("modList"); if(!track) return;
+  const step = () => { const card = track.querySelector(".mod"); return card ? card.getBoundingClientRect().width + 14 : 260; };
+  const go = dir => {
+    const max = track.scrollWidth - track.clientWidth - 2;
+    if(dir > 0 && track.scrollLeft >= max) track.scrollTo({ left: 0, behavior: "smooth" });
+    else if(dir < 0 && track.scrollLeft <= 2) track.scrollTo({ left: max, behavior: "smooth" });
+    else track.scrollBy({ left: dir * step(), behavior: "smooth" });
+  };
+  document.getElementById("modPrev")?.addEventListener("click", () => go(-1));
+  document.getElementById("modNext")?.addEventListener("click", () => go(1));
+  track.addEventListener("keydown", e => { if(e.key === "ArrowRight"){ e.preventDefault(); go(1); } if(e.key === "ArrowLeft"){ e.preventDefault(); go(-1); } });
+  if(!MOTION_OK) return;
+  let paused = false;
+  ["pointerenter","focusin","touchstart"].forEach(ev => track.parentElement.addEventListener(ev, () => paused = true, { passive:true }));
+  ["pointerleave","focusout"].forEach(ev => track.parentElement.addEventListener(ev, () => paused = false));
+  setInterval(() => { if(!paused && !document.hidden) go(1); }, 3200);
 }
 
 function rotator(){
