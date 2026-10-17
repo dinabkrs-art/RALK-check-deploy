@@ -14,10 +14,8 @@ const CONFIG = {
 const PRICING = {
   currency: "USD",
   tiers: [
-    { max: 500,      rate: 65 },
-    { max: 2000,     rate: 60 },
-    { max: 5000,     rate: 55 },
-    { max: 10000,    rate: 50 },
+    { max: 1000,     rate: 65 },
+    { max: 10000,    rate: 55 },
     { max: Infinity, rate: 45 }
   ],
   minimumAnnual: 5000
@@ -90,7 +88,7 @@ const I18N = {
     perEmp:"/ employee / year",
     bandHead:"Employees", rateHead:"Price per employee / year", upTo:"up to {n}", over:"more than {n}",
     inclTitle:"Included in every licence", incl:["All 13 modules","Role-based AI training","Certificates & verification","Manager dashboard & reports","HR import","Email support"],
-    inclBig:"From 2,001 employees: dedicated onboarding contact",
+    inclBig:"From 1,001 employees: dedicated onboarding contact",
     minNote:"Minimum annual licence: USD 5,000. When an organisation grows into a cheaper band, its licence never costs less than the largest organisation of the band below.",
     fixedNote:"Fixed published prices — the same for every customer. Volume discounts are already built in; there are no individual discounts.",
     taxNote:"All prices are net amounts in USD. Any withholding tax or similar levy in the customer's country is the sole responsibility of the customer and is borne in addition to the price, so that RALK as the contractor receives the full invoiced amount.",
@@ -174,7 +172,7 @@ const I18N = {
     perEmp:"/ collaborateur / an",
     bandHead:"Collaborateurs", rateHead:"Prix par collaborateur / an", upTo:"jusqu'à {n}", over:"plus de {n}",
     inclTitle:"Inclus dans chaque licence", incl:["Les 13 modules","Formation IA par fonction","Certificats & vérification","Tableau de bord & rapports","Import RH","Support par e-mail"],
-    inclBig:"Dès 2 001 collaborateurs : interlocuteur dédié pour la mise en place",
+    inclBig:"Dès 1 001 collaborateurs : interlocuteur dédié pour la mise en place",
     minNote:"Licence annuelle minimale : 5 000 USD. Lorsqu'une organisation passe dans une tranche moins chère, sa licence ne coûte jamais moins que celle de la plus grande organisation de la tranche précédente.",
     fixedNote:"Prix fixes et publics — identiques pour tous les clients. Les remises sur volume sont déjà intégrées ; il n'y a pas de remise individuelle.",
     taxNote:"Tous les prix s'entendent nets, en USD. Toute retenue à la source ou taxe similaire applicable dans le pays du client est à la charge exclusive du client et s'ajoute au prix, de sorte que RALK, en tant que prestataire, perçoive l'intégralité du montant facturé.",
