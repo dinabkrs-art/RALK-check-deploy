@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RALK — Financial-crime compliance training for Africa</title>
-<meta name="description" content="Compliance e-learning for banks, fintechs, insurers, mining, telecoms and every company in Africa: AML/CFT, sanctions, fraud, corruption, data protection, cyber. Annual licence from USD 45 per employee.">
+<title>RALK — Compliance and financial-crime training for every employee</title>
+<meta name="description" content="Compliance e-learning for banks, fintechs, insurers, mining, energy, telecoms and every company: fraud, corruption, sanctions, money laundering, data protection, cyber. Annual licence from USD 45 per employee.">
 <meta property="og:title" content="RALK — Every employee trained. Every audit answered.">
-<meta property="og:description" content="Financial-crime compliance training for Africa. Role-based, always current, audit-ready. Licence from USD 45 per employee per year.">
+<meta property="og:description" content="Compliance and financial-crime training for every employee. Role-based, always current, audit-ready. Licence from USD 45 per employee per year.">
 <meta property="og:image" content="https://ralk.io/logo.png">
 <meta property="og:url" content="https://ralk.io/">
 <meta property="og:type" content="website">
@@ -20,7 +20,7 @@
  {"@type":"Organization","name":"RALK","url":"https://ralk.io","logo":"https://ralk.io/logo.png","email":"info@ralk.io",
   "address":{"@type":"PostalAddress","streetAddress":"Hafenstraße 25–27","postalCode":"68159","addressLocality":"Mannheim","addressCountry":"DE"}},
  {"@type":"Product","name":"RALK compliance training licence","brand":{"@type":"Brand","name":"RALK"},
-  "description":"Financial-crime compliance training (AML/CFT, sanctions, fraud, anti-bribery, data protection, cyber) for regulated firms and every company in Africa. Annual licence per employee.",
+  "description":"Compliance and financial-crime training (fraud, anti-bribery, sanctions, AML/CFT, data protection, cyber) for regulated firms and every other company. Annual licence per employee.",
   "offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"45","highPrice":"65","offerCount":"3","url":"https://ralk.io/#pricing"}}
 ]}
 </script>
@@ -33,25 +33,63 @@
 <main>
   <!-- Hero -->
   <section class="hero" id="product">
-    <div class="wrap">
-      <p class="eyebrow" data-i18n="heroEyebrow"></p>
-      <h1 data-i18n="heroTitle"></h1>
-      <p class="lead" data-i18n="heroLead"></p>
-      <div class="cta">
-        <a class="btn" href="/order" data-i18n="heroBuy"></a>
-        <a class="btn ghost" href="https://check.ralk.io" data-i18n="heroCheck"></a>
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="wrap hero-wrap">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="heroEyebrow"></p>
+        <p class="rotator" aria-hidden="true"><span data-i18n="rotPre"></span> <span class="rot" id="rot"></span></p>
+        <h1 data-i18n="heroTitle"></h1>
+        <p class="lead" data-i18n="heroLead"></p>
+        <div class="cta">
+          <a class="btn" href="/order" data-i18n="heroBuy"></a>
+          <a class="btn ghost" href="https://check.ralk.io" data-i18n="heroCheck"></a>
+        </div>
+        <p class="note" data-i18n="heroNote"></p>
       </div>
-      <p class="note" data-i18n="heroNote"></p>
-      <div class="stats">
-        <div class="stat"><b data-i18n="stat1"></b><span data-i18n="stat1s"></span></div>
-        <div class="stat"><b data-i18n="stat2"></b><span data-i18n="stat2s"></span></div>
-        <div class="stat"><b data-i18n="stat3"></b><span data-i18n="stat3s"></span></div>
+      <div class="hero-visual" id="heroVisual" aria-hidden="true">
+        <svg class="rosette" id="rosette" viewBox="-200 -200 400 400"></svg>
+        <div class="mock win">
+          <div class="win-bar"><i></i><i></i><i></i><span>app.ralk.io</span></div>
+          <div class="win-body">
+            <div class="mock-h"><b data-i18n="mockTitle"></b><span class="pill-ok" data-i18n="mockLive"></span></div>
+            <div class="bars" id="mockBars"></div>
+          </div>
+        </div>
+        <div class="mock float cert">
+          <div class="cert-ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+          <div><b data-i18n="mockCert"></b><small data-i18n="mockCertS"></small></div>
+        </div>
+        <div class="mock float rai">
+          <div class="rai-av">RAI</div>
+          <p data-i18n="mockRai"></p>
+        </div>
+        <div class="mock float rep">
+          <svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z"/><path d="M9 13h6M9 17h4M12 8v5"/></svg>
+          <b data-i18n="mockReport"></b>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="guil-band" id="guilBand" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"></svg>
+  <!-- Topics marquee -->
+  <div class="marquee" aria-hidden="true"><div class="track" id="marq"></div></div>
+
+  <!-- Key figures -->
+  <section class="kpis-sec">
+    <div class="wrap">
+      <div class="kpis">
+        <svg class="guil-bg" data-guil="wave" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="kpi"><b><span class="count" data-to="13">13</span></b><span data-i18n="k1"></span></div>
+        <div class="kpi"><b>&lt;<span class="count" data-to="60">60</span>&nbsp;s</b><span data-i18n="k2"></span></div>
+        <div class="kpi"><b><span class="count" data-to="100">100</span>&nbsp;%</b><span data-i18n="k3"></span></div>
+        <div class="kpi"><b>24/7</b><span data-i18n="k4"></span></div>
       </div>
     </div>
   </section>
 
   <!-- Why -->
-  <section class="alt">
+  <section class="alt why">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow" data-i18n="whyEyebrow"></p>
@@ -67,7 +105,7 @@
   </section>
 
   <!-- How -->
-  <section>
+  <section class="how">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow" data-i18n="howEyebrow"></p>
@@ -82,13 +120,29 @@
     </div>
   </section>
 
+  <!-- Platform band -->
+  <section class="band" id="platform">
+    <div class="wrap band-grid">
+      <div>
+        <p class="eyebrow" data-i18n="platEyebrow"></p>
+        <h2 data-i18n="platTitle"></h2>
+        <p class="lead" data-i18n="platLead"></p>
+        <ul class="ticks" data-list="platPoints"></ul>
+      </div>
+      <div class="dash" aria-hidden="true">
+        <div class="dash-head"><span data-i18n="dashTitle"></span><span class="pill-ok" data-i18n="mockLive"></span></div>
+        <div class="rings" id="rings"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Modules -->
   <section class="alt" id="modules">
     <div class="wrap">
       <p class="eyebrow" data-i18n="modEyebrow"></p>
       <h2 data-i18n="modTitle"></h2>
       <p class="lead" data-i18n="modLead"></p>
-      <div class="chips" id="modList"></div>
+      <div class="mods" id="modList"></div>
     </div>
   </section>
 
@@ -121,7 +175,7 @@
       </div>
       <p class="hint" style="margin-top:14px" data-i18n="minNote"></p>
       <p class="hint" style="margin-top:6px;font-weight:600" data-i18n="fixedNote"></p>
-      <div class="taxnote" data-i18n="taxNote"></div>
+      <p class="hint fine" data-i18n="taxNote"></p>
 
       <div class="calc">
         <div class="card">
@@ -179,14 +233,37 @@
       </div>
     </div>
   </section>
+<a class="float-cta" id="floatCta" href="https://check.ralk.io"><span class="dot"></span><span data-i18n="floatCta"></span></a>
 </main>
 
 <footer id="foot"></footer>
 
 <script>
 function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+const ICONS = [
+ "M12 3l9 16H3z M12 9v4 M12 16h.01",
+ "M3 7h18v10H3z M12 10a2 2 0 1 0 0 4a2 2 0 0 0 0-4z M6 10v4 M18 10v4",
+ "M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18z M5.6 5.6l12.8 12.8",
+ "M6 11h12v9H6z M8 11V8a4 4 0 0 1 8 0v3 M12 15v2",
+ "M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6z M9 12l2 2 4-4",
+ "M7 7h10v10H7z M10 3v4 M14 3v4 M10 17v4 M14 17v4 M3 10h4 M3 14h4 M17 10h4 M17 14h4",
+ "M3 10v4l11 5V5L3 10z M14 8.5a3.5 3.5 0 0 1 0 7 M6 15l1.5 5h3l-1-4",
+ "M11 4a7 7 0 1 0 0 14a7 7 0 0 0 0-14z M20 20l-4-4",
+ "M10 3h4v4h-4z M12 7v4 M5 11h14 M5 11v4 M19 11v4 M3 15h4v5H3z M17 15h4v5h-4z",
+ "M9 11a4 4 0 1 0 0-8a4 4 0 0 0 0 8z M2 21c0-4 3-6 7-6s7 2 7 6 M16 10l2 2 4-4",
+ "M3 12h4l3-7 4 14 3-7h4",
+ "M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18z M10 8h3.5a2 2 0 0 1 0 4H10h4a2 2 0 0 1 0 4h-4z M11.5 6.5v11",
+ "M8 3h8v3H8z M6 4.5H5V21h14V4.5h-1 M9 14l2 2 4-4"
+];
 function renderLists(){
-  document.getElementById("modList").innerHTML = t("mods").map(m => `<span class="chip">${esc(m)}</span>`).join("");
+  document.getElementById("modList").innerHTML = t("mods").map((m,i) => `<div class="mod"><svg viewBox="0 0 24 24"><path d="${ICONS[i % ICONS.length]}"/></svg><span>${esc(m)}</span></div>`).join("");
+  const mq = t("mods").map(m => `<span>${esc(m)}</span><i>▲</i>`).join("");
+  document.getElementById("marq").innerHTML = `<div class="seq">${mq}</div><div class="seq">${mq}</div>`;
+  const pct = [100, 92, 84, 76, 68, 61];
+  document.getElementById("mockBars").innerHTML = t("mods").slice(0,4).map((m,i) =>
+    `<div class="bar"><span>${esc(m)}</span><em>${pct[i]}%</em><div class="track2"><div class="fill" style="--w:${pct[i]}%"></div></div></div>`).join("");
+  document.getElementById("rings").innerHTML = t("mods").slice(0,6).map((m,i) =>
+    `<div class="ring" style="--p:${pct[i]}"><div class="ring-c"><b>${pct[i]}%</b></div><span>${esc(m)}</span></div>`).join("");
   document.getElementById("forList").innerHTML = t("fors").map(m => `<span class="chip">${esc(m)}</span>`).join("");
   document.querySelectorAll("ul.incl").forEach(ul => {
     const items = t("incl").slice();
@@ -197,8 +274,14 @@ function renderLists(){
     `<tr><td><b>${esc(t("bandHead"))}</b></td><td><b>${esc(t("rateHead"))}</b></td></tr>` +
     PRICING.tiers.map((x,i) => `<tr><td>${esc(bandLabel(i))}</td><td style="font-size:20px;color:hsl(var(--gold))">${esc(money(x.rate))}</td></tr>`).join("");
   document.querySelectorAll("ul[data-list]").forEach(ul => { ul.innerHTML = t(ul.dataset.list).map(i => `<li>${esc(i)}</li>`).join(""); });
-  document.getElementById("faqList").innerHTML = t("faq").map(([q,a]) =>
-    `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("");
+  const faqItem = ([q,a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`;
+  const faq = t("faq"), FAQ_TOP = 5;
+  document.getElementById("faqList").innerHTML = faq.slice(0, FAQ_TOP).map(faqItem).join("") +
+    (faq.length > FAQ_TOP ? `<div id="faqMore" hidden>${faq.slice(FAQ_TOP).map(faqItem).join("")}</div>
+      <button type="button" class="btn ghost faq-more" id="faqMoreBtn" aria-expanded="false" aria-controls="faqMore">${esc(t("faqAll").replace("{n}", faq.length))}</button>` : "");
+  const fb = document.getElementById("faqMoreBtn");
+  if(fb) fb.addEventListener("click", () => { const box = document.getElementById("faqMore"); const open = box.hidden;
+    box.hidden = !open; fb.setAttribute("aria-expanded", String(open)); fb.textContent = open ? t("faqLess") : t("faqAll").replace("{n}", faq.length); });
   updateCalc();
 }
 function updateCalc(){

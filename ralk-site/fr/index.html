@@ -2,10 +2,10 @@
 <html lang="fr" data-theme="dark" data-page-lang="fr"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RALK — Formation conformité LBC/FT et criminalité financière pour l'Afrique</title>
-<meta name="description" content="E-learning conformité pour banques, fintechs, assurances, mines, télécoms et toutes les entreprises en Afrique : LBC/FT, sanctions, fraude, corruption, protection des données, cyber. Licence annuelle dès 45 USD par collaborateur.">
+<title>RALK — Formation conformité et criminalité financière pour chaque collaborateur</title>
+<meta name="description" content="E-learning conformité pour banques, fintechs, assurances, mines, énergie, télécoms et toutes les entreprises : fraude, corruption, sanctions, blanchiment, protection des données, cyber. Licence annuelle dès 45 USD par collaborateur.">
 <meta property="og:title" content="RALK — Every employee trained. Every audit answered.">
-<meta property="og:description" content="E-learning conformité pour banques, fintechs, assurances, mines, télécoms et toutes les entreprises en Afrique : LBC/FT, sanctions, fraude, corruption, protection des données, cyber. Licence annuelle dès 45 USD par collaborateur.">
+<meta property="og:description" content="E-learning conformité pour banques, fintechs, assurances, mines, énergie, télécoms et toutes les entreprises : fraude, corruption, sanctions, blanchiment, protection des données, cyber. Licence annuelle dès 45 USD par collaborateur.">
 <meta property="og:image" content="https://ralk.io/logo.png">
 <meta property="og:url" content="https://ralk.io/fr">
 <meta property="og:type" content="website">
@@ -19,7 +19,7 @@
  {"@type":"Organization","name":"RALK","url":"https://ralk.io","logo":"https://ralk.io/logo.png","email":"info@ralk.io",
   "address":{"@type":"PostalAddress","streetAddress":"Hafenstraße 25–27","postalCode":"68159","addressLocality":"Mannheim","addressCountry":"DE"}},
  {"@type":"Product","name":"RALK compliance training licence","brand":{"@type":"Brand","name":"RALK"},
-  "description":"Financial-crime compliance training (AML/CFT, sanctions, fraud, anti-bribery, data protection, cyber) for regulated firms and every company in Africa. Annual licence per employee.",
+  "description":"Compliance and financial-crime training (fraud, anti-bribery, sanctions, AML/CFT, data protection, cyber) for regulated firms and every other company. Annual licence per employee.",
   "offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"45","highPrice":"65","offerCount":"3","url":"https://ralk.io/#pricing"}}
 ]}
 </script>
@@ -47,51 +47,105 @@
 <main>
   <!-- Hero -->
   <section class="hero" id="product">
-    <div class="wrap">
-      <p class="eyebrow" data-i18n="heroEyebrow">Formation conformité criminalité financière pour l'Afrique</p>
-      <h1 data-i18n="heroTitle">Chaque collaborateur formé. Chaque contrôle maîtrisé.</h1>
-      <p class="lead" data-i18n="heroLead">RALK est une plateforme d'e-learning qui forme vos équipes à la lutte contre le blanchiment, aux sanctions, à la fraude, à la corruption, à la protection des données et au risque cyber — adaptée à leur fonction, leur secteur et leur pays, avec des certificats à présenter à votre régulateur et à vos auditeurs.</p>
-      <div class="cta">
-        <a class="btn" href="/order" data-i18n="heroBuy">Obtenir une licence</a>
-        <a class="btn ghost" href="https://check.ralk.io" data-i18n="heroCheck">Diagnostic conformité gratuit en 10 minutes</a>
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="wrap hero-wrap">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="heroEyebrow">Formation conformité &amp; criminalité financière</p>
+        <p class="rotator" aria-hidden="true"><span data-i18n="rotPre">Formez chaque équipe contre</span> <span class="rot" id="rot">la fraude</span></p>
+        <h1 data-i18n="heroTitle">Chaque collaborateur formé. <em class="g">Chaque contrôle maîtrisé.</em></h1>
+        <p class="lead" data-i18n="heroLead">RALK est une plateforme d'e-learning qui forme vos équipes à prévenir la fraude, la corruption, les violations de sanctions, le blanchiment, les fuites de données et les cyberattaques, adaptée à leur fonction, leur secteur et leur pays, avec des certificats à présenter à votre régulateur et à vos auditeurs.</p>
+        <div class="cta">
+          <a class="btn" href="/order" data-i18n="heroBuy">Obtenir une licence</a>
+          <a class="btn ghost" href="https://check.ralk.io" data-i18n="heroCheck">Diagnostic conformité gratuit en 10 minutes</a>
+        </div>
+        <p class="note" data-i18n="heroNote">Licence annuelle à partir de 45 USD par collaborateur. Sans frais de mise en place.</p>
       </div>
-      <p class="note" data-i18n="heroNote">Licence annuelle à partir de 45 USD par collaborateur. Sans frais de mise en place.</p>
-      <div class="stats">
-        <div class="stat"><b data-i18n="stat1">13 domaines de risque</b><span data-i18n="stat1s">de la LBC/FT/KYC à l'IA et aux lanceurs d'alerte</span></div>
-        <div class="stat"><b data-i18n="stat2">Par fonction</b><span data-i18n="stat2s">front office, conformité, direction</span></div>
-        <div class="stat"><b data-i18n="stat3">Prêt pour l'audit</b><span data-i18n="stat3s">certificats, rapports, vérification</span></div>
+      <div class="hero-visual" id="heroVisual" aria-hidden="true">
+        <svg class="rosette" id="rosette" viewBox="-200 -200 400 400"></svg>
+        <div class="mock win">
+          <div class="win-bar"><i></i><i></i><i></i><span>app.ralk.io</span></div>
+          <div class="win-body">
+            <div class="mock-h"><b data-i18n="mockTitle">Progression de l'équipe</b><span class="pill-ok" data-i18n="mockLive">En direct</span></div>
+            <div class="bars" id="mockBars"><div class="bar"><span>Prévention de la fraude</span><em>100%</em><div class="track2"><div class="fill" style="--w:100%"></div></div></div><div class="bar"><span>Anti-corruption</span><em>92%</em><div class="track2"><div class="fill" style="--w:92%"></div></div></div><div class="bar"><span>Sanctions &amp; embargos</span><em>84%</em><div class="track2"><div class="fill" style="--w:84%"></div></div></div><div class="bar"><span>Protection des données</span><em>76%</em><div class="track2"><div class="fill" style="--w:76%"></div></div></div></div>
+          </div>
+        </div>
+        <div class="mock float cert">
+          <div class="cert-ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg></div>
+          <div><b data-i18n="mockCert">Certificat vérifié</b><small data-i18n="mockCertS">Valable 12 mois, contrôle QR</small></div>
+        </div>
+        <div class="mock float rai">
+          <div class="rai-av">RAI</div>
+          <p data-i18n="mockRai">RAI : cette demande de paiement présente 3 signaux d'alerte. Signalez-la en interne.</p>
+        </div>
+        <div class="mock float rep">
+          <svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z"></path><path d="M9 13h6M9 17h4M12 8v5"></path></svg>
+          <b data-i18n="mockReport">Rapport d'audit prêt</b>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="guil-band" id="guilBand" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"></svg>
+  <!-- Topics marquee -->
+  <div class="marquee" aria-hidden="true"><div class="track" id="marq"><div class="seq"><span>Prévention de la fraude</span><i>▲</i><span>Anti-corruption</span><i>▲</i><span>Sanctions &amp; embargos</span><i>▲</i><span>Protection des données</span><i>▲</i><span>Cybersécurité</span><i>▲</i><span>IA &amp; criminalité financière</span><i>▲</i><span>Protection des lanceurs d'alerte</span><i>▲</i><span>LBC/FT &amp; KYC</span><i>▲</i><span>Bénéficiaires effectifs</span><i>▲</i><span>PPE &amp; vigilance renforcée</span><i>▲</i><span>Surveillance &amp; déclarations de soupçon</span><i>▲</i><span>Crypto / actifs virtuels</span><i>▲</i><span>Gouvernance, audit &amp; formation</span><i>▲</i></div><div class="seq"><span>Prévention de la fraude</span><i>▲</i><span>Anti-corruption</span><i>▲</i><span>Sanctions &amp; embargos</span><i>▲</i><span>Protection des données</span><i>▲</i><span>Cybersécurité</span><i>▲</i><span>IA &amp; criminalité financière</span><i>▲</i><span>Protection des lanceurs d'alerte</span><i>▲</i><span>LBC/FT &amp; KYC</span><i>▲</i><span>Bénéficiaires effectifs</span><i>▲</i><span>PPE &amp; vigilance renforcée</span><i>▲</i><span>Surveillance &amp; déclarations de soupçon</span><i>▲</i><span>Crypto / actifs virtuels</span><i>▲</i><span>Gouvernance, audit &amp; formation</span><i>▲</i></div></div></div>
+
+  <!-- Key figures -->
+  <section class="kpis-sec">
+    <div class="wrap">
+      <div class="kpis">
+        <svg class="guil-bg" data-guil="wave" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="kpi"><b><span class="count" data-to="13">13</span></b><span data-i18n="k1">domaines de risque couverts</span></div>
+        <div class="kpi"><b>&lt;<span class="count" data-to="60">60</span>&nbsp;s</b><span data-i18n="k2">pour adapter une formation à votre entreprise</span></div>
+        <div class="kpi"><b><span class="count" data-to="100">100</span>&nbsp;%</b><span data-i18n="k3">des certificats vérifiables en ligne</span></div>
+        <div class="kpi"><b>24/7</b><span data-i18n="k4">formation sur tout appareil</span></div>
       </div>
     </div>
   </section>
 
   <!-- Why -->
-  <section class="alt">
+  <section class="alt why">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow" data-i18n="whyEyebrow">Pourquoi RALK</p>
         <h2 data-i18n="whyTitle">Les régulateurs exigent la preuve que vos équipes sont formées.</h2>
-        <p class="lead" data-i18n="whyLead">Les normes du GAFI et les lois nationales LBC/FT obligent banques, fintechs, assureurs, sociétés de transfert d'argent et professions assujetties à former leur personnel — et à le prouver lors des contrôles. La formation en salle est coûteuse, vite dépassée et difficile à documenter.</p>
+        <p class="lead" data-i18n="whyLead">Les lois anticorruption, sur les sanctions, contre le blanchiment et sur la protection des données obligent les entreprises à former leur personnel, et à le prouver lors des audits et des contrôles. Banques, assurances et autres entités assujetties sont contrôlées par leur superviseur ; toutes les autres entreprises rendent des comptes à leurs auditeurs, partenaires et bailleurs. La formation en salle est coûteuse, vite dépassée et difficile à documenter.</p>
       </div>
       <div class="grid g3">
-        <div class="card"><h3 data-i18n="why1t">Obligation légale</h3><p data-i18n="why1">Obligations de formation prévues par les lois LBC/FT nationales et la Recommandation 18 du GAFI — vérifiées à chaque contrôle.</p></div>
-        <div class="card"><h3 data-i18n="why2t">Toujours à jour</h3><p data-i18n="why2">Nouvelles sanctions, typologies et réglementations intégrées en continu — fini les supports obsolètes.</p></div>
+        <div class="card"><h3 data-i18n="why1t">Obligation légale</h3><p data-i18n="why1">Obligations de formation prévues par les règles anticorruption, sanctions, LBC/FT et protection des données, vérifiées lors des audits et des contrôles.</p></div>
+        <div class="card"><h3 data-i18n="why2t">Toujours à jour</h3><p data-i18n="why2">Nouvelles sanctions, typologies et réglementations intégrées en continu, fini les supports obsolètes.</p></div>
         <div class="card"><h3 data-i18n="why3t">Documenté automatiquement</h3><p data-i18n="why3">Chaque formation suivie est enregistrée avec un certificat et une référence vérifiable pour superviseurs et auditeurs.</p></div>
       </div>
     </div>
   </section>
 
   <!-- How -->
-  <section>
+  <section class="how">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow" data-i18n="howEyebrow">Fonctionnement</p>
-        <h2 data-i18n="howTitle">Opérationnel en une journée — sans déplacement.</h2>
+        <h2 data-i18n="howTitle">Opérationnel en une journée, sans déplacement.</h2>
       </div>
       <div class="grid g4">
         <div class="card"><span class="num">1</span><h3 data-i18n="how1t">Obtenez votre licence</h3><p data-i18n="how1">Choisissez le nombre de collaborateurs, acceptez les conditions de licence en ligne et recevez votre facture.</p></div>
         <div class="card"><span class="num">2</span><h3 data-i18n="how2t">Importez vos équipes</h3><p data-i18n="how2">Téléversez la liste du personnel ou connectez votre SIRH. Chaque personne reçoit son propre accès.</p></div>
-        <div class="card"><span class="num">3</span><h3 data-i18n="how3t">Vos équipes se forment en autonomie</h3><p data-i18n="how3">Modules courts par fonction, avec des cas réels et une évaluation — sur tout appareil.</p></div>
+        <div class="card"><span class="num">3</span><h3 data-i18n="how3t">Vos équipes se forment en autonomie</h3><p data-i18n="how3">Modules courts par fonction, avec des cas réels et une évaluation, sur tout appareil.</p></div>
         <div class="card"><span class="num">4</span><h3 data-i18n="how4t">Vous conservez les preuves</h3><p data-i18n="how4">Tableau de bord, rapports et certificats pour la direction, les auditeurs et le régulateur.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform band -->
+  <section class="band" id="platform">
+    <div class="wrap band-grid">
+      <div>
+        <p class="eyebrow" data-i18n="platEyebrow">La plateforme</p>
+        <h2 data-i18n="platTitle">Tout ce que demande votre auditeur, au même endroit</h2>
+        <p class="lead" data-i18n="platLead">Progression par équipe, module et pays, certificats vérifiables publiquement et rapports à remettre à la direction, aux auditeurs et aux superviseurs.</p>
+        <ul class="ticks" data-list="platPoints"><li>Tableau de bord en direct par équipe et module</li><li>Certificats avec vérification QR</li><li>Rapports pour audits et contrôles</li><li>Import RH et relances automatiques</li></ul>
+      </div>
+      <div class="dash" aria-hidden="true">
+        <div class="dash-head"><span data-i18n="dashTitle">Taux de réalisation par module</span><span class="pill-ok" data-i18n="mockLive">En direct</span></div>
+        <div class="rings" id="rings"><div class="ring" style="--p:100"><div class="ring-c"><b>100%</b></div><span>Prévention de la fraude</span></div><div class="ring" style="--p:92"><div class="ring-c"><b>92%</b></div><span>Anti-corruption</span></div><div class="ring" style="--p:84"><div class="ring-c"><b>84%</b></div><span>Sanctions &amp; embargos</span></div><div class="ring" style="--p:76"><div class="ring-c"><b>76%</b></div><span>Protection des données</span></div><div class="ring" style="--p:68"><div class="ring-c"><b>68%</b></div><span>Cybersécurité</span></div><div class="ring" style="--p:61"><div class="ring-c"><b>61%</b></div><span>IA &amp; criminalité financière</span></div></div>
       </div>
     </div>
   </section>
@@ -101,8 +155,8 @@
     <div class="wrap">
       <p class="eyebrow" data-i18n="modEyebrow">Modules</p>
       <h2 data-i18n="modTitle">Une plateforme pour tous les risques de criminalité financière</h2>
-      <p class="lead" data-i18n="modLead">Le contenu s'adapte à la fonction, au secteur et au pays de chaque apprenant, sur la base des normes du GAFI et de la réglementation locale.</p>
-      <div class="chips" id="modList"><span class="chip">Sanctions &amp; embargos</span><span class="chip">LBC/FT &amp; KYC</span><span class="chip">Bénéficiaires effectifs</span><span class="chip">PPE &amp; vigilance renforcée</span><span class="chip">Surveillance &amp; déclarations de soupçon</span><span class="chip">Crypto / actifs virtuels</span><span class="chip">Prévention de la fraude</span><span class="chip">Anti-corruption</span><span class="chip">Protection des données</span><span class="chip">Cybersécurité</span><span class="chip">IA &amp; criminalité financière</span><span class="chip">Gouvernance, audit &amp; formation</span><span class="chip">Protection des lanceurs d'alerte</span></div>
+      <p class="lead" data-i18n="modLead">Le contenu s'adapte à la fonction, au secteur et au pays de chaque apprenant, sur la base des normes internationales et de la réglementation locale.</p>
+      <div class="mods" id="modList"><div class="mod"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z M12 9v4 M12 16h.01"></path></svg><span>Prévention de la fraude</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M3 7h18v10H3z M12 10a2 2 0 1 0 0 4a2 2 0 0 0 0-4z M6 10v4 M18 10v4"></path></svg><span>Anti-corruption</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18z M5.6 5.6l12.8 12.8"></path></svg><span>Sanctions &amp; embargos</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M6 11h12v9H6z M8 11V8a4 4 0 0 1 8 0v3 M12 15v2"></path></svg><span>Protection des données</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"></path></svg><span>Cybersécurité</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M7 7h10v10H7z M10 3v4 M14 3v4 M10 17v4 M14 17v4 M3 10h4 M3 14h4 M17 10h4 M17 14h4"></path></svg><span>IA &amp; criminalité financière</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M3 10v4l11 5V5L3 10z M14 8.5a3.5 3.5 0 0 1 0 7 M6 15l1.5 5h3l-1-4"></path></svg><span>Protection des lanceurs d'alerte</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 0 0 14a7 7 0 0 0 0-14z M20 20l-4-4"></path></svg><span>LBC/FT &amp; KYC</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M10 3h4v4h-4z M12 7v4 M5 11h14 M5 11v4 M19 11v4 M3 15h4v5H3z M17 15h4v5h-4z"></path></svg><span>Bénéficiaires effectifs</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M9 11a4 4 0 1 0 0-8a4 4 0 0 0 0 8z M2 21c0-4 3-6 7-6s7 2 7 6 M16 10l2 2 4-4"></path></svg><span>PPE &amp; vigilance renforcée</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"></path></svg><span>Surveillance &amp; déclarations de soupçon</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18z M10 8h3.5a2 2 0 0 1 0 4H10h4a2 2 0 0 1 0 4h-4z M11.5 6.5v11"></path></svg><span>Crypto / actifs virtuels</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M8 3h8v3H8z M6 4.5H5V21h14V4.5h-1 M9 14l2 2 4-4"></path></svg><span>Gouvernance, audit &amp; formation</span></div></div>
     </div>
   </section>
 
@@ -111,7 +165,7 @@
     <div class="wrap">
       <p class="eyebrow" data-i18n="forEyebrow">Pour qui</p>
       <h2 data-i18n="forTitle">Pour toute organisation exposée à la criminalité financière</h2>
-      <p class="lead" data-i18n="forLead">Les entreprises assujetties doivent former leur personnel par la loi. Toutes les autres sont aussi exposées à la fraude, à la corruption et aux sanctions — dans les mines, l'énergie, les télécoms, le BTP et le commerce.</p>
+      <p class="lead" data-i18n="forLead">Les entreprises assujetties doivent former leur personnel par la loi. Toutes les autres sont aussi exposées à la fraude, à la corruption et aux sanctions, dans les mines, l'énergie, les télécoms, le BTP et le commerce.</p>
       <div class="chips" id="forList"><span class="chip">Banques</span><span class="chip">Institutions de microfinance</span><span class="chip">Fintechs, PSP &amp; monnaie électronique</span><span class="chip">Mobile money</span><span class="chip">Transfert d'argent &amp; bureaux de change</span><span class="chip">Assurances</span><span class="chip">Gestion d'actifs &amp; courtiers</span><span class="chip">Crypto / PSAV</span><span class="chip">Avocats, notaires, experts-comptables</span><span class="chip">Régulateurs &amp; organismes publics</span><span class="chip">Ordres et associations professionnelles</span><span class="chip">Mines, pétrole &amp; gaz</span><span class="chip">Télécoms &amp; énergie</span><span class="chip">BTP &amp; commerce</span><span class="chip">Entreprises &amp; ONG</span></div>
     </div>
   </section>
@@ -134,8 +188,8 @@
         </div>
       </div>
       <p class="hint" style="margin-top:14px" data-i18n="minNote">Licence annuelle minimale : 5 000 USD. Lorsqu'une organisation passe dans une tranche moins chère, sa licence ne coûte jamais moins que celle de la plus grande organisation de la tranche précédente.</p>
-      <p class="hint" style="margin-top:6px;font-weight:600" data-i18n="fixedNote">Prix fixes et publics — identiques pour tous les clients. Les remises sur volume sont déjà intégrées ; il n'y a pas de remise individuelle.</p>
-      <div class="taxnote" data-i18n="taxNote">Tous les prix s'entendent nets, en USD. Toute retenue à la source ou taxe similaire applicable dans le pays du client est à la charge exclusive du client et s'ajoute au prix, de sorte que RALK, en tant que prestataire, perçoive l'intégralité du montant facturé.</div>
+      <p class="hint" style="margin-top:6px;font-weight:600" data-i18n="fixedNote">Prix fixes et publics, identiques pour tous les clients. Les remises sur volume sont déjà intégrées ; il n'y a pas de remise individuelle.</p>
+      <p class="hint fine" data-i18n="taxNote">Prix nets en USD. Les impôts et taxes du pays du client s'ajoutent au prix (conditions de licence, article 6).</p>
 
       <div class="calc">
         <div class="card">
@@ -167,7 +221,7 @@
         <p class="lead" data-i18n="cmpLead">Les organisations paient souvent davantage pour des formations en salle qui couvrent moins de thèmes, touchent moins de personnes et sont dépassées en quelques mois.</p>
       </div>
       <div class="grid g2">
-        <div class="tier"><div class="size" data-i18n="cmpOldT">Formation LBC/FT en salle</div><div class="price" style="font-size:28px" data-i18n="cmpOldP">≈ 460 USD par participant</div><ul class="cmp" data-list="cmpOld"><li>Ponctuelle, souvent 3 à 5 jours</li><li>En général un seul thème (LBC/FT/KYC)</li><li>Déplacements et absence du poste</li><li>Même contenu pour toutes les fonctions</li><li>Feuille de présence papier comme preuve</li></ul></div>
+        <div class="tier"><div class="size" data-i18n="cmpOldT">Formation conformité en salle</div><div class="price" style="font-size:28px" data-i18n="cmpOldP">≈ 460 USD par participant</div><ul class="cmp" data-list="cmpOld"><li>Ponctuelle, souvent 3 à 5 jours</li><li>En général un seul thème</li><li>Déplacements et absence du poste</li><li>Même contenu pour toutes les fonctions</li><li>Feuille de présence papier comme preuve</li></ul></div>
         <div class="tier hl"><div class="size" data-i18n="cmpNewT">Licence RALK</div><div class="price" style="font-size:28px;color:hsl(var(--gold))" data-i18n="cmpNewP">45–65 USD par collaborateur et par an</div><ul class="cmp" data-list="cmpNew"><li>Toute l'année, modules courts sur tout appareil</li><li>13 thèmes de criminalité financière inclus</li><li>Sans déplacement, sans quitter les clients</li><li>Adapté à chaque fonction, secteur et pays</li><li>Certificats vérifiables et rapports d'audit</li></ul></div>
       </div>
     </div>
@@ -178,7 +232,8 @@
     <div class="wrap" style="max-width:820px">
       <p class="eyebrow" data-i18n="faqEyebrow">FAQ</p>
       <h2 data-i18n="faqTitle">Vos questions avant de commencer</h2>
-      <div id="faqList" style="margin-top:24px"><details><summary>Comment payer ?</summary><p>Par facture et virement bancaire en USD (ou en EUR sur demande). Les factures sont payables sous 14 jours ; l'accès est activé à réception du paiement ou, pour les organismes publics, du bon de commande.</p></details><details><summary>Et la retenue à la source ?</summary><p>Les prix sont nets. Si une retenue à la source ou une taxe similaire s'applique dans votre pays, elle est à votre charge en plus du prix, afin que RALK perçoive l'intégralité du montant facturé.</p></details><details><summary>Faut-il une présence sur place ?</summary><p>Non. Tout se fait en ligne : commande, mise en place, formation et reporting. Notre équipe vous accompagne par e-mail ou visioconférence.</p></details><details><summary>Quelles langues sont disponibles ?</summary><p>Français et anglais. D'autres langues sur demande.</p></details><details><summary>Peut-on ajouter des collaborateurs plus tard ?</summary><p>Oui. Des licences supplémentaires peuvent être ajoutées à tout moment au tarif de votre tranche.</p></details><details><summary>Le prix est-il négociable ?</summary><p>Non. Comme Google Workspace ou Microsoft 365, RALK applique une grille tarifaire publique unique. Les remises sur volume sont déjà intégrées dans les tranches : chaque client bénéficie du même prix équitable.</p></details><details><summary>RALK est-il un conseil juridique ?</summary><p>Non. RALK est une solution de formation. Elle soutient votre fonction conformité sans remplacer un conseil juridique.</p></details></div>
+      <div id="faqList" style="margin-top:24px"><details><summary>Combien de temps dure la formation ?</summary><p>Chaque collaborateur suit des modules courts d'environ 10 minutes, chacun avec un cas réel et un court test. La formation peut être interrompue et reprise à tout moment, sur tout appareil.</p></details><details><summary>Quels thèmes sont couverts ?</summary><p>13 domaines de risque : fraude, corruption, sanctions, blanchiment, protection des données, cybersécurité, criminalité liée à l'IA, lanceurs d'alerte et plus. Chaque collaborateur reçoit les modules pertinents pour sa fonction, son secteur et son pays.</p></details><details><summary>Le contenu est-il adapté à notre entreprise ?</summary><p>Oui. RALK adapte chaque formation à votre secteur, à la réglementation de votre pays et à la fonction de chaque apprenant. Un caissier, un acheteur et un administrateur voient des situations différentes.</p></details><details><summary>Comment prouver la formation aux auditeurs et aux superviseurs ?</summary><p>Chaque formation réussie donne lieu à un certificat avec QR code, vérifiable en ligne par tous. La direction suit la progression par équipe et par module et exporte des rapports pour les audits et contrôles.</p></details><details><summary>La formation doit-elle être renouvelée ?</summary><p>Les certificats sont valables 12 mois. Avec chaque licence annuelle, vos équipes suivent une formation actualisée intégrant les nouvelles règles, sanctions et typologies.</p></details><div id="faqMore" hidden=""><details><summary>Comment les collaborateurs accèdent-ils à la plateforme ?</summary><p>Vous importez la liste du personnel ou connectez votre SIRH. Les collaborateurs se connectent avec le code entreprise ou leur compte professionnel Microsoft ou Google. Aucune installation n'est nécessaire.</p></details><details><summary>Quelles langues sont disponibles ?</summary><p>Anglais et français. D'autres langues sur demande.</p></details><details><summary>Comment nos données sont-elles protégées ?</summary><p>RALK ne traite que les données nécessaires à la formation et aux certificats, conformément au RGPD et à un accord de traitement des données conclu avec votre organisation. L'accès est réservé à vos administrateurs.</p></details><details><summary>Peut-on tester RALK avant ?</summary><p>Oui. Le diagnostic conformité gratuit de 10 minutes montre où en est votre organisation et de quels modules vos équipes ont besoin.</p></details><details><summary>Comment payer ?</summary><p>Par facture et virement bancaire en USD (ou en EUR sur demande). Les factures sont payables sous 14 jours. L'accès est activé à réception du paiement ou, pour les organismes publics, du bon de commande.</p></details><details><summary>Quelle est la durée de la licence ?</summary><p>12 mois. Elle se renouvelle automatiquement, sauf résiliation au moins 30 jours avant la fin de la période.</p></details><details><summary>Peut-on ajouter des collaborateurs plus tard ?</summary><p>Oui. Des places supplémentaires peuvent être ajoutées à tout moment au tarif de votre tranche.</p></details><details><summary>Peut-on négocier le prix ?</summary><p>Non. Comme Google Workspace ou Microsoft 365, RALK applique une seule grille tarifaire publique pour tous. Les remises sur volume sont déjà intégrées aux tranches.</p></details><details><summary>RALK est-il un conseil juridique ?</summary><p>Non. RALK fournit de la formation. Elle soutient votre fonction conformité et vos conseils juridiques, sans les remplacer.</p></details></div>
+      <button type="button" class="btn ghost faq-more" id="faqMoreBtn" aria-expanded="false" aria-controls="faqMore">Afficher les 14 questions</button></div>
     </div>
   </section>
 
@@ -186,13 +241,14 @@
   <section class="alt">
     <div class="wrap center">
       <h2 data-i18n="ctaTitle">Formez vos équipes dès cette semaine.</h2>
-      <p class="lead" data-i18n="ctaLead">Obtenez votre licence en ligne en quelques minutes — ou évaluez d'abord votre risque, gratuitement.</p>
+      <p class="lead" data-i18n="ctaLead">Obtenez votre licence en ligne en quelques minutes, ou évaluez d'abord votre risque, gratuitement.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px">
         <a class="btn" href="/order" data-i18n="heroBuy">Obtenir une licence</a>
         <a class="btn ghost" href="https://check.ralk.io" data-i18n="heroCheck">Diagnostic conformité gratuit en 10 minutes</a>
       </div>
     </div>
   </section>
+<a class="float-cta" id="floatCta" href="https://check.ralk.io"><span class="dot"></span><span data-i18n="floatCta">Diagnostic gratuit</span></a>
 </main>
 
 <footer id="foot">
@@ -210,8 +266,30 @@
 
 <script>
 function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+const ICONS = [
+ "M12 3l9 16H3z M12 9v4 M12 16h.01",
+ "M3 7h18v10H3z M12 10a2 2 0 1 0 0 4a2 2 0 0 0 0-4z M6 10v4 M18 10v4",
+ "M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18z M5.6 5.6l12.8 12.8",
+ "M6 11h12v9H6z M8 11V8a4 4 0 0 1 8 0v3 M12 15v2",
+ "M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6z M9 12l2 2 4-4",
+ "M7 7h10v10H7z M10 3v4 M14 3v4 M10 17v4 M14 17v4 M3 10h4 M3 14h4 M17 10h4 M17 14h4",
+ "M3 10v4l11 5V5L3 10z M14 8.5a3.5 3.5 0 0 1 0 7 M6 15l1.5 5h3l-1-4",
+ "M11 4a7 7 0 1 0 0 14a7 7 0 0 0 0-14z M20 20l-4-4",
+ "M10 3h4v4h-4z M12 7v4 M5 11h14 M5 11v4 M19 11v4 M3 15h4v5H3z M17 15h4v5h-4z",
+ "M9 11a4 4 0 1 0 0-8a4 4 0 0 0 0 8z M2 21c0-4 3-6 7-6s7 2 7 6 M16 10l2 2 4-4",
+ "M3 12h4l3-7 4 14 3-7h4",
+ "M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18z M10 8h3.5a2 2 0 0 1 0 4H10h4a2 2 0 0 1 0 4h-4z M11.5 6.5v11",
+ "M8 3h8v3H8z M6 4.5H5V21h14V4.5h-1 M9 14l2 2 4-4"
+];
 function renderLists(){
-  document.getElementById("modList").innerHTML = t("mods").map(m => `<span class="chip">${esc(m)}</span>`).join("");
+  document.getElementById("modList").innerHTML = t("mods").map((m,i) => `<div class="mod"><svg viewBox="0 0 24 24"><path d="${ICONS[i % ICONS.length]}"/></svg><span>${esc(m)}</span></div>`).join("");
+  const mq = t("mods").map(m => `<span>${esc(m)}</span><i>▲</i>`).join("");
+  document.getElementById("marq").innerHTML = `<div class="seq">${mq}</div><div class="seq">${mq}</div>`;
+  const pct = [100, 92, 84, 76, 68, 61];
+  document.getElementById("mockBars").innerHTML = t("mods").slice(0,4).map((m,i) =>
+    `<div class="bar"><span>${esc(m)}</span><em>${pct[i]}%</em><div class="track2"><div class="fill" style="--w:${pct[i]}%"></div></div></div>`).join("");
+  document.getElementById("rings").innerHTML = t("mods").slice(0,6).map((m,i) =>
+    `<div class="ring" style="--p:${pct[i]}"><div class="ring-c"><b>${pct[i]}%</b></div><span>${esc(m)}</span></div>`).join("");
   document.getElementById("forList").innerHTML = t("fors").map(m => `<span class="chip">${esc(m)}</span>`).join("");
   document.querySelectorAll("ul.incl").forEach(ul => {
     const items = t("incl").slice();
@@ -222,8 +300,14 @@ function renderLists(){
     `<tr><td><b>${esc(t("bandHead"))}</b></td><td><b>${esc(t("rateHead"))}</b></td></tr>` +
     PRICING.tiers.map((x,i) => `<tr><td>${esc(bandLabel(i))}</td><td style="font-size:20px;color:hsl(var(--gold))">${esc(money(x.rate))}</td></tr>`).join("");
   document.querySelectorAll("ul[data-list]").forEach(ul => { ul.innerHTML = t(ul.dataset.list).map(i => `<li>${esc(i)}</li>`).join(""); });
-  document.getElementById("faqList").innerHTML = t("faq").map(([q,a]) =>
-    `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("");
+  const faqItem = ([q,a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`;
+  const faq = t("faq"), FAQ_TOP = 5;
+  document.getElementById("faqList").innerHTML = faq.slice(0, FAQ_TOP).map(faqItem).join("") +
+    (faq.length > FAQ_TOP ? `<div id="faqMore" hidden>${faq.slice(FAQ_TOP).map(faqItem).join("")}</div>
+      <button type="button" class="btn ghost faq-more" id="faqMoreBtn" aria-expanded="false" aria-controls="faqMore">${esc(t("faqAll").replace("{n}", faq.length))}</button>` : "");
+  const fb = document.getElementById("faqMoreBtn");
+  if(fb) fb.addEventListener("click", () => { const box = document.getElementById("faqMore"); const open = box.hidden;
+    box.hidden = !open; fb.setAttribute("aria-expanded", String(open)); fb.textContent = open ? t("faqLess") : t("faqAll").replace("{n}", faq.length); });
   updateCalc();
 }
 function updateCalc(){
