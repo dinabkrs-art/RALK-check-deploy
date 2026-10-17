@@ -473,3 +473,4 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:40;opa
 }
 @media (prefers-reduced-motion: reduce){ .rosette{animation:none} .rosette path{animation:none;stroke-dashoffset:0} }
 #bandTable tr+tr td+td,.tier .price{font-family:var(--serif);font-weight:500;font-size:24px}
+.hint.fine{font-size:12px;opacity:1;color:hsl(var(--muted));margin-top:6px}

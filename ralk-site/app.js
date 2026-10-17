@@ -101,7 +101,7 @@ const I18N = {
     inclBig:"From 1,001 employees: dedicated onboarding contact",
     minNote:"Minimum annual licence: USD 5,000. When an organisation grows into a cheaper band, its licence never costs less than the largest organisation of the band below.",
     fixedNote:"Fixed published prices, the same for every customer. Volume discounts are already built in; there are no individual discounts.",
-    taxNote:"All prices are net amounts in USD. Any withholding tax or similar levy in the customer's country is the sole responsibility of the customer and is borne in addition to the price, so that RALK as the contractor receives the full invoiced amount.",
+    taxNote:"Prices are net amounts in USD. Taxes and levies in the customer's country are added to the price (licence terms, section 6).",
     calcTitle:"Calculate your licence", calcLabel:"Number of employees to train",
     calcRate:"Rate per employee", calcTotal:"Annual licence", calcMin:"Minimum annual licence applies",
     calcBuy:"Continue to order", calcFloor:"Band transition rule applies", calcEff:"Effective price per employee",
@@ -115,7 +115,6 @@ const I18N = {
     faqEyebrow:"FAQ", faqTitle:"Questions before you start",
     faq:[
       ["How do we pay?","By invoice and bank transfer in USD (or EUR on request). Invoices are due within 14 days; access is activated on payment or, for public bodies, on receipt of the purchase order."],
-      ["What about withholding tax?","Prices are net. If withholding tax or a similar levy applies in your country, it is borne by you in addition to the price, so that RALK receives the full invoiced amount."],
       ["Do we need anyone on site?","No. Everything runs online: ordering, onboarding, training and reporting. Our team supports you by email or video call."],
       ["Which languages are available?","English and French. Further languages on request."],
       ["Can we add employees later?","Yes. Additional seats can be booked at any time at the rate of your size band."],
@@ -201,7 +200,7 @@ const I18N = {
     inclBig:"Dès 1 001 collaborateurs : interlocuteur dédié pour la mise en place",
     minNote:"Licence annuelle minimale : 5 000 USD. Lorsqu'une organisation passe dans une tranche moins chère, sa licence ne coûte jamais moins que celle de la plus grande organisation de la tranche précédente.",
     fixedNote:"Prix fixes et publics, identiques pour tous les clients. Les remises sur volume sont déjà intégrées ; il n'y a pas de remise individuelle.",
-    taxNote:"Tous les prix s'entendent nets, en USD. Toute retenue à la source ou taxe similaire applicable dans le pays du client est à la charge exclusive du client et s'ajoute au prix, de sorte que RALK, en tant que prestataire, perçoive l'intégralité du montant facturé.",
+    taxNote:"Prix nets en USD. Les impôts et taxes du pays du client s'ajoutent au prix (conditions de licence, article 6).",
     calcTitle:"Calculez votre licence", calcLabel:"Nombre de collaborateurs à former",
     calcRate:"Tarif par collaborateur", calcTotal:"Licence annuelle", calcMin:"La licence annuelle minimale s'applique",
     calcBuy:"Passer à la commande", calcFloor:"Règle de passage de tranche appliquée", calcEff:"Prix effectif par collaborateur",
@@ -215,7 +214,6 @@ const I18N = {
     faqEyebrow:"FAQ", faqTitle:"Vos questions avant de commencer",
     faq:[
       ["Comment payer ?","Par facture et virement bancaire en USD (ou en EUR sur demande). Les factures sont payables sous 14 jours ; l'accès est activé à réception du paiement ou, pour les organismes publics, du bon de commande."],
-      ["Et la retenue à la source ?","Les prix sont nets. Si une retenue à la source ou une taxe similaire s'applique dans votre pays, elle est à votre charge en plus du prix, afin que RALK perçoive l'intégralité du montant facturé."],
       ["Faut-il une présence sur place ?","Non. Tout se fait en ligne : commande, mise en place, formation et reporting. Notre équipe vous accompagne par e-mail ou visioconférence."],
       ["Quelles langues sont disponibles ?","Français et anglais. D'autres langues sur demande."],
       ["Peut-on ajouter des collaborateurs plus tard ?","Oui. Des licences supplémentaires peuvent être ajoutées à tout moment au tarif de votre tranche."],
