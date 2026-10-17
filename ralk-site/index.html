@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RALK — Financial-crime compliance training for Africa</title>
+<meta name="description" content="AI-powered compliance e-learning for banks, fintechs, insurers and professionals in Africa: AML/CFT, sanctions, fraud, corruption, data protection, cyber. Annual licence from USD 45 per employee.">
+<meta property="og:title" content="RALK — Every employee trained. Every audit answered.">
+<meta property="og:description" content="Financial-crime compliance training for Africa. Role-based, always current, audit-ready. Licence from USD 45 per employee per year.">
+<meta property="og:image" content="https://ralk.io/logo.png">
+<meta property="og:url" content="https://ralk.io/">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<script src="/app.js"></script>
+</head>
+<body>
+<header class="top" id="top"></header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero" id="product">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="heroEyebrow"></p>
+      <h1 data-i18n="heroTitle"></h1>
+      <p class="lead" data-i18n="heroLead"></p>
+      <div class="cta">
+        <a class="btn" href="/order" data-i18n="heroBuy"></a>
+        <a class="btn ghost" href="https://check.ralk.io" data-i18n="heroCheck"></a>
+      </div>
+      <p class="note" data-i18n="heroNote"></p>
+      <div class="stats">
+        <div class="stat"><b data-i18n="stat1"></b><span data-i18n="stat1s"></span></div>
+        <div class="stat"><b data-i18n="stat2"></b><span data-i18n="stat2s"></span></div>
+        <div class="stat"><b data-i18n="stat3"></b><span data-i18n="stat3s"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow" data-i18n="whyEyebrow"></p>
+        <h2 data-i18n="whyTitle"></h2>
+        <p class="lead" data-i18n="whyLead"></p>
+      </div>
+      <div class="grid g3">
+        <div class="card"><h3 data-i18n="why1t"></h3><p data-i18n="why1"></p></div>
+        <div class="card"><h3 data-i18n="why2t"></h3><p data-i18n="why2"></p></div>
+        <div class="card"><h3 data-i18n="why3t"></h3><p data-i18n="why3"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How -->
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow" data-i18n="howEyebrow"></p>
+        <h2 data-i18n="howTitle"></h2>
+      </div>
+      <div class="grid g4">
+        <div class="card"><span class="num">1</span><h3 data-i18n="how1t"></h3><p data-i18n="how1"></p></div>
+        <div class="card"><span class="num">2</span><h3 data-i18n="how2t"></h3><p data-i18n="how2"></p></div>
+        <div class="card"><span class="num">3</span><h3 data-i18n="how3t"></h3><p data-i18n="how3"></p></div>
+        <div class="card"><span class="num">4</span><h3 data-i18n="how4t"></h3><p data-i18n="how4"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modules -->
+  <section class="alt" id="modules">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="modEyebrow"></p>
+      <h2 data-i18n="modTitle"></h2>
+      <p class="lead" data-i18n="modLead"></p>
+      <div class="chips" id="modList"></div>
+    </div>
+  </section>
+
+  <!-- Audience -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="forEyebrow"></p>
+      <h2 data-i18n="forTitle"></h2>
+      <div class="chips" id="forList"></div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="alt" id="pricing">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow" data-i18n="priceEyebrow"></p>
+        <h2 data-i18n="priceTitle"></h2>
+        <p class="lead" data-i18n="priceLead"></p>
+      </div>
+      <div class="tiers">
+        <div class="tier">
+          <div class="size" data-i18n="t1"></div>
+          <div class="price">$65 <small data-i18n="perEmp"></small></div>
+          <ul class="incl"></ul>
+        </div>
+        <div class="tier hl">
+          <div class="size" data-i18n="t2"></div>
+          <div class="price">$50 <small data-i18n="perEmp"></small></div>
+          <ul class="incl big"></ul>
+        </div>
+        <div class="tier">
+          <div class="size" data-i18n="t3"></div>
+          <div class="price">$45 <small data-i18n="perEmp"></small></div>
+          <ul class="incl big"></ul>
+        </div>
+      </div>
+      <p class="hint" style="margin-top:14px" data-i18n="minNote"></p>
+      <div class="taxnote" data-i18n="taxNote"></div>
+
+      <div class="calc">
+        <div class="card">
+          <h3 data-i18n="calcTitle"></h3>
+          <div class="field" style="margin-top:14px">
+            <label for="calcSeats" data-i18n="calcLabel"></label>
+            <input type="number" id="calcSeats" min="1" step="1" value="250" inputmode="numeric">
+          </div>
+          <p class="sub"><span data-i18n="calcRate"></span>: <b id="calcRate"></b></p>
+        </div>
+        <div class="card out">
+          <div class="sub" data-i18n="calcTotal"></div>
+          <div class="big" id="calcTotal"></div>
+          <div class="sub" id="calcMin" hidden data-i18n="calcMin"></div>
+          <div style="margin-top:16px"><a class="btn" id="calcBuy" href="/order" data-i18n="calcBuy"></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap" style="max-width:820px">
+      <p class="eyebrow" data-i18n="faqEyebrow"></p>
+      <h2 data-i18n="faqTitle"></h2>
+      <div id="faqList" style="margin-top:24px"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="alt">
+    <div class="wrap center">
+      <h2 data-i18n="ctaTitle"></h2>
+      <p class="lead" data-i18n="ctaLead"></p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px">
+        <a class="btn" href="/order" data-i18n="heroBuy"></a>
+        <a class="btn ghost" href="https://check.ralk.io" data-i18n="heroCheck"></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="foot"></footer>
+
+<script>
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+function renderLists(){
+  document.getElementById("modList").innerHTML = t("mods").map(m => `<span class="chip">${esc(m)}</span>`).join("");
+  document.getElementById("forList").innerHTML = t("fors").map(m => `<span class="chip">${esc(m)}</span>`).join("");
+  document.querySelectorAll("ul.incl").forEach(ul => {
+    const items = t("incl").slice();
+    if(ul.classList.contains("big")) items.push(t("inclBig"));
+    ul.innerHTML = items.map(i => `<li>${esc(i)}</li>`).join("");
+  });
+  document.getElementById("faqList").innerHTML = t("faq").map(([q,a]) =>
+    `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("");
+  updateCalc();
+}
+function updateCalc(){
+  const n = document.getElementById("calcSeats").value;
+  const q = quote(n);
+  document.getElementById("calcRate").textContent = money(q.rate);
+  document.getElementById("calcTotal").textContent = money(q.total);
+  document.getElementById("calcMin").hidden = !q.minimumApplied;
+  document.getElementById("calcBuy").href = "/order?seats=" + q.seats;
+}
+document.addEventListener("ralk:lang", renderLists);
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("calcSeats").addEventListener("input", updateCalc);
+});
+</script>
+</body>
+</html>

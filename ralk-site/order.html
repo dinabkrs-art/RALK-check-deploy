@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RALK — Order your licence</title>
+<meta name="description" content="Order your RALK compliance training licence online.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<script src="/app.js"></script>
+</head>
+<body>
+<header class="top" id="top"></header>
+
+<main>
+<section style="padding-top:54px">
+  <div class="wrap">
+    <div id="orderView">
+      <h1 style="font-size:clamp(28px,4vw,40px)" data-i18n="oTitle"></h1>
+      <p class="lead" data-i18n="oLead"></p>
+
+      <div class="order-grid" style="margin-top:34px">
+        <form id="orderForm" class="card" novalidate>
+          <div class="steps"><span class="on" data-i18n="oStep1"></span></div>
+          <div class="field"><label for="org"><span data-i18n="fOrg"></span> *</label><input type="text" id="org" required autocomplete="organization"></div>
+          <div class="grid g2" style="gap:14px">
+            <div class="field"><label for="country"><span data-i18n="fCountry"></span> *</label><select id="country" required></select></div>
+            <div class="field"><label for="sector"><span data-i18n="fSector"></span> *</label><select id="sector" required></select></div>
+          </div>
+          <div class="field"><label for="address"><span data-i18n="fAddress"></span> *</label><textarea id="address" required autocomplete="street-address"></textarea></div>
+          <div class="field"><label for="taxid" data-i18n="fTax"></label><input type="text" id="taxid"></div>
+
+          <div class="steps" style="margin-top:10px"><span class="on" data-i18n="oStep2"></span></div>
+          <div class="grid g2" style="gap:14px">
+            <div class="field"><label for="seats"><span data-i18n="fSeats"></span> *</label><input type="number" id="seats" min="1" step="1" required inputmode="numeric"></div>
+            <div class="field"><label for="currency" data-i18n="fCurrency"></label>
+              <select id="currency"><option value="USD">USD</option><option value="EUR">EUR</option></select></div>
+          </div>
+          <div class="grid g2" style="gap:14px">
+            <div class="field"><label for="contact"><span data-i18n="fContact"></span> *</label><input type="text" id="contact" required autocomplete="name"></div>
+            <div class="field"><label for="role"><span data-i18n="fRole"></span> *</label><input type="text" id="role" required autocomplete="organization-title"></div>
+          </div>
+          <div class="grid g2" style="gap:14px">
+            <div class="field"><label for="email"><span data-i18n="fEmail"></span> *</label><input type="email" id="email" required autocomplete="email"></div>
+            <div class="field"><label for="phone" data-i18n="fPhone"></label><input type="tel" id="phone" autocomplete="tel"></div>
+          </div>
+          <div class="field"><label for="po" data-i18n="fPo"></label><input type="text" id="po"></div>
+          <div class="field"><label for="notes" data-i18n="fNotes"></label><textarea id="notes"></textarea></div>
+
+          <div class="steps" style="margin-top:10px"><span class="on" data-i18n="oStep3"></span></div>
+          <label class="check"><input type="checkbox" id="accept"><span id="acceptText"></span></label>
+          <label class="check"><input type="checkbox" id="taxAck"><span data-i18n="fTaxAck"></span></label>
+          <p class="hint"><a href="/licence" target="_blank" rel="noopener" data-i18n="footLicence"></a></p>
+          <div class="err" id="err" role="alert"></div>
+          <button class="btn" type="submit" id="submitBtn" style="margin-top:6px" data-i18n="fSubmit"></button>
+        </form>
+
+        <aside class="card sticky">
+          <h3 data-i18n="sumTitle"></h3>
+          <table class="summary" style="margin-top:10px">
+            <tr><td data-i18n="sumSeats"></td><td id="sSeats">–</td></tr>
+            <tr><td data-i18n="sumRate"></td><td id="sRate">–</td></tr>
+            <tr><td data-i18n="sumTerm"></td><td data-i18n="sumTermV"></td></tr>
+            <tr><td data-i18n="sumSetup"></td><td data-i18n="sumSetupV"></td></tr>
+            <tr class="total"><td data-i18n="sumTotal"></td><td id="sTotal">–</td></tr>
+          </table>
+          <p class="hint" id="sMin" hidden data-i18n="calcMin"></p>
+          <p class="hint" style="margin-top:12px" data-i18n="taxNote"></p>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Confirmation -->
+    <div id="doneView" hidden style="max-width:760px">
+      <h1 style="font-size:clamp(28px,4vw,40px)" data-i18n="okTitle"></h1>
+      <p class="lead" id="okLead"></p>
+      <div class="card" style="margin-top:26px">
+        <p class="hint"><span data-i18n="okRef"></span></p>
+        <div style="font-size:24px;font-weight:800;color:hsl(var(--gold))" id="okRef"></div>
+        <table class="summary" style="margin-top:14px" id="okTable"></table>
+        <p class="hint" style="margin-top:12px" data-i18n="taxNote"></p>
+      </div>
+      <div class="noprint" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px">
+        <button class="btn" onclick="window.print()" data-i18n="okPrint"></button>
+        <a class="btn ghost" href="/" data-i18n="okBack"></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="foot"></footer>
+
+<script>
+const COUNTRIES = ["DR Congo","Kenya","Nigeria","Côte d'Ivoire","Senegal","Cameroon","Ghana","Rwanda","Gabon","Mali","Togo","Republic of the Congo","──",
+ "Algeria","Angola","Benin","Botswana","Burkina Faso","Burundi","Cabo Verde","Central African Republic","Chad","Comoros","Djibouti","Egypt","Equatorial Guinea","Eritrea","Eswatini","Ethiopia","Gambia","Guinea","Guinea-Bissau","Lesotho","Liberia","Libya","Madagascar","Malawi","Mauritania","Mauritius","Morocco","Mozambique","Namibia","Niger","São Tomé and Príncipe","Seychelles","Sierra Leone","Somalia","South Africa","South Sudan","Sudan","Tanzania","Tunisia","Uganda","Zambia","Zimbabwe","──","Other"];
+
+const $ = id => document.getElementById(id);
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+function fillSelects(){
+  const cSel = $("country"), cur = cSel.value;
+  cSel.innerHTML = `<option value=""></option>` + COUNTRIES.map(c => c === "──"
+    ? `<option disabled>──────────</option>` : `<option>${esc(c)}</option>`).join("");
+  cSel.value = cur;
+  const sSel = $("sector"), sIdx = sSel.selectedIndex;
+  sSel.innerHTML = `<option value=""></option>` + t("sectors").map((s,i) => `<option value="${i}">${esc(s)}</option>`).join("");
+  sSel.selectedIndex = sIdx > 0 ? sIdx : 0;
+  $("acceptText").textContent = t("fAccept").replace("{v}", CONFIG.TERMS_VERSION);
+  updateSummary();
+}
+function updateSummary(){
+  const n = parseInt($("seats").value, 10);
+  if(!n || n < 1){ ["sSeats","sRate","sTotal"].forEach(i => $(i).textContent = "–"); $("sMin").hidden = true; return; }
+  const q = quote(n);
+  $("sSeats").textContent = q.seats.toLocaleString(getLang() === "fr" ? "fr-FR" : "en-US");
+  $("sRate").textContent = money(q.rate);
+  $("sTotal").textContent = money(q.total);
+  $("sMin").hidden = !q.minimumApplied;
+}
+function orderRef(){
+  const d = new Date(), p = n => String(n).padStart(2,"0");
+  return `RALK-${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}-${Math.random().toString(36).slice(2,7).toUpperCase()}`;
+}
+
+async function submitOrder(e){
+  e.preventDefault();
+  $("err").textContent = "";
+  const req = ["org","country","sector","address","seats","contact","role","email"];
+  const missing = req.filter(id => !String($(id).value).trim());
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($("email").value.trim());
+  if(missing.length || !emailOk || !$("accept").checked || !$("taxAck").checked || parseInt($("seats").value,10) < 1){
+    $("err").textContent = t("errReq"); return;
+  }
+  const q = quote($("seats").value);
+  const ref = orderRef();
+  const acceptedAt = new Date().toISOString();
+  const sectorLabel = I18N.en.sectors[parseInt($("sector").value,10)];
+  const payload = {
+    _subject: `RALK licence order ${ref} — ${$("org").value.trim()} (${q.seats} employees)`,
+    _template: "table",
+    _captcha: "false",
+    order_reference: ref,
+    organisation: $("org").value.trim(),
+    country: $("country").value,
+    sector: sectorLabel,
+    billing_address: $("address").value.trim(),
+    tax_id: $("taxid").value.trim(),
+    employees: q.seats,
+    rate_per_employee_usd: q.rate,
+    annual_licence_net_usd: q.total,
+    minimum_applied: q.minimumApplied ? "yes" : "no",
+    invoice_currency: $("currency").value,
+    set_up_fee: "none",
+    term: "12 months, auto-renewal",
+    contact_person: $("contact").value.trim(),
+    function: $("role").value.trim(),
+    email: $("email").value.trim(),
+    phone: $("phone").value.trim(),
+    purchase_order: $("po").value.trim(),
+    notes: $("notes").value.trim(),
+    licence_terms_version: CONFIG.TERMS_VERSION,
+    licence_terms_accepted: "yes",
+    withholding_tax_acknowledged: "yes",
+    accepted_at_utc: acceptedAt,
+    language: getLang(),
+    page: location.href
+  };
+  const btn = $("submitBtn");
+  btn.disabled = true; btn.textContent = t("fSending");
+  try{
+    const r = await fetch(CONFIG.ORDER_ENDPOINT, {
+      method:"POST", headers:{ "Content-Type":"application/json", "Accept":"application/json" },
+      body: JSON.stringify(payload)
+    });
+    if(!r.ok) throw new Error("HTTP " + r.status);
+    showDone(payload);
+  }catch(err){
+    $("err").textContent = t("errSend");
+    btn.disabled = false; btn.textContent = t("fSubmit");
+  }
+}
+let lastOrder = null;
+function showDone(p){
+  lastOrder = p;
+  $("orderView").hidden = true; $("doneView").hidden = false;
+  renderDone(); window.scrollTo(0,0);
+}
+function renderDone(){
+  if(!lastOrder) return;
+  const p = lastOrder;
+  $("okLead").textContent = t("okLead").replace("{email}", p.email);
+  $("okRef").textContent = p.order_reference;
+  const rows = [
+    [t("fOrg"), p.organisation], [t("fCountry"), p.country], [t("fContact"), `${p.contact_person} — ${p.function}`],
+    [t("sumSeats"), p.employees], [t("sumRate"), money(p.rate_per_employee_usd)],
+    [t("sumTerm"), t("sumTermV")], [t("sumSetup"), t("sumSetupV")],
+    [t("footLicence"), `v${p.licence_terms_version} · ${new Date(p.accepted_at_utc).toLocaleString()}`]
+  ];
+  $("okTable").innerHTML = rows.map(([a,b]) => `<tr><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join("")
+    + `<tr class="total"><td>${esc(t("sumTotal"))}</td><td>${esc(money(p.annual_licence_net_usd))}</td></tr>`;
+}
+
+document.addEventListener("ralk:lang", () => { fillSelects(); renderDone(); });
+document.addEventListener("DOMContentLoaded", () => {
+  const s = new URLSearchParams(location.search).get("seats");
+  if(s && /^\d+$/.test(s)) $("seats").value = s;
+  $("seats").addEventListener("input", updateSummary);
+  $("orderForm").addEventListener("submit", submitOrder);
+  updateSummary();
+});
+</script>
+</body>
+</html>
