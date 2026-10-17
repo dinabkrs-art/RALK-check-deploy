@@ -47,6 +47,7 @@
         <p class="note" data-i18n="heroNote"></p>
       </div>
       <div class="hero-visual" id="heroVisual" aria-hidden="true">
+        <svg class="rosette" id="rosette" viewBox="-200 -200 400 400"></svg>
         <div class="mock win">
           <div class="win-bar"><i></i><i></i><i></i><span>app.ralk.io</span></div>
           <div class="win-body">
@@ -70,6 +71,7 @@
     </div>
   </section>
 
+  <svg class="guil-band" id="guilBand" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"></svg>
   <!-- Topics marquee -->
   <div class="marquee" aria-hidden="true"><div class="track" id="marq"></div></div>
 
@@ -77,16 +79,17 @@
   <section class="kpis-sec">
     <div class="wrap">
       <div class="kpis">
-        <div class="kpi"><span class="kpi-ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6z"/></svg></span><b><span class="count" data-to="13">13</span></b><span data-i18n="k1"></span></div>
-        <div class="kpi"><span class="kpi-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M10 2h4"/></svg></span><b>&lt;<span class="count" data-to="60">60</span>&nbsp;s</b><span data-i18n="k2"></span></div>
-        <div class="kpi"><span class="kpi-ic"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><b><span class="count" data-to="100">100</span>&nbsp;%</b><span data-i18n="k3"></span></div>
-        <div class="kpi"><span class="kpi-ic"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span><b>24/7</b><span data-i18n="k4"></span></div>
+        <svg class="guil-bg" data-guil="wave" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="kpi"><b><span class="count" data-to="13">13</span></b><span data-i18n="k1"></span></div>
+        <div class="kpi"><b>&lt;<span class="count" data-to="60">60</span>&nbsp;s</b><span data-i18n="k2"></span></div>
+        <div class="kpi"><b><span class="count" data-to="100">100</span>&nbsp;%</b><span data-i18n="k3"></span></div>
+        <div class="kpi"><b>24/7</b><span data-i18n="k4"></span></div>
       </div>
     </div>
   </section>
 
   <!-- Why -->
-  <section class="alt">
+  <section class="alt why">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow" data-i18n="whyEyebrow"></p>
@@ -102,7 +105,7 @@
   </section>
 
   <!-- How -->
-  <section>
+  <section class="how">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow" data-i18n="howEyebrow"></p>
@@ -254,7 +257,7 @@ const ICONS = [
 ];
 function renderLists(){
   document.getElementById("modList").innerHTML = t("mods").map((m,i) => `<div class="mod"><svg viewBox="0 0 24 24"><path d="${ICONS[i % ICONS.length]}"/></svg><span>${esc(m)}</span></div>`).join("");
-  const mq = t("mods").map(m => `<span>${esc(m)}</span><i>✦</i>`).join("");
+  const mq = t("mods").map(m => `<span>${esc(m)}</span><i>▲</i>`).join("");
   document.getElementById("marq").innerHTML = `<div class="seq">${mq}</div><div class="seq">${mq}</div>`;
   const pct = [100, 92, 84, 76, 68, 61];
   document.getElementById("mockBars").innerHTML = t("mods").slice(0,4).map((m,i) =>
