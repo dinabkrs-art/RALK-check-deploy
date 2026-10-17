@@ -1,6 +1,6 @@
 /* RALK website — same design language as check.ralk.io and app.ralk.io
    (Inter, olive-gold on near-black / warm cream, R▲LK logo) */
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap');
 
 :root{
   --bg:240 4% 5%;
@@ -474,3 +474,19 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:40;opa
 @media (prefers-reduced-motion: reduce){ .rosette{animation:none} .rosette path{animation:none;stroke-dashoffset:0} }
 #bandTable tr+tr td+td,.tier .price{font-family:var(--serif);font-weight:500;font-size:24px}
 .hint.fine{font-size:12px;opacity:1;color:hsl(var(--muted));margin-top:6px}
+
+
+/* ================= v5: calmer headings, side reveals ================= */
+h1,h2,.dash-head span:first-child{font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:700;letter-spacing:-.025em}
+h1{font-size:clamp(38px,5vw,62px);line-height:1.04}
+h2{font-size:clamp(28px,3.3vw,42px);line-height:1.1}
+em.g,.band em.g{font-style:normal;font-weight:700}
+.why .card h3{font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:20px;letter-spacing:-.01em}
+.eyebrow,section .eyebrow,.band .eyebrow{font-family:'Hanken Grotesk',sans-serif;font-style:normal;font-weight:600;font-size:15px}
+.seq{font-family:'Hanken Grotesk',sans-serif;font-style:normal;font-weight:600;font-size:16px}
+.kpi b,.tier .price,.calc .big,#bandTable tr+tr td+td,.ring-c b,.how .card .num{font-family:'Hanken Grotesk',sans-serif;font-weight:300;letter-spacing:-.03em}
+.kpi b{font-size:clamp(48px,5vw,66px)}
+.how .card .num{font-weight:600;font-size:16px}
+html.fx .rv.rv-l{transform:translateX(-56px)}
+html.fx .rv.rv-r{transform:translateX(56px)}
+html.fx .rv.rv-l.in,html.fx .rv.rv-r.in{transform:none}

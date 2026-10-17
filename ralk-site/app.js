@@ -66,7 +66,7 @@ const I18N = {
     k1:"risk areas covered", k2:"to tailor a training to your company", k3:"of certificates verifiable online", k4:"learning on any device",
     platEyebrow:"The platform", platTitle:"Everything your auditor asks for, in one place",
     platLead:"Progress per team, module and country, certificates with a public check and reports you can hand to management, auditors and supervisors.",
-    platPoints:["Live dashboard per team and module","Certificates with QR verification","Reports for audits and inspections","HR import and automatic reminders"],
+    platPoints:["Live dashboard per team and module","Certificates with QR verification","Reports for audits and inspections","HR import and team overview"],
     dashTitle:"Completion by module", floatCta:"Free compliance check",
     stat1:"13 risk areas", stat1s:"from fraud and corruption to sanctions, data and cyber",
     stat2:"Role-based", stat2s:"front office, compliance, management",
@@ -114,12 +114,20 @@ const I18N = {
     cmpNew:["All year, short modules on any device","13 financial-crime topics included","No travel, no time away from customers","Adapted to each role, sector and country","Verifiable certificates and audit reports"],
     faqEyebrow:"FAQ", faqTitle:"Questions before you start",
     faq:[
-      ["How do we pay?","By invoice and bank transfer in USD (or EUR on request). Invoices are due within 14 days; access is activated on payment or, for public bodies, on receipt of the purchase order."],
-      ["Do we need anyone on site?","No. Everything runs online: ordering, onboarding, training and reporting. Our team supports you by email or video call."],
-      ["Which languages are available?","English and French. Further languages on request."],
-      ["Can we add employees later?","Yes. Additional seats can be booked at any time at the rate of your size band."],
-      ["Can we negotiate the price?","No. Like Google Workspace or Microsoft 365, RALK uses one published price list for everyone. Volume discounts are already included in the size bands, so every customer gets the same fair price."],
-      ["Is RALK legal advice?","No. RALK provides training. It supports, but does not replace, your compliance function and legal advice."]
+      ["How long does the training take?", "Each employee completes short modules of about 10 minutes, each with a real-life scenario and a short test. Training can be paused and continued at any time, on any device."],
+      ["Which topics are covered?", "13 risk areas: fraud, bribery and corruption, sanctions, money laundering, data protection, cybersecurity, AI-enabled crime, whistleblowing and more. Each employee receives the modules that matter for their role, sector and country."],
+      ["Is the content adapted to our company?", "Yes. RALK tailors every training to your sector, your country's rules and each learner's role. A cashier, a buyer and a board member see different situations."],
+      ["How do we prove the training to auditors and supervisors?", "Every completion produces a certificate with a QR code that anyone can verify online. Management sees progress per team and module and can export reports for audits and inspections."],
+      ["Does the training need to be repeated?", "Certificates are valid for 12 months. With each annual licence your staff complete a refreshed training that includes new rules, sanctions and typologies."],
+      ["How do employees get access?", "You import your staff list or connect your HR system. Employees sign in with your company code or with their Microsoft or Google work account. Nothing needs to be installed."],
+      ["Which languages are available?", "English and French. Further languages on request."],
+      ["How is our data protected?", "RALK processes only the data needed for training and certificates, under the GDPR and a data processing agreement with your organisation. Access is restricted to your administrators."],
+      ["Can we try RALK first?", "Yes. The free 10-minute compliance check shows where your organisation stands and which modules your teams need."],
+      ["How do we pay?", "By invoice and bank transfer in USD (or EUR on request). Invoices are due within 14 days. Access is activated on payment or, for public bodies, on receipt of the purchase order."],
+      ["How long does the licence run?", "12 months. It renews automatically unless you cancel at least 30 days before the end of the term."],
+      ["Can we add employees later?", "Yes. Additional seats can be booked at any time at the rate of your size band."],
+      ["Can we negotiate the price?", "No. Like Google Workspace or Microsoft 365, RALK uses one published price list for everyone. Volume discounts are already included in the size bands."],
+      ["Is RALK legal advice?", "No. RALK provides training. It supports, but does not replace, your compliance function and legal advice."]
     ],
 
     ctaTitle:"Start training your team this week.",
@@ -165,7 +173,7 @@ const I18N = {
     k1:"domaines de risque couverts", k2:"pour adapter une formation à votre entreprise", k3:"des certificats vérifiables en ligne", k4:"formation sur tout appareil",
     platEyebrow:"La plateforme", platTitle:"Tout ce que demande votre auditeur, au même endroit",
     platLead:"Progression par équipe, module et pays, certificats vérifiables publiquement et rapports à remettre à la direction, aux auditeurs et aux superviseurs.",
-    platPoints:["Tableau de bord en direct par équipe et module","Certificats avec vérification QR","Rapports pour audits et contrôles","Import RH et relances automatiques"],
+    platPoints:["Tableau de bord en direct par équipe et module","Certificats avec vérification QR","Rapports pour audits et contrôles","Import RH et vue par équipe"],
     dashTitle:"Taux de réalisation par module", floatCta:"Diagnostic gratuit",
     stat1:"13 domaines de risque", stat1s:"de la fraude et la corruption aux sanctions, données et cyber",
     stat2:"Par fonction", stat2s:"front office, conformité, direction",
@@ -213,12 +221,20 @@ const I18N = {
     cmpNew:["Toute l'année, modules courts sur tout appareil","13 thèmes de criminalité financière inclus","Sans déplacement, sans quitter les clients","Adapté à chaque fonction, secteur et pays","Certificats vérifiables et rapports d'audit"],
     faqEyebrow:"FAQ", faqTitle:"Vos questions avant de commencer",
     faq:[
-      ["Comment payer ?","Par facture et virement bancaire en USD (ou en EUR sur demande). Les factures sont payables sous 14 jours ; l'accès est activé à réception du paiement ou, pour les organismes publics, du bon de commande."],
-      ["Faut-il une présence sur place ?","Non. Tout se fait en ligne : commande, mise en place, formation et reporting. Notre équipe vous accompagne par e-mail ou visioconférence."],
-      ["Quelles langues sont disponibles ?","Français et anglais. D'autres langues sur demande."],
-      ["Peut-on ajouter des collaborateurs plus tard ?","Oui. Des licences supplémentaires peuvent être ajoutées à tout moment au tarif de votre tranche."],
-      ["Le prix est-il négociable ?","Non. Comme Google Workspace ou Microsoft 365, RALK applique une grille tarifaire publique unique. Les remises sur volume sont déjà intégrées dans les tranches : chaque client bénéficie du même prix équitable."],
-      ["RALK est-il un conseil juridique ?","Non. RALK est une solution de formation. Elle soutient votre fonction conformité sans remplacer un conseil juridique."]
+      ["Combien de temps dure la formation ?", "Chaque collaborateur suit des modules courts d'environ 10 minutes, chacun avec un cas réel et un court test. La formation peut être interrompue et reprise à tout moment, sur tout appareil."],
+      ["Quels thèmes sont couverts ?", "13 domaines de risque : fraude, corruption, sanctions, blanchiment, protection des données, cybersécurité, criminalité liée à l'IA, lanceurs d'alerte et plus. Chaque collaborateur reçoit les modules pertinents pour sa fonction, son secteur et son pays."],
+      ["Le contenu est-il adapté à notre entreprise ?", "Oui. RALK adapte chaque formation à votre secteur, à la réglementation de votre pays et à la fonction de chaque apprenant. Un caissier, un acheteur et un administrateur voient des situations différentes."],
+      ["Comment prouver la formation aux auditeurs et aux superviseurs ?", "Chaque formation réussie donne lieu à un certificat avec QR code, vérifiable en ligne par tous. La direction suit la progression par équipe et par module et exporte des rapports pour les audits et contrôles."],
+      ["La formation doit-elle être renouvelée ?", "Les certificats sont valables 12 mois. Avec chaque licence annuelle, vos équipes suivent une formation actualisée intégrant les nouvelles règles, sanctions et typologies."],
+      ["Comment les collaborateurs accèdent-ils à la plateforme ?", "Vous importez la liste du personnel ou connectez votre SIRH. Les collaborateurs se connectent avec le code entreprise ou leur compte professionnel Microsoft ou Google. Aucune installation n'est nécessaire."],
+      ["Quelles langues sont disponibles ?", "Anglais et français. D'autres langues sur demande."],
+      ["Comment nos données sont-elles protégées ?", "RALK ne traite que les données nécessaires à la formation et aux certificats, conformément au RGPD et à un accord de traitement des données conclu avec votre organisation. L'accès est réservé à vos administrateurs."],
+      ["Peut-on tester RALK avant ?", "Oui. Le diagnostic conformité gratuit de 10 minutes montre où en est votre organisation et de quels modules vos équipes ont besoin."],
+      ["Comment payer ?", "Par facture et virement bancaire en USD (ou en EUR sur demande). Les factures sont payables sous 14 jours. L'accès est activé à réception du paiement ou, pour les organismes publics, du bon de commande."],
+      ["Quelle est la durée de la licence ?", "12 mois. Elle se renouvelle automatiquement, sauf résiliation au moins 30 jours avant la fin de la période."],
+      ["Peut-on ajouter des collaborateurs plus tard ?", "Oui. Des places supplémentaires peuvent être ajoutées à tout moment au tarif de votre tranche."],
+      ["Peut-on négocier le prix ?", "Non. Comme Google Workspace ou Microsoft 365, RALK applique une seule grille tarifaire publique pour tous. Les remises sur volume sont déjà intégrées aux tranches."],
+      ["RALK est-il un conseil juridique ?", "Non. RALK fournit de la formation. Elle soutient votre fonction conformité et vos conseils juridiques, sans les remplacer."]
     ],
 
     ctaTitle:"Formez vos équipes dès cette semaine.",
@@ -349,14 +365,17 @@ function motion(){
   document.querySelectorAll(".count").forEach(el => { el.textContent = "0"; cio.observe(el); });
   const bio = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add("go"); bio.unobserve(e.target); } }), { threshold: .3 });
   document.querySelectorAll(".bars,.rings").forEach(el => bio.observe(el));
-  const sel = "section:not(.hero) .eyebrow, section:not(.hero) h2, section:not(.hero) .lead, section:not(.hero) .card, .chip, .mod, .kpi, .tier, .calc, .taxnote, .incl, .ticks li, .dash, section:not(.hero) .note";
+  const sel = ".band-grid > div:first-child, .grid.g2 > *, section:not(.hero) .eyebrow, section:not(.hero) h2, section:not(.hero) .lead, section:not(.hero) .card, .chip, .mod, .kpi, .tier, .calc, .taxnote, .incl, .ticks li, .dash, section:not(.hero) .note";
   const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }),
     { rootMargin:"0px 0px -8% 0px", threshold:0.08 });
   const seen = new Map();
   document.querySelectorAll(sel).forEach(el => {
     const parent = el.parentElement; const i = seen.get(parent) || 0; seen.set(parent, i + 1);
     el.style.setProperty("--d", Math.min(i, 8) * 0.07 + "s");
-    el.classList.add("rv"); io.observe(el);
+    el.classList.add("rv");
+    if(el.matches(".band-grid > div:first-child, .why .card:nth-child(1), .grid.g2 > :first-child, .calc > .card:first-child")) el.classList.add("rv-l");
+    if(el.matches(".dash, .why .card:nth-child(3), .grid.g2 > :last-child, .calc > .card:last-child")) el.classList.add("rv-r");
+    io.observe(el);
   });
 }
 
