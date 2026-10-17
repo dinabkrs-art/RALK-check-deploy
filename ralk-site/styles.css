@@ -491,3 +491,14 @@ html.fx .rv.rv-l{transform:translateX(-56px)}
 html.fx .rv.rv-r{transform:translateX(56px)}
 html.fx .rv.rv-l.in,html.fx .rv.rv-r.in{transform:none}
 .faq-more{margin-top:8px}
+
+/* Pilot partners */
+.voice-grid{align-items:stretch}
+.voice{position:relative;margin:0;padding:34px 32px 28px;border:1px solid hsl(var(--gold) / .35);border-radius:4px;background:hsl(var(--card));overflow:hidden;
+  box-shadow:0 30px 70px -40px rgba(0,0,0,.9),0 0 0 6px hsl(var(--card)),0 0 0 7px hsl(var(--gold) / .16)}
+.voice .guil-bg path{opacity:.10}
+.voice blockquote{position:relative;margin:0 0 22px;font-size:19px;line-height:1.55;color:hsl(var(--fg))}
+.voice blockquote::before{content:"\201C";display:block;font-size:64px;line-height:.6;height:30px;color:hsl(var(--gold));font-weight:700}
+.voice figcaption{position:relative;display:flex;flex-direction:column;gap:3px;padding-top:16px;border-top:1px solid hsl(var(--gold) / .3)}
+.voice figcaption b{font-size:16px}
+.voice figcaption span{font-size:14px;color:hsl(var(--muted))}
