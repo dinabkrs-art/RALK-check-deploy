@@ -1021,7 +1021,13 @@ const I18N = {
    STATE + APP
    ===================================================================== */
 const STATE = {
-  lang:"en", theme:"light",
+  // ?lang=fr|en from ads and links wins; otherwise follow the browser language.
+  lang:(() => {
+    const p = new URLSearchParams(location.search).get("lang");
+    if (p === "fr" || p === "en") return p;
+    return (navigator.language || "").toLowerCase().startsWith("fr") ? "fr" : "en";
+  })(),
+  theme:"light",
   step:"hero",     // hero | profile | exposure | q0..qN | results
   qIndex:0,
   profile:{company:"",country:"",sector:"",size:""},
