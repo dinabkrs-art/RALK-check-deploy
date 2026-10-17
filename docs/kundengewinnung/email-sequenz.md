@@ -1,72 +1,83 @@
 # E-Mail-Sequenz an Firmen aus öffentlichen Registern (FR + EN)
 
-Drei kurze, persönliche E-Mails an Institute aus `zielkunden-priorisiert.csv` (Priorität A zuerst),
+Drei kurze, persönliche E-Mails (einzeln aus contact@ralk.io gesendet, siehe Abschnitt 2) an Institute aus `zielkunden-priorisiert.csv` (Priorität A zuerst),
 wie in `docs/vertrieb-remote.md` (Kanal C) geplant:
 
 | Mail | Wann | Inhalt |
 |---|---|---|
 | 1 | Tag 0 | Schulungspflicht und Risiko breit (Betrug, Korruption, Sanktionen, Geldwäsche …) + Link zum kostenlosen Check |
 | 2 | Tag 4 | Ein konkretes Praxisbeispiel aus einem öffentlichen FATF-Bericht (keine erfundenen Fälle) |
-| 3 | Tag 8 | Angebot: Testzugang für 3 Mitarbeiter |
+| 3 | Tag 8 | Angebot: kostenloser Testzugang – nur die ersten 2 Module, höchstens 3 Mitarbeiter, 14 Tage |
 
 Wer antwortet, den Check macht oder „stop“ schreibt, bekommt **keine** weitere Mail der Sequenz.
 
 ---
 
-## 1. Rechtliche Hygiene (bitte einhalten)
+## 1. Rechtliche Hygiene – eigene Checkliste vor jedem Versand
 
-Keine Rechtsberatung – vor dem ersten Versand kurz von einer Partnerkanzlei gegenlesen lassen.
+Keine Rechtsberatung, sondern Dinas eigene Prüfliste. Vor jedem Versandtag kurz durchgehen.
 
 - **Nur B2B:** ausschließlich Firmen und Institute, keine Privatpersonen.
 - **Nur zulässige Adressen:** allgemeine Funktions-Adressen (z. B. contact@, info@, compliance@)
   oder geschäftliche Kontakte, die die Firma **selbst öffentlich** auf ihrer Website oder im
   amtlichen Register angibt. Keine geratenen Adressen (vorname.nachname@…), **keine gekauften
   Listen**, keine Adressen aus Datenhändler-Tools.
-- **Herkunft notieren:** Für jede Adresse in Brevo im Feld `QUELLE` festhalten, wo sie steht
-  (URL). Das brauchen wir für Auskunftsanfragen.
-- **Abmeldung sofort beachten:** Jede Mail hat eine Abmeldezeile. Wer „stop“ antwortet oder den
-  Link klickt, wird sofort gesperrt (Brevo macht das beim Link automatisch; bei „stop“-Antworten
-  den Kontakt in Brevo von Hand auf „gesperrt“ setzen).
+- **Herkunft notieren:** Für jede Adresse in der eigenen Kontaktliste (Tabelle, Spalte `QUELLE`)
+  festhalten, wo sie steht (URL). Das brauchen wir für Auskunftsanfragen.
+- **Abmeldung sofort beachten:** Jede Mail endet mit dem Satz „antworten Sie mit ‚stop‘“. Wer
+  „stop“ antwortet, wird sofort in der Kontaktliste als gesperrt markiert und nie wieder
+  angeschrieben (auch nicht später über Brevo).
 - **Absender klar erkennbar:** Name, Firma, E-Mail und Link zu Impressum/Datenschutz in jeder Mail.
 - **Datenschutz:** RALK sitzt in der EU, daher gilt die DSGVO (Werbung an Firmen auf Grundlage des
   berechtigten Interesses, Information über die Datenherkunft – steht in der Fußzeile). Zusätzlich
   gelten die Datenschutzgesetze der Empfängerländer (z. B. Nigeria Data Protection Act 2023,
   Kenya Data Protection Act 2019, Senegal Loi 2008-12, Côte d'Ivoire Loi 2013-450).
-- **Menge klein halten:** am Anfang höchstens 30–50 neue Firmen pro Tag. Das schützt die
+- **Menge klein halten:** höchstens ca. **30 neue Firmen pro Tag**. Das schützt die
   Absender-Domain ralk.io vor dem Spam-Ordner.
-- **Brevo-Regeln beachten:** Brevo verlangt in seinen Nutzungsbedingungen grundsätzlich eine
-  Einwilligung der Empfänger für Marketing-Mails; Kaltakquise kann zur Sperrung des Kontos
-  führen. **Vor dem Start beim Brevo-Support schriftlich nachfragen**, ob B2B-Erstkontakte an
-  öffentliche Funktions-Adressen erlaubt sind. Wenn nein: Mail 1–3 als einzelne, persönliche
-  Mails aus dem Postfach contact@ralk.io senden (≤ 30 pro Tag) und Brevo nur für Personen
-  nutzen, die geantwortet oder den Check gemacht haben.
+- **Kein Massenversand-Tool für Erstkontakte:** Brevo verlangt in seinen Nutzungsbedingungen eine
+  Einwilligung der Empfänger; Kaltakquise über Brevo kann zur Sperrung des Kontos führen. Deshalb
+  gilt die Aufteilung in Abschnitt 2.
 
-## 2. Tool: Brevo (EU-Anbieter, kostenloser Tarif)
+## 2. Versand: Erstkontakt persönlich, Brevo nur nach Einwilligung
 
-Kostenloser Tarif: bis 300 E-Mails pro Tag, ausreichend für den Start.
+### 2a. Mail 1–3 an Register-Firmen: persönlich aus contact@ralk.io
 
-1. Auf **brevo.com** ein Konto mit contact@ralk.io anlegen (Firma: RALK, Land: Deutschland bzw.
-   Firmensitz).
+1. Mails **einzeln** aus dem normalen Postfach **contact@ralk.io** senden (Outlook o. Ä.),
+   **höchstens ca. 30 pro Tag**, keine BCC-Sammelmails.
+2. **Kontaktliste** als Tabelle führen, Spalten: `EMAIL`, `FIRMA`, `LAND`, `REGISTER`
+   (z. B. „Commission Bancaire de l'UMOA“), `QUELLE` (URL), `SPRACHE` (FR/EN), `MAIL1` (Datum),
+   `MAIL2`, `MAIL3`, `ANTWORT`, `GESPERRT`.
+3. Platzhalter in den Texten unten **von Hand ersetzen**: `[Organisation]` = Firmenname,
+   `[Register]` = Name des Registers bzw. der Liste, in der die Firma steht.
+4. **Folge-Mails:** Mail 2 am Tag 4, Mail 3 am Tag 8 – nur wenn bis dahin keine Antwort, kein
+   Check und kein „stop“ kam. Als Antwort auf die eigene erste Mail senden (gleicher Verlauf).
+5. Tipp: Die Texte als **Vorlagen/Schnellbausteine** im Mailprogramm speichern, dann dauert eine
+   Mail unter einer Minute.
+6. Als **reine Text-Mail** schreiben, keine Bilder, kein Newsletter-Design.
+7. **Betreff:** für Mail 1 die zwei Betreffzeilen abwechselnd nutzen und nach ca. 100 Mails die
+   mit mehr Antworten/Klicks behalten.
+
+### 2b. Brevo (EU-Anbieter, kostenloser Tarif): nur für Personen mit Einwilligung
+
+Brevo nur für Kontakte, die **selbst zugestimmt** haben, z. B.:
+- wer den **Quick-Check** gemacht und dabei ausdrücklich angekreuzt hat, Infos von RALK zu
+  erhalten (dafür braucht das Check-Formular ein **nicht vorangekreuztes** Kästchen – Aufgabe für
+  die Website-Session),
+- wer auf eine persönliche Mail mit „ja, gern mehr Infos“ geantwortet hat (Antwort aufbewahren).
+
+Einrichtung:
+1. Auf **brevo.com** ein Konto mit contact@ralk.io anlegen (Firma: RALK, Land: Firmensitz).
 2. **Absender-Domain ralk.io bestätigen:** Brevo → „Absender, Domains & dedizierte IPs“ →
    „Domain hinzufügen“ → Brevo zeigt 2–3 DNS-Einträge (TXT für Brevo-Code, DKIM, DMARC).
    Diese bei **Hostinger** → Domains → ralk.io → DNS-Zone eintragen. (DNS-Änderung = Dina macht
    sie selbst bzw. gibt sie ausdrücklich frei.) Nach ein paar Stunden in Brevo „Bestätigen“.
+   Die DKIM/DMARC-Einträge verbessern auch die Zustellung der persönlichen Mails.
 3. **Absender anlegen:** Name „Dina Boyele Kraus – RALK“, Adresse contact@ralk.io.
-4. **Kontakt-Felder anlegen** (Kontakte → Einstellungen → Attribute): `FIRMA`, `LAND`,
-   `REGISTER` (z. B. „Commission Bancaire de l'UMOA“), `QUELLE` (URL), `SPRACHE` (FR/EN).
-5. **Zwei Listen** anlegen: „Register FR“ und „Register EN“. Kontakte als CSV importieren
-   (Spalten: EMAIL, FIRMA, LAND, REGISTER, QUELLE, SPRACHE).
-6. **Automatisierung** anlegen (Automatisierungen → „Eigenes Szenario“): Auslöser „Kontakt wird
-   zur Liste hinzugefügt“ → Mail 1 → 4 Tage warten → Bedingung „hat nicht geantwortet / nicht
-   abgemeldet“ → Mail 2 → 4 Tage warten → Mail 3. Pro Sprache ein Szenario.
-7. **Als Text-Mail gestalten:** im Editor „Einfacher Text“/„Rich Text“ wählen, kein Newsletter-
-   Design, keine Bilder. Wirkt persönlich und landet seltener im Spam.
-8. **A/B-Betreff:** für Mail 1 die zwei Betreffzeilen unten im A/B-Test laufen lassen; nach
-   100 Versendungen die Variante mit mehr Antworten/Klicks behalten.
-9. **Test:** jede Mail zuerst an die eigene Adresse senden, Links anklicken.
-
-Platzhalter unten in Brevo-Schreibweise: `{{ contact.FIRMA }}`, `{{ contact.REGISTER }}`,
-Abmeldelink `{{ unsubscribe }}`.
+4. **Liste** „Check-Teilnehmer (Einwilligung)“ mit Feldern `FIRMA`, `LAND`, `SPRACHE`,
+   `EINWILLIGUNG` (Datum + Quelle, z. B. „Quick-Check 12.11.“).
+5. Inhalte für diese Liste: Ergebnis-Erläuterung zum Check, neue Module, gelegentliche
+   Praxisbeispiele (Mail 2 eignet sich als Vorlage). Brevo setzt den Abmeldelink automatisch.
+6. **Test:** jede Mail zuerst an die eigene Adresse senden, Links anklicken.
 
 Alle Links tragen UTM-Parameter, damit in den Check- und Bestell-Mails sichtbar ist, dass der
 Kontakt aus dieser Sequenz kommt (`utm_source=email&utm_medium=outreach`).
@@ -80,10 +91,10 @@ Kontakt aus dieser Sequenz kommt (`utm_source=email&utm_medium=outreach`).
 | ID | Feld | Text |
 |---|---|---|
 | FR-M1-A | Betreff | Formation conformité de vos équipes |
-| FR-M1-B | Betreff | {{ contact.FIRMA }} : où vos équipes sont-elles exposées ? |
+| FR-M1-B | Betreff | [Organisation] : où vos équipes sont-elles exposées ? |
 | FR-M2-A | Betreff | Un cas type décrit par le GAFI |
 | FR-M2-B | Betreff | Faux fournisseur, vrai virement |
-| FR-M3-A | Betreff | Un accès d'essai pour 3 collaborateurs ? |
+| FR-M3-A | Betreff | Un essai gratuit de 14 jours pour votre équipe ? |
 | FR-M3-B | Betreff | Dernier message de ma part |
 
 ### Mail 1 (Tag 0)
@@ -91,7 +102,7 @@ Kontakt aus dieser Sequenz kommt (`utm_source=email&utm_medium=outreach`).
 ```text
 Bonjour,
 
-J'ai trouvé {{ contact.FIRMA }} dans la liste publiée par {{ contact.REGISTER }} et je me permets de vous écrire directement.
+J'ai trouvé [Organisation] dans la liste publiée par [Register] et je me permets de vous écrire directement.
 
 Fraude, corruption, sanctions, blanchiment, fuite de données, cyberattaques : ce sont vos collaborateurs qui voient les signaux en premier. Les standards du GAFI (Recommandation 18) et les lois nationales prévoient leur formation régulière, et les autorités de contrôle demandent à en voir la preuve.
 
@@ -105,7 +116,7 @@ Dina Boyele Kraus
 Fondatrice, RALK – experte en conformité financière, MBA Compliance & Risk Management
 contact@ralk.io · https://ralk.io/fr
 
-Votre adresse provient du site web public de votre organisation ou du registre cité ci-dessus. Pour ne plus recevoir de messages : répondez « stop » ou cliquez ici : {{ unsubscribe }}
+Votre adresse provient du site web public de votre organisation ou du registre cité ci-dessus. Pour ne plus recevoir de messages, répondez simplement « stop ».
 Mentions légales : https://ralk.io/imprint · Données personnelles : https://check.ralk.io/privacy
 ```
 
@@ -132,7 +143,7 @@ Bien cordialement,
 Dina Boyele Kraus
 RALK · contact@ralk.io · https://ralk.io/fr
 
-Pour ne plus recevoir de messages : répondez « stop » ou cliquez ici : {{ unsubscribe }}
+Pour ne plus recevoir de messages, répondez simplement « stop ».
 ```
 
 **Variante für Bergbau/Rohstoffe** (nur wenn die Firma im Rohstoffsektor ist), statt des
@@ -148,17 +159,17 @@ Le GAFI a consacré un rapport aux risques liés à l'or (« Money laundering an
 ```text
 Bonjour,
 
-Dernier message de ma part sur ce sujet : souhaitez-vous que j'ouvre un accès d'essai gratuit pour 3 collaborateurs de {{ contact.FIRMA }} ? Ils pourront suivre les modules (fraude, corruption, sanctions, LBC/FT, données, cyber…) et vous verrez les rapports.
+Dernier message de ma part sur ce sujet : souhaitez-vous que j'ouvre un accès d'essai gratuit de 14 jours pour [Organisation] ? L'essai comprend les 2 premiers modules, pour 3 collaborateurs au maximum, et vous verrez les rapports de suivi.
 
-Une simple réponse « oui » suffit, avec les adresses e-mail des 3 personnes.
+Une simple réponse « oui » suffit, avec les adresses e-mail des personnes (3 au maximum).
 
-Nos tarifs sont publics et identiques pour tous : https://ralk.io/fr?utm_source=email&utm_medium=outreach&utm_campaign=register_fr&utm_content=mail3#pricing
+La licence complète couvre 13 thèmes (fraude, corruption, sanctions, LBC/FT, données, cyber…). Nos tarifs sont publics et identiques pour tous : https://ralk.io/fr?utm_source=email&utm_medium=outreach&utm_campaign=register_fr&utm_content=mail3#pricing
 
 Bien cordialement,
 Dina Boyele Kraus
 RALK · contact@ralk.io · https://ralk.io/fr
 
-Pour ne plus recevoir de messages : répondez « stop » ou cliquez ici : {{ unsubscribe }}
+Pour ne plus recevoir de messages, répondez simplement « stop ».
 ```
 
 ---
@@ -170,10 +181,10 @@ Pour ne plus recevoir de messages : répondez « stop » ou cliquez ici : {{ uns
 | ID | Feld | Text |
 |---|---|---|
 | EN-M1-A | Betreff | Compliance training for your staff |
-| EN-M1-B | Betreff | {{ contact.FIRMA }}: where are your staff exposed? |
+| EN-M1-B | Betreff | [Organisation]: where are your staff exposed? |
 | EN-M2-A | Betreff | A typical case described by the FATF |
 | EN-M2-B | Betreff | Fake supplier, real payment |
-| EN-M3-A | Betreff | Trial access for 3 employees? |
+| EN-M3-A | Betreff | A free 14-day trial for your team? |
 | EN-M3-B | Betreff | My last message on this |
 
 ### Mail 1 (Tag 0)
@@ -181,7 +192,7 @@ Pour ne plus recevoir de messages : répondez « stop » ou cliquez ici : {{ uns
 ```text
 Hello,
 
-I found {{ contact.FIRMA }} in the list published by {{ contact.REGISTER }} and wanted to write to you directly.
+I found [Organisation] in the list published by [Register] and wanted to write to you directly.
 
 Fraud, bribery, sanctions, money laundering, data leaks, cyber attacks: your employees are the first to see the warning signs. The FATF standards (Recommendation 18) and national laws expect them to be trained regularly, and supervisors ask to see the evidence.
 
@@ -195,7 +206,7 @@ Dina Boyele Kraus
 Founder, RALK – financial-crime compliance expert, MBA Compliance & Risk Management
 contact@ralk.io · https://ralk.io
 
-Your address comes from your organisation's public website or the register named above. To stop receiving messages, reply "stop" or click here: {{ unsubscribe }}
+Your address comes from your organisation's public website or the register named above. To stop receiving messages, simply reply "stop".
 Legal notice: https://ralk.io/imprint · Privacy: https://check.ralk.io/privacy
 ```
 
@@ -217,7 +228,7 @@ Kind regards,
 Dina Boyele Kraus
 RALK · contact@ralk.io · https://ralk.io
 
-To stop receiving messages, reply "stop" or click here: {{ unsubscribe }}
+To stop receiving messages, simply reply "stop".
 ```
 
 **Variante für Bergbau/Rohstoffe** (Quelle wie oben, FATF/APG 2015):
@@ -231,17 +242,17 @@ The FATF has published a report on the risks linked to gold ("Money laundering a
 ```text
 Hello,
 
-My last message on this: would you like me to open a free trial access for 3 employees of {{ contact.FIRMA }}? They can take the modules (fraud, bribery, sanctions, AML, data protection, cyber…) and you will see the reports.
+My last message on this: would you like me to open a free 14-day trial for [Organisation]? The trial covers the first 2 modules for up to 3 employees, and you will see the progress reports.
 
-A simple "yes" is enough, with the email addresses of the 3 people.
+A simple "yes" is enough, with the email addresses of the people (up to 3).
 
-Our prices are public and the same for everyone: https://ralk.io/?utm_source=email&utm_medium=outreach&utm_campaign=register_en&utm_content=mail3#pricing
+The full licence covers 13 topics (fraud, bribery, sanctions, AML, data protection, cyber…). Our prices are public and the same for everyone: https://ralk.io/?utm_source=email&utm_medium=outreach&utm_campaign=register_en&utm_content=mail3#pricing
 
 Kind regards,
 Dina Boyele Kraus
 RALK · contact@ralk.io · https://ralk.io
 
-To stop receiving messages, reply "stop" or click here: {{ unsubscribe }}
+To stop receiving messages, simply reply "stop".
 ```
 
 ---

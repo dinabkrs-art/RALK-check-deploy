@@ -1,6 +1,7 @@
-# Meta-Anzeigen (Facebook/Instagram) und WhatsApp Business
+# WhatsApp Business (organisch, ohne bezahlte Anzeigen)
 
 Erklärungen auf Deutsch, alle Kundentexte auf Französisch (FR) und Englisch (EN).
+(Der Dateiname enthält noch „meta“, weil das Prüfskript ihn so erwartet.)
 Alle Texte in den Tabellen „ID | Feld | Text“ und in den grauen Textblöcken werden von
 `google-ads/validate.py` auf Länge und verbotene Wörter geprüft.
 
@@ -13,98 +14,12 @@ Alle Texte in den Tabellen „ID | Feld | Text“ und in den grauen Textblöcken
 
 ---
 
-## 1. Meta-Anzeigen
+## 1. Keine Meta-Anzeigen
 
-> **Sparvariante:** Zuerst nur der 14-Tage-Test „Klick zu WhatsApp“ (FR-3, EN-3) mit 3 USD/Tag.
-> Alles andere in diesem Abschnitt ist Vorrat für später.
-
-**Längen:** Primärtext ≤ 125 Zeichen (sonst schneidet Meta mit „… mehr“ ab),
-Überschrift ≤ 40, Beschreibung ≤ 30.
-
-**Ziel-Links (immer mit UTM, damit man im Postfach sieht, woher der Check/Auftrag kommt):**
-
-| Anzeige | Link |
-|---|---|
-| FR-1, FR-4 | `https://check.ralk.io/?lang=fr&utm_source=meta&utm_medium=paid_social&utm_campaign=ralk_fr&utm_content=fr1` (bzw. `fr4`) |
-| FR-2 | `https://ralk.io/fr?utm_source=meta&utm_medium=paid_social&utm_campaign=ralk_fr&utm_content=fr2#pricing` |
-| FR-3 | Ziel „WhatsApp“ (Klick-zu-WhatsApp), keine URL |
-| EN-1, EN-4 | `https://check.ralk.io/?lang=en&utm_source=meta&utm_medium=paid_social&utm_campaign=ralk_en&utm_content=en1` (bzw. `en4`) |
-| EN-2 | `https://ralk.io/?utm_source=meta&utm_medium=paid_social&utm_campaign=ralk_en&utm_content=en2#pricing` |
-| EN-3 | Ziel „WhatsApp“ (Klick-zu-WhatsApp), keine URL |
-
-### Französisch
-
-| ID | Feld | Text |
-|---|---|---|
-| FR-1 | Primärtext | Fraude, corruption, sanctions, cyber : où vos équipes sont-elles exposées ? Faites le check gratuit en 10 minutes. |
-| FR-1 | Überschrift | Check de risque gratuit en 10 minutes |
-| FR-1 | Beschreibung | Résultat immédiat |
-| FR-2 | Primärtext | Formez tous vos collaborateurs à la conformité : 13 thèmes, certificats inclus, dès 45 USD par personne et par an. |
-| FR-2 | Überschrift | Licence e-learning conformité |
-| FR-2 | Beschreibung | Prix publics et fixes |
-| FR-3 | Primärtext | Une question sur la formation conformité de vos équipes ? Écrivez-nous directement sur WhatsApp. |
-| FR-3 | Überschrift | Parlons-en sur WhatsApp |
-| FR-3 | Beschreibung | Réponse en français |
-| FR-4 | Primärtext | Mines, énergie, télécoms, ONG : la fraude, la corruption et les sanctions vous concernent aussi. Testez vos risques. |
-| FR-4 | Überschrift | Conformité : formez chaque fonction |
-| FR-4 | Beschreibung | 13 thèmes, une licence |
-
-Button: FR-1/FR-4 „En savoir plus“, FR-2 „Voir les tarifs“ (falls nicht vorhanden: „En savoir plus“), FR-3 „Envoyer un message WhatsApp“.
-
-### Englisch
-
-| ID | Feld | Text |
-|---|---|---|
-| EN-1 | Primärtext | Fraud, bribery, sanctions, cyber: where are your staff exposed? Take the free 10-minute risk check. |
-| EN-1 | Überschrift | Free 10-minute compliance risk check |
-| EN-1 | Beschreibung | Instant result |
-| EN-2 | Primärtext | Train every employee in financial-crime compliance: 13 topics, certificates included, from USD 45 per person per year. |
-| EN-2 | Überschrift | Compliance e-learning licence |
-| EN-2 | Beschreibung | Fixed public prices |
-| EN-3 | Primärtext | Questions about compliance training for your staff? Message us directly on WhatsApp. |
-| EN-3 | Überschrift | Let's talk on WhatsApp |
-| EN-3 | Beschreibung | Answers in English |
-| EN-4 | Primärtext | Mining, energy, telecoms, NGOs: fraud, bribery and sanctions risks apply to you too. Check your exposure. |
-| EN-4 | Überschrift | Compliance training for every role |
-| EN-4 | Beschreibung | 13 topics, one licence |
-
-Button: EN-1/EN-4 „Learn more“, EN-2 „See pricing“/„Learn more“, EN-3 „Send WhatsApp message“.
-
-**Bild/Video:** Logo von ralk.io, ruhiges Business-Motiv (Büro, Team am Laptop), Text im Bild
-höchstens eine Zeile („Check gratuit – 10 min“ / „Free check – 10 min“). Keine Flaggen, keine
-Landkarten (Regel: keine Region im Kundentext).
-
-### Targeting (Vorschlag)
-
-| Kampagne | Länder | Sprache |
-|---|---|---|
-| RALK FR (Meta) | Senegal, Côte d'Ivoire, Kamerun, Benin, Togo, Burkina Faso, Mali, Niger, Gabun, Kongo (Brazzaville), DR Kongo, Guinea, Madagaskar, Tschad, Zentralafrikanische Republik, Burundi | Französisch |
-| RALK EN (Meta) | Nigeria, Kenia, Ghana, Uganda, Tansania, Ruanda, Sambia, Südafrika, Botswana, Malawi, Sierra Leone, Gambia, Liberia, Namibia, Simbabwe, Mauritius | Englisch |
-
-- **Alter:** 25–60. **Standort-Option:** „Personen, die an diesem Ort leben oder sich kürzlich dort aufgehalten haben“.
-- **Detailliertes Targeting – Interessen** (je Anzeigengruppe 5–10 auswählen, Meta schlägt
-  Ähnliches vor): Regulatory compliance, Compliance, Risk management, Anti-money laundering,
-  Internal audit, Corporate governance, Banking, Microfinance, Mobile money, Financial services,
-  Fintech, Insurance, Mining, Petroleum industry, Telecommunications, Human resources,
-  Training and development, Business ethics.
-- **Berufsbezeichnungen** (falls Meta sie im Konto anbietet, unter „Demografische Angaben →
-  Beruf“): Compliance Officer, Chief Compliance Officer, Risk Manager, Internal Auditor,
-  Head of HR, HR Manager, Training Manager, Managing Director, Chief Financial Officer;
-  FR: Responsable conformité, Directeur des risques, Auditeur interne, DRH, Directeur général.
-- **Platzierungen:** Facebook- und Instagram-Feed, Stories. Audience Network ausschließen
-  (bringt viele Fehlklicks).
-- **Sonderkategorie:** Keine. Es wird eine Schulung beworben, kein Kredit oder Finanzprodukt.
-  Falls Meta trotzdem „Finanzprodukte und -dienstleistungen“ verlangt: annehmen, das Targeting
-  wird dann nur breiter.
-- **Budget (Sparvariante, Dinas Vorgabe):** Meta ist **optional**. Wenn überhaupt, nur ein
-  **Klick-zu-WhatsApp-Test** mit FR-3 und EN-3: **3 USD pro Tag insgesamt (Vorschlag: 2 USD FR-3, 1 USD EN-3), 14 Tage, danach
-  automatisch beenden** (beim Anlegen ein Enddatum setzen, Gesamtkosten max. ca. 42 USD). Die Anzeigen
-  FR-1/2/4 und EN-1/2/4 liegen bereit für später, wenn der Test Gespräche bringt.
-  Stopp-Regel: Kommt nach 20 USD Ausgaben kein einziges WhatsApp-Gespräch mit einer Firma,
-  Test sofort beenden.
-- **Optimierung:** Solange kein Meta-Pixel auf ralk.io und check.ralk.io ist, auf
-  „Link-Klicks“ optimieren (WhatsApp-Anzeigen: „Unterhaltungen“). Mit Pixel (Website-Session,
-  mit Cookie-Einwilligung) später auf „Leads“ umstellen.
+Dinas Entscheidung: **keine bezahlten Meta-Anzeigen** (auch kein Test „Klick zu WhatsApp“).
+Das gesamte Werbebudget (50 EUR/Monat) geht in die Google-Suche (`google-ads/LIESMICH.md`).
+WhatsApp Business wird nur **organisch** genutzt: Profil, Katalog, Begrüßung und
+Schnellantworten unten; die Nummer kann in Mail-Signaturen, LinkedIn-Beiträgen und auf ralk.io genannt werden.
 
 ---
 
@@ -197,7 +112,7 @@ und das Kürzel wählen.
 | QR-FR-5 | WA-Kürzel | /paiement |
 | QR-FR-5 | WA-Schnellantwort | Paiement sur facture par virement en USD (EUR sur demande), à 14 jours. Les prix sont nets : une éventuelle retenue à la source est à la charge du client. |
 | QR-FR-6 | WA-Kürzel | /essai |
-| QR-FR-6 | WA-Schnellantwort | Nous pouvons ouvrir un accès d'essai pour 3 collaborateurs. Envoyez-nous le nom de votre organisation et les adresses e-mail des 3 personnes. |
+| QR-FR-6 | WA-Schnellantwort | Nous pouvons ouvrir un accès d'essai gratuit de 14 jours aux 2 premiers modules, pour 3 collaborateurs au maximum. Envoyez-nous le nom de votre organisation et les adresses e-mail des personnes (3 au maximum). |
 | QR-FR-7 | WA-Kürzel | /prixfixe |
 | QR-FR-7 | WA-Schnellantwort | Nos prix sont les mêmes pour tous les clients et ne se négocient pas : les remises de volume sont déjà comprises dans les tranches. |
 | QR-EN-1 | WA-Kürzel | /price |
@@ -211,9 +126,10 @@ und das Kürzel wählen.
 | QR-EN-5 | WA-Kürzel | /payment |
 | QR-EN-5 | WA-Schnellantwort | Payment by invoice and bank transfer in USD (EUR on request), due within 14 days. Prices are net: any withholding tax is borne by the customer. |
 | QR-EN-6 | WA-Kürzel | /trial |
-| QR-EN-6 | WA-Schnellantwort | We can open a trial access for 3 employees. Send us your organisation's name and the email addresses of the 3 people. |
+| QR-EN-6 | WA-Schnellantwort | We can open a free 14-day trial of the first 2 modules for up to 3 employees. Send us your organisation's name and the email addresses of the people (up to 3). |
 | QR-EN-7 | WA-Kürzel | /fixedprice |
 | QR-EN-7 | WA-Schnellantwort | Our prices are the same for every customer and are not negotiated: volume discounts are already built into the size bands. |
 
-**Wichtig:** Das Testzugang-Angebot (/essai, /trial) nur aktivieren, wenn Testzugänge in
-app.ralk.io tatsächlich angelegt werden können (siehe startplan.md).
+**Testzugang (Dinas Vorgabe):** nur die **ersten 2 Module**, für **höchstens 3 Mitarbeiter**,
+**14 Tage**. Nie „alle Module“ anbieten. Die Schnellantworten /essai und /trial erst aktivieren,
+wenn solche Testzugänge in app.ralk.io tatsächlich angelegt werden können (siehe startplan.md).

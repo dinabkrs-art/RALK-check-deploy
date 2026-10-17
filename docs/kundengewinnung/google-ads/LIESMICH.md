@@ -4,20 +4,42 @@ Alles ist vorbereitet: 2 Kampagnen, 22 Anzeigengruppen, 144 Keywords, 22 Anzeige
 76 ausschließende Keywords. Die Kampagnen werden **pausiert** importiert – es kostet nichts,
 bis Sie sie selbst einschalten.
 
+**Budget (Dinas Vorgabe): insgesamt 50 EUR im Monat**, nur Google-Suche. Keine Meta-Anzeigen.
+Damit das kleine Budget nicht verpufft, sind je Sprache nur **4 Anzeigengruppen aktiv**, die
+übrigen 7 werden pausiert importiert (Vorrat für später).
+
 ## Was in den Dateien steckt
 
 | Datei | Inhalt |
 |---|---|
-| `1-kampagnen.csv` | „RALK FR – Afrique francophone“ (Französisch, 7 USD/Tag) und „RALK EN – Anglophone Africa“ (Englisch, 5 USD/Tag). Nur Google-Suche, „Klicks maximieren“ mit max. 0,60 USD pro Klick, Mo–Fr 07–19 Uhr. |
+| `1-kampagnen.csv` | „RALK FR – Afrique francophone“ (Französisch, 1,00 EUR/Tag) und „RALK EN – Anglophone Africa“ (Englisch, 0,65 EUR/Tag). Nur Google-Suche, „Klicks maximieren“ mit max. 0,60 EUR pro Klick, Mo–Fr 07–19 Uhr. |
 | `2-standorte.csv` | Länder je Kampagne (als Google-Standort-ID, Liste unten) |
-| `3-anzeigengruppen.csv` | 11 Themen je Sprache: Geldwäsche, Sanktionen, Betrug, Korruption, Datenschutz, Cyber, KYC, Whistleblowing, Compliance allgemein, Bergbau/Rohstoffe, Preise |
+| `3-anzeigengruppen.csv` | 11 Themen je Sprache. **Aktiv (4):** Compliance allgemein (e-learning), Geldwäsche (LBC-FT / AML-CFT), Korruption (Anti-corruption / Anti-bribery), Preise. **Pausiert (7):** Sanktionen, Betrug, Datenschutz, Cyber, KYC, Whistleblowing, Bergbau/Rohstoffe (Begründung unten). |
 | `4-keywords.csv` | nur Suchbegriffe mit Kaufabsicht („formation …“, „… training“, „e-learning …“), je als Wortgruppe und genau passend |
 | `5-auszuschliessende-keywords.csv` | Begriffe, bei denen die Anzeige **nicht** erscheint (Jobs, Praktikum, gratis, PDF, Master, Diplom, Uni …) |
 | `6-anzeigen.csv` | je Anzeigengruppe eine responsive Suchanzeige mit 15 Titeln und 4 Beschreibungen |
 | `validate.py` | Prüfskript: Längen, verbotene Wörter, Links (siehe unten) |
 
-Kosten: höchstens ca. **365 USD im Monat** (7 + 5 USD × 30,4 Tage). Google darf an einzelnen
-Tagen etwas mehr ausgeben, im Monat aber nicht mehr als dieses Limit.
+Kosten: höchstens ca. **50 EUR im Monat** (1,00 + 0,65 EUR × 30,4 Tage = 50,16 EUR). Google darf
+an einzelnen Tagen etwas mehr ausgeben, im Monat aber nicht mehr als dieses Limit. Bei 0,60 EUR
+pro Klick sind das nur ca. 2–3 Klicks pro Werktag – deshalb die Konzentration auf wenige Gruppen.
+
+### Warum nur diese 4 Anzeigengruppen aktiv sind
+
+| Gruppe | Status | Grund |
+|---|---|---|
+| Compliance allgemein (e-learning) | aktiv | Wer „formation conformité en ligne“ / „compliance training for employees“ sucht, sucht genau unser Produkt. |
+| Geldwäsche (LBC-FT / AML-CFT) | aktiv | Gesetzliche Schulungspflicht bei Banken, Mikrofinanz, E-Geld – höchste Kaufabsicht. Die Anzeigen nennen trotzdem auch Betrug, Korruption, Sanktionen. |
+| Korruption (Anti-corruption / Anti-bribery) | aktiv | Firmen aller Branchen (auch Bergbau, Energie, Telekom) suchen das als Schulung für Mitarbeiter. |
+| Preise | aktiv | Wer nach Preis/Lizenz sucht, steht kurz vor der Entscheidung. |
+| Betrug | pausiert | Viele Suchen kommen von Betroffenen („fraude bancaire“, „fraud report“), nicht von Firmen, die schulen wollen. Das Thema steht ohnehin in allen aktiven Anzeigen. |
+| Sanktionen, KYC | pausiert | Überschneiden sich stark mit Geldwäsche; zuerst sehen, ob die Geldwäsche-Gruppe Checks bringt. |
+| Datenschutz, Cyber | pausiert | Hier werben viele große Anbieter, Klicks sind teurer, Suchende wollen oft Zertifikate für sich selbst. |
+| Whistleblowing | pausiert | Sehr wenige Suchen mit Kaufabsicht in den Zielländern. |
+| Bergbau/Rohstoffe | pausiert (FR und EN) | Die Suchbegriffe („formation conformité secteur minier“, „mining compliance training“) haben gute Absicht, werden aber fast nie gesucht; die Variante „pétrole et gaz“ zieht eher Jobsuchende an. Bergbaufirmen erreichen wir besser direkt: die neuen Bergbau-Verzeichnisse (Chambers of Mines, Bergbauregister, EITI-Berichte) stehen in `zielkunden-priorisiert.csv` und in der Excel-Tabelle. |
+
+Pausierte Gruppen erst einschalten, wenn eine aktive Gruppe nach der Stopp-Regel pausiert wurde
+oder das Budget erhöht wird.
 
 Links in den Anzeigen: Themen-Anzeigen führen zum kostenlosen Check
 (`https://check.ralk.io/?lang=fr&utm_source=google&utm_medium=cpc&utm_campaign=ralk_fr&utm_content=<Thema>`),
@@ -41,8 +63,10 @@ Bestell-Mail steht dann, aus welcher Kampagne und Anzeigengruppe der Kontakt kam
 1. ads.google.com öffnen → „Jetzt starten“ → mit dem Google-Konto anmelden, das RALK gehören soll.
 2. Google will sofort eine Kampagne erstellen: unten auf **„Zum Expertenmodus wechseln“** und dann
    **„Konto ohne Kampagne erstellen“** klicken.
-3. Land der Rechnungsadresse, **Zeitzone „(GMT+01:00) Lagos“** und **Währung „US-Dollar (USD)“**
-   wählen. Achtung: Zeitzone und Währung lassen sich später **nicht** mehr ändern.
+3. Land der Rechnungsadresse, **Zeitzone „(GMT+01:00) Lagos“** und **Währung „Euro (EUR)“**
+   wählen. Achtung: Zeitzone und Währung lassen sich später **nicht** mehr ändern. Alle Beträge in
+   den Dateien (Tagesbudget, max. Klickpreis) sind EUR-Beträge – sie stimmen nur, wenn das Konto
+   in EUR geführt wird.
 
 ### 2. Zahlungsmethode hinterlegen
 Abrechnung → Einstellungen → Firmenkarte oder Lastschrift eintragen, „Automatische Zahlungen“.
@@ -70,7 +94,9 @@ Danach in jeder Kampagne kurz prüfen (Kampagne anklicken, rechts die Einstellun
 - **Sprache:** FR-Kampagne Französisch, EN-Kampagne Englisch.
 - **Standorte:** Liste unten; Option „Präsenz: Personen, die sich an Ihren Zielorten befinden
   oder regelmäßig dort aufhalten“.
-- **Gebotsstrategie:** „Klicks maximieren“, **maximales CPC-Gebot 0,60 USD**.
+- **Gebotsstrategie:** „Klicks maximieren“, **maximales CPC-Gebot 0,60 EUR**.
+- **Budget:** FR 1,00 EUR/Tag, EN 0,65 EUR/Tag.
+- **Anzeigengruppen:** je Kampagne genau 4 aktiv (siehe Tabelle oben), 7 pausiert.
 - **Werbezeitplaner:** Montag–Freitag, 07:00–19:00.
 - **Geräte:** nichts ändern (die Kampagnen sind reine Suchkampagnen, App-Platzierungen gibt es
   dort nicht).
@@ -101,8 +127,10 @@ EN-Kampagne aktivieren, die FR-Kampagne direkt danach. Google prüft die Anzeige
 1. **Suchbegriffe:** Kampagne → Keywords → **Suchbegriffe**. Alles, was nicht passt (Jobsuche,
    Studium, kostenlos, falsches Thema), markieren → „Als ausschließendes Keyword hinzufügen“
    (Ebene: Kampagne).
-2. **Stopp-Regel:** Jede Anzeigengruppe, die **nach 40 USD Ausgaben keinen einzigen Check**
-   gebracht hat, pausieren (Checks = Mails mit dieser Anzeigengruppe in `utm_content`).
+2. **Stopp-Regel:** Jede Anzeigengruppe, die **nach 10 EUR Ausgaben keinen einzigen Check**
+   gebracht hat, pausieren (Checks = Mails mit dieser Anzeigengruppe in `utm_content`). Statt ihr
+   eine pausierte Gruppe derselben Sprache einschalten (Vorschlag der Reihenfolge: Sanktionen,
+   Betrug, Datenschutz).
 3. **Zahlen notieren** (Tabelle in startplan.md): Kosten, Klicks, Checks, Bestellungen,
    Kosten pro Check.
 4. **Anzeigen-Status:** „Abgelehnt“ oder „Eingeschränkt“? Grund anklicken und an Claude geben.
