@@ -20,13 +20,21 @@ const PRICING = {
   ],
   minimumAnnual: 5000
 };
-function rateFor(n){ return PRICING.tiers.find(t => n <= t.max).rate; }
+function tierIndex(n){ return PRICING.tiers.findIndex(t => n <= t.max); }
+function rateFor(n){ return PRICING.tiers[tierIndex(n)].rate; }
+/* Fixed price list, no negotiation. Moving into a cheaper size band never
+   makes the licence cheaper than the largest organisation of the band below
+   (no price cliff at 4,001 or 8,000 employees). */
 function quote(n){
   n = Math.max(1, Math.floor(Number(n) || 0));
-  const rate = rateFor(n);
+  const i = tierIndex(n), rate = PRICING.tiers[i].rate;
   const list = n * rate;
-  const total = Math.max(list, PRICING.minimumAnnual);
-  return { seats:n, rate, list, total, minimumApplied: total > list };
+  const bandFloor = PRICING.tiers.slice(0, i).reduce((m, t) => Math.max(m, t.max * t.rate), 0);
+  const total = Math.max(list, bandFloor, PRICING.minimumAnnual);
+  return { seats:n, rate, list, total,
+           minimumApplied: total === PRICING.minimumAnnual && total > list,
+           bandFloorApplied: total === bandFloor && total > list,
+           effective: total / n };
 }
 function money(v){
   const lang = getLang();
@@ -75,11 +83,12 @@ const I18N = {
     t1:"Up to 4,000 employees", t2:"4,001 – 7,999 employees", t3:"8,000+ employees",
     incl:["All 13 modules","Role-based AI training","Certificates & verification","Manager dashboard & reports","HR import","Email support"],
     inclBig:"Plus dedicated onboarding contact",
-    minNote:"Minimum annual licence: USD 5,000.",
+    minNote:"Minimum annual licence: USD 5,000. When an organisation grows into a cheaper band, its licence never costs less than the largest organisation of the band below.",
+    fixedNote:"Fixed published prices — the same for every customer. Volume discounts are already built in; there are no individual discounts.",
     taxNote:"All prices are net amounts in USD. Any withholding tax or similar levy in the customer's country is the sole responsibility of the customer and is borne in addition to the price, so that RALK as the contractor receives the full invoiced amount.",
     calcTitle:"Calculate your licence", calcLabel:"Number of employees to train",
     calcRate:"Rate per employee", calcTotal:"Annual licence", calcMin:"Minimum annual licence applies",
-    calcBuy:"Continue to order",
+    calcBuy:"Continue to order", calcFloor:"Band transition rule applies", calcEff:"Effective price per employee",
 
     faqEyebrow:"FAQ", faqTitle:"Questions before you start",
     faq:[
@@ -88,6 +97,7 @@ const I18N = {
       ["Do we need anyone on site?","No. Everything runs online: ordering, onboarding, training and reporting. Our team supports you by email or video call."],
       ["Which languages are available?","English and French. Further languages on request."],
       ["Can we add employees later?","Yes. Additional seats can be booked at any time at the rate of your size band."],
+      ["Can we negotiate the price?","No. Like Google Workspace or Microsoft 365, RALK uses one published price list for everyone. Volume discounts are already included in the size bands, so every customer gets the same fair price."],
       ["Is RALK legal advice?","No. RALK provides training. It supports, but does not replace, your compliance function and legal advice."]
     ],
 
@@ -157,11 +167,12 @@ const I18N = {
     t1:"Jusqu'à 4 000 collaborateurs", t2:"4 001 – 7 999 collaborateurs", t3:"8 000 collaborateurs et plus",
     incl:["Les 13 modules","Formation IA par fonction","Certificats & vérification","Tableau de bord & rapports","Import RH","Support par e-mail"],
     inclBig:"Plus un interlocuteur dédié pour la mise en place",
-    minNote:"Licence annuelle minimale : 5 000 USD.",
+    minNote:"Licence annuelle minimale : 5 000 USD. Lorsqu'une organisation passe dans une tranche moins chère, sa licence ne coûte jamais moins que celle de la plus grande organisation de la tranche précédente.",
+    fixedNote:"Prix fixes et publics — identiques pour tous les clients. Les remises sur volume sont déjà intégrées ; il n'y a pas de remise individuelle.",
     taxNote:"Tous les prix s'entendent nets, en USD. Toute retenue à la source ou taxe similaire applicable dans le pays du client est à la charge exclusive du client et s'ajoute au prix, de sorte que RALK, en tant que prestataire, perçoive l'intégralité du montant facturé.",
     calcTitle:"Calculez votre licence", calcLabel:"Nombre de collaborateurs à former",
     calcRate:"Tarif par collaborateur", calcTotal:"Licence annuelle", calcMin:"La licence annuelle minimale s'applique",
-    calcBuy:"Passer à la commande",
+    calcBuy:"Passer à la commande", calcFloor:"Règle de passage de tranche appliquée", calcEff:"Prix effectif par collaborateur",
 
     faqEyebrow:"FAQ", faqTitle:"Vos questions avant de commencer",
     faq:[
@@ -170,6 +181,7 @@ const I18N = {
       ["Faut-il une présence sur place ?","Non. Tout se fait en ligne : commande, mise en place, formation et reporting. Notre équipe vous accompagne par e-mail ou visioconférence."],
       ["Quelles langues sont disponibles ?","Français et anglais. D'autres langues sur demande."],
       ["Peut-on ajouter des collaborateurs plus tard ?","Oui. Des licences supplémentaires peuvent être ajoutées à tout moment au tarif de votre tranche."],
+      ["Le prix est-il négociable ?","Non. Comme Google Workspace ou Microsoft 365, RALK applique une grille tarifaire publique unique. Les remises sur volume sont déjà intégrées dans les tranches : chaque client bénéficie du même prix équitable."],
       ["RALK est-il un conseil juridique ?","Non. RALK est une solution de formation. Elle soutient votre fonction conformité sans remplacer un conseil juridique."]
     ],
 

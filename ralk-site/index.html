@@ -114,6 +114,7 @@
         </div>
       </div>
       <p class="hint" style="margin-top:14px" data-i18n="minNote"></p>
+      <p class="hint" style="margin-top:6px;font-weight:600" data-i18n="fixedNote"></p>
       <div class="taxnote" data-i18n="taxNote"></div>
 
       <div class="calc">
@@ -129,6 +130,8 @@
           <div class="sub" data-i18n="calcTotal"></div>
           <div class="big" id="calcTotal"></div>
           <div class="sub" id="calcMin" hidden data-i18n="calcMin"></div>
+          <div class="sub" id="calcFloor" hidden data-i18n="calcFloor"></div>
+          <div class="sub"><span data-i18n="calcEff"></span>: <b id="calcEff"></b></div>
           <div style="margin-top:16px"><a class="btn" id="calcBuy" href="/order" data-i18n="calcBuy"></a></div>
         </div>
       </div>
@@ -179,6 +182,8 @@ function updateCalc(){
   document.getElementById("calcRate").textContent = money(q.rate);
   document.getElementById("calcTotal").textContent = money(q.total);
   document.getElementById("calcMin").hidden = !q.minimumApplied;
+  document.getElementById("calcFloor").hidden = !q.bandFloorApplied;
+  document.getElementById("calcEff").textContent = new Intl.NumberFormat(getLang()==="fr"?"fr-FR":"en-US",{style:"currency",currency:"USD",minimumFractionDigits:2}).format(q.effective);
   document.getElementById("calcBuy").href = "/order?seats=" + q.seats;
 }
 document.addEventListener("ralk:lang", renderLists);

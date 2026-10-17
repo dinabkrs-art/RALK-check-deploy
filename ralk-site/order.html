@@ -66,6 +66,7 @@
             <tr class="total"><td data-i18n="sumTotal"></td><td id="sTotal">–</td></tr>
           </table>
           <p class="hint" id="sMin" hidden data-i18n="calcMin"></p>
+          <p class="hint" id="sFloor" hidden data-i18n="calcFloor"></p>
           <p class="hint" style="margin-top:12px" data-i18n="taxNote"></p>
         </aside>
       </div>
@@ -118,6 +119,7 @@ function updateSummary(){
   $("sRate").textContent = money(q.rate);
   $("sTotal").textContent = money(q.total);
   $("sMin").hidden = !q.minimumApplied;
+  $("sFloor").hidden = !q.bandFloorApplied;
 }
 function orderRef(){
   const d = new Date(), p = n => String(n).padStart(2,"0");
@@ -151,6 +153,7 @@ async function submitOrder(e){
     rate_per_employee_usd: q.rate,
     annual_licence_net_usd: q.total,
     minimum_applied: q.minimumApplied ? "yes" : "no",
+    band_transition_rule_applied: q.bandFloorApplied ? "yes" : "no",
     invoice_currency: $("currency").value,
     set_up_fee: "none",
     term: "12 months, auto-renewal",
