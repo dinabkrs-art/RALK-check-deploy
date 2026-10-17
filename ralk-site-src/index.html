@@ -274,8 +274,14 @@ function renderLists(){
     `<tr><td><b>${esc(t("bandHead"))}</b></td><td><b>${esc(t("rateHead"))}</b></td></tr>` +
     PRICING.tiers.map((x,i) => `<tr><td>${esc(bandLabel(i))}</td><td style="font-size:20px;color:hsl(var(--gold))">${esc(money(x.rate))}</td></tr>`).join("");
   document.querySelectorAll("ul[data-list]").forEach(ul => { ul.innerHTML = t(ul.dataset.list).map(i => `<li>${esc(i)}</li>`).join(""); });
-  document.getElementById("faqList").innerHTML = t("faq").map(([q,a]) =>
-    `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("");
+  const faqItem = ([q,a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`;
+  const faq = t("faq"), FAQ_TOP = 5;
+  document.getElementById("faqList").innerHTML = faq.slice(0, FAQ_TOP).map(faqItem).join("") +
+    (faq.length > FAQ_TOP ? `<div id="faqMore" hidden>${faq.slice(FAQ_TOP).map(faqItem).join("")}</div>
+      <button type="button" class="btn ghost faq-more" id="faqMoreBtn" aria-expanded="false" aria-controls="faqMore">${esc(t("faqAll").replace("{n}", faq.length))}</button>` : "");
+  const fb = document.getElementById("faqMoreBtn");
+  if(fb) fb.addEventListener("click", () => { const box = document.getElementById("faqMore"); const open = box.hidden;
+    box.hidden = !open; fb.setAttribute("aria-expanded", String(open)); fb.textContent = open ? t("faqLess") : t("faqAll").replace("{n}", faq.length); });
   updateCalc();
 }
 function updateCalc(){
