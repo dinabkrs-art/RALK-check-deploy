@@ -2,8 +2,8 @@
 
 const CONFIG = {
   CONTACT_EMAIL: "info@ralk.io",
-  // Licence orders are sent here (same form service as check.ralk.io)
-  ORDER_ENDPOINT: "https://formsubmit.co/ajax/contact@ralk.io",
+  // Licence orders: same-origin path, proxied by vercel.json to the RALK backend
+  ORDER_ENDPOINT: "/api/licence-order",
   APP_URL: "https://app.ralk.io",
   CHECK_URL: "https://check.ralk.io",
   TERMS_VERSION: "2026-10"

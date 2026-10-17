@@ -1,6 +1,12 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/api/licence-order",
+      "destination": "https://ralk-backend-production.up.railway.app/api/public/licence-order"
+    }
+  ],
   "redirects": [
     {
       "source": "/license",
