@@ -56,7 +56,7 @@ const I18N = {
 
     heroEyebrow:"Financial-crime compliance training for Africa",
     heroTitle:"Every employee trained. Every audit answered.",
-    heroLead:"RALK is AI-powered e-learning that trains your staff on anti-money laundering, sanctions, fraud, corruption, data protection and cyber risk — tailored to their role, sector and country, with certificates you can show your regulator and auditors.",
+    heroLead:"RALK is e-learning that trains your staff on anti-money laundering, sanctions, fraud, corruption, data protection and cyber risk — tailored to their role, sector and country, with certificates you can show your regulator and auditors.",
     heroBuy:"Get a licence", heroCheck:"Free 10-minute compliance check",
     heroNote:"Annual licence from USD 45 per employee. No set-up fee.",
     stat1:"13 risk areas", stat1s:"from AML/KYC to AI and whistleblowing",
@@ -80,14 +80,15 @@ const I18N = {
     modLead:"Content adapts to each learner's role, sector and country, based on FATF standards and local regulation.",
     mods:["Sanctions & embargo","AML/CFT & KYC","Beneficial ownership","PEP & enhanced due diligence","Monitoring & suspicious transaction reports","Crypto / virtual assets","Fraud prevention","Anti-bribery & corruption","Data protection","Cybersecurity","AI & financial crime","Governance, audit & training","Whistleblower protection"],
 
-    forEyebrow:"Who it is for", forTitle:"Built for regulated organisations",
-    fors:["Banks","Microfinance institutions","Fintechs, PSPs & e-money","Mobile money","Money transfer & forex","Insurers","Asset managers & brokers","Crypto / VASPs","Law firms, notaries, accountants","Regulators & public bodies","Professional associations","Corporates & NGOs"],
+    forEyebrow:"Who it is for", forTitle:"For every organisation exposed to financial crime",
+    forLead:"Regulated firms must train their staff by law. Every other company faces fraud, bribery and sanctions risk too — in mining, energy, telecoms, construction and trade.",
+    fors:["Banks","Microfinance institutions","Fintechs, PSPs & e-money","Mobile money","Money transfer & forex","Insurers","Asset managers & brokers","Crypto / VASPs","Law firms, notaries, accountants","Regulators & public bodies","Professional associations","Mining, oil & gas","Telecoms & energy","Construction & trade","Corporates & NGOs"],
 
     priceEyebrow:"Pricing", priceTitle:"Simple annual licence per employee",
     priceLead:"One fixed rate per employee, based on the size of your organisation. All modules included. No set-up fee.",
     perEmp:"/ employee / year",
     bandHead:"Employees", rateHead:"Price per employee / year", upTo:"up to {n}", over:"more than {n}",
-    inclTitle:"Included in every licence", incl:["All 13 modules","Role-based AI training","Certificates & verification","Manager dashboard & reports","HR import","Email support"],
+    inclTitle:"Included in every licence", incl:["All 13 modules","Role-based training with real scenarios","Certificates & verification","Manager dashboard & reports","HR import","Email support"],
     inclBig:"From 1,001 employees: dedicated onboarding contact",
     minNote:"Minimum annual licence: USD 5,000. When an organisation grows into a cheaper band, its licence never costs less than the largest organisation of the band below.",
     fixedNote:"Fixed published prices — the same for every customer. Volume discounts are already built in; there are no individual discounts.",
@@ -137,7 +138,7 @@ const I18N = {
     okTitle:"Thank you — your order has been received.",
     okLead:"We will send your invoice and the countersigned order confirmation to {email} within one business day. Your access to app.ralk.io is activated as soon as payment (or your purchase order) is received.",
     okRef:"Order reference", okPrint:"Print / save as PDF", okBack:"Back to ralk.io",
-    sectors:["Bank","Microfinance institution","Fintech / PSP / e-money","Mobile money operator","Money transfer / forex bureau","Insurance","Investment / asset management","Crypto / VASP","Law firm / notary / accountant","Regulator / public body","Professional association","Corporate / other company","NGO / non-profit","Other"]
+    sectors:["Bank","Microfinance institution","Fintech / PSP / e-money","Mobile money operator","Money transfer / forex bureau","Insurance","Investment / asset management","Crypto / VASP","Law firm / notary / accountant","Regulator / public body","Professional association","Mining / oil & gas","Telecoms / energy","Construction / trade","Corporate / other company","NGO / non-profit","Other"]
   },
 
   fr: {
@@ -146,7 +147,7 @@ const I18N = {
 
     heroEyebrow:"Formation conformité criminalité financière pour l'Afrique",
     heroTitle:"Chaque collaborateur formé. Chaque contrôle maîtrisé.",
-    heroLead:"RALK est une plateforme d'e-learning propulsée par l'IA qui forme vos équipes à la lutte contre le blanchiment, aux sanctions, à la fraude, à la corruption, à la protection des données et au risque cyber — adaptée à leur fonction, leur secteur et leur pays, avec des certificats à présenter à votre régulateur et à vos auditeurs.",
+    heroLead:"RALK est une plateforme d'e-learning qui forme vos équipes à la lutte contre le blanchiment, aux sanctions, à la fraude, à la corruption, à la protection des données et au risque cyber — adaptée à leur fonction, leur secteur et leur pays, avec des certificats à présenter à votre régulateur et à vos auditeurs.",
     heroBuy:"Obtenir une licence", heroCheck:"Diagnostic conformité gratuit en 10 minutes",
     heroNote:"Licence annuelle à partir de 45 USD par collaborateur. Sans frais de mise en place.",
     stat1:"13 domaines de risque", stat1s:"de la LBC/FT/KYC à l'IA et aux lanceurs d'alerte",
@@ -170,14 +171,15 @@ const I18N = {
     modLead:"Le contenu s'adapte à la fonction, au secteur et au pays de chaque apprenant, sur la base des normes du GAFI et de la réglementation locale.",
     mods:["Sanctions & embargos","LBC/FT & KYC","Bénéficiaires effectifs","PPE & vigilance renforcée","Surveillance & déclarations de soupçon","Crypto / actifs virtuels","Prévention de la fraude","Anti-corruption","Protection des données","Cybersécurité","IA & criminalité financière","Gouvernance, audit & formation","Protection des lanceurs d'alerte"],
 
-    forEyebrow:"Pour qui", forTitle:"Conçu pour les organisations assujetties",
-    fors:["Banques","Institutions de microfinance","Fintechs, PSP & monnaie électronique","Mobile money","Transfert d'argent & bureaux de change","Assurances","Gestion d'actifs & courtiers","Crypto / PSAV","Avocats, notaires, experts-comptables","Régulateurs & organismes publics","Ordres et associations professionnelles","Entreprises & ONG"],
+    forEyebrow:"Pour qui", forTitle:"Pour toute organisation exposée à la criminalité financière",
+    forLead:"Les entreprises assujetties doivent former leur personnel par la loi. Toutes les autres sont aussi exposées à la fraude, à la corruption et aux sanctions — dans les mines, l'énergie, les télécoms, le BTP et le commerce.",
+    fors:["Banques","Institutions de microfinance","Fintechs, PSP & monnaie électronique","Mobile money","Transfert d'argent & bureaux de change","Assurances","Gestion d'actifs & courtiers","Crypto / PSAV","Avocats, notaires, experts-comptables","Régulateurs & organismes publics","Ordres et associations professionnelles","Mines, pétrole & gaz","Télécoms & énergie","BTP & commerce","Entreprises & ONG"],
 
     priceEyebrow:"Tarifs", priceTitle:"Une licence annuelle simple, par collaborateur",
     priceLead:"Un tarif fixe par collaborateur, selon la taille de votre organisation. Tous les modules inclus. Sans frais de mise en place.",
     perEmp:"/ collaborateur / an",
     bandHead:"Collaborateurs", rateHead:"Prix par collaborateur / an", upTo:"jusqu'à {n}", over:"plus de {n}",
-    inclTitle:"Inclus dans chaque licence", incl:["Les 13 modules","Formation IA par fonction","Certificats & vérification","Tableau de bord & rapports","Import RH","Support par e-mail"],
+    inclTitle:"Inclus dans chaque licence", incl:["Les 13 modules","Formation par fonction avec cas réels","Certificats & vérification","Tableau de bord & rapports","Import RH","Support par e-mail"],
     inclBig:"Dès 1 001 collaborateurs : interlocuteur dédié pour la mise en place",
     minNote:"Licence annuelle minimale : 5 000 USD. Lorsqu'une organisation passe dans une tranche moins chère, sa licence ne coûte jamais moins que celle de la plus grande organisation de la tranche précédente.",
     fixedNote:"Prix fixes et publics — identiques pour tous les clients. Les remises sur volume sont déjà intégrées ; il n'y a pas de remise individuelle.",
@@ -226,7 +228,7 @@ const I18N = {
     okTitle:"Merci — votre commande a bien été reçue.",
     okLead:"Nous enverrons votre facture et la confirmation de commande à {email} sous un jour ouvré. Votre accès à app.ralk.io est activé dès réception du paiement (ou de votre bon de commande).",
     okRef:"Référence de commande", okPrint:"Imprimer / enregistrer en PDF", okBack:"Retour à ralk.io",
-    sectors:["Banque","Institution de microfinance","Fintech / PSP / monnaie électronique","Opérateur de mobile money","Transfert d'argent / bureau de change","Assurance","Investissement / gestion d'actifs","Crypto / PSAV","Avocat / notaire / expert-comptable","Régulateur / organisme public","Ordre / association professionnelle","Entreprise / autre société","ONG / association","Autre"]
+    sectors:["Banque","Institution de microfinance","Fintech / PSP / monnaie électronique","Opérateur de mobile money","Transfert d'argent / bureau de change","Assurance","Investissement / gestion d'actifs","Crypto / PSAV","Avocat / notaire / expert-comptable","Régulateur / organisme public","Ordre / association professionnelle","Mines / pétrole & gaz","Télécoms / énergie","BTP / commerce","Entreprise / autre société","ONG / association","Autre"]
   }
 };
 

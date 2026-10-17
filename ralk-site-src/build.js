@@ -11,10 +11,10 @@ const TYPES = { ".html":"text/html", ".js":"text/javascript", ".css":"text/css",
 const META = {
   en: { url:"https://ralk.io/",
         title:"RALK — Financial-crime compliance training for Africa",
-        desc:"AI-powered compliance e-learning for banks, fintechs, insurers and professionals in Africa: AML/CFT, sanctions, fraud, corruption, data protection, cyber. Annual licence from USD 45 per employee." },
+        desc:"Compliance e-learning for banks, fintechs, insurers, mining, telecoms and every company in Africa: AML/CFT, sanctions, fraud, corruption, data protection, cyber. Annual licence from USD 45 per employee." },
   fr: { url:"https://ralk.io/fr",
         title:"RALK — Formation conformité LBC/FT et criminalité financière pour l'Afrique",
-        desc:"E-learning conformité propulsé par l'IA pour banques, fintechs, assurances et professions assujetties en Afrique : LBC/FT, sanctions, fraude, corruption, protection des données, cyber. Licence annuelle dès 45 USD par collaborateur." }
+        desc:"E-learning conformité pour banques, fintechs, assurances, mines, télécoms et toutes les entreprises en Afrique : LBC/FT, sanctions, fraude, corruption, protection des données, cyber. Licence annuelle dès 45 USD par collaborateur." }
 };
 
 const server = http.createServer((req, res) => {
