@@ -163,7 +163,7 @@ async function submitOrder(e){
     notes: $("notes").value.trim(),
     licence_terms_version: CONFIG.TERMS_VERSION,
     licence_terms_accepted: "yes",
-    taxes: "net prices, local taxes added (licence terms section 6)",
+    withholding_tax_acknowledged: "yes",   // covered by licence terms section 6, accepted with the checkbox above
     accepted_at_utc: acceptedAt,
     language: getLang(),
     campaign: ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","ref"]
