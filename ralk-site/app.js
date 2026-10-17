@@ -55,36 +55,45 @@ const I18N = {
     navLogin:"Log in", navBuy:"Get a licence",
 
     heroEyebrow:"Compliance & financial-crime training",
-    heroTitle:"Every employee trained. Every audit answered.",
+    heroTitle:"Every employee trained. *Every audit answered.*",
     heroLead:"RALK is e-learning that trains your staff to prevent fraud, corruption, sanctions breaches, money laundering, data leaks and cyber attacks — tailored to their role, sector and country, with certificates you can show your regulator and auditors.",
     heroBuy:"Get a licence", heroCheck:"Free 10-minute compliance check",
     heroNote:"Annual licence from USD 45 per employee. No set-up fee.",
+    rotPre:"Train every team against",
+    rotWords:["fraud","corruption","sanctions breaches","money laundering","data leaks","cyber attacks"],
+    mockTitle:"Team progress", mockLive:"Live", mockCert:"Certificate verified", mockCertS:"Valid 12 months · QR check",
+    mockRai:"RAI: 3 red flags in this payment request — report it internally.", mockReport:"Audit report ready",
+    k1:"risk areas covered", k2:"to tailor a training to your company", k3:"of certificates verifiable online", k4:"learning on any device",
+    platEyebrow:"The platform", platTitle:"Everything your auditor asks for — *in one place*",
+    platLead:"Progress per team, module and country, certificates with a public check and reports you can hand to management, auditors and supervisors.",
+    platPoints:["Live dashboard per team and module","Certificates with QR verification","Reports for audits and inspections","HR import and automatic reminders"],
+    dashTitle:"Completion by module", floatCta:"Free compliance check",
     stat1:"13 risk areas", stat1s:"from fraud and corruption to sanctions, data and cyber",
     stat2:"Role-based", stat2s:"front office, compliance, management",
     stat3:"Audit-ready", stat3s:"certificates, reports, verification",
 
     whyEyebrow:"Why RALK",
-    whyTitle:"Regulators expect proof that your people are trained.",
+    whyTitle:"Regulators expect *proof* that your people are trained.",
     whyLead:"Laws on anti-bribery, sanctions, money laundering and data protection oblige companies to train their staff — and to prove it in audits and inspections. Banks, insurers and other regulated firms are checked by their supervisor; every other company answers to auditors, partners and lenders. Classroom training is expensive, quickly outdated and hard to document.",
     why1t:"Required by law", why1:"Training duties under anti-bribery, sanctions, anti-money-laundering and data-protection rules — checked in audits and inspections.",
     why2t:"Always current", why2:"New sanctions, typologies and rules flow into the training continuously — no outdated slide decks.",
     why3t:"Documented automatically", why3:"Every completion is recorded with a certificate and a verifiable reference for supervisors and auditors.",
 
-    howEyebrow:"How it works", howTitle:"Live in one day — without anyone on site.",
+    howEyebrow:"How it works", howTitle:"Live in *one day* — without anyone on site.",
     how1t:"Get your licence", how1:"Choose the number of employees, accept the licence terms online and receive your invoice.",
     how2t:"Import your staff", how2:"Upload your employee list or connect your HR system. Each person gets their own access.",
     how3t:"Staff train on their own", how3:"Short, role-based modules with real scenarios and an assessment — on any device.",
     how4t:"You keep the evidence", how4:"Dashboard, reports and certificates for management, auditors and the regulator.",
 
-    modEyebrow:"Modules", modTitle:"One platform for all financial-crime risks",
+    modEyebrow:"Modules", modTitle:"One platform for *all* financial-crime risks",
     modLead:"Content adapts to each learner's role, sector and country, based on international standards and local regulation.",
     mods:["Fraud prevention","Anti-bribery & corruption","Sanctions & embargo","Data protection","Cybersecurity","AI & financial crime","Whistleblower protection","AML/CFT & KYC","Beneficial ownership","PEP & enhanced due diligence","Monitoring & suspicious transaction reports","Crypto / virtual assets","Governance, audit & training"],
 
-    forEyebrow:"Who it is for", forTitle:"For every organisation exposed to financial crime",
+    forEyebrow:"Who it is for", forTitle:"For *every organisation* exposed to financial crime",
     forLead:"Regulated firms must train their staff by law. Every other company faces fraud, bribery and sanctions risk too — in mining, energy, telecoms, construction and trade.",
     fors:["Banks","Microfinance institutions","Fintechs, PSPs & e-money","Mobile money","Money transfer & forex","Insurers","Asset managers & brokers","Crypto / VASPs","Law firms, notaries, accountants","Regulators & public bodies","Professional associations","Mining, oil & gas","Telecoms & energy","Construction & trade","Corporates & NGOs"],
 
-    priceEyebrow:"Pricing", priceTitle:"Simple annual licence per employee",
+    priceEyebrow:"Pricing", priceTitle:"Simple *annual licence* per employee",
     priceLead:"One fixed rate per employee, based on the size of your organisation. All modules included. No set-up fee.",
     perEmp:"/ employee / year",
     bandHead:"Employees", rateHead:"Price per employee / year", upTo:"up to {n}", over:"more than {n}",
@@ -97,7 +106,7 @@ const I18N = {
     calcRate:"Rate per employee", calcTotal:"Annual licence", calcMin:"Minimum annual licence applies",
     calcBuy:"Continue to order", calcFloor:"Band transition rule applies", calcEff:"Effective price per employee",
 
-    cmpEyebrow:"Compare", cmpTitle:"More training for less money than the classroom",
+    cmpEyebrow:"Compare", cmpTitle:"*More training* for less money than the classroom",
     cmpLead:"Organisations often pay more for classroom courses that cover fewer topics, reach fewer people and are outdated within months.",
     cmpOldT:"Classroom compliance course", cmpOldP:"≈ USD 460 per participant",
     cmpOld:["One-off, typically 3–5 days","Usually one topic only","Travel and time away from work","Same content for every role","Paper attendance list as evidence"],
@@ -114,7 +123,7 @@ const I18N = {
       ["Is RALK legal advice?","No. RALK provides training. It supports, but does not replace, your compliance function and legal advice."]
     ],
 
-    ctaTitle:"Start training your team this week.",
+    ctaTitle:"Start training your team *this week.*",
     ctaLead:"Get your licence online in a few minutes — or check your current risk first, free of charge.",
 
     footRights:"© 2026 RALK. All rights reserved.",
@@ -146,36 +155,45 @@ const I18N = {
     navLogin:"Connexion", navBuy:"Obtenir une licence",
 
     heroEyebrow:"Formation conformité & criminalité financière",
-    heroTitle:"Chaque collaborateur formé. Chaque contrôle maîtrisé.",
+    heroTitle:"Chaque collaborateur formé. *Chaque contrôle maîtrisé.*",
     heroLead:"RALK est une plateforme d'e-learning qui forme vos équipes à prévenir la fraude, la corruption, les violations de sanctions, le blanchiment, les fuites de données et les cyberattaques — adaptée à leur fonction, leur secteur et leur pays, avec des certificats à présenter à votre régulateur et à vos auditeurs.",
     heroBuy:"Obtenir une licence", heroCheck:"Diagnostic conformité gratuit en 10 minutes",
     heroNote:"Licence annuelle à partir de 45 USD par collaborateur. Sans frais de mise en place.",
+    rotPre:"Formez chaque équipe contre",
+    rotWords:["la fraude","la corruption","les violations de sanctions","le blanchiment","les fuites de données","les cyberattaques"],
+    mockTitle:"Progression de l'équipe", mockLive:"En direct", mockCert:"Certificat vérifié", mockCertS:"Valable 12 mois · contrôle QR",
+    mockRai:"RAI : 3 signaux d'alerte dans cette demande de paiement — signalez-la en interne.", mockReport:"Rapport d'audit prêt",
+    k1:"domaines de risque couverts", k2:"pour adapter une formation à votre entreprise", k3:"des certificats vérifiables en ligne", k4:"formation sur tout appareil",
+    platEyebrow:"La plateforme", platTitle:"Tout ce que demande votre auditeur — *au même endroit*",
+    platLead:"Progression par équipe, module et pays, certificats vérifiables publiquement et rapports à remettre à la direction, aux auditeurs et aux superviseurs.",
+    platPoints:["Tableau de bord en direct par équipe et module","Certificats avec vérification QR","Rapports pour audits et contrôles","Import RH et relances automatiques"],
+    dashTitle:"Taux de réalisation par module", floatCta:"Diagnostic gratuit",
     stat1:"13 domaines de risque", stat1s:"de la fraude et la corruption aux sanctions, données et cyber",
     stat2:"Par fonction", stat2s:"front office, conformité, direction",
     stat3:"Prêt pour l'audit", stat3s:"certificats, rapports, vérification",
 
     whyEyebrow:"Pourquoi RALK",
-    whyTitle:"Les régulateurs exigent la preuve que vos équipes sont formées.",
+    whyTitle:"Les régulateurs exigent *la preuve* que vos équipes sont formées.",
     whyLead:"Les lois anticorruption, sur les sanctions, contre le blanchiment et sur la protection des données obligent les entreprises à former leur personnel — et à le prouver lors des audits et des contrôles. Banques, assurances et autres entités assujetties sont contrôlées par leur superviseur ; toutes les autres entreprises rendent des comptes à leurs auditeurs, partenaires et bailleurs. La formation en salle est coûteuse, vite dépassée et difficile à documenter.",
     why1t:"Obligation légale", why1:"Obligations de formation prévues par les règles anticorruption, sanctions, LBC/FT et protection des données — vérifiées lors des audits et des contrôles.",
     why2t:"Toujours à jour", why2:"Nouvelles sanctions, typologies et réglementations intégrées en continu — fini les supports obsolètes.",
     why3t:"Documenté automatiquement", why3:"Chaque formation suivie est enregistrée avec un certificat et une référence vérifiable pour superviseurs et auditeurs.",
 
-    howEyebrow:"Fonctionnement", howTitle:"Opérationnel en une journée — sans déplacement.",
+    howEyebrow:"Fonctionnement", howTitle:"Opérationnel en *une journée* — sans déplacement.",
     how1t:"Obtenez votre licence", how1:"Choisissez le nombre de collaborateurs, acceptez les conditions de licence en ligne et recevez votre facture.",
     how2t:"Importez vos équipes", how2:"Téléversez la liste du personnel ou connectez votre SIRH. Chaque personne reçoit son propre accès.",
     how3t:"Vos équipes se forment en autonomie", how3:"Modules courts par fonction, avec des cas réels et une évaluation — sur tout appareil.",
     how4t:"Vous conservez les preuves", how4:"Tableau de bord, rapports et certificats pour la direction, les auditeurs et le régulateur.",
 
-    modEyebrow:"Modules", modTitle:"Une plateforme pour tous les risques de criminalité financière",
+    modEyebrow:"Modules", modTitle:"Une plateforme pour *tous* les risques de criminalité financière",
     modLead:"Le contenu s'adapte à la fonction, au secteur et au pays de chaque apprenant, sur la base des normes internationales et de la réglementation locale.",
     mods:["Prévention de la fraude","Anti-corruption","Sanctions & embargos","Protection des données","Cybersécurité","IA & criminalité financière","Protection des lanceurs d'alerte","LBC/FT & KYC","Bénéficiaires effectifs","PPE & vigilance renforcée","Surveillance & déclarations de soupçon","Crypto / actifs virtuels","Gouvernance, audit & formation"],
 
-    forEyebrow:"Pour qui", forTitle:"Pour toute organisation exposée à la criminalité financière",
+    forEyebrow:"Pour qui", forTitle:"Pour *toute organisation* exposée à la criminalité financière",
     forLead:"Les entreprises assujetties doivent former leur personnel par la loi. Toutes les autres sont aussi exposées à la fraude, à la corruption et aux sanctions — dans les mines, l'énergie, les télécoms, le BTP et le commerce.",
     fors:["Banques","Institutions de microfinance","Fintechs, PSP & monnaie électronique","Mobile money","Transfert d'argent & bureaux de change","Assurances","Gestion d'actifs & courtiers","Crypto / PSAV","Avocats, notaires, experts-comptables","Régulateurs & organismes publics","Ordres et associations professionnelles","Mines, pétrole & gaz","Télécoms & énergie","BTP & commerce","Entreprises & ONG"],
 
-    priceEyebrow:"Tarifs", priceTitle:"Une licence annuelle simple, par collaborateur",
+    priceEyebrow:"Tarifs", priceTitle:"Une *licence annuelle* simple, par collaborateur",
     priceLead:"Un tarif fixe par collaborateur, selon la taille de votre organisation. Tous les modules inclus. Sans frais de mise en place.",
     perEmp:"/ collaborateur / an",
     bandHead:"Collaborateurs", rateHead:"Prix par collaborateur / an", upTo:"jusqu'à {n}", over:"plus de {n}",
@@ -188,7 +206,7 @@ const I18N = {
     calcRate:"Tarif par collaborateur", calcTotal:"Licence annuelle", calcMin:"La licence annuelle minimale s'applique",
     calcBuy:"Passer à la commande", calcFloor:"Règle de passage de tranche appliquée", calcEff:"Prix effectif par collaborateur",
 
-    cmpEyebrow:"Comparer", cmpTitle:"Plus de formation, pour moins cher qu'en salle",
+    cmpEyebrow:"Comparer", cmpTitle:"*Plus de formation*, pour moins cher qu'en salle",
     cmpLead:"Les organisations paient souvent davantage pour des formations en salle qui couvrent moins de thèmes, touchent moins de personnes et sont dépassées en quelques mois.",
     cmpOldT:"Formation conformité en salle", cmpOldP:"≈ 460 USD par participant",
     cmpOld:["Ponctuelle, souvent 3 à 5 jours","En général un seul thème","Déplacements et absence du poste","Même contenu pour toutes les fonctions","Feuille de présence papier comme preuve"],
@@ -205,7 +223,7 @@ const I18N = {
       ["RALK est-il un conseil juridique ?","Non. RALK est une solution de formation. Elle soutient votre fonction conformité sans remplacer un conseil juridique."]
     ],
 
-    ctaTitle:"Formez vos équipes dès cette semaine.",
+    ctaTitle:"Formez vos équipes dès *cette semaine.*",
     ctaLead:"Obtenez votre licence en ligne en quelques minutes — ou évaluez d'abord votre risque, gratuitement.",
 
     footRights:"© 2026 RALK. Tous droits réservés.",
@@ -250,7 +268,9 @@ function applyI18n(){
   document.documentElement.lang = lang;
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const v = t(el.dataset.i18n);
-    if(typeof v === "string") el.textContent = v;
+    if(typeof v !== "string") return;
+    if(v.includes("*")) el.innerHTML = v.split("*").map((p,i) => { const e = p.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); return i % 2 ? `<em class="g">${e}</em>` : e; }).join("");
+    else el.textContent = v;
   });
   document.querySelectorAll("[data-lang]").forEach(el => { el.hidden = el.dataset.lang !== lang; });
   const lb = document.getElementById("langBtn");
@@ -315,8 +335,23 @@ function motion(){
     const r = el.getBoundingClientRect();
     el.style.setProperty("--mx", (e.clientX - r.left) + "px"); el.style.setProperty("--my", (e.clientY - r.top) + "px");
   }));
+  rotator(); floatCta();
+  const hv = document.getElementById("heroVisual");
+  if(hv && MOTION_OK && matchMedia("(pointer:fine)").matches){
+    hv.addEventListener("pointermove", e => { const r = hv.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      hv.style.setProperty("--rx", (-y * 8).toFixed(2) + "deg"); hv.style.setProperty("--ry", (x * 10).toFixed(2) + "deg"); });
+    hv.addEventListener("pointerleave", () => { hv.style.setProperty("--rx","0deg"); hv.style.setProperty("--ry","0deg"); });
+  }
   if(!MOTION_OK) return;
-  const sel = "section:not(.hero) .eyebrow, section:not(.hero) h2, section:not(.hero) .lead, section:not(.hero) .card, .chip, .tier, .calc, .taxnote, .summary, .incl, section:not(.hero) .note";
+  const cio = new IntersectionObserver(es => es.forEach(e => { if(!e.isIntersecting) return; cio.unobserve(e.target);
+    const el = e.target, to = +el.dataset.to, t0 = performance.now(), dur = 1400;
+    const step = now => { const k = Math.min(1, (now - t0) / dur); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if(k < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step); }), { threshold: .6 });
+  document.querySelectorAll(".count").forEach(el => { el.textContent = "0"; cio.observe(el); });
+  const bio = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add("go"); bio.unobserve(e.target); } }), { threshold: .3 });
+  document.querySelectorAll(".bars,.rings").forEach(el => bio.observe(el));
+  const sel = "section:not(.hero) .eyebrow, section:not(.hero) h2, section:not(.hero) .lead, section:not(.hero) .card, .chip, .mod, .kpi, .tier, .calc, .taxnote, .incl, .ticks li, .dash, section:not(.hero) .note";
   const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }),
     { rootMargin:"0px 0px -8% 0px", threshold:0.08 });
   const seen = new Map();
@@ -325,6 +360,20 @@ function motion(){
     el.style.setProperty("--d", Math.min(i, 8) * 0.07 + "s");
     el.classList.add("rv"); io.observe(el);
   });
+}
+
+function rotator(){
+  const el = document.getElementById("rot"); if(!el) return;
+  const words = t("rotWords"); let i = 0; el.textContent = words[0];
+  if(!MOTION_OK) return;
+  clearInterval(window.__rot);
+  window.__rot = setInterval(() => { el.classList.add("out");
+    setTimeout(() => { i = (i + 1) % words.length; el.textContent = t("rotWords")[i]; el.classList.remove("out"); }, 380); }, 2400);
+}
+function floatCta(){
+  const b = document.getElementById("floatCta"), hero = document.querySelector(".hero"); if(!b || !hero) return;
+  const upd = () => b.classList.toggle("show", window.scrollY > hero.offsetHeight * .7);
+  window.addEventListener("scroll", upd, { passive:true }); upd();
 }
 
 /* ---------- Star rain in the hero (as on the app.ralk.io login page) ---------- */

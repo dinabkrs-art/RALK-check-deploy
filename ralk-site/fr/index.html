@@ -47,19 +47,54 @@
 <main>
   <!-- Hero -->
   <section class="hero" id="product">
-    <div class="wrap">
-      <p class="eyebrow" data-i18n="heroEyebrow">Formation conformité &amp; criminalité financière</p>
-      <h1 data-i18n="heroTitle">Chaque collaborateur formé. Chaque contrôle maîtrisé.</h1>
-      <p class="lead" data-i18n="heroLead">RALK est une plateforme d'e-learning qui forme vos équipes à prévenir la fraude, la corruption, les violations de sanctions, le blanchiment, les fuites de données et les cyberattaques — adaptée à leur fonction, leur secteur et leur pays, avec des certificats à présenter à votre régulateur et à vos auditeurs.</p>
-      <div class="cta">
-        <a class="btn" href="/order" data-i18n="heroBuy">Obtenir une licence</a>
-        <a class="btn ghost" href="https://check.ralk.io" data-i18n="heroCheck">Diagnostic conformité gratuit en 10 minutes</a>
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="wrap hero-wrap">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="heroEyebrow">Formation conformité &amp; criminalité financière</p>
+        <p class="rotator" aria-hidden="true"><span data-i18n="rotPre">Formez chaque équipe contre</span> <span class="rot" id="rot">la fraude</span></p>
+        <h1 data-i18n="heroTitle">Chaque collaborateur formé. <em class="g">Chaque contrôle maîtrisé.</em></h1>
+        <p class="lead" data-i18n="heroLead">RALK est une plateforme d'e-learning qui forme vos équipes à prévenir la fraude, la corruption, les violations de sanctions, le blanchiment, les fuites de données et les cyberattaques — adaptée à leur fonction, leur secteur et leur pays, avec des certificats à présenter à votre régulateur et à vos auditeurs.</p>
+        <div class="cta">
+          <a class="btn" href="/order" data-i18n="heroBuy">Obtenir une licence</a>
+          <a class="btn ghost" href="https://check.ralk.io" data-i18n="heroCheck">Diagnostic conformité gratuit en 10 minutes</a>
+        </div>
+        <p class="note" data-i18n="heroNote">Licence annuelle à partir de 45 USD par collaborateur. Sans frais de mise en place.</p>
       </div>
-      <p class="note" data-i18n="heroNote">Licence annuelle à partir de 45 USD par collaborateur. Sans frais de mise en place.</p>
-      <div class="stats">
-        <div class="stat"><b data-i18n="stat1">13 domaines de risque</b><span data-i18n="stat1s">de la fraude et la corruption aux sanctions, données et cyber</span></div>
-        <div class="stat"><b data-i18n="stat2">Par fonction</b><span data-i18n="stat2s">front office, conformité, direction</span></div>
-        <div class="stat"><b data-i18n="stat3">Prêt pour l'audit</b><span data-i18n="stat3s">certificats, rapports, vérification</span></div>
+      <div class="hero-visual" id="heroVisual" aria-hidden="true">
+        <div class="mock win">
+          <div class="win-bar"><i></i><i></i><i></i><span>app.ralk.io</span></div>
+          <div class="win-body">
+            <div class="mock-h"><b data-i18n="mockTitle">Progression de l'équipe</b><span class="pill-ok" data-i18n="mockLive">En direct</span></div>
+            <div class="bars" id="mockBars"><div class="bar"><span>Prévention de la fraude</span><em>100%</em><div class="track2"><div class="fill" style="--w:100%"></div></div></div><div class="bar"><span>Anti-corruption</span><em>92%</em><div class="track2"><div class="fill" style="--w:92%"></div></div></div><div class="bar"><span>Sanctions &amp; embargos</span><em>84%</em><div class="track2"><div class="fill" style="--w:84%"></div></div></div><div class="bar"><span>Protection des données</span><em>76%</em><div class="track2"><div class="fill" style="--w:76%"></div></div></div></div>
+          </div>
+        </div>
+        <div class="mock float cert">
+          <div class="cert-ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg></div>
+          <div><b data-i18n="mockCert">Certificat vérifié</b><small data-i18n="mockCertS">Valable 12 mois · contrôle QR</small></div>
+        </div>
+        <div class="mock float rai">
+          <div class="rai-av">RAI</div>
+          <p data-i18n="mockRai">RAI : 3 signaux d'alerte dans cette demande de paiement — signalez-la en interne.</p>
+        </div>
+        <div class="mock float rep">
+          <svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z"></path><path d="M9 13h6M9 17h4M12 8v5"></path></svg>
+          <b data-i18n="mockReport">Rapport d'audit prêt</b>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Topics marquee -->
+  <div class="marquee" aria-hidden="true"><div class="track" id="marq"><div class="seq"><span>Prévention de la fraude</span><i>✦</i><span>Anti-corruption</span><i>✦</i><span>Sanctions &amp; embargos</span><i>✦</i><span>Protection des données</span><i>✦</i><span>Cybersécurité</span><i>✦</i><span>IA &amp; criminalité financière</span><i>✦</i><span>Protection des lanceurs d'alerte</span><i>✦</i><span>LBC/FT &amp; KYC</span><i>✦</i><span>Bénéficiaires effectifs</span><i>✦</i><span>PPE &amp; vigilance renforcée</span><i>✦</i><span>Surveillance &amp; déclarations de soupçon</span><i>✦</i><span>Crypto / actifs virtuels</span><i>✦</i><span>Gouvernance, audit &amp; formation</span><i>✦</i></div><div class="seq"><span>Prévention de la fraude</span><i>✦</i><span>Anti-corruption</span><i>✦</i><span>Sanctions &amp; embargos</span><i>✦</i><span>Protection des données</span><i>✦</i><span>Cybersécurité</span><i>✦</i><span>IA &amp; criminalité financière</span><i>✦</i><span>Protection des lanceurs d'alerte</span><i>✦</i><span>LBC/FT &amp; KYC</span><i>✦</i><span>Bénéficiaires effectifs</span><i>✦</i><span>PPE &amp; vigilance renforcée</span><i>✦</i><span>Surveillance &amp; déclarations de soupçon</span><i>✦</i><span>Crypto / actifs virtuels</span><i>✦</i><span>Gouvernance, audit &amp; formation</span><i>✦</i></div></div></div>
+
+  <!-- Key figures -->
+  <section class="kpis-sec">
+    <div class="wrap">
+      <div class="kpis">
+        <div class="kpi"><span class="kpi-ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6z"></path></svg></span><b><span class="count" data-to="13">13</span></b><span data-i18n="k1">domaines de risque couverts</span></div>
+        <div class="kpi"><span class="kpi-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l3 2M10 2h4"></path></svg></span><b>&lt;<span class="count" data-to="60">60</span>&nbsp;s</b><span data-i18n="k2">pour adapter une formation à votre entreprise</span></div>
+        <div class="kpi"><span class="kpi-ic"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg></span><b><span class="count" data-to="100">100</span>&nbsp;%</b><span data-i18n="k3">des certificats vérifiables en ligne</span></div>
+        <div class="kpi"><span class="kpi-ic"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"></rect><path d="M11 18h2"></path></svg></span><b>24/7</b><span data-i18n="k4">formation sur tout appareil</span></div>
       </div>
     </div>
   </section>
@@ -69,7 +104,7 @@
     <div class="wrap">
       <div class="head">
         <p class="eyebrow" data-i18n="whyEyebrow">Pourquoi RALK</p>
-        <h2 data-i18n="whyTitle">Les régulateurs exigent la preuve que vos équipes sont formées.</h2>
+        <h2 data-i18n="whyTitle">Les régulateurs exigent <em class="g">la preuve</em> que vos équipes sont formées.</h2>
         <p class="lead" data-i18n="whyLead">Les lois anticorruption, sur les sanctions, contre le blanchiment et sur la protection des données obligent les entreprises à former leur personnel — et à le prouver lors des audits et des contrôles. Banques, assurances et autres entités assujetties sont contrôlées par leur superviseur ; toutes les autres entreprises rendent des comptes à leurs auditeurs, partenaires et bailleurs. La formation en salle est coûteuse, vite dépassée et difficile à documenter.</p>
       </div>
       <div class="grid g3">
@@ -85,7 +120,7 @@
     <div class="wrap">
       <div class="head">
         <p class="eyebrow" data-i18n="howEyebrow">Fonctionnement</p>
-        <h2 data-i18n="howTitle">Opérationnel en une journée — sans déplacement.</h2>
+        <h2 data-i18n="howTitle">Opérationnel en <em class="g">une journée</em> — sans déplacement.</h2>
       </div>
       <div class="grid g4">
         <div class="card"><span class="num">1</span><h3 data-i18n="how1t">Obtenez votre licence</h3><p data-i18n="how1">Choisissez le nombre de collaborateurs, acceptez les conditions de licence en ligne et recevez votre facture.</p></div>
@@ -96,13 +131,29 @@
     </div>
   </section>
 
+  <!-- Platform band -->
+  <section class="band" id="platform">
+    <div class="wrap band-grid">
+      <div>
+        <p class="eyebrow" data-i18n="platEyebrow">La plateforme</p>
+        <h2 data-i18n="platTitle">Tout ce que demande votre auditeur — <em class="g">au même endroit</em></h2>
+        <p class="lead" data-i18n="platLead">Progression par équipe, module et pays, certificats vérifiables publiquement et rapports à remettre à la direction, aux auditeurs et aux superviseurs.</p>
+        <ul class="ticks" data-list="platPoints"><li>Tableau de bord en direct par équipe et module</li><li>Certificats avec vérification QR</li><li>Rapports pour audits et contrôles</li><li>Import RH et relances automatiques</li></ul>
+      </div>
+      <div class="dash" aria-hidden="true">
+        <div class="dash-head"><span data-i18n="dashTitle">Taux de réalisation par module</span><span class="pill-ok" data-i18n="mockLive">En direct</span></div>
+        <div class="rings" id="rings"><div class="ring" style="--p:100"><div class="ring-c"><b>100%</b></div><span>Prévention de la fraude</span></div><div class="ring" style="--p:92"><div class="ring-c"><b>92%</b></div><span>Anti-corruption</span></div><div class="ring" style="--p:84"><div class="ring-c"><b>84%</b></div><span>Sanctions &amp; embargos</span></div><div class="ring" style="--p:76"><div class="ring-c"><b>76%</b></div><span>Protection des données</span></div><div class="ring" style="--p:68"><div class="ring-c"><b>68%</b></div><span>Cybersécurité</span></div><div class="ring" style="--p:61"><div class="ring-c"><b>61%</b></div><span>IA &amp; criminalité financière</span></div></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Modules -->
   <section class="alt" id="modules">
     <div class="wrap">
       <p class="eyebrow" data-i18n="modEyebrow">Modules</p>
-      <h2 data-i18n="modTitle">Une plateforme pour tous les risques de criminalité financière</h2>
+      <h2 data-i18n="modTitle">Une plateforme pour <em class="g">tous</em> les risques de criminalité financière</h2>
       <p class="lead" data-i18n="modLead">Le contenu s'adapte à la fonction, au secteur et au pays de chaque apprenant, sur la base des normes internationales et de la réglementation locale.</p>
-      <div class="chips" id="modList"><span class="chip">Prévention de la fraude</span><span class="chip">Anti-corruption</span><span class="chip">Sanctions &amp; embargos</span><span class="chip">Protection des données</span><span class="chip">Cybersécurité</span><span class="chip">IA &amp; criminalité financière</span><span class="chip">Protection des lanceurs d'alerte</span><span class="chip">LBC/FT &amp; KYC</span><span class="chip">Bénéficiaires effectifs</span><span class="chip">PPE &amp; vigilance renforcée</span><span class="chip">Surveillance &amp; déclarations de soupçon</span><span class="chip">Crypto / actifs virtuels</span><span class="chip">Gouvernance, audit &amp; formation</span></div>
+      <div class="mods" id="modList"><div class="mod"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z M12 9v4 M12 16h.01"></path></svg><span>Prévention de la fraude</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M3 7h18v10H3z M12 10a2 2 0 1 0 0 4a2 2 0 0 0 0-4z M6 10v4 M18 10v4"></path></svg><span>Anti-corruption</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18z M5.6 5.6l12.8 12.8"></path></svg><span>Sanctions &amp; embargos</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M6 11h12v9H6z M8 11V8a4 4 0 0 1 8 0v3 M12 15v2"></path></svg><span>Protection des données</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"></path></svg><span>Cybersécurité</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M7 7h10v10H7z M10 3v4 M14 3v4 M10 17v4 M14 17v4 M3 10h4 M3 14h4 M17 10h4 M17 14h4"></path></svg><span>IA &amp; criminalité financière</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M3 10v4l11 5V5L3 10z M14 8.5a3.5 3.5 0 0 1 0 7 M6 15l1.5 5h3l-1-4"></path></svg><span>Protection des lanceurs d'alerte</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 0 0 14a7 7 0 0 0 0-14z M20 20l-4-4"></path></svg><span>LBC/FT &amp; KYC</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M10 3h4v4h-4z M12 7v4 M5 11h14 M5 11v4 M19 11v4 M3 15h4v5H3z M17 15h4v5h-4z"></path></svg><span>Bénéficiaires effectifs</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M9 11a4 4 0 1 0 0-8a4 4 0 0 0 0 8z M2 21c0-4 3-6 7-6s7 2 7 6 M16 10l2 2 4-4"></path></svg><span>PPE &amp; vigilance renforcée</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"></path></svg><span>Surveillance &amp; déclarations de soupçon</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18z M10 8h3.5a2 2 0 0 1 0 4H10h4a2 2 0 0 1 0 4h-4z M11.5 6.5v11"></path></svg><span>Crypto / actifs virtuels</span></div><div class="mod"><svg viewBox="0 0 24 24"><path d="M8 3h8v3H8z M6 4.5H5V21h14V4.5h-1 M9 14l2 2 4-4"></path></svg><span>Gouvernance, audit &amp; formation</span></div></div>
     </div>
   </section>
 
@@ -110,7 +161,7 @@
   <section>
     <div class="wrap">
       <p class="eyebrow" data-i18n="forEyebrow">Pour qui</p>
-      <h2 data-i18n="forTitle">Pour toute organisation exposée à la criminalité financière</h2>
+      <h2 data-i18n="forTitle">Pour <em class="g">toute organisation</em> exposée à la criminalité financière</h2>
       <p class="lead" data-i18n="forLead">Les entreprises assujetties doivent former leur personnel par la loi. Toutes les autres sont aussi exposées à la fraude, à la corruption et aux sanctions — dans les mines, l'énergie, les télécoms, le BTP et le commerce.</p>
       <div class="chips" id="forList"><span class="chip">Banques</span><span class="chip">Institutions de microfinance</span><span class="chip">Fintechs, PSP &amp; monnaie électronique</span><span class="chip">Mobile money</span><span class="chip">Transfert d'argent &amp; bureaux de change</span><span class="chip">Assurances</span><span class="chip">Gestion d'actifs &amp; courtiers</span><span class="chip">Crypto / PSAV</span><span class="chip">Avocats, notaires, experts-comptables</span><span class="chip">Régulateurs &amp; organismes publics</span><span class="chip">Ordres et associations professionnelles</span><span class="chip">Mines, pétrole &amp; gaz</span><span class="chip">Télécoms &amp; énergie</span><span class="chip">BTP &amp; commerce</span><span class="chip">Entreprises &amp; ONG</span></div>
     </div>
@@ -121,7 +172,7 @@
     <div class="wrap">
       <div class="head">
         <p class="eyebrow" data-i18n="priceEyebrow">Tarifs</p>
-        <h2 data-i18n="priceTitle">Une licence annuelle simple, par collaborateur</h2>
+        <h2 data-i18n="priceTitle">Une <em class="g">licence annuelle</em> simple, par collaborateur</h2>
         <p class="lead" data-i18n="priceLead">Un tarif fixe par collaborateur, selon la taille de votre organisation. Tous les modules inclus. Sans frais de mise en place.</p>
       </div>
       <div class="grid g2" style="align-items:start">
@@ -163,7 +214,7 @@
     <div class="wrap">
       <div class="head">
         <p class="eyebrow" data-i18n="cmpEyebrow">Comparer</p>
-        <h2 data-i18n="cmpTitle">Plus de formation, pour moins cher qu'en salle</h2>
+        <h2 data-i18n="cmpTitle"><em class="g">Plus de formation</em>, pour moins cher qu'en salle</h2>
         <p class="lead" data-i18n="cmpLead">Les organisations paient souvent davantage pour des formations en salle qui couvrent moins de thèmes, touchent moins de personnes et sont dépassées en quelques mois.</p>
       </div>
       <div class="grid g2">
@@ -185,7 +236,7 @@
   <!-- CTA -->
   <section class="alt">
     <div class="wrap center">
-      <h2 data-i18n="ctaTitle">Formez vos équipes dès cette semaine.</h2>
+      <h2 data-i18n="ctaTitle">Formez vos équipes dès <em class="g">cette semaine.</em></h2>
       <p class="lead" data-i18n="ctaLead">Obtenez votre licence en ligne en quelques minutes — ou évaluez d'abord votre risque, gratuitement.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px">
         <a class="btn" href="/order" data-i18n="heroBuy">Obtenir une licence</a>
@@ -193,6 +244,7 @@
       </div>
     </div>
   </section>
+<a class="float-cta" id="floatCta" href="https://check.ralk.io"><span class="dot"></span><span data-i18n="floatCta">Diagnostic gratuit</span></a>
 </main>
 
 <footer id="foot">
@@ -210,8 +262,30 @@
 
 <script>
 function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+const ICONS = [
+ "M12 3l9 16H3z M12 9v4 M12 16h.01",
+ "M3 7h18v10H3z M12 10a2 2 0 1 0 0 4a2 2 0 0 0 0-4z M6 10v4 M18 10v4",
+ "M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18z M5.6 5.6l12.8 12.8",
+ "M6 11h12v9H6z M8 11V8a4 4 0 0 1 8 0v3 M12 15v2",
+ "M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6z M9 12l2 2 4-4",
+ "M7 7h10v10H7z M10 3v4 M14 3v4 M10 17v4 M14 17v4 M3 10h4 M3 14h4 M17 10h4 M17 14h4",
+ "M3 10v4l11 5V5L3 10z M14 8.5a3.5 3.5 0 0 1 0 7 M6 15l1.5 5h3l-1-4",
+ "M11 4a7 7 0 1 0 0 14a7 7 0 0 0 0-14z M20 20l-4-4",
+ "M10 3h4v4h-4z M12 7v4 M5 11h14 M5 11v4 M19 11v4 M3 15h4v5H3z M17 15h4v5h-4z",
+ "M9 11a4 4 0 1 0 0-8a4 4 0 0 0 0 8z M2 21c0-4 3-6 7-6s7 2 7 6 M16 10l2 2 4-4",
+ "M3 12h4l3-7 4 14 3-7h4",
+ "M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18z M10 8h3.5a2 2 0 0 1 0 4H10h4a2 2 0 0 1 0 4h-4z M11.5 6.5v11",
+ "M8 3h8v3H8z M6 4.5H5V21h14V4.5h-1 M9 14l2 2 4-4"
+];
 function renderLists(){
-  document.getElementById("modList").innerHTML = t("mods").map(m => `<span class="chip">${esc(m)}</span>`).join("");
+  document.getElementById("modList").innerHTML = t("mods").map((m,i) => `<div class="mod"><svg viewBox="0 0 24 24"><path d="${ICONS[i % ICONS.length]}"/></svg><span>${esc(m)}</span></div>`).join("");
+  const mq = t("mods").map(m => `<span>${esc(m)}</span><i>✦</i>`).join("");
+  document.getElementById("marq").innerHTML = `<div class="seq">${mq}</div><div class="seq">${mq}</div>`;
+  const pct = [100, 92, 84, 76, 68, 61];
+  document.getElementById("mockBars").innerHTML = t("mods").slice(0,4).map((m,i) =>
+    `<div class="bar"><span>${esc(m)}</span><em>${pct[i]}%</em><div class="track2"><div class="fill" style="--w:${pct[i]}%"></div></div></div>`).join("");
+  document.getElementById("rings").innerHTML = t("mods").slice(0,6).map((m,i) =>
+    `<div class="ring" style="--p:${pct[i]}"><div class="ring-c"><b>${pct[i]}%</b></div><span>${esc(m)}</span></div>`).join("");
   document.getElementById("forList").innerHTML = t("fors").map(m => `<span class="chip">${esc(m)}</span>`).join("");
   document.querySelectorAll("ul.incl").forEach(ul => {
     const items = t("incl").slice();
