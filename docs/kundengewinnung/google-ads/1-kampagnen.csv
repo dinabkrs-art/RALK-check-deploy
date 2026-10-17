@@ -1,0 +1,3 @@
+Campaign,Campaign Type,Networks,Budget,Budget type,Bid Strategy Type,Max CPC bid limit,Languages,Ad Schedule,Campaign Status
+RALK FR – Afrique francophone,Search,Google search,7,Daily,Maximize clicks,0.60,fr,(Monday[07:00-19:00]);(Tuesday[07:00-19:00]);(Wednesday[07:00-19:00]);(Thursday[07:00-19:00]);(Friday[07:00-19:00]),Paused
+RALK EN – Anglophone Africa,Search,Google search,5,Daily,Maximize clicks,0.60,en,(Monday[07:00-19:00]);(Tuesday[07:00-19:00]);(Wednesday[07:00-19:00]);(Thursday[07:00-19:00]);(Friday[07:00-19:00]),Paused
