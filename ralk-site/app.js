@@ -93,6 +93,11 @@ const I18N = {
     forLead:"Regulated firms must train their staff by law. Every other company faces fraud, bribery and sanctions risk too, in mining, energy, telecoms, construction and trade.",
     fors:["Banks","Microfinance institutions","Fintechs, PSPs & e-money","Mobile money","Money transfer & forex","Insurers","Asset managers & brokers","Crypto / VASPs","Law firms, notaries, accountants","Regulators & public bodies","Professional associations","Mining, oil & gas","Telecoms & energy","Construction & trade","Corporates & NGOs"],
 
+    voiceEyebrow:"Pilot partners", voiceTitle:"Tested in practice",
+    voice1:"A well-designed tool, calibrated to operational needs. An excellent initiative that we encourage.",
+    voice1r:"President, Congoinvest 360, RALK pilot partner",
+    voice2:"The design choice is right. By tying each module to the learner's profile instead of distributing one undifferentiated content, RALK makes a choice consistent with the risk-based approach, precisely where most AML/CFT training falls short.",
+    voice2r:"Expert in financial intelligence units and asset recovery, CoDA / African Union",
     priceEyebrow:"Pricing", priceTitle:"Simple annual licence per employee",
     priceLead:"One fixed rate per employee, based on the size of your organisation. All modules included. No set-up fee.",
     perEmp:"/ employee / year",
@@ -200,6 +205,11 @@ const I18N = {
     forLead:"Les entreprises assujetties doivent former leur personnel par la loi. Toutes les autres sont aussi exposées à la fraude, à la corruption et aux sanctions, dans les mines, l'énergie, les télécoms, le BTP et le commerce.",
     fors:["Banques","Institutions de microfinance","Fintechs, PSP & monnaie électronique","Mobile money","Transfert d'argent & bureaux de change","Assurances","Gestion d'actifs & courtiers","Crypto / PSAV","Avocats, notaires, experts-comptables","Régulateurs & organismes publics","Ordres et associations professionnelles","Mines, pétrole & gaz","Télécoms & énergie","BTP & commerce","Entreprises & ONG"],
 
+    voiceEyebrow:"Partenaires pilotes", voiceTitle:"Éprouvé sur le terrain",
+    voice1:"Outil bien conçu et calibré aux besoins opérationnels. Une excellente initiative que nous encourageons.",
+    voice1r:"Président, Congoinvest 360, partenaire pilote RALK",
+    voice2:"Le parti pris de conception est juste. En conditionnant la génération du module au profil de l'apprenant plutôt qu'en diffusant un contenu unique et indifférencié, RALK opère un choix cohérent avec l'approche fondée sur les risques, précisément là où la plupart des dispositifs de formation en LBC/FT révèlent leurs insuffisances.",
+    voice2r:"Expert FFI et recouvrement des avoirs, CoDA / Union Africaine",
     priceEyebrow:"Tarifs", priceTitle:"Une licence annuelle simple, par collaborateur",
     priceLead:"Un tarif fixe par collaborateur, selon la taille de votre organisation. Tous les modules inclus. Sans frais de mise en place.",
     perEmp:"/ collaborateur / an",
@@ -373,7 +383,7 @@ function motion(){
     const parent = el.parentElement; const i = seen.get(parent) || 0; seen.set(parent, i + 1);
     el.style.setProperty("--d", Math.min(i, 8) * 0.07 + "s");
     el.classList.add("rv");
-    if(el.matches(".band-grid > div:first-child, .why .card:nth-child(1), .grid.g2 > :first-child, .calc > .card:first-child")) el.classList.add("rv-l");
+    if(el.matches(".band-grid > div:first-child, .why .card:nth-child(1), .grid.g2 > :first-child, .voice-grid > :first-child, .calc > .card:first-child")) el.classList.add("rv-l");
     if(el.matches(".dash, .why .card:nth-child(3), .grid.g2 > :last-child, .calc > .card:last-child")) el.classList.add("rv-r");
     io.observe(el);
   });
