@@ -159,22 +159,12 @@
   </section>
 
   <!-- Modules -->
-  <section class="alt" id="modules">
+  <section id="modules">
     <div class="wrap">
       <p class="eyebrow" data-i18n="modEyebrow"></p>
       <h2 data-i18n="modTitle"></h2>
       <p class="lead" data-i18n="modLead"></p>
       <div class="mods" id="modList"></div>
-    </div>
-  </section>
-
-  <!-- Audience -->
-  <section>
-    <div class="wrap">
-      <p class="eyebrow" data-i18n="forEyebrow"></p>
-      <h2 data-i18n="forTitle"></h2>
-      <p class="lead" data-i18n="forLead"></p>
-      <div class="chips" id="forList"></div>
     </div>
   </section>
 
@@ -216,21 +206,6 @@
           <div class="sub"><span data-i18n="calcEff"></span>: <b id="calcEff"></b></div>
           <div style="margin-top:16px"><a class="btn" id="calcBuy" href="/order" data-i18n="calcBuy"></a></div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Compare -->
-  <section>
-    <div class="wrap">
-      <div class="head">
-        <p class="eyebrow" data-i18n="cmpEyebrow"></p>
-        <h2 data-i18n="cmpTitle"></h2>
-        <p class="lead" data-i18n="cmpLead"></p>
-      </div>
-      <div class="grid g2">
-        <div class="tier"><div class="size" data-i18n="cmpOldT"></div><div class="price" style="font-size:28px" data-i18n="cmpOldP"></div><ul class="cmp" data-list="cmpOld"></ul></div>
-        <div class="tier hl"><div class="size" data-i18n="cmpNewT"></div><div class="price" style="font-size:28px;color:hsl(var(--gold))" data-i18n="cmpNewP"></div><ul class="cmp" data-list="cmpNew"></ul></div>
       </div>
     </div>
   </section>
@@ -279,14 +254,13 @@ const ICONS = [
 ];
 function renderLists(){
   document.getElementById("modList").innerHTML = t("mods").map((m,i) => `<div class="mod"><svg viewBox="0 0 24 24"><path d="${ICONS[i % ICONS.length]}"/></svg><span>${esc(m)}</span></div>`).join("");
-  const mq = t("mods").map(m => `<span>${esc(m)}</span><i>▲</i>`).join("");
+  const mq = t("fors").map(m => `<span>${esc(m)}</span><i>▲</i>`).join("");
   document.getElementById("marq").innerHTML = `<div class="seq">${mq}</div><div class="seq">${mq}</div>`;
   const pct = [100, 92, 84, 76, 68, 61];
   document.getElementById("mockBars").innerHTML = t("mods").slice(0,4).map((m,i) =>
     `<div class="bar"><span>${esc(m)}</span><em>${pct[i]}%</em><div class="track2"><div class="fill" style="--w:${pct[i]}%"></div></div></div>`).join("");
-  document.getElementById("rings").innerHTML = t("mods").slice(0,6).map((m,i) =>
+  document.getElementById("rings").innerHTML = t("dashTeams").map((m,i) =>
     `<div class="ring" style="--p:${pct[i]}"><div class="ring-c"><b>${pct[i]}%</b></div><span>${esc(m)}</span></div>`).join("");
-  document.getElementById("forList").innerHTML = t("fors").map(m => `<span class="chip">${esc(m)}</span>`).join("");
   document.querySelectorAll("ul.incl").forEach(ul => {
     const items = t("incl").slice();
     if(ul.classList.contains("big")) items.push(t("inclBig"));
