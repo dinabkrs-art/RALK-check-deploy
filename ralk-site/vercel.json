@@ -2,16 +2,67 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/license", "destination": "/licence", "permanent": true },
-    { "source": "/pricing", "destination": "/#pricing", "permanent": false },
-    { "source": "/check", "destination": "https://check.ralk.io", "permanent": false },
-    { "source": "/login", "destination": "https://app.ralk.io", "permanent": false }
+    {
+      "source": "/license",
+      "destination": "/licence",
+      "permanent": true
+    },
+    {
+      "source": "/pricing",
+      "destination": "/#pricing",
+      "permanent": false
+    },
+    {
+      "source": "/check",
+      "destination": "https://check.ralk.io",
+      "permanent": false
+    },
+    {
+      "source": "/login",
+      "destination": "https://app.ralk.io",
+      "permanent": false
+    },
+    {
+      "source": "/ralk/privacy-policy",
+      "destination": "https://check.ralk.io/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/ralk/:path*",
+      "destination": "/",
+      "permanent": false
+    }
   ],
   "headers": [
-    { "source": "/(.*)", "headers": [
-      { "key": "X-Content-Type-Options", "value": "nosniff" },
-      { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-      { "key": "X-Frame-Options", "value": "DENY" }
-    ]}
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        }
+      ]
+    },
+    {
+      "source": "/wp-content/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    }
   ]
 }
