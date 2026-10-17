@@ -275,7 +275,7 @@ function renderChrome(){
   if(h) h.innerHTML = `
     <div class="wrap">
       <a href="/" aria-label="RALK home"><img class="logo" src="/logo.png" alt="RALK"></a>
-      <nav class="main">
+      <nav class="main" aria-label="Main">
         <a href="/#product" data-i18n="navProduct"></a>
         <a href="/#modules" data-i18n="navModules"></a>
         <a href="/#pricing" data-i18n="navPricing"></a>
@@ -293,7 +293,7 @@ function renderChrome(){
     <div class="wrap">
       <div><img class="logo" src="/logo.png" alt="RALK" style="height:18px;display:inline-block;vertical-align:middle">
         &nbsp; <span data-i18n="footRights"></span></div>
-      <nav>
+      <nav aria-label="Footer">
         <a href="/licence" data-i18n="footLicence"></a>
         <a href="${CONFIG.CHECK_URL}/terms" data-i18n="footTerms"></a>
         <a href="${CONFIG.CHECK_URL}/privacy" data-i18n="footPrivacy"></a>

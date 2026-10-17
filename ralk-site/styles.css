@@ -22,7 +22,8 @@ html[data-theme="light"]{
   --card-2:42 22% 89%;
   --muted:0 0% 32%;
   --border:40 16% 80%;
-  --gold:43 62% 38%;
+  --gold:43 62% 30%;
+  --gold-ink:#ffffff;
   --green:142 45% 32%;
   --red:0 62% 44%;
 }
@@ -151,7 +152,7 @@ details p{color:hsl(var(--muted));margin:10px 0 0}
 .legal{max-width:820px;padding:56px 20px 80px;margin:0 auto}
 .legal h1{font-size:34px}
 .legal h2{font-size:20px;margin-top:34px}
-.legal p,.legal li{color:hsl(var(--fg));opacity:.9}
+.legal p,.legal li{color:hsl(var(--fg))}
 .legal .meta{color:hsl(var(--muted));font-size:14px}
 
 /* Footer */
@@ -168,3 +169,6 @@ footer nav a{color:hsl(var(--muted))}
 }
 ul.cmp{margin:14px 0 0;padding-left:18px;color:hsl(var(--muted));font-size:15px}
 ul.cmp li{margin:4px 0}
+
+/* Accessibility: links inside running text are underlined (WCAG 1.4.1) */
+p a,li a,td a{text-decoration:underline;text-underline-offset:2px}
