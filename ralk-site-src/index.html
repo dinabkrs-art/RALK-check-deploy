@@ -164,7 +164,11 @@
       <p class="eyebrow" data-i18n="modEyebrow"></p>
       <h2 data-i18n="modTitle"></h2>
       <p class="lead" data-i18n="modLead"></p>
-      <div class="mods" id="modList"></div>
+      <div class="carousel" role="region" aria-roledescription="carousel" data-i18n-aria="modTitle">
+        <button type="button" class="car-btn prev" id="modPrev" data-i18n-label="carPrev">&#8249;</button>
+        <div class="mods track-x" id="modList" tabindex="0"></div>
+        <button type="button" class="car-btn next" id="modNext" data-i18n-label="carNext">&#8250;</button>
+      </div>
     </div>
   </section>
 
@@ -211,11 +215,12 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq">
+  <section id="faq" class="faq-compact">
     <div class="wrap" style="max-width:820px">
       <p class="eyebrow" data-i18n="faqEyebrow"></p>
       <h2 data-i18n="faqTitle"></h2>
-      <div id="faqList" style="margin-top:24px"></div>
+      <button type="button" class="btn ghost faq-toggle" id="faqToggle" aria-expanded="false" aria-controls="faqList"></button>
+      <div id="faqList" hidden style="margin-top:22px"></div>
     </div>
   </section>
 
@@ -271,13 +276,14 @@ function renderLists(){
     PRICING.tiers.map((x,i) => `<tr><td>${esc(bandLabel(i))}</td><td style="font-size:20px;color:hsl(var(--gold))">${esc(money(x.rate))}</td></tr>`).join("");
   document.querySelectorAll("ul[data-list]").forEach(ul => { ul.innerHTML = t(ul.dataset.list).map(i => `<li>${esc(i)}</li>`).join(""); });
   const faqItem = ([q,a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`;
-  const faq = t("faq"), FAQ_TOP = 5;
-  document.getElementById("faqList").innerHTML = faq.slice(0, FAQ_TOP).map(faqItem).join("") +
-    (faq.length > FAQ_TOP ? `<div id="faqMore" hidden>${faq.slice(FAQ_TOP).map(faqItem).join("")}</div>
-      <button type="button" class="btn ghost faq-more" id="faqMoreBtn" aria-expanded="false" aria-controls="faqMore">${esc(t("faqAll").replace("{n}", faq.length))}</button>` : "");
-  const fb = document.getElementById("faqMoreBtn");
-  if(fb) fb.addEventListener("click", () => { const box = document.getElementById("faqMore"); const open = box.hidden;
-    box.hidden = !open; fb.setAttribute("aria-expanded", String(open)); fb.textContent = open ? t("faqLess") : t("faqAll").replace("{n}", faq.length); });
+  const faq = t("faq");
+  document.getElementById("faqList").innerHTML = faq.map(faqItem).join("");
+  const ft = document.getElementById("faqToggle"), fl = document.getElementById("faqList");
+  const ftLabel = () => { ft.textContent = fl.hidden ? t("faqAll").replace("{n}", faq.length) : t("faqLess"); ft.setAttribute("aria-expanded", String(!fl.hidden)); };
+  if(!ft._bound){ ft._bound = true; ft.addEventListener("click", () => { fl.hidden = !fl.hidden; ftLabel(); });
+    const openFromHash = () => { if(location.hash === "#faq"){ fl.hidden = false; ftLabel(); } };
+    window.addEventListener("hashchange", openFromHash); openFromHash(); }
+  ftLabel();
   updateCalc();
 }
 function updateCalc(){
