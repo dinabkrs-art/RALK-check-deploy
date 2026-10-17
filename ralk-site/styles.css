@@ -76,8 +76,12 @@ h3{font-size:18px;margin:0 0 6px}
 
 /* Hero */
 .hero{padding:96px 0 72px;position:relative;overflow:hidden}
+.hero > *{position:relative;z-index:1}
+.hero canvas.stars{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.hero::after{content:"";position:absolute;left:-18%;bottom:-55%;width:560px;height:560px;z-index:0;
+  background:radial-gradient(closest-side,hsla(var(--gold),.22),transparent);pointer-events:none}
 .hero::before{content:"";position:absolute;inset:-40% -10% auto auto;width:640px;height:640px;
-  background:radial-gradient(closest-side,hsla(var(--gold),.20),transparent);pointer-events:none}
+  background:radial-gradient(closest-side,hsla(var(--gold),.34),transparent);pointer-events:none;z-index:0}
 .hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
 .hero .note{margin-top:16px;font-size:13.5px;color:hsl(var(--muted))}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:54px;max-width:760px}
@@ -172,3 +176,50 @@ ul.cmp li{margin:4px 0}
 
 /* Accessibility: links inside running text are underlined (WCAG 1.4.1) */
 p a,li a,td a{text-decoration:underline;text-underline-offset:2px}
+
+/* Gold halos (brand look) */
+.calc{position:relative;box-shadow:0 0 0 1px hsla(var(--gold),.25),0 18px 70px -20px hsla(var(--gold),.35)}
+.tier.hl{box-shadow:0 18px 60px -24px hsla(var(--gold),.45)}
+
+/* ---------- Motion & depth (scroll reveal, hover lift, floating halos) ---------- */
+:root{--shadow-1:0 1px 2px rgba(0,0,0,.25),0 8px 24px -12px rgba(0,0,0,.45);
+      --shadow-2:0 2px 6px rgba(0,0,0,.25),0 22px 48px -18px rgba(0,0,0,.6),0 0 0 1px hsla(var(--gold),.28),0 18px 60px -28px hsla(var(--gold),.55)}
+html[data-theme="light"]{--shadow-1:0 1px 2px rgba(60,45,10,.06),0 10px 28px -14px rgba(60,45,10,.22);
+      --shadow-2:0 2px 6px rgba(60,45,10,.08),0 24px 50px -20px rgba(60,45,10,.30),0 0 0 1px hsla(var(--gold),.35),0 18px 60px -28px hsla(var(--gold),.45)}
+.card,.stat,.tier,.calc,.chip{box-shadow:var(--shadow-1);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s,background .35s}
+.card,.stat,.tier{position:relative;overflow:hidden}
+.card::before,.stat::before,.tier::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),hsla(var(--gold),.12),transparent 45%)}
+.card:hover,.stat:hover,.tier:hover{transform:translateY(-5px);box-shadow:var(--shadow-2);border-color:hsla(var(--gold),.55)}
+.card:hover::before,.stat:hover::before,.tier:hover::before{opacity:1}
+.chip:hover{transform:translateY(-2px);border-color:hsla(var(--gold),.6);box-shadow:var(--shadow-2)}
+.card .num{transition:transform .35s}
+.card:hover .num{transform:scale(1.12) rotate(-4deg)}
+header.top{transition:box-shadow .3s,background .3s}
+header.top.scrolled{box-shadow:0 10px 30px -18px rgba(0,0,0,.7)}
+.btn{transition:transform .2s,box-shadow .25s,filter .2s}
+.btn:hover{transform:translateY(-2px)}
+.hero::before{animation:haloA 14s ease-in-out infinite alternate}
+.hero::after{animation:haloB 18s ease-in-out infinite alternate}
+@keyframes haloA{to{transform:translate(-70px,50px) scale(1.12)}}
+@keyframes haloB{to{transform:translate(80px,-40px) scale(1.18)}}
+section{position:relative}
+section.alt::before{content:"";position:absolute;right:-180px;top:-120px;width:520px;height:520px;pointer-events:none;
+  background:radial-gradient(closest-side,hsla(var(--gold),.11),transparent)}
+
+/* Hero entrance */
+html.fx .hero .wrap > *{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+html.fx .hero .wrap > *:nth-child(2){animation-delay:.08s}
+html.fx .hero .wrap > *:nth-child(3){animation-delay:.16s}
+html.fx .hero .wrap > *:nth-child(4){animation-delay:.24s}
+html.fx .hero .wrap > *:nth-child(5){animation-delay:.32s}
+html.fx .hero .wrap > *:nth-child(6){animation-delay:.40s}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+/* Scroll reveal: only when JS + motion are available, content stays visible otherwise */
+html.fx .rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+html.fx .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  .hero::before,.hero::after{animation:none}
+  .card:hover,.stat:hover,.tier:hover,.chip:hover,.btn:hover{transform:none}
+}
