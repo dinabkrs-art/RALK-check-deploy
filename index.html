@@ -328,7 +328,9 @@ const CAMPAIGN = (() => {
 })();
 function orderUrl(){
   const seats = {"1–10":10,"11–50":50,"51–200":200,"201–1000":1000}[STATE.profile.size];
-  const q = new URLSearchParams({ lang: STATE.lang, utm_source: "quickcheck", utm_medium: "results" });
+  // Keep the original ad/email campaign; tag as Quick-Check only for direct visits.
+  const q = new URLSearchParams(Object.keys(CAMPAIGN).length ? CAMPAIGN : { utm_source: "quickcheck", utm_medium: "results" });
+  q.set("lang", STATE.lang);
   if(seats) q.set("seats", seats);
   return `${CONFIG.ORDER_URL}?${q}`;
 }

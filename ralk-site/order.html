@@ -169,7 +169,7 @@ async function submitOrder(e){
     accepted_at_utc: acceptedAt,
     language: getLang(),
     campaign: ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","ref"]
-      .map(k => [k, new URLSearchParams(location.search).get(k)]).filter(([,v]) => v)
+      .map(k => [k, campaignParams().get(k)]).filter(([,v]) => v)
       .map(([k,v]) => `${k}=${String(v).slice(0,100)}`).join(" · ") || "direct",
     page: location.href
   };
@@ -186,6 +186,17 @@ async function submitOrder(e){
     $("err").textContent = t("errSend");
     btn.disabled = false; btn.textContent = t("fSubmit");
   }
+}
+// Campaign tags from this URL, else from the ralk.io page the visitor came from
+// (ads land on ralk.io/#pricing, the order link itself carries no utm_*).
+function campaignParams(){
+  const own = new URLSearchParams(location.search);
+  if([...own.keys()].some(k => k.startsWith("utm_") || k === "ref")) return own;
+  try{
+    const ref = new URL(document.referrer);
+    if(ref.origin === location.origin) return ref.searchParams;
+  }catch(e){}
+  return own;
 }
 let lastOrder = null;
 function showDone(p){
