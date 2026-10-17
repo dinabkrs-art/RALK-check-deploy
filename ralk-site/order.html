@@ -62,7 +62,6 @@
             <tr><td data-i18n="sumSeats"></td><td id="sSeats">–</td></tr>
             <tr><td data-i18n="sumRate"></td><td id="sRate">–</td></tr>
             <tr><td data-i18n="sumTerm"></td><td data-i18n="sumTermV"></td></tr>
-            <tr><td data-i18n="sumSetup"></td><td data-i18n="sumSetupV"></td></tr>
             <tr class="total"><td data-i18n="sumTotal"></td><td id="sTotal">–</td></tr>
           </table>
           <p class="hint" id="sMin" hidden data-i18n="calcMin"></p>
@@ -164,7 +163,7 @@ async function submitOrder(e){
     notes: $("notes").value.trim(),
     licence_terms_version: CONFIG.TERMS_VERSION,
     licence_terms_accepted: "yes",
-    taxes: "net prices, local taxes added (licence terms section 6)",
+    withholding_tax_acknowledged: "yes",   // covered by licence terms section 6, accepted with the checkbox above
     accepted_at_utc: acceptedAt,
     language: getLang(),
     campaign: ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","ref"]
@@ -215,7 +214,7 @@ function renderDone(){
   const rows = [
     [t("fOrg"), p.organisation], [t("fCountry"), p.country], [t("fContact"), `${p.contact_person} — ${p.function}`],
     [t("sumSeats"), p.employees], [t("sumRate"), money(p.rate_per_employee_usd)],
-    [t("sumTerm"), t("sumTermV")], [t("sumSetup"), t("sumSetupV")],
+    [t("sumTerm"), t("sumTermV")],
     [t("footLicence"), `v${p.licence_terms_version} · ${new Date(p.accepted_at_utc).toLocaleString()}`]
   ];
   $("okTable").innerHTML = rows.map(([a,b]) => `<tr><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join("")
