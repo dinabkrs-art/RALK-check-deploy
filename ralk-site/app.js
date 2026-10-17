@@ -96,6 +96,12 @@ const I18N = {
     calcRate:"Rate per employee", calcTotal:"Annual licence", calcMin:"Minimum annual licence applies",
     calcBuy:"Continue to order", calcFloor:"Band transition rule applies", calcEff:"Effective price per employee",
 
+    cmpEyebrow:"Compare", cmpTitle:"More training for less money than the classroom",
+    cmpLead:"Organisations often pay more for classroom courses that cover fewer topics, reach fewer people and are outdated within months.",
+    cmpOldT:"Classroom AML course", cmpOldP:"≈ USD 460 per participant",
+    cmpOld:["One-off, typically 3–5 days","Usually one topic (AML/KYC)","Travel and time away from work","Same content for every role","Paper attendance list as evidence"],
+    cmpNewT:"RALK licence", cmpNewP:"USD 45–65 per employee per year",
+    cmpNew:["All year, short modules on any device","13 financial-crime topics included","No travel, no time away from customers","Adapted to each role, sector and country","Verifiable certificates and audit reports"],
     faqEyebrow:"FAQ", faqTitle:"Questions before you start",
     faq:[
       ["How do we pay?","By invoice and bank transfer in USD (or EUR on request). Invoices are due within 14 days; access is activated on payment or, for public bodies, on receipt of the purchase order."],
@@ -180,6 +186,12 @@ const I18N = {
     calcRate:"Tarif par collaborateur", calcTotal:"Licence annuelle", calcMin:"La licence annuelle minimale s'applique",
     calcBuy:"Passer à la commande", calcFloor:"Règle de passage de tranche appliquée", calcEff:"Prix effectif par collaborateur",
 
+    cmpEyebrow:"Comparer", cmpTitle:"Plus de formation, pour moins cher qu'en salle",
+    cmpLead:"Les organisations paient souvent davantage pour des formations en salle qui couvrent moins de thèmes, touchent moins de personnes et sont dépassées en quelques mois.",
+    cmpOldT:"Formation LBC/FT en salle", cmpOldP:"≈ 460 USD par participant",
+    cmpOld:["Ponctuelle, souvent 3 à 5 jours","En général un seul thème (LBC/FT/KYC)","Déplacements et absence du poste","Même contenu pour toutes les fonctions","Feuille de présence papier comme preuve"],
+    cmpNewT:"Licence RALK", cmpNewP:"45–65 USD par collaborateur et par an",
+    cmpNew:["Toute l'année, modules courts sur tout appareil","13 thèmes de criminalité financière inclus","Sans déplacement, sans quitter les clients","Adapté à chaque fonction, secteur et pays","Certificats vérifiables et rapports d'audit"],
     faqEyebrow:"FAQ", faqTitle:"Vos questions avant de commencer",
     faq:[
       ["Comment payer ?","Par facture et virement bancaire en USD (ou en EUR sur demande). Les factures sont payables sous 14 jours ; l'accès est activé à réception du paiement ou, pour les organismes publics, du bon de commande."],
@@ -223,6 +235,8 @@ function store(k, v){ try{ if(v===undefined) return localStorage.getItem(k); loc
 function getLang(){
   const q = new URLSearchParams(location.search).get("lang");
   if(q === "en" || q === "fr") return q;
+  const pl = document.documentElement.dataset.pageLang;   // prerendered /  and /fr pages
+  if(pl === "en" || pl === "fr") return pl;
   const s = store("ralk_lang");
   if(s === "en" || s === "fr") return s;
   return (navigator.language || "en").toLowerCase().startsWith("fr") ? "fr" : "en";
@@ -241,7 +255,11 @@ function applyI18n(){
   if(lb) lb.textContent = lang === "en" ? "FR" : "EN";
   document.dispatchEvent(new CustomEvent("ralk:lang"));
 }
-function toggleLang(){ store("ralk_lang", getLang() === "en" ? "fr" : "en");
+function toggleLang(){
+  const next = getLang() === "en" ? "fr" : "en";
+  store("ralk_lang", next);
+  const pl = document.documentElement.dataset.pageLang;
+  if(pl){ location.href = (next === "fr" ? "/fr" : "/") + location.hash; return; }
   const u = new URL(location.href); u.searchParams.delete("lang"); history.replaceState(null, "", u); applyI18n(); }
 
 function getTheme(){ const s = store("ralk_theme"); return s === "light" ? "light" : "dark"; }
@@ -284,4 +302,8 @@ function renderChrome(){
 }
 
 applyTheme();
-document.addEventListener("DOMContentLoaded", () => { renderChrome(); applyTheme(); applyI18n(); });
+document.addEventListener("DOMContentLoaded", () => {
+  const pl = document.documentElement.dataset.pageLang;
+  if(pl) store("ralk_lang", pl);          // keep the language on /order, /licence …
+  renderChrome(); applyTheme(); applyI18n();
+});

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://ralk.io/</loc><lastmod>2026-10-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ralk.io/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ralk.io/fr"/></url>
+  <url><loc>https://ralk.io/fr</loc><lastmod>2026-10-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ralk.io/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ralk.io/fr"/></url>
+  <url><loc>https://ralk.io/licence</loc><lastmod>2026-10-17</lastmod></url>
+  <url><loc>https://ralk.io/imprint</loc><lastmod>2026-10-17</lastmod></url>
+</urlset>

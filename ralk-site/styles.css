@@ -166,3 +166,5 @@ footer nav a{color:hsl(var(--muted))}
   .tools .btn.sm{display:none}
   .hero{padding-top:56px}
 }
+ul.cmp{margin:14px 0 0;padding-left:18px;color:hsl(var(--muted));font-size:15px}
+ul.cmp li{margin:4px 0}

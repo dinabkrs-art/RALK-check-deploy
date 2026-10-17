@@ -1,38 +1,65 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
-<head>
+<html lang="en" data-theme="dark" data-page-lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RALK — Financial-crime compliance training for Africa</title>
 <meta name="description" content="AI-powered compliance e-learning for banks, fintechs, insurers and professionals in Africa: AML/CFT, sanctions, fraud, corruption, data protection, cyber. Annual licence from USD 45 per employee.">
 <meta property="og:title" content="RALK — Every employee trained. Every audit answered.">
-<meta property="og:description" content="Financial-crime compliance training for Africa. Role-based, always current, audit-ready. Licence from USD 45 per employee per year.">
+<meta property="og:description" content="AI-powered compliance e-learning for banks, fintechs, insurers and professionals in Africa: AML/CFT, sanctions, fraud, corruption, data protection, cyber. Annual licence from USD 45 per employee.">
 <meta property="og:image" content="https://ralk.io/logo.png">
 <meta property="og:url" content="https://ralk.io/">
 <meta property="og:type" content="website">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ralk.io/">
+<link rel="alternate" hreflang="en" href="https://ralk.io/">
+<link rel="alternate" hreflang="fr" href="https://ralk.io/fr">
+<link rel="alternate" hreflang="x-default" href="https://ralk.io/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","name":"RALK","url":"https://ralk.io","logo":"https://ralk.io/logo.png","email":"info@ralk.io",
+  "address":{"@type":"PostalAddress","streetAddress":"Hafenstraße 25–27","postalCode":"68159","addressLocality":"Mannheim","addressCountry":"DE"}},
+ {"@type":"Product","name":"RALK compliance training licence","brand":{"@type":"Brand","name":"RALK"},
+  "description":"AI-powered financial-crime compliance training (AML/CFT, sanctions, fraud, anti-bribery, data protection, cyber) for regulated organisations in Africa. Annual licence per employee.",
+  "offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"45","highPrice":"65","offerCount":"3","url":"https://ralk.io/#pricing"}}
+]}
+</script>
 <link rel="stylesheet" href="/styles.css">
 <script src="/app.js"></script>
 </head>
 <body>
-<header class="top" id="top"></header>
+<header class="top" id="top">
+    <div class="wrap">
+      <a href="/" aria-label="RALK home"><img class="logo" src="/logo.png" alt="RALK"></a>
+      <nav class="main">
+        <a href="/#product" data-i18n="navProduct">Product</a>
+        <a href="/#modules" data-i18n="navModules">Modules</a>
+        <a href="/#pricing" data-i18n="navPricing">Pricing</a>
+        <a href="/#faq" data-i18n="navFaq">FAQ</a>
+        <a href="https://app.ralk.io" data-i18n="navLogin">Log in</a>
+      </nav>
+      <div class="tools">
+        <button class="tbtn" id="langBtn" onclick="toggleLang()" aria-label="Language">FR</button>
+        <button class="tbtn" id="themeBtn" onclick="toggleTheme()" aria-label="Theme">☀</button>
+        <a class="btn sm" href="/order" data-i18n="navBuy">Get a licence</a>
+      </div>
+    </div></header>
 
 <main>
   <!-- Hero -->
   <section class="hero" id="product">
     <div class="wrap">
-      <p class="eyebrow" data-i18n="heroEyebrow"></p>
-      <h1 data-i18n="heroTitle"></h1>
-      <p class="lead" data-i18n="heroLead"></p>
+      <p class="eyebrow" data-i18n="heroEyebrow">Financial-crime compliance training for Africa</p>
+      <h1 data-i18n="heroTitle">Every employee trained. Every audit answered.</h1>
+      <p class="lead" data-i18n="heroLead">RALK is AI-powered e-learning that trains your staff on anti-money laundering, sanctions, fraud, corruption, data protection and cyber risk — tailored to their role, sector and country, with certificates you can show your regulator and auditors.</p>
       <div class="cta">
-        <a class="btn" href="/order" data-i18n="heroBuy"></a>
-        <a class="btn ghost" href="https://check.ralk.io" data-i18n="heroCheck"></a>
+        <a class="btn" href="/order" data-i18n="heroBuy">Get a licence</a>
+        <a class="btn ghost" href="https://check.ralk.io" data-i18n="heroCheck">Free 10-minute compliance check</a>
       </div>
-      <p class="note" data-i18n="heroNote"></p>
+      <p class="note" data-i18n="heroNote">Annual licence from USD 45 per employee. No set-up fee.</p>
       <div class="stats">
-        <div class="stat"><b data-i18n="stat1"></b><span data-i18n="stat1s"></span></div>
-        <div class="stat"><b data-i18n="stat2"></b><span data-i18n="stat2s"></span></div>
-        <div class="stat"><b data-i18n="stat3"></b><span data-i18n="stat3s"></span></div>
+        <div class="stat"><b data-i18n="stat1">13 risk areas</b><span data-i18n="stat1s">from AML/KYC to AI and whistleblowing</span></div>
+        <div class="stat"><b data-i18n="stat2">Role-based</b><span data-i18n="stat2s">front office, compliance, management</span></div>
+        <div class="stat"><b data-i18n="stat3">Audit-ready</b><span data-i18n="stat3s">certificates, reports, verification</span></div>
       </div>
     </div>
   </section>
@@ -41,14 +68,14 @@
   <section class="alt">
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow" data-i18n="whyEyebrow"></p>
-        <h2 data-i18n="whyTitle"></h2>
-        <p class="lead" data-i18n="whyLead"></p>
+        <p class="eyebrow" data-i18n="whyEyebrow">Why RALK</p>
+        <h2 data-i18n="whyTitle">Regulators expect proof that your people are trained.</h2>
+        <p class="lead" data-i18n="whyLead">FATF standards and national AML laws oblige banks, fintechs, insurers, money transfer operators and professionals to train their staff — and to prove it in inspections. Classic classroom training is expensive, quickly outdated and hard to document.</p>
       </div>
       <div class="grid g3">
-        <div class="card"><h3 data-i18n="why1t"></h3><p data-i18n="why1"></p></div>
-        <div class="card"><h3 data-i18n="why2t"></h3><p data-i18n="why2"></p></div>
-        <div class="card"><h3 data-i18n="why3t"></h3><p data-i18n="why3"></p></div>
+        <div class="card"><h3 data-i18n="why1t">Required by law</h3><p data-i18n="why1">Training obligations under national AML/CFT laws and FATF Recommendation 18 — checked in every inspection.</p></div>
+        <div class="card"><h3 data-i18n="why2t">Always current</h3><p data-i18n="why2">New sanctions, typologies and rules flow into the training continuously — no outdated slide decks.</p></div>
+        <div class="card"><h3 data-i18n="why3t">Documented automatically</h3><p data-i18n="why3">Every completion is recorded with a certificate and a verifiable reference for supervisors and auditors.</p></div>
       </div>
     </div>
   </section>
@@ -57,14 +84,14 @@
   <section>
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow" data-i18n="howEyebrow"></p>
-        <h2 data-i18n="howTitle"></h2>
+        <p class="eyebrow" data-i18n="howEyebrow">How it works</p>
+        <h2 data-i18n="howTitle">Live in one day — without anyone on site.</h2>
       </div>
       <div class="grid g4">
-        <div class="card"><span class="num">1</span><h3 data-i18n="how1t"></h3><p data-i18n="how1"></p></div>
-        <div class="card"><span class="num">2</span><h3 data-i18n="how2t"></h3><p data-i18n="how2"></p></div>
-        <div class="card"><span class="num">3</span><h3 data-i18n="how3t"></h3><p data-i18n="how3"></p></div>
-        <div class="card"><span class="num">4</span><h3 data-i18n="how4t"></h3><p data-i18n="how4"></p></div>
+        <div class="card"><span class="num">1</span><h3 data-i18n="how1t">Get your licence</h3><p data-i18n="how1">Choose the number of employees, accept the licence terms online and receive your invoice.</p></div>
+        <div class="card"><span class="num">2</span><h3 data-i18n="how2t">Import your staff</h3><p data-i18n="how2">Upload your employee list or connect your HR system. Each person gets their own access.</p></div>
+        <div class="card"><span class="num">3</span><h3 data-i18n="how3t">Staff train on their own</h3><p data-i18n="how3">Short, role-based modules with real scenarios and an assessment — on any device.</p></div>
+        <div class="card"><span class="num">4</span><h3 data-i18n="how4t">You keep the evidence</h3><p data-i18n="how4">Dashboard, reports and certificates for management, auditors and the regulator.</p></div>
       </div>
     </div>
   </section>
@@ -72,19 +99,19 @@
   <!-- Modules -->
   <section class="alt" id="modules">
     <div class="wrap">
-      <p class="eyebrow" data-i18n="modEyebrow"></p>
-      <h2 data-i18n="modTitle"></h2>
-      <p class="lead" data-i18n="modLead"></p>
-      <div class="chips" id="modList"></div>
+      <p class="eyebrow" data-i18n="modEyebrow">Modules</p>
+      <h2 data-i18n="modTitle">One platform for all financial-crime risks</h2>
+      <p class="lead" data-i18n="modLead">Content adapts to each learner's role, sector and country, based on FATF standards and local regulation.</p>
+      <div class="chips" id="modList"><span class="chip">Sanctions &amp; embargo</span><span class="chip">AML/CFT &amp; KYC</span><span class="chip">Beneficial ownership</span><span class="chip">PEP &amp; enhanced due diligence</span><span class="chip">Monitoring &amp; suspicious transaction reports</span><span class="chip">Crypto / virtual assets</span><span class="chip">Fraud prevention</span><span class="chip">Anti-bribery &amp; corruption</span><span class="chip">Data protection</span><span class="chip">Cybersecurity</span><span class="chip">AI &amp; financial crime</span><span class="chip">Governance, audit &amp; training</span><span class="chip">Whistleblower protection</span></div>
     </div>
   </section>
 
   <!-- Audience -->
   <section>
     <div class="wrap">
-      <p class="eyebrow" data-i18n="forEyebrow"></p>
-      <h2 data-i18n="forTitle"></h2>
-      <div class="chips" id="forList"></div>
+      <p class="eyebrow" data-i18n="forEyebrow">Who it is for</p>
+      <h2 data-i18n="forTitle">Built for regulated organisations</h2>
+      <div class="chips" id="forList"><span class="chip">Banks</span><span class="chip">Microfinance institutions</span><span class="chip">Fintechs, PSPs &amp; e-money</span><span class="chip">Mobile money</span><span class="chip">Money transfer &amp; forex</span><span class="chip">Insurers</span><span class="chip">Asset managers &amp; brokers</span><span class="chip">Crypto / VASPs</span><span class="chip">Law firms, notaries, accountants</span><span class="chip">Regulators &amp; public bodies</span><span class="chip">Professional associations</span><span class="chip">Corporates &amp; NGOs</span></div>
     </div>
   </section>
 
@@ -92,40 +119,55 @@
   <section class="alt" id="pricing">
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow" data-i18n="priceEyebrow"></p>
-        <h2 data-i18n="priceTitle"></h2>
-        <p class="lead" data-i18n="priceLead"></p>
+        <p class="eyebrow" data-i18n="priceEyebrow">Pricing</p>
+        <h2 data-i18n="priceTitle">Simple annual licence per employee</h2>
+        <p class="lead" data-i18n="priceLead">One fixed rate per employee, based on the size of your organisation. All modules included. No set-up fee.</p>
       </div>
       <div class="grid g2" style="align-items:start">
         <div class="tier hl">
-          <table class="summary" id="bandTable"></table>
+          <table class="summary" id="bandTable"><tbody><tr><td><b>Employees</b></td><td><b>Price per employee / year</b></td></tr><tr><td>up to 1,000</td><td style="font-size:20px;color:hsl(var(--gold))">$65</td></tr><tr><td>1,001 – 10,000</td><td style="font-size:20px;color:hsl(var(--gold))">$55</td></tr><tr><td>more than 10,000</td><td style="font-size:20px;color:hsl(var(--gold))">$45</td></tr></tbody></table>
         </div>
         <div class="tier">
-          <div class="size" data-i18n="inclTitle"></div>
-          <ul class="incl big"></ul>
+          <div class="size" data-i18n="inclTitle">Included in every licence</div>
+          <ul class="incl big"><li>All 13 modules</li><li>Role-based AI training</li><li>Certificates &amp; verification</li><li>Manager dashboard &amp; reports</li><li>HR import</li><li>Email support</li><li>From 1,001 employees: dedicated onboarding contact</li></ul>
         </div>
       </div>
-      <p class="hint" style="margin-top:14px" data-i18n="minNote"></p>
-      <p class="hint" style="margin-top:6px;font-weight:600" data-i18n="fixedNote"></p>
-      <div class="taxnote" data-i18n="taxNote"></div>
+      <p class="hint" style="margin-top:14px" data-i18n="minNote">Minimum annual licence: USD 5,000. When an organisation grows into a cheaper band, its licence never costs less than the largest organisation of the band below.</p>
+      <p class="hint" style="margin-top:6px;font-weight:600" data-i18n="fixedNote">Fixed published prices — the same for every customer. Volume discounts are already built in; there are no individual discounts.</p>
+      <div class="taxnote" data-i18n="taxNote">All prices are net amounts in USD. Any withholding tax or similar levy in the customer's country is the sole responsibility of the customer and is borne in addition to the price, so that RALK as the contractor receives the full invoiced amount.</div>
 
       <div class="calc">
         <div class="card">
-          <h3 data-i18n="calcTitle"></h3>
+          <h3 data-i18n="calcTitle">Calculate your licence</h3>
           <div class="field" style="margin-top:14px">
-            <label for="calcSeats" data-i18n="calcLabel"></label>
+            <label for="calcSeats" data-i18n="calcLabel">Number of employees to train</label>
             <input type="number" id="calcSeats" min="1" step="1" value="250" inputmode="numeric">
           </div>
-          <p class="sub"><span data-i18n="calcRate"></span>: <b id="calcRate"></b></p>
+          <p class="sub"><span data-i18n="calcRate">Rate per employee</span>: <b id="calcRate">$65</b></p>
         </div>
         <div class="card out">
-          <div class="sub" data-i18n="calcTotal"></div>
-          <div class="big" id="calcTotal"></div>
-          <div class="sub" id="calcMin" hidden data-i18n="calcMin"></div>
-          <div class="sub" id="calcFloor" hidden data-i18n="calcFloor"></div>
-          <div class="sub"><span data-i18n="calcEff"></span>: <b id="calcEff"></b></div>
-          <div style="margin-top:16px"><a class="btn" id="calcBuy" href="/order" data-i18n="calcBuy"></a></div>
+          <div class="sub" data-i18n="calcTotal">Annual licence</div>
+          <div class="big" id="calcTotal">$16,250</div>
+          <div class="sub" id="calcMin" hidden="" data-i18n="calcMin">Minimum annual licence applies</div>
+          <div class="sub" id="calcFloor" hidden="" data-i18n="calcFloor">Band transition rule applies</div>
+          <div class="sub"><span data-i18n="calcEff">Effective price per employee</span>: <b id="calcEff">$65.00</b></div>
+          <div style="margin-top:16px"><a class="btn" id="calcBuy" href="/order?seats=250" data-i18n="calcBuy">Continue to order</a></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compare -->
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow" data-i18n="cmpEyebrow">Compare</p>
+        <h2 data-i18n="cmpTitle">More training for less money than the classroom</h2>
+        <p class="lead" data-i18n="cmpLead">Organisations often pay more for classroom courses that cover fewer topics, reach fewer people and are outdated within months.</p>
+      </div>
+      <div class="grid g2">
+        <div class="tier"><div class="size" data-i18n="cmpOldT">Classroom AML course</div><div class="price" style="font-size:28px" data-i18n="cmpOldP">≈ USD 460 per participant</div><ul class="cmp" data-list="cmpOld"><li>One-off, typically 3–5 days</li><li>Usually one topic (AML/KYC)</li><li>Travel and time away from work</li><li>Same content for every role</li><li>Paper attendance list as evidence</li></ul></div>
+        <div class="tier hl"><div class="size" data-i18n="cmpNewT">RALK licence</div><div class="price" style="font-size:28px;color:hsl(var(--gold))" data-i18n="cmpNewP">USD 45–65 per employee per year</div><ul class="cmp" data-list="cmpNew"><li>All year, short modules on any device</li><li>13 financial-crime topics included</li><li>No travel, no time away from customers</li><li>Adapted to each role, sector and country</li><li>Verifiable certificates and audit reports</li></ul></div>
       </div>
     </div>
   </section>
@@ -133,26 +175,37 @@
   <!-- FAQ -->
   <section id="faq">
     <div class="wrap" style="max-width:820px">
-      <p class="eyebrow" data-i18n="faqEyebrow"></p>
-      <h2 data-i18n="faqTitle"></h2>
-      <div id="faqList" style="margin-top:24px"></div>
+      <p class="eyebrow" data-i18n="faqEyebrow">FAQ</p>
+      <h2 data-i18n="faqTitle">Questions before you start</h2>
+      <div id="faqList" style="margin-top:24px"><details><summary>How do we pay?</summary><p>By invoice and bank transfer in USD (or EUR on request). Invoices are due within 14 days; access is activated on payment or, for public bodies, on receipt of the purchase order.</p></details><details><summary>What about withholding tax?</summary><p>Prices are net. If withholding tax or a similar levy applies in your country, it is borne by you in addition to the price, so that RALK receives the full invoiced amount.</p></details><details><summary>Do we need anyone on site?</summary><p>No. Everything runs online: ordering, onboarding, training and reporting. Our team supports you by email or video call.</p></details><details><summary>Which languages are available?</summary><p>English and French. Further languages on request.</p></details><details><summary>Can we add employees later?</summary><p>Yes. Additional seats can be booked at any time at the rate of your size band.</p></details><details><summary>Can we negotiate the price?</summary><p>No. Like Google Workspace or Microsoft 365, RALK uses one published price list for everyone. Volume discounts are already included in the size bands, so every customer gets the same fair price.</p></details><details><summary>Is RALK legal advice?</summary><p>No. RALK provides training. It supports, but does not replace, your compliance function and legal advice.</p></details></div>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="alt">
     <div class="wrap center">
-      <h2 data-i18n="ctaTitle"></h2>
-      <p class="lead" data-i18n="ctaLead"></p>
+      <h2 data-i18n="ctaTitle">Start training your team this week.</h2>
+      <p class="lead" data-i18n="ctaLead">Get your licence online in a few minutes — or check your current risk first, free of charge.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px">
-        <a class="btn" href="/order" data-i18n="heroBuy"></a>
-        <a class="btn ghost" href="https://check.ralk.io" data-i18n="heroCheck"></a>
+        <a class="btn" href="/order" data-i18n="heroBuy">Get a licence</a>
+        <a class="btn ghost" href="https://check.ralk.io" data-i18n="heroCheck">Free 10-minute compliance check</a>
       </div>
     </div>
   </section>
 </main>
 
-<footer id="foot"></footer>
+<footer id="foot">
+    <div class="wrap">
+      <div><img class="logo" src="/logo.png" alt="RALK" style="height:18px;display:inline-block;vertical-align:middle">
+        &nbsp; <span data-i18n="footRights">© 2026 RALK. All rights reserved.</span></div>
+      <nav>
+        <a href="/licence" data-i18n="footLicence">Licence terms</a>
+        <a href="https://check.ralk.io/terms" data-i18n="footTerms">Terms of use</a>
+        <a href="https://check.ralk.io/privacy" data-i18n="footPrivacy">Privacy</a>
+        <a href="/imprint" data-i18n="footImprint">Legal notice</a>
+        <a href="mailto:info@ralk.io">info@ralk.io</a>
+      </nav>
+    </div></footer>
 
 <script>
 function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
@@ -167,6 +220,7 @@ function renderLists(){
   document.getElementById("bandTable").innerHTML =
     `<tr><td><b>${esc(t("bandHead"))}</b></td><td><b>${esc(t("rateHead"))}</b></td></tr>` +
     PRICING.tiers.map((x,i) => `<tr><td>${esc(bandLabel(i))}</td><td style="font-size:20px;color:hsl(var(--gold))">${esc(money(x.rate))}</td></tr>`).join("");
+  document.querySelectorAll("ul[data-list]").forEach(ul => { ul.innerHTML = t(ul.dataset.list).map(i => `<li>${esc(i)}</li>`).join(""); });
   document.getElementById("faqList").innerHTML = t("faq").map(([q,a]) =>
     `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("");
   updateCalc();
@@ -186,5 +240,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("calcSeats").addEventListener("input", updateCalc);
 });
 </script>
-</body>
-</html>
+
+
+</body></html>
