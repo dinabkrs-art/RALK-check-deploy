@@ -168,6 +168,9 @@ async function submitOrder(e){
     withholding_tax_acknowledged: "yes",
     accepted_at_utc: acceptedAt,
     language: getLang(),
+    campaign: ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","ref"]
+      .map(k => [k, new URLSearchParams(location.search).get(k)]).filter(([,v]) => v)
+      .map(([k,v]) => `${k}=${String(v).slice(0,100)}`).join(" · ") || "direct",
     page: location.href
   };
   const btn = $("submitBtn");
