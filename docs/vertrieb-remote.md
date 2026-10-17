@@ -97,6 +97,11 @@ fertige Liste aller Firmen mit Schulungspflicht.
 Compliance-Berater und Schulungsanbieter verkaufen selbst Schulungen – also keine
 Partner. Geeignet sind nur Multiplikatoren ohne eigenes Schulungsangebot:
 
+- **Anwalts-Empfehlungsnetz (läuft bereits):** 18 Kanzleien haben zugesagt (313 kontaktiert
+  in 10 Ländern). Provision 10 % im 1. Jahr, danach 5 %, solange der Kunde bleibt.
+  Größter Hebel: Berufsverbände und Behörden mit CPD-Pflicht (z. B. Law Society of Kenya,
+  ICPAK) über Partner-Anwälte.
+
 - **Bankenverbände** (z. B. APBEF), Fintech- und Mikrofinanzverbände → Mitgliederrabatt.
 - **Anbieter von Screening-/KYC-Software** und Core-Banking-Systemen: Sie verkaufen das
   Tool, RALK liefert die Schulung dazu (genau die Lücke „Tool vorhanden, aber keine
@@ -115,7 +120,18 @@ Partner. Geeignet sind nur Multiplikatoren ohne eigenes Schulungsangebot:
 
 ## 4. Den Kauf selbst vereinfachen: Lizenzvertrag direkt auf ralk.io
 
-1. **Preis-Seite auf ralk.io** mit Paketen nach Mitarbeiterzahl (1–10 / 11–50 / 51–200 / 200+).
+1. **Preis-Seite auf ralk.io** mit den festgelegten Preisen (Quelle: RALK-Preismodell,
+   ohne Einrichtungsgebühr). Jahreslizenz pro Mitarbeiter, in USD, zzgl. Quellsteuer falls anfallend:
+
+   | Unternehmensgröße | Preis pro Mitarbeiter/Jahr |
+   |---|---|
+   | bis 4.000 Mitarbeiter | 65 USD |
+   | 4.001–7.999 Mitarbeiter | 50 USD |
+   | ab 8.000 Mitarbeiter | 45 USD |
+   | Mindest-Jahreslizenz | 5.000 USD |
+
+   Keine Einrichtungsgebühr. Bei Verbänden schlägt der Verband ggf. 20 % Verwaltungsgebühr
+   für seine Mitglieder auf (kostet RALK nichts).
 2. **Lizenzvertrag online abschließen:** Firmendaten eingeben → Lizenzbedingungen per
    Klick akzeptieren (mit Name, Funktion, Zeitstempel, PDF-Kopie per E-Mail) → Zahlung →
    Firmenkonto in app.ralk.io wird automatisch angelegt.
