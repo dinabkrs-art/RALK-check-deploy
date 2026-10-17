@@ -50,7 +50,6 @@
 
           <div class="steps" style="margin-top:10px"><span class="on" data-i18n="oStep3"></span></div>
           <label class="check"><input type="checkbox" id="accept"><span id="acceptText"></span></label>
-          <label class="check"><input type="checkbox" id="taxAck"><span data-i18n="fTaxAck"></span></label>
           <p class="hint"><a href="/licence" target="_blank" rel="noopener" data-i18n="footLicence"></a></p>
           <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden"><label for="website">Website</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
           <div class="err" id="err" role="alert"></div>
@@ -132,7 +131,7 @@ async function submitOrder(e){
   const req = ["org","country","sector","address","seats","contact","role","email"];
   const missing = req.filter(id => !String($(id).value).trim());
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($("email").value.trim());
-  if(missing.length || !emailOk || !$("accept").checked || !$("taxAck").checked || parseInt($("seats").value,10) < 1){
+  if(missing.length || !emailOk || !$("accept").checked || parseInt($("seats").value,10) < 1){
     $("err").textContent = t("errReq"); return;
   }
   const q = quote($("seats").value);
@@ -165,7 +164,7 @@ async function submitOrder(e){
     notes: $("notes").value.trim(),
     licence_terms_version: CONFIG.TERMS_VERSION,
     licence_terms_accepted: "yes",
-    withholding_tax_acknowledged: "yes",
+    taxes: "net prices, local taxes added (licence terms section 6)",
     accepted_at_utc: acceptedAt,
     language: getLang(),
     campaign: ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","ref"]
