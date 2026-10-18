@@ -41,21 +41,19 @@ pro Klick sind das nur ca. 2–3 Klicks pro Werktag – deshalb die Konzentratio
 Pausierte Gruppen erst einschalten, wenn eine aktive Gruppe nach der Stopp-Regel pausiert wurde
 oder das Budget erhöht wird.
 
-Links in den Anzeigen: Themen-Anzeigen führen zum kostenlosen Check
-(`https://check.ralk.io/?lang=fr&utm_source=google&utm_medium=cpc&utm_campaign=ralk_fr&utm_content=<Thema>`),
-die Preis-Anzeigen zu `ralk.io/fr#pricing` bzw. `ralk.io/#pricing`. In jeder Check- und
-Bestell-Mail steht dann, aus welcher Kampagne und Anzeigengruppe der Kontakt kam.
+Links in den Anzeigen: Themen-Anzeigen führen direkt auf die passende Themenseite auf ralk.io
+(z. B. `https://ralk.io/fr/formation/lbc-ft?utm_source=google&utm_medium=cpc&utm_campaign=ralk_fr&utm_content=lbc-ft`
+bzw. `https://ralk.io/training/aml-cft?…`), dort kann sofort bestellt werden. Allgemeine Gruppen
+(E-Learning, Bergbau) führen auf die Startseite, die Preis-Anzeigen auf `ralk.io/fr#pricing`
+bzw. `ralk.io/#pricing`. Die UTM-Angaben werden bis zur Bestellung mitgenommen; in jeder
+Bestell-Mail steht, aus welcher Kampagne und Anzeigengruppe der Kontakt kam.
 
-## Vor dem Start klären (technisch, erledigt die Website-Session)
+## Technik vor dem Start (erledigt)
 
-1. **Check auf Französisch öffnen:** check.ralk.io startet derzeit immer auf Englisch und liest
-   `?lang=fr` noch nicht aus. Französische Anzeigen landen sonst auf einer englischen Seite.
-   Kleine Änderung im Check nötig, **bevor** die FR-Kampagne läuft.
-2. **Herkunft bis zur Bestellung mitnehmen:** Wer über eine Anzeige auf ralk.io landet und dann
-   auf „Bestellen“ klickt, verliert die UTM-Angaben (die Bestellseite liest sie nur aus ihrer
-   eigenen Adresse). ralk.io sollte sie an /order weitergeben.
-3. **Conversion-Messung:** Auf ralk.io und check.ralk.io ist noch kein Google-Tag. Ohne ihn
-   weiß Google nicht, welche Klicks zu Checks/Bestellungen führen (siehe Schritt 6).
+1. Themenseiten für alle 9 Module auf Englisch und Französisch sind online.
+2. Herkunft (UTM) wird bis zur Bestellung mitgenommen.
+3. Google-Tag mit Cookie-Einwilligung ist auf ralk.io eingebaut, die Conversion
+   „Lizenzbestellung“ wird nach jeder erfolgreichen Bestellung gezählt.
 
 ## Schritt für Schritt
 
