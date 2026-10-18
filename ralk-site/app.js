@@ -139,7 +139,7 @@ const I18N = {
     ctaLead:"Get your licence online in a few minutes, or check your current risk first, free of charge.",
 
     footRights:"© 2026 RALK. All rights reserved.",
-    footLicence:"Licence terms", footPrivacy:"Privacy", footImprint:"Legal notice", footTerms:"Terms of use",
+    footLicence:"Licence terms", footPrivacy:"Privacy", footCookies:"Cookie settings", footImprint:"Legal notice", footTerms:"Terms of use",
 
     /* order page */
     oTitle:"Order your RALK licence", oLead:"Fill in your details, accept the licence terms and receive your invoice by email.",
@@ -251,7 +251,7 @@ const I18N = {
     ctaLead:"Obtenez votre licence en ligne en quelques minutes, ou évaluez d'abord votre risque, gratuitement.",
 
     footRights:"© 2026 RALK. Tous droits réservés.",
-    footLicence:"Conditions de licence", footPrivacy:"Confidentialité", footImprint:"Mentions légales", footTerms:"Conditions d'utilisation",
+    footLicence:"Conditions de licence", footPrivacy:"Confidentialité", footCookies:"Paramètres des cookies", footImprint:"Mentions légales", footTerms:"Conditions d'utilisation",
 
     oTitle:"Commander votre licence RALK", oLead:"Renseignez vos coordonnées, acceptez les conditions de licence et recevez votre facture par e-mail.",
     oStep1:"1 · Organisation", oStep2:"2 · Licence", oStep3:"3 · Confirmation",
@@ -343,6 +343,7 @@ function renderChrome(){
         <a href="/licence" data-i18n="footLicence"></a>
         <a href="${CONFIG.CHECK_URL}/terms" data-i18n="footTerms"></a>
         <a href="${CONFIG.CHECK_URL}/privacy" data-i18n="footPrivacy"></a>
+        <a href="#" data-cookie-settings data-i18n="footCookies"></a>
         <a href="/imprint" data-i18n="footImprint"></a>
         <a href="mailto:${CONFIG.CONTACT_EMAIL}">${CONFIG.CONTACT_EMAIL}</a>
       </nav>
@@ -548,3 +549,11 @@ function trackOrder(p){
     value: Number(p.annual_licence_net_usd) || 0, currency: "USD", transaction_id: p.order_reference });
 }
 document.addEventListener("DOMContentLoaded", initAds);
+/* Footer "Cookie settings": withdraw or change consent at any time. */
+document.addEventListener("click", e => {
+  const a = e.target.closest && e.target.closest("[data-cookie-settings]"); if(!a) return;
+  e.preventDefault();
+  try{ localStorage.removeItem("ralk_consent"); }catch(err){}
+  gtag("consent", "update", { ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied", analytics_storage: "denied" });
+  if(!document.querySelector(".consent")) consentBanner();
+});
