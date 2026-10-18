@@ -1,6 +1,6 @@
 # E-Mail-Sequenz an Firmen aus öffentlichen Registern (FR + EN)
 
-Drei kurze, persönliche E-Mails (einzeln aus contact@ralk.io gesendet, siehe Abschnitt 2) an Institute aus `zielkunden-priorisiert.csv` (Priorität A zuerst),
+Drei kurze, persönliche E-Mails (einzeln aus info@ralk.io gesendet, siehe Abschnitt 2) an Institute aus `zielkunden-priorisiert.csv` (Priorität A zuerst),
 wie in `docs/vertrieb-remote.md` (Kanal C) geplant:
 
 | Mail | Wann | Inhalt |
@@ -40,9 +40,9 @@ Keine Rechtsberatung, sondern Dinas eigene Prüfliste. Vor jedem Versandtag kurz
 
 ## 2. Versand: Erstkontakt persönlich, Brevo nur nach Einwilligung
 
-### 2a. Mail 1–3 an Register-Firmen: persönlich aus contact@ralk.io
+### 2a. Mail 1–3 an Register-Firmen: persönlich aus info@ralk.io
 
-1. Mails **einzeln** aus dem normalen Postfach **contact@ralk.io** senden (Outlook o. Ä.),
+1. Mails **einzeln** aus dem normalen Postfach **info@ralk.io** senden (Outlook o. Ä.),
    **höchstens ca. 30 pro Tag**, keine BCC-Sammelmails.
 2. **Kontaktliste** als Tabelle führen, Spalten: `EMAIL`, `FIRMA`, `LAND`, `REGISTER`
    (z. B. „Commission Bancaire de l'UMOA“), `QUELLE` (URL), `SPRACHE` (FR/EN), `MAIL1` (Datum),
@@ -66,13 +66,13 @@ Brevo nur für Kontakte, die **selbst zugestimmt** haben, z. B.:
 - wer auf eine persönliche Mail mit „ja, gern mehr Infos“ geantwortet hat (Antwort aufbewahren).
 
 Einrichtung:
-1. Auf **brevo.com** ein Konto mit contact@ralk.io anlegen (Firma: RALK, Land: Firmensitz).
+1. Auf **brevo.com** ein Konto mit info@ralk.io anlegen (Firma: RALK, Land: Firmensitz).
 2. **Absender-Domain ralk.io bestätigen:** Brevo → „Absender, Domains & dedizierte IPs“ →
    „Domain hinzufügen“ → Brevo zeigt 2–3 DNS-Einträge (TXT für Brevo-Code, DKIM, DMARC).
    Diese bei **Hostinger** → Domains → ralk.io → DNS-Zone eintragen. (DNS-Änderung = Dina macht
    sie selbst bzw. gibt sie ausdrücklich frei.) Nach ein paar Stunden in Brevo „Bestätigen“.
    Die DKIM/DMARC-Einträge verbessern auch die Zustellung der persönlichen Mails.
-3. **Absender anlegen:** Name „Dina Boyele Kraus – RALK“, Adresse contact@ralk.io.
+3. **Absender anlegen:** Name „Dina Boyele Kraus – RALK“, Adresse info@ralk.io.
 4. **Liste** „Check-Teilnehmer (Einwilligung)“ mit Feldern `FIRMA`, `LAND`, `SPRACHE`,
    `EINWILLIGUNG` (Datum + Quelle, z. B. „Quick-Check 12.11.“).
 5. Inhalte für diese Liste: Ergebnis-Erläuterung zum Check, neue Module, gelegentliche
@@ -114,7 +114,7 @@ Si le résultat montre des points faibles, RALK forme ensuite chaque collaborate
 Bien cordialement,
 Dina Boyele Kraus
 Fondatrice, RALK – experte en conformité financière, MBA Compliance & Risk Management
-contact@ralk.io · https://ralk.io/fr
+info@ralk.io · https://ralk.io/fr
 
 Votre adresse provient du site web public de votre organisation ou du registre cité ci-dessus. Pour ne plus recevoir de messages, répondez simplement « stop ».
 Mentions légales : https://ralk.io/imprint · Données personnelles : https://check.ralk.io/privacy
@@ -141,7 +141,7 @@ https://check.ralk.io/?lang=fr&utm_source=email&utm_medium=outreach&utm_campaign
 
 Bien cordialement,
 Dina Boyele Kraus
-RALK · contact@ralk.io · https://ralk.io/fr
+RALK · info@ralk.io · https://ralk.io/fr
 
 Pour ne plus recevoir de messages, répondez simplement « stop ».
 ```
@@ -167,7 +167,7 @@ La licence complète couvre 13 thèmes (fraude, corruption, sanctions, LBC/FT, d
 
 Bien cordialement,
 Dina Boyele Kraus
-RALK · contact@ralk.io · https://ralk.io/fr
+RALK · info@ralk.io · https://ralk.io/fr
 
 Pour ne plus recevoir de messages, répondez simplement « stop ».
 ```
@@ -204,7 +204,7 @@ If the result shows gaps, RALK trains every employee online, by role, across 13 
 Kind regards,
 Dina Boyele Kraus
 Founder, RALK – financial-crime compliance expert, MBA Compliance & Risk Management
-contact@ralk.io · https://ralk.io
+info@ralk.io · https://ralk.io
 
 Your address comes from your organisation's public website or the register named above. To stop receiving messages, simply reply "stop".
 Legal notice: https://ralk.io/imprint · Privacy: https://check.ralk.io/privacy
@@ -226,7 +226,7 @@ https://check.ralk.io/?lang=en&utm_source=email&utm_medium=outreach&utm_campaign
 
 Kind regards,
 Dina Boyele Kraus
-RALK · contact@ralk.io · https://ralk.io
+RALK · info@ralk.io · https://ralk.io
 
 To stop receiving messages, simply reply "stop".
 ```
@@ -250,7 +250,7 @@ The full licence covers 13 topics (fraud, bribery, sanctions, AML, data protecti
 
 Kind regards,
 Dina Boyele Kraus
-RALK · contact@ralk.io · https://ralk.io
+RALK · info@ralk.io · https://ralk.io
 
 To stop receiving messages, simply reply "stop".
 ```

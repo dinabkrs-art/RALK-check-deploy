@@ -5,7 +5,7 @@ Ziel: mit möglichst wenig Geld möglichst viele passende Firmen erreichen. Zuer
 
 **Dinas Vorgaben (Stand 17.10.2026):** Werbebudget insgesamt **50 EUR pro Monat**, nur
 Google-Suche, **keine Meta-Anzeigen**. Testzugang nur **erste 2 Module, höchstens 3 Mitarbeiter,
-14 Tage**. Erstkontakt-Mails **persönlich aus contact@ralk.io** (max. ca. 30/Tag), Brevo nur für
+14 Tage**. Erstkontakt-Mails **persönlich aus info@ralk.io** (max. ca. 30/Tag), Brevo nur für
 Personen mit Einwilligung. Keine Prüfung durch eine Kanzlei; die rechtliche Checkliste in
 `email-sequenz.md` ist Dinas eigene Prüfliste.
 
@@ -27,7 +27,7 @@ Konten legt nur die Inhaberin an (Zahlungsdaten, Identität, 2FA). Überall 2FA 
 |---|---|---|---|
 | 1 | **Bestellformular-Aktivierung prüfen** (siehe unten) | 0 | 5 Min. |
 | 2 | **WhatsApp Business** App mit eigener Firmennummer einrichten, Texte aus `meta-whatsapp.md` | 0 | 30 Min. |
-| 3 | **Kontaktliste** (Tabelle) und **Mail-Vorlagen** im Postfach contact@ralk.io anlegen (`email-sequenz.md`, Abschnitt 2a). Später: **Brevo**-Konto nur für Personen mit Einwilligung, Domain ralk.io bestätigen (DNS-Einträge bei Hostinger) | 0 | 45 Min. |
+| 3 | **Kontaktliste** (Tabelle) und **Mail-Vorlagen** im Postfach info@ralk.io anlegen (`email-sequenz.md`, Abschnitt 2a). Später: **Brevo**-Konto nur für Personen mit Einwilligung, Domain ralk.io bestätigen (DNS-Einträge bei Hostinger) | 0 | 45 Min. |
 | 4 | **Google Search Console**: search.google.com/search-console → „Domain“ → `ralk.io` → angezeigten **TXT-Eintrag** bei Hostinger → Domains → ralk.io → DNS-Zone eintragen → „Bestätigen“. Danach unter „Sitemaps“ `https://ralk.io/sitemap.xml` einreichen. | 0 | 20 Min. |
 | 5 | **Google-Ads-Konto in EUR** + Zahlungsmethode (Schritte in `google-ads/LIESMICH.md`) | max. ca. 50 EUR/Monat | 45 Min. |
 
@@ -37,13 +37,13 @@ hinzufügen).
 ### Bestellformular: einmalige Aktivierung bei formsubmit.co
 
 Das Bestellformular auf ralk.io/order und das Formular des Checks senden an
-`https://formsubmit.co/ajax/contact@ralk.io`. formsubmit.co liefert erst aus, wenn im Postfach
-**contact@ralk.io** einmal der Bestätigungslink geklickt wurde – möglicherweise einmal pro
+`https://formsubmit.co/ajax/info@ralk.io`. formsubmit.co liefert erst aus, wenn im Postfach
+**info@ralk.io** einmal der Bestätigungslink geklickt wurde – möglicherweise einmal pro
 Website (ralk.io und check.ralk.io).
 
 So prüfen:
 1. Auf ralk.io/order eine Testbestellung absenden (Bemerkung: „TEST – bitte ignorieren“).
-2. Im Postfach contact@ralk.io (auch **Spam**) nach einer Mail von FormSubmit suchen
+2. Im Postfach info@ralk.io (auch **Spam**) nach einer Mail von FormSubmit suchen
    („Activate Form“/„Confirm your email“) → Link klicken.
 3. Testbestellung noch einmal senden → sie muss als normale Mail ankommen.
 4. Dasselbe mit einem Test-Check auf check.ralk.io.
@@ -54,7 +54,7 @@ erledigen.
 ## 3. Kanäle in dieser Reihenfolge
 
 **Kostenlos (zuerst):**
-1. **Register-E-Mails, persönlich aus contact@ralk.io** (kein Massenversand): Priorität A aus
+1. **Register-E-Mails, persönlich aus info@ralk.io** (kein Massenversand): Priorität A aus
    `zielkunden-priorisiert.csv` – frankophone Banken, Mikrofinanz und E-Geld-Institute
    (BCEAO/Commission Bancaire, COBAC/BEAC, BCC DR Kongo) sowie Banken/Fintechs in Nigeria,
    Kenia, Ghana. Danach Priorität B, darunter **Bergbau** (Chambers of Mines, EITI-Berichte;
@@ -85,7 +85,7 @@ eingeschaltet werden (`google-ads/LIESMICH.md`).
 | Tag | Was |
 |---|---|
 | 1 | formsubmit-Aktivierung prüfen (oben). WhatsApp Business einrichten. |
-| 2 | Kontaktliste (Tabelle) und Mail-Vorlagen in contact@ralk.io anlegen. Search Console + TXT-Eintrag. |
+| 2 | Kontaktliste (Tabelle) und Mail-Vorlagen in info@ralk.io anlegen. Search Console + TXT-Eintrag. |
 | 3 | Kontaktliste FR bauen: 5 A-Register öffnen (BCEAO, Commission Bancaire, COBAC, BCC), öffentliche Funktions-Adressen der Institute abschreiben, Quelle notieren. |
 | 4 | Mail 1 FR persönlich senden (max. ca. 30 Firmen/Tag). Anwaltsnetz + 2 Verbände anschreiben. |
 | 5 | Kontaktliste EN (CBN Nigeria, Central Bank of Kenya, Bank of Ghana), Mail 1 EN persönlich senden. |
@@ -118,7 +118,7 @@ eingeschaltet werden (`google-ads/LIESMICH.md`).
    Kein Meta.
 2. **Testzugang:** nur die ersten 2 Module, höchstens 3 Mitarbeiter, 14 Tage. Mail 3 und die
    WhatsApp-Schnellantworten /essai und /trial sagen genau das – nie „alle Module“.
-3. **Versand:** Erstkontakt persönlich aus contact@ralk.io (max. ca. 30/Tag); Brevo nur für
+3. **Versand:** Erstkontakt persönlich aus info@ralk.io (max. ca. 30/Tag); Brevo nur für
    Personen mit Einwilligung (z. B. nach dem Quick-Check).
 4. **Keine Kanzlei-Prüfung** der Mails; die rechtliche Checkliste in `email-sequenz.md` ist
    Dinas eigene Prüfliste.

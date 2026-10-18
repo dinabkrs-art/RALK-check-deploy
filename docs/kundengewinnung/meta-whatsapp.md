@@ -38,7 +38,7 @@ Unternehmensprofil → die Texte unten einfügen.
 | WA-DESC | WA-Beschreibung | RALK forme vos collaborateurs à la conformité : fraude, corruption, sanctions, LBC/FT, protection des données, cybersécurité et 7 autres thèmes. Modules courts par fonction, certificats et rapports d'audit. RALK trains your staff in financial-crime compliance: fraud, bribery, sanctions, AML, data protection, cyber and 7 more topics. Short role-based modules, certificates and audit reports. ralk.io |
 
 - **Kategorie:** „Bildung“ (oder „Professionelle Dienstleistungen“).
-- **Website:** `https://ralk.io` und `https://check.ralk.io` · **E-Mail:** contact@ralk.io
+- **Website:** `https://ralk.io` und `https://check.ralk.io` · **E-Mail:** info@ralk.io
 - **Info-Zeile:** nur eine ist möglich – die Sprache wählen, in der die meisten Anfragen kommen
   (Vorschlag: FR).
 
