@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>RALK Security and Quality</title><link rel="stylesheet" href="pack.css">
+<style>body{font-size:9pt;line-height:1.4} h2{margin-top:9px} li{margin-bottom:1.5px}</style></head>
+<body>
+<div class="band"><img src="logo.png" alt="RALK"><div class="doc"><span>Vendor information</span><b>Security &amp; quality factsheet</b></div></div>
+
+<h1>Security, data protection and content quality</h1>
+<p class="lead">How the RALK Training Platform (app.ralk.io) is hosted, protected and maintained. This factsheet lists technical and organisational measures as implemented at the date of issue.</p>
+
+<div class="cols">
+<div>
+<h2>Hosting and architecture</h2>
+<ul>
+  <li><b>Frontend</b> (ralk.io, app.ralk.io): Vercel</li>
+  <li><b>Backend API:</b> Railway, deployment region europe-west4 (EU)</li>
+  <li><b>Database:</b> MongoDB Atlas (user accounts, training records, certificates)</li>
+  <li>All services are delivered over HTTPS (TLS)</li>
+  <li>Backend accepts browser requests only from configured RALK origins (CORS allow-list)</li>
+</ul>
+
+<h2>Security headers (app.ralk.io)</h2>
+<ul>
+  <li>Strict-Transport-Security (HSTS, 1 year, including subdomains)</li>
+  <li>Content-Security-Policy, framing blocked (frame-ancestors 'none')</li>
+  <li>X-Frame-Options: DENY · X-Content-Type-Options: nosniff</li>
+  <li>Referrer-Policy and Permissions-Policy (camera, microphone, geolocation disabled)</li>
+</ul>
+
+<h2>Authentication and sessions</h2>
+<ul>
+  <li>Sign-in with Google or Microsoft work account (OAuth 2.0 with PKCE)</li>
+  <li>Employees: one-time e-mail login links, single use, valid for 20 minutes, stored only as hashes</li>
+  <li>Administrators: second factor by one-time code sent by e-mail on every sign-in (valid 10 minutes, limited attempts)</li>
+  <li>Passwords, where used, are stored only as Argon2 hashes</li>
+  <li>Session tokens in httpOnly cookies, with expiry</li>
+  <li>Rate limiting on sign-in and other sensitive endpoints</li>
+</ul>
+
+<h2>Access control and audit trail</h2>
+<ul>
+  <li>Role-based access: employee, customer administrator, RALK platform administrator (super-admin)</li>
+  <li>Customer data is held per organisation; customer administrator sessions are bound to their own organisation</li>
+  <li>Audit log of security-relevant events (e.g. sign-ins, failed codes, certificate issuance) with timestamp, actor and SHA-256 integrity hash</li>
+  <li>Certificates carry a unique ID and integrity hash and can be verified online</li>
+</ul>
+</div>
+
+<div>
+<h2>Data protection (GDPR)</h2>
+<ul>
+  <li>RALK is established in Germany; the EU General Data Protection Regulation applies</li>
+  <li>RALK processes users’ personal data as a processor on behalf of the customer under a data processing agreement (licence terms, section 8)</li>
+  <li>Data subject rights: access, rectification, erasure, restriction, portability, objection (Art. 15–21 GDPR)</li>
+  <li>After contract end: export of training records for 30 days, then deletion unless statutory retention applies (licence terms, 7.3)</li>
+  <li>Supervisory authority: Landesbeauftragter für den Datenschutz und die Informationsfreiheit Baden-Württemberg</li>
+  <li>Privacy policy: check.ralk.io/privacy</li>
+</ul>
+
+<h2>Subprocessors</h2>
+<table style="font-size:8.2pt">
+  <tr><th>Vendor</th><th>Purpose</th></tr>
+  <tr><td>Vercel Inc. (USA)</td><td>Frontend hosting</td></tr>
+  <tr><td>Railway (USA)</td><td>Backend API hosting</td></tr>
+  <tr><td>MongoDB Atlas / MongoDB Inc. (USA)</td><td>Database: accounts, training records, certificates</td></tr>
+  <tr><td>Anthropic PBC (USA)</td><td>AI model API for personalised training content</td></tr>
+  <tr><td>OpenAI / DALL·E (USA)</td><td>Images for training scenarios</td></tr>
+  <tr><td>Cloudflare R2 (Cloudflare Inc., USA)</td><td>Storage of training images</td></tr>
+  <tr><td>Resend (USA)</td><td>Transactional e-mail (login links, notifications)</td></tr>
+  <tr><td>FormSubmit.co</td><td>Relay for Quick-Check lead form</td></tr>
+  <tr><td>Google Ireland Ltd. (Google LLC, USA)</td><td>Ads conversion measurement on ralk.io, consent-based</td></tr>
+</table>
+<p class="small">Transfers under standard contractual clauses or adequacy decisions where applicable (privacy policy, section 6).</p>
+
+</div>
+</div>
+
+<h2>Content quality</h2>
+<div class="box">Training content is developed under the responsibility of RALK’s financial-crime compliance experts on the basis of FATF standards and applicable regulation. RALK uses artificial intelligence as a tool to prepare content and to adapt it to each learner’s role, sector and country. The underlying modules, scenarios and assessment logic are reviewed by RALK’s experts and are kept under regular review. The content is training material and does not constitute legal advice.</div>
+<p class="small">Licence terms, clause 3.2.</p>
+
+<p><span class="tag">Planned</span> Independent penetration test</p>
+
+</body>
+</html>

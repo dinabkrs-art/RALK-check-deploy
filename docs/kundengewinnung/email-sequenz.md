@@ -109,7 +109,7 @@ Fraude, corruption, sanctions, blanchiment, fuite de données, cyberattaques : c
 Nous avons créé un check gratuit de 10 minutes qui montre où votre organisation est la plus exposée :
 https://check.ralk.io/?lang=fr&utm_source=email&utm_medium=outreach&utm_campaign=register_fr&utm_content=mail1
 
-Si le résultat montre des points faibles, RALK forme ensuite chaque collaborateur en ligne, selon sa fonction, sur 13 thèmes, avec certificats et rapports d'audit.
+Si le résultat montre des points faibles, RALK forme ensuite chaque collaborateur en ligne, selon sa fonction, sur 9 modules, avec certificats et rapports d'audit.
 
 Bien cordialement,
 Dina Boyele Kraus
@@ -163,7 +163,7 @@ Dernier message de ma part sur ce sujet : souhaitez-vous que j'ouvre un accès d
 
 Une simple réponse « oui » suffit, avec les adresses e-mail des personnes (3 au maximum).
 
-La licence complète couvre 13 thèmes (fraude, corruption, sanctions, LBC/FT, données, cyber…). Nos tarifs sont publics et identiques pour tous : https://ralk.io/fr?utm_source=email&utm_medium=outreach&utm_campaign=register_fr&utm_content=mail3#pricing
+La licence complète couvre 9 modules (fraude, corruption, sanctions, LBC/FT, données, cyber…). Nos tarifs sont publics et identiques pour tous : https://ralk.io/fr?utm_source=email&utm_medium=outreach&utm_campaign=register_fr&utm_content=mail3#pricing
 
 Bien cordialement,
 Dina Boyele Kraus
@@ -199,7 +199,7 @@ Fraud, bribery, sanctions, money laundering, data leaks, cyber attacks: your emp
 We built a free 10-minute check that shows where your organisation is most exposed:
 https://check.ralk.io/?lang=en&utm_source=email&utm_medium=outreach&utm_campaign=register_en&utm_content=mail1
 
-If the result shows gaps, RALK trains every employee online, by role, across 13 topics, with certificates and audit reports.
+If the result shows gaps, RALK trains every employee online, by role, across 9 modules, with certificates and audit reports.
 
 Kind regards,
 Dina Boyele Kraus
@@ -246,7 +246,7 @@ My last message on this: would you like me to open a free 14-day trial for [Orga
 
 A simple "yes" is enough, with the email addresses of the people (up to 3).
 
-The full licence covers 13 topics (fraud, bribery, sanctions, AML, data protection, cyber…). Our prices are public and the same for everyone: https://ralk.io/?utm_source=email&utm_medium=outreach&utm_campaign=register_en&utm_content=mail3#pricing
+The full licence covers 9 modules (fraud, bribery, sanctions, AML, data protection, cyber…). Our prices are public and the same for everyone: https://ralk.io/?utm_source=email&utm_medium=outreach&utm_campaign=register_en&utm_content=mail3#pricing
 
 Kind regards,
 Dina Boyele Kraus

@@ -203,6 +203,7 @@ function campaignParams(){
 let lastOrder = null;
 function showDone(p){
   lastOrder = p;
+  trackOrder(p);
   $("orderView").hidden = true; $("doneView").hidden = false;
   renderDone(); window.scrollTo(0,0);
 }
