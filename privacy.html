@@ -81,7 +81,7 @@ a:hover{text-decoration:underline}
   <div class="card">
     <span class="chip">check.ralk.io &nbsp;·&nbsp; app.ralk.io</span>
     <h1>Privacy Policy</h1>
-    <p class="meta">Last updated: August 2026 &nbsp;·&nbsp; Contact: <a href="mailto:info@ralk.io">info@ralk.io</a></p>
+    <p class="meta">Last updated: October 2026 &nbsp;·&nbsp; Contact: <a href="mailto:info@ralk.io">info@ralk.io</a></p>
 
     <h2>1. Controller</h2>
     <p>The controller responsible for the processing of personal data on all RALK services is:</p>
@@ -153,8 +153,8 @@ a:hover{text-decoration:underline}
       <li><strong>Vercel Inc.</strong> (USA) — frontend hosting for check.ralk.io and app.ralk.io</li>
       <li><strong>Railway</strong> (USA) — backend API hosting for app.ralk.io</li>
       <li><strong>MongoDB Atlas / MongoDB Inc.</strong> (USA) — database for Training Platform user accounts, training records, and certificates</li>
-      <li><strong>Anthropic PBC</strong> (USA) — AI model API used to generate personalised training content (content is generated on request; we do not send personal data beyond role/country/sector to generate content)</li>
-      <li><strong>OpenAI / DALL·E</strong> (USA) — AI image generation for training scenario illustrations</li>
+      <li><strong>Anthropic PBC</strong> (USA) — AI model API used to generate personalised training content and to answer questions in the RAI assistant. To generate training, we send only the learner's role, department and seniority, and the organisation's country, sector, size, risk profile and compliance set-up (yes/no answers, e.g. whether a compliance officer is in place). We do not send names: the learner's name is never sent, and the organisation's name is replaced by a placeholder before sending and only inserted on our own servers afterwards. Questions typed into the RAI assistant are sent as written, together with the organisation's country and sector, so please do not enter names or other personal data there.</li>
+      <li><strong>OpenAI / DALL·E</strong> (USA) — AI image generation for training scenario illustrations (where enabled; no names are sent)</li>
       <li><strong>Cloudflare R2</strong> (Cloudflare Inc., USA) — storage of generated training images</li>
       <li><strong>Resend</strong> (USA) — transactional email delivery (magic links, training notifications)</li>
       <li><strong>FormSubmit.co</strong> — relay for Quick-Check lead form submissions to our inbox</li>
