@@ -506,3 +506,45 @@ document.addEventListener("DOMContentLoaded", () => {
   if(pl) store("ralk_lang", pl);          // keep the language on /order, /licence …
   renderChrome(); applyTheme(); applyI18n(); starRain(); motion();
 });
+
+/* ---------- Google Ads measurement (consent mode v2) ----------
+   Nothing is stored until the visitor accepts; before that Google only gets
+   cookieless pings. Skipped during prerendering (navigator.webdriver). */
+const ADS = { ID: "AW-18520098546", ORDER_LABEL: "ysdxCKn8hKEdEPKNif9E" };
+window.dataLayer = window.dataLayer || [];
+function gtag(){ dataLayer.push(arguments); }
+function adsConsent(){ try{ return localStorage.getItem("ralk_consent"); }catch(e){ return null; } }
+function initAds(){
+  if(navigator.webdriver) return;
+  const granted = adsConsent() === "granted" ? "granted" : "denied";
+  gtag("consent", "default", { ad_storage: granted, ad_user_data: granted, ad_personalization: granted, analytics_storage: granted });
+  const s = document.createElement("script");
+  s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + ADS.ID;
+  document.head.appendChild(s);
+  gtag("js", new Date()); gtag("config", ADS.ID);
+  if(!adsConsent()) consentBanner();
+}
+function consentBanner(){
+  const fr = getLang() === "fr";
+  const b = document.createElement("div");
+  b.className = "consent"; b.setAttribute("role", "dialog"); b.setAttribute("aria-label", fr ? "Cookies" : "Cookies");
+  b.innerHTML = `<p>${fr
+      ? "Nous utilisons des cookies Google Ads pour mesurer l'efficacité de nos annonces. Acceptez-vous ?"
+      : "We use Google Ads cookies to measure how well our ads work. Do you accept?"}
+    <a href="${CONFIG.CHECK_URL}/privacy">${fr ? "Confidentialité" : "Privacy"}</a></p>
+    <div><button type="button" data-c="denied" class="btn ghost">${fr ? "Refuser" : "Decline"}</button>
+    <button type="button" data-c="granted" class="btn">${fr ? "Accepter" : "Accept"}</button></div>`;
+  b.addEventListener("click", e => {
+    const v = e.target.dataset && e.target.dataset.c; if(!v) return;
+    try{ localStorage.setItem("ralk_consent", v); }catch(err){}
+    gtag("consent", "update", { ad_storage: v, ad_user_data: v, ad_personalization: v, analytics_storage: v });
+    b.remove();
+  });
+  document.body.appendChild(b);
+}
+/* Called by the order page once the backend has stored the order. */
+function trackOrder(p){
+  gtag("event", "conversion", { send_to: ADS.ID + "/" + ADS.ORDER_LABEL,
+    value: Number(p.annual_licence_net_usd) || 0, currency: "USD", transaction_id: p.order_reference });
+}
+document.addEventListener("DOMContentLoaded", initAds);
