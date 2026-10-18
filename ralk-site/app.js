@@ -129,7 +129,7 @@ const I18N = {
       ["Which languages are available?", "English and French. Further languages on request."],
       ["How is our data protected?", "RALK processes only the data needed for training and certificates, under the GDPR and a data processing agreement with your organisation. Access is restricted to your administrators."],
       ["Can we try RALK first?", "Yes. The free 10-minute compliance check shows where your organisation stands and which modules your teams need."],
-      ["How do we pay?", "By invoice and bank transfer in USD (or EUR on request). Invoices are due within 14 days. Access is activated on payment or, for public bodies, on receipt of the purchase order."],
+      ["How do we pay?", "By card (Visa or Mastercard) via a secure payment link sent with your invoice. Access to app.ralk.io is activated as soon as payment is received."],
       ["How long does the licence run?", "12 months. It renews automatically unless you cancel at least 30 days before the end of the term."],
       ["Can we add employees later?", "Yes. Additional seats can be booked at any time at the rate of your size band."],
       ["Can we negotiate the price?", "No. Like Google Workspace or Microsoft 365, RALK uses one published price list for everyone. Volume discounts are already included in the size bands."],
@@ -158,7 +158,7 @@ const I18N = {
     errReq:"Please fill in all required fields and accept the licence terms.",
     errSend:"The order could not be sent. Please try again or email us at info@ralk.io.",
     okTitle:"Thank you, your order has been received.",
-    okLead:"We will send your invoice and the countersigned order confirmation to {email} within one business day. Your access to app.ralk.io is activated as soon as payment (or your purchase order) is received.",
+    okLead:"We will send your invoice with a secure card payment link and the order confirmation to {email} within one business day. Your access to app.ralk.io is activated as soon as payment is received.",
     okRef:"Order reference", okPrint:"Print / save as PDF", okBack:"Back to ralk.io",
     sectors:["Bank","Microfinance institution","Fintech / PSP / e-money","Mobile money operator","Money transfer / forex bureau","Insurance","Investment / asset management","Crypto / VASP","Law firm / notary / accountant","Regulator / public body","Professional association","Mining / oil & gas","Telecoms / energy","Construction / trade","Corporate / other company","NGO / non-profit","Other"]
   },
@@ -241,7 +241,7 @@ const I18N = {
       ["Quelles langues sont disponibles ?", "Anglais et français. D'autres langues sur demande."],
       ["Comment nos données sont-elles protégées ?", "RALK ne traite que les données nécessaires à la formation et aux certificats, conformément au RGPD et à un accord de traitement des données conclu avec votre organisation. L'accès est réservé à vos administrateurs."],
       ["Peut-on tester RALK avant ?", "Oui. Le diagnostic conformité gratuit de 10 minutes montre où en est votre organisation et de quels modules vos équipes ont besoin."],
-      ["Comment payer ?", "Par facture et virement bancaire en USD (ou en EUR sur demande). Les factures sont payables sous 14 jours. L'accès est activé à réception du paiement ou, pour les organismes publics, du bon de commande."],
+      ["Comment payer ?", "Par carte bancaire (Visa ou Mastercard), via un lien de paiement sécurisé envoyé avec votre facture. L'accès à app.ralk.io est activé dès réception du paiement."],
       ["Quelle est la durée de la licence ?", "12 mois. Elle se renouvelle automatiquement, sauf résiliation au moins 30 jours avant la fin de la période."],
       ["Peut-on ajouter des collaborateurs plus tard ?", "Oui. Des places supplémentaires peuvent être ajoutées à tout moment au tarif de votre tranche."],
       ["Peut-on négocier le prix ?", "Non. Comme Google Workspace ou Microsoft 365, RALK applique une seule grille tarifaire publique pour tous. Les remises sur volume sont déjà intégrées aux tranches."],
@@ -269,7 +269,7 @@ const I18N = {
     errReq:"Veuillez remplir tous les champs obligatoires et accepter les conditions de licence.",
     errSend:"La commande n'a pas pu être envoyée. Veuillez réessayer ou nous écrire à info@ralk.io.",
     okTitle:"Merci, votre commande a bien été reçue.",
-    okLead:"Nous enverrons votre facture et la confirmation de commande à {email} sous un jour ouvré. Votre accès à app.ralk.io est activé dès réception du paiement (ou de votre bon de commande).",
+    okLead:"Nous enverrons votre facture avec un lien de paiement sécurisé par carte, ainsi que la confirmation de commande, à {email} sous un jour ouvré. Votre accès à app.ralk.io est activé dès réception du paiement.",
     okRef:"Référence de commande", okPrint:"Imprimer / enregistrer en PDF", okBack:"Retour à ralk.io",
     sectors:["Banque","Institution de microfinance","Fintech / PSP / monnaie électronique","Opérateur de mobile money","Transfert d'argent / bureau de change","Assurance","Investissement / gestion d'actifs","Crypto / PSAV","Avocat / notaire / expert-comptable","Régulateur / organisme public","Ordre / association professionnelle","Mines / pétrole & gaz","Télécoms / énergie","BTP / commerce","Entreprise / autre société","ONG / association","Autre"]
   }

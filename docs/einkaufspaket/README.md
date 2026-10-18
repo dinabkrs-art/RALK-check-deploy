@@ -14,7 +14,7 @@ Pitch Deck: nicht in diesem Ordner. Als PDF aus dem Deck-Artifact laden: https:/
 ## Noch offen (bitte nachliefern)
 
 - **Bankverbindung:** Auf dem Preisblatt steht „Bank details: provided on the invoice“. Sobald die Bankdaten feststehen, auf der Rechnung angeben (oder hier ergänzen lassen).
-- **Zahlungsziel:** Preisblatt sagt 30 Tage, Lizenzbedingungen (6.2) und FAQ auf ralk.io sagen 14 Tage. Bitte eine Frist festlegen, dann wird angeglichen.
+- **Zahlung:** nur per Karte über einen Zahlungslink zur Rechnung (keine Überweisung), zahlbar bei Erhalt; Freischaltung nach Zahlungseingang.
 - **Steuernummer / USt-IdNr.:** steht nirgends; Einkaufsabteilungen fragen meist danach.
 
 ## Neu erzeugen
