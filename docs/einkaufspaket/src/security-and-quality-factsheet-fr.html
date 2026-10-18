@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>RALK Sécurité et qualité</title><link rel="stylesheet" href="pack.css">
+<style>body{font-size:9pt;line-height:1.4} h2{margin-top:9px} li{margin-bottom:1.5px}</style></head>
+<body>
+<div class="band"><img src="logo.png" alt="RALK"><div class="doc"><span>Informations fournisseur</span><b>Fiche sécurité &amp; qualité</b></div></div>
+
+<h1>Sécurité, protection des données et qualité des contenus</h1>
+<p class="lead">Hébergement, protection et maintenance de la plateforme de formation RALK (app.ralk.io). Cette fiche présente les mesures techniques et organisationnelles en place à la date d’émission.</p>
+
+<div class="cols">
+<div>
+<h2>Hébergement et architecture</h2>
+<ul>
+  <li><b>Frontend</b> (ralk.io, app.ralk.io) : Vercel</li>
+  <li><b>API backend :</b> Railway, région de déploiement europe-west4 (UE)</li>
+  <li><b>Base de données :</b> MongoDB Atlas (comptes utilisateurs, données de formation, certificats)</li>
+  <li>Tous les services sont fournis en HTTPS (TLS)</li>
+  <li>Le backend n’accepte les requêtes navigateur que des origines RALK configurées (liste CORS)</li>
+</ul>
+
+<h2>En-têtes de sécurité (app.ralk.io)</h2>
+<ul>
+  <li>Strict-Transport-Security (HSTS, 1 an, sous-domaines inclus)</li>
+  <li>Content-Security-Policy, intégration en cadre bloquée (frame-ancestors 'none')</li>
+  <li>X-Frame-Options : DENY · X-Content-Type-Options : nosniff</li>
+  <li>Referrer-Policy et Permissions-Policy (caméra, micro, géolocalisation désactivés)</li>
+</ul>
+
+<h2>Authentification et sessions</h2>
+<ul>
+  <li>Connexion avec un compte professionnel Google ou Microsoft (OAuth 2.0 avec PKCE)</li>
+  <li>Collaborateurs : liens de connexion à usage unique par e-mail, valables 20 minutes, conservés uniquement sous forme de hash</li>
+  <li>Administrateurs : second facteur par code à usage unique envoyé par e-mail à chaque connexion (valable 10 minutes, tentatives limitées)</li>
+  <li>Les mots de passe, le cas échéant, sont conservés uniquement sous forme de hash Argon2</li>
+  <li>Jetons de session dans des cookies httpOnly, avec expiration</li>
+  <li>Limitation du débit (rate limiting) sur la connexion et les autres points d’accès sensibles</li>
+</ul>
+
+<h2>Contrôle d’accès et piste d’audit</h2>
+<ul>
+  <li>Accès par rôle : collaborateur, administrateur client, administrateur de la plateforme RALK (super-admin)</li>
+  <li>Données conservées par organisation ; les sessions des administrateurs clients sont liées à leur propre organisation</li>
+  <li>Journal d’audit des événements de sécurité (p. ex. connexions, codes erronés, émission de certificats) avec horodatage, auteur et hash d’intégrité SHA-256</li>
+  <li>Les certificats portent un identifiant unique et un hash d’intégrité et sont vérifiables en ligne</li>
+</ul>
+</div>
+
+<div>
+<h2>Protection des données (RGPD)</h2>
+<ul>
+  <li>RALK est établie en Allemagne ; le Règlement général sur la protection des données de l’UE s’applique</li>
+  <li>RALK traite les données personnelles des utilisateurs en qualité de sous-traitant pour le compte du Client, dans le cadre d’un accord de traitement des données (conditions de licence, article 8)</li>
+  <li>Droits des personnes : accès, rectification, effacement, limitation, portabilité, opposition (art. 15 à 21 RGPD)</li>
+  <li>Fin du contrat : export des données de formation pendant 30 jours, puis suppression sauf obligation légale de conservation (conditions de licence, 7.3)</li>
+  <li>Autorité de contrôle : Landesbeauftragter für den Datenschutz und die Informationsfreiheit Baden-Württemberg</li>
+  <li>Politique de confidentialité : check.ralk.io/privacy</li>
+</ul>
+
+<h2>Sous-traitants ultérieurs</h2>
+<table style="font-size:8.2pt">
+  <tr><th>Prestataire</th><th>Finalité</th></tr>
+  <tr><td>Vercel Inc. (États-Unis)</td><td>Hébergement frontend</td></tr>
+  <tr><td>Railway (États-Unis)</td><td>Hébergement de l’API backend</td></tr>
+  <tr><td>MongoDB Atlas / MongoDB Inc. (États-Unis)</td><td>Base de données : comptes, données de formation, certificats</td></tr>
+  <tr><td>Anthropic PBC (États-Unis)</td><td>API de modèle d’IA pour les contenus de formation personnalisés</td></tr>
+  <tr><td>OpenAI / DALL·E (États-Unis)</td><td>Images des scénarios de formation</td></tr>
+  <tr><td>Cloudflare R2 (Cloudflare Inc., États-Unis)</td><td>Stockage des images de formation</td></tr>
+  <tr><td>Resend (États-Unis)</td><td>E-mails transactionnels (liens de connexion, notifications)</td></tr>
+  <tr><td>FormSubmit.co</td><td>Relais du formulaire du Quick-Check</td></tr>
+  <tr><td>Google Ireland Ltd. (Google LLC, États-Unis)</td><td>Mesure des conversions publicitaires sur ralk.io, sur consentement</td></tr>
+</table>
+<p class="small">Transferts encadrés par des clauses contractuelles types ou des décisions d’adéquation le cas échéant (politique de confidentialité, section 6).</p>
+
+</div>
+</div>
+
+<h2>Qualité des contenus</h2>
+<div class="box">Le contenu de formation est élaboré sous la responsabilité des experts en conformité et criminalité financière de RALK, sur la base des normes du GAFI et de la réglementation applicable. RALK utilise l’intelligence artificielle comme outil pour préparer les contenus et les adapter à la fonction, au secteur et au pays de chaque apprenant. Les modules, scénarios et la logique d’évaluation sont revus par les experts de RALK et font l’objet d’une revue régulière. Le contenu constitue un support de formation et non un conseil juridique.</div>
+<p class="small">Conditions de licence, article 3.2.</p>
+
+<p><span class="tag">Prévu</span> Test d’intrusion indépendant</p>
+
+</body>
+</html>
