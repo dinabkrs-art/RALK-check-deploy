@@ -81,7 +81,7 @@ a:hover{text-decoration:underline}
   <div class="card">
     <span class="chip">check.ralk.io &nbsp;·&nbsp; app.ralk.io</span>
     <h1>Privacy Policy</h1>
-    <p class="meta">Last updated: August 2026 &nbsp;·&nbsp; Contact: <a href="mailto:info@ralk.io">info@ralk.io</a></p>
+    <p class="meta">Last updated: October 2026 &nbsp;·&nbsp; Contact: <a href="mailto:info@ralk.io">info@ralk.io</a></p>
 
     <h2>1. Controller</h2>
     <p>The controller responsible for the processing of personal data on all RALK services is:</p>
@@ -96,13 +96,13 @@ a:hover{text-decoration:underline}
     </p>
     <p>This Privacy Policy covers the following services operated by RALK:</p>
     <ul>
-      <li><strong>check.ralk.io</strong> — RALK Compliance Quick-Check (free AML/FATF self-assessment)</li>
-      <li><strong>app.ralk.io</strong> — RALK Training Platform (AML/CFT e-learning for regulated institutions)</li>
+      <li><strong>check.ralk.io</strong> — RALK Compliance Quick-Check (free financial crime compliance self-assessment)</li>
+      <li><strong>app.ralk.io</strong> — RALK Training Platform (financial crime prevention e-learning for companies and institutions)</li>
     </ul>
 
     <h2>2. What our services do</h2>
-    <p><strong>check.ralk.io</strong> — A free, browser-based self-assessment tool. It calculates an AML/FATF risk profile entirely within your browser. No assessment answers are transmitted to any server. A score and prioritised action plan are generated locally and displayed to you.</p>
-    <p><strong>app.ralk.io</strong> — A SaaS training platform for compliance teams. It generates customised AML/CFT training programmes by role, country, and risk profile, and tracks completion, quiz results, and certificates for audit purposes.</p>
+    <p><strong>check.ralk.io</strong> — A free, browser-based self-assessment tool. It calculates a financial crime risk profile (money laundering, fraud, corruption, sanctions and related risks) entirely within your browser. No assessment answers are transmitted to any server. A score and prioritised action plan are generated locally and displayed to you.</p>
+    <p><strong>app.ralk.io</strong> — A SaaS training platform for companies and their employees. It generates customised financial crime prevention training (money laundering, fraud, corruption, sanctions, data protection and related risks) by role, country, sector and risk profile, and tracks completion, quiz results, and certificates for audit purposes.</p>
 
     <h2>3. What data we process</h2>
     <p><strong>3a. Quick-Check (check.ralk.io)</strong><br/>
@@ -153,8 +153,8 @@ a:hover{text-decoration:underline}
       <li><strong>Vercel Inc.</strong> (USA) — frontend hosting for check.ralk.io and app.ralk.io</li>
       <li><strong>Railway</strong> (USA) — backend API hosting for app.ralk.io</li>
       <li><strong>MongoDB Atlas / MongoDB Inc.</strong> (USA) — database for Training Platform user accounts, training records, and certificates</li>
-      <li><strong>Anthropic PBC</strong> (USA) — AI model API used to generate personalised training content (content is generated on request; we do not send personal data beyond role/country/sector to generate content)</li>
-      <li><strong>OpenAI / DALL·E</strong> (USA) — AI image generation for training scenario illustrations</li>
+      <li><strong>Anthropic PBC</strong> (USA) — AI model API used to generate personalised training content and to answer questions in the RAI assistant. To generate training, we send only the learner's role, department and seniority, and the organisation's country, sector, size, risk profile and compliance set-up (yes/no answers, e.g. whether a compliance officer is in place). We do not send names: the learner's name is never sent, and the organisation's name is replaced by a placeholder before sending and only inserted on our own servers afterwards. Questions typed into the RAI assistant are sent as written, together with the organisation's country and sector, so please do not enter names or other personal data there.</li>
+      <li><strong>OpenAI / DALL·E</strong> (USA) — AI image generation for training scenario illustrations (where enabled; no names are sent)</li>
       <li><strong>Cloudflare R2</strong> (Cloudflare Inc., USA) — storage of generated training images</li>
       <li><strong>Resend</strong> (USA) — transactional email delivery (magic links, training notifications)</li>
       <li><strong>FormSubmit.co</strong> — relay for Quick-Check lead form submissions to our inbox</li>
