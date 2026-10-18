@@ -8,7 +8,7 @@ Alle Texte in den Tabellen „ID | Feld | Text“ und in den grauen Textblöcken
 **Regeln für alle Texte**
 - Kein „Africa/Afrique/African/africain“ im Kundentext (die Länder stehen nur im Targeting).
 - Breit auftreten: Fraude, Korruption, Sanktionen, Datenschutz, Cyber – Geldwäsche (LBC/FT, AML)
-  ist ein Thema unter 13, nicht die Hauptbotschaft.
+  ist ein Thema unter 9, nicht die Hauptbotschaft.
 - Keine erfundenen Zahlen, Kunden oder Zitate, kein Hinweis auf KI, keine Behörden-„Empfehlung“.
 - Preise nur so, wie sie auf ralk.io stehen (65 / 55 / 45 USD, Minimum 5.000 USD, keine Rabatte).
 
@@ -35,7 +35,7 @@ Unternehmensprofil → die Texte unten einfügen.
 | WA-NAME | WA-Katalogname | RALK |
 | WA-INFO-FR | WA-Info | Formation conformité en ligne : fraude, corruption, sanctions, LBC/FT, données, cyber. |
 | WA-INFO-EN | WA-Info | Online compliance training: fraud, bribery, sanctions, AML, data protection, cyber. |
-| WA-DESC | WA-Beschreibung | RALK forme vos collaborateurs à la conformité : fraude, corruption, sanctions, LBC/FT, protection des données, cybersécurité et 7 autres thèmes. Modules courts par fonction, certificats et rapports d'audit. RALK trains your staff in financial-crime compliance: fraud, bribery, sanctions, AML, data protection, cyber and 7 more topics. Short role-based modules, certificates and audit reports. ralk.io |
+| WA-DESC | WA-Beschreibung | RALK forme vos collaborateurs à la conformité : fraude, corruption, sanctions, LBC/FT, protection des données, cybersécurité et 3 autres thèmes. Modules courts par fonction, certificats et rapports d'audit. RALK trains your staff in financial-crime compliance: fraud, bribery, sanctions, AML, data protection, cyber and 3 more topics. Short role-based modules, certificates and audit reports. ralk.io |
 
 - **Kategorie:** „Bildung“ (oder „Professionelle Dienstleistungen“).
 - **Website:** `https://ralk.io` und `https://check.ralk.io` · **E-Mail:** info@ralk.io
@@ -50,17 +50,17 @@ aus WhatsApp erkennbar sind (die Bestellseite übernimmt `seats` und `lang`).
 | ID | Feld | Text |
 |---|---|---|
 | CAT-1-FR | WA-Katalogname | Licence RALK – jusqu'à 1 000 collaborateurs |
-| CAT-1-FR-T | Katalogtext | 65 USD par collaborateur et par an. Les 13 modules inclus. Licence annuelle minimum : 5 000 USD. Prix nets, sans frais de mise en place. |
+| CAT-1-FR-T | Katalogtext | 65 USD par collaborateur et par an. Les 9 modules inclus. Licence annuelle minimum : 5 000 USD. Prix nets, sans frais de mise en place. |
 | CAT-2-FR | WA-Katalogname | Licence RALK – 1 001 à 10 000 collaborateurs |
-| CAT-2-FR-T | Katalogtext | 55 USD par collaborateur et par an. Les 13 modules inclus. Prix nets, sans frais de mise en place. |
+| CAT-2-FR-T | Katalogtext | 55 USD par collaborateur et par an. Les 9 modules inclus. Prix nets, sans frais de mise en place. |
 | CAT-3-FR | WA-Katalogname | Licence RALK – plus de 10 000 collaborateurs |
-| CAT-3-FR-T | Katalogtext | 45 USD par collaborateur et par an. Les 13 modules inclus. Prix nets, sans frais de mise en place. |
+| CAT-3-FR-T | Katalogtext | 45 USD par collaborateur et par an. Les 9 modules inclus. Prix nets, sans frais de mise en place. |
 | CAT-1-EN | WA-Katalogname | RALK licence – up to 1,000 employees |
-| CAT-1-EN-T | Katalogtext | USD 65 per employee per year. All 13 modules included. Minimum annual licence: USD 5,000. Net prices, no set-up fee. |
+| CAT-1-EN-T | Katalogtext | USD 65 per employee per year. All 9 modules included. Minimum annual licence: USD 5,000. Net prices, no set-up fee. |
 | CAT-2-EN | WA-Katalogname | RALK licence – 1,001 to 10,000 employees |
-| CAT-2-EN-T | Katalogtext | USD 55 per employee per year. All 13 modules included. Net prices, no set-up fee. |
+| CAT-2-EN-T | Katalogtext | USD 55 per employee per year. All 9 modules included. Net prices, no set-up fee. |
 | CAT-3-EN | WA-Katalogname | RALK licence – more than 10,000 employees |
-| CAT-3-EN-T | Katalogtext | USD 45 per employee per year. All 13 modules included. Net prices, no set-up fee. |
+| CAT-3-EN-T | Katalogtext | USD 45 per employee per year. All 9 modules included. Net prices, no set-up fee. |
 
 Links je Katalog-Artikel:
 
@@ -108,7 +108,7 @@ und das Kürzel wählen.
 | QR-FR-3 | WA-Kürzel | /commande |
 | QR-FR-3 | WA-Schnellantwort | Vous pouvez commander directement en ligne : https://ralk.io/order?lang=fr&utm_source=whatsapp&utm_medium=chat – vous recevez ensuite la facture, l'accès est activé au paiement. |
 | QR-FR-4 | WA-Kürzel | /modules |
-| QR-FR-4 | WA-Schnellantwort | 13 thèmes inclus : sanctions, LBC/FT et KYC, bénéficiaires effectifs, PPE, déclarations de soupçon, crypto-actifs, fraude, anti-corruption, protection des données, cybersécurité, IA, gouvernance, lanceurs d'alerte. |
+| QR-FR-4 | WA-Schnellantwort | 9 modules inclus : prévention de la fraude, anti-corruption, sanctions et embargos, LBC/FT, KYC et PPE, protection des données, cybersécurité, IA et criminalité financière, crypto et actifs virtuels, protection des lanceurs d'alerte. |
 | QR-FR-5 | WA-Kürzel | /paiement |
 | QR-FR-5 | WA-Schnellantwort | Paiement sur facture par virement en USD (EUR sur demande), à 14 jours. Les prix sont nets : une éventuelle retenue à la source est à la charge du client. |
 | QR-FR-6 | WA-Kürzel | /essai |
@@ -122,7 +122,7 @@ und das Kürzel wählen.
 | QR-EN-3 | WA-Kürzel | /order |
 | QR-EN-3 | WA-Schnellantwort | You can order directly online: https://ralk.io/order?lang=en&utm_source=whatsapp&utm_medium=chat – you then receive the invoice and access is activated on payment. |
 | QR-EN-4 | WA-Kürzel | /modules |
-| QR-EN-4 | WA-Schnellantwort | 13 topics included: sanctions, AML/CFT and KYC, beneficial ownership, PEPs, suspicious transaction reports, crypto assets, fraud, anti-bribery, data protection, cyber security, AI, governance, whistleblowing. |
+| QR-EN-4 | WA-Schnellantwort | 9 modules included: fraud prevention, anti-bribery and corruption, sanctions and embargoes, AML/CFT, KYC and PEP, data protection, cybersecurity, AI and financial crime, crypto and virtual assets, whistleblower protection. |
 | QR-EN-5 | WA-Kürzel | /payment |
 | QR-EN-5 | WA-Schnellantwort | Payment by invoice and bank transfer in USD (EUR on request), due within 14 days. Prices are net: any withholding tax is borne by the customer. |
 | QR-EN-6 | WA-Kürzel | /trial |

@@ -28,8 +28,8 @@ Anzeige / E-Mail / WhatsApp
 
 ## 2. Wer RALK „bekanntermaßen“ braucht
 
-RALK deckt Financial-Crime-Compliance breit ab (AML/KYC, Sanktionen, Betrug,
-Korruption, Datenschutz, Cyber, KI, Governance, Whistleblowing). Diese Firmen sind
+RALK deckt Financial-Crime-Compliance breit ab (9 Module: Betrug, Korruption,
+Sanktionen, AML/KYC & PEP, Datenschutz, Cyber, KI, Krypto, Whistleblowing). Diese Firmen sind
 **gesetzlich verpflichtet**, ihre Mitarbeiter darin zu schulen. Den Bedarf müssen wir also nicht erst wecken:
 
 | Zielgruppe | Warum sie kaufen müssen |
