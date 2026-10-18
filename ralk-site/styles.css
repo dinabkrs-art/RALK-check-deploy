@@ -542,3 +542,20 @@ section.faq-compact{padding:64px 0}
 .wa:hover{transform:scale(1.06)}
 body:has(.float-cta) .wa{bottom:80px}
 @media print{.wa{display:none}}
+
+/* Topic landing pages (/training/…, /fr/formation/…) */
+.topic-hero{padding:72px 0 56px}
+.topic-hero h1{max-width:20ch}
+.topic .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.topic-hero .note{margin-top:14px;font-size:13.5px;color:hsl(var(--muted))}
+.topic-cols{align-items:start;gap:32px}
+.topic-cols h2{font-size:clamp(22px,2.4vw,28px);max-width:none}
+.topic-cols h2:not(:first-child){margin-top:28px}
+.topic-cols p{color:hsl(var(--muted))}
+.chip.on{border-color:hsl(var(--gold));color:hsl(var(--gold))}
+a.chip{color:hsl(var(--fg))}
+a.chip:hover{text-decoration:none}
+a.mod{color:inherit}
+a.mod:hover{text-decoration:none;border-color:hsl(var(--gold) / .6)}
+@media (max-width:760px){.topic-hero{padding:48px 0 36px}}
+.topic .center .cta{justify-content:center}

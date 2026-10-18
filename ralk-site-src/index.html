@@ -254,7 +254,7 @@ const ICONS = [
  "M3 10v4l11 5V5L3 10z M14 8.5a3.5 3.5 0 0 1 0 7 M6 15l1.5 5h3l-1-4"
 ];
 function renderLists(){
-  document.getElementById("modList").innerHTML = t("mods").map((m,i) => `<div class="mod"><svg viewBox="0 0 24 24"><path d="${ICONS[i % ICONS.length]}"/></svg><span>${esc(m)}</span></div>`).join("");
+  document.getElementById("modList").innerHTML = t("mods").map((m,i) => `<a class="mod" href="${topicUrl(i)}"><svg viewBox="0 0 24 24"><path d="${ICONS[i % ICONS.length]}"/></svg><span>${esc(m)}</span></a>`).join("");
   const mq = t("fors").map(m => `<span>${esc(m)}</span><i>▲</i>`).join("");
   document.getElementById("marq").innerHTML = `<div class="seq">${mq}</div><div class="seq">${mq}</div>`;
   const pct = [100, 92, 84, 76, 68, 61];
