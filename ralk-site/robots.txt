@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /order
+Disallow: /docs/
 
 Sitemap: https://ralk.io/sitemap.xml
-Disallow: /docs/
