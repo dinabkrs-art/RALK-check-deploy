@@ -3,3 +3,4 @@ Allow: /
 Disallow: /order
 
 Sitemap: https://ralk.io/sitemap.xml
+Disallow: /docs/
