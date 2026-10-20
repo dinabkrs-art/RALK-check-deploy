@@ -153,7 +153,7 @@ const UI = {
         how:[["Learn","Key rules, red flags, rights and duties for the learner's own role."],
              ["Apply","A realistic situation from their job, sector and country."],
              ["Prove","A short assessment with explanations. Certificates anyone can verify online."]],
-        allT:"One licence, all 9 topics", allLead:"Every RALK licence includes all modules. Your staff complete the topics that matter for their role.",
+        allT:"One licence, all 9 topics", allLead:"Every RALK licence includes all 9 modules. Every employee completes them, adapted to their role, sector and country.",
         ctaT:"Start training your team this week.", ctaLead:"Order online in a few minutes. Fixed public prices, no negotiation needed.",
         courseDesc:"Role-based online compliance training module" },
   fr: { home:"/fr", order:"/order", check:"https://check.ralk.io/?lang=fr", eyebrow:"Formation conformité",
@@ -164,7 +164,7 @@ const UI = {
         how:[["Apprendre","Les règles clés, les signaux d'alerte, les droits et devoirs propres à la fonction de l'apprenant."],
              ["Appliquer","Une situation réaliste issue de son métier, de son secteur et de son pays."],
              ["Prouver","Une courte évaluation avec explications. Des certificats vérifiables en ligne par tous."]],
-        allT:"Une licence, les 9 thèmes", allLead:"Chaque licence RALK inclut tous les modules. Vos collaborateurs suivent les thèmes utiles à leur fonction.",
+        allT:"Une licence, les 9 thèmes", allLead:"Chaque licence RALK inclut les 9 modules. Chaque collaborateur les suit, adaptés à sa fonction, à son secteur et à son pays.",
         ctaT:"Formez votre équipe dès cette semaine.", ctaLead:"Commandez en ligne en quelques minutes. Prix publics fixes, sans négociation.",
         courseDesc:"Module de formation conformité en ligne adapté à chaque fonction" }
 };
