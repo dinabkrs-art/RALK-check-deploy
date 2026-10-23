@@ -4,6 +4,8 @@ const CONFIG = {
   CONTACT_EMAIL: "info@ralk.io",
   // Licence orders: same-origin path, proxied by vercel.json to the RALK backend
   ORDER_ENDPOINT: "/api/licence-order",
+  // Trial requests: same-origin path, proxied by vercel.json to the RALK backend
+  TRIAL_ENDPOINT: "/api/trial-request",
   APP_URL: "https://app.ralk.io",
   CHECK_URL: "https://check.ralk.io",
   TERMS_VERSION: "2026-10"
@@ -48,6 +50,9 @@ function money(v){
     { style:"currency", currency:PRICING.currency, maximumFractionDigits:0 }).format(v);
 }
 
+/* Country list for the order and trial forms (organisations we serve first, then A–Z). */
+const COUNTRIES = ["DR Congo","Kenya","Nigeria","Côte d'Ivoire","Senegal","Cameroon","Ghana","Rwanda","Gabon","Mali","Togo","Republic of the Congo","──","Afghanistan","Albania","Algeria","American Samoa","Andorra","Angola","Anguilla","Antarctica","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Bouvet Island","Brazil","British Indian Ocean Territory","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Canada","Cape Verde","Caribbean NL","Cayman Islands","Central African Rep.","Chad","Chile","China","Christmas Island","Cocos (Keeling) Islands","Colombia","Comoros","Cook Islands","Costa Rica","Croatia","Cuba","Curaçao","Cyprus","Czech Republic","Côte d’Ivoire","Denmark","Djibouti","Dominica","Dominican Republic","East Timor","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Guiana","French Polynesia","French S. Terr.","Gambia","Georgia","Germany","Gibraltar","Greece","Greenland","Grenada","Guadeloupe","Guam","Guatemala","Guernsey","Guinea","Guinea-Bissau","Guyana","Haiti","Heard Island & McDonald Islands","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kiribati","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Madagascar","Malawi","Malaysia","Maldives","Malta","Marshall Islands","Martinique","Mauritania","Mauritius","Mayotte","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands","New Caledonia","New Zealand","Nicaragua","Niger","Niue","Norfolk Island","North Korea","North Macedonia","Northern Mariana Islands","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Pitcairn","Poland","Portugal","Puerto Rico","Qatar","Romania","Russia","Réunion","Samoa","San Marino","Sao Tome & Principe","Saudi Arabia","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Georgia & the South Sandwich Islands","South Korea","South Sudan","Spain","Sri Lanka","St Barthelemy","St Helena","St Kitts & Nevis","St Lucia","St Maarten (Dutch)","St Martin (French)","St Pierre & Miquelon","St Vincent","Sudan","Suriname","Svalbard & Jan Mayen","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Tokelau","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos Islands","Tuvalu","US Virgin Islands","US minor outlying islands","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Wallis & Futuna","Western Sahara","Yemen","Zambia","Zimbabwe","Åland Islands"];
+
 /* ---------- Texts ---------- */
 const I18N = {
   en: {
@@ -57,7 +62,7 @@ const I18N = {
     heroEyebrow:"Compliance & financial-crime training",
     heroTitle:"Every employee trained. *Ready for every partner.*",
     heroLead:"Banks, investors, international partners and new markets expect companies with proven compliance. RALK trains every employee to recognise fraud, corruption, sanctions breaches, money laundering, data leaks and cyber attacks, tailored to their role, sector and country, and documents it with certificates anyone can verify.",
-    heroBuy:"Get a licence", heroCheck:"Free 10-minute compliance check",
+    heroBuy:"Get a licence", heroCheck:"Free 10-minute compliance check", heroTrial:"Free 14-day trial",
     heroNote:"Annual licence from USD 45 per employee. No set-up fee.",
     rotPre:"Train every team against",
     rotWords:["fraud","corruption","sanctions breaches","money laundering","data leaks","cyber attacks"],
@@ -127,7 +132,7 @@ const I18N = {
       ["How do employees get access?", "You import your staff list or connect your HR system. Employees sign in with your company code or with their Microsoft or Google work account. Nothing needs to be installed."],
       ["Which languages are available?", "English and French. Further languages on request."],
       ["How is our data protected?", "RALK processes only the data needed for training and certificates, under the GDPR and a data processing agreement with your organisation. Access is restricted to your administrators."],
-      ["Can we try RALK first?", "Yes. The free 10-minute compliance check shows where your organisation stands and which modules your teams need."],
+      ["Can we try RALK first?", "Yes. Request a free 14-day trial for you and two colleagues at ralk.io/trial. The free 10-minute compliance check also shows where your organisation stands and which modules your teams need."],
       ["How do we pay?", "By invoice and bank transfer in USD (or EUR on request). Invoices are due within 14 days. Access is activated on payment or, for public bodies, on receipt of the purchase order."],
       ["How long does the licence run?", "12 months. It renews automatically unless you cancel at least 30 days before the end of the term."],
       ["Can we add employees later?", "Yes. Additional seats can be booked at any time at the rate of your size band."],
@@ -159,6 +164,18 @@ const I18N = {
     okTitle:"Thank you, your order has been received.",
     okLead:"We will send your invoice and the countersigned order confirmation to {email} within one business day. Your access to app.ralk.io is activated as soon as payment (or your purchase order) is received.",
     okRef:"Order reference", okPrint:"Print / save as PDF", okBack:"Back to ralk.io",
+    /* trial page */
+    trTitle:"Try RALK free for 14 days",
+    trLead:"Full access for you and two colleagues: role-based training, assessment and certificate, plus the admin dashboard. No payment details, no obligation.",
+    trB1:"Access by e-mail once we have confirmed your request, usually within one business day",
+    trB2:"Invite two colleagues yourself from the dashboard",
+    trB3:"The trial ends automatically after 14 days. Licences are ordered online at fixed public prices.",
+    fName:"Full name", fWorkEmail:"E-mail", fCompany:"Company",
+    trSubmit:"Request free trial",
+    errTrialReq:"Please fill in all required fields.",
+    errTrialSend:"The request could not be sent. Please try again or email us at info@ralk.io.",
+    trOkTitle:"Thank you, your request has been received.",
+    trOkLead:"Once we have confirmed it, you will receive your access at {email}, usually within one business day.",
     sectors:["Bank","Microfinance institution","Fintech / PSP / e-money","Mobile money operator","Money transfer / forex bureau","Insurance","Investment / asset management","Crypto / VASP","Law firm / notary / accountant","Regulator / public body","Professional association","Mining / oil & gas","Telecoms / energy","Construction / trade","Corporate / other company","NGO / non-profit","Other"]
   },
 
@@ -169,7 +186,7 @@ const I18N = {
     heroEyebrow:"Formation conformité & criminalité financière",
     heroTitle:"Chaque collaborateur formé. *Prêt pour chaque partenaire.*",
     heroLead:"Banques, investisseurs, partenaires internationaux et nouveaux marchés attendent des entreprises une conformité démontrée. RALK forme chaque collaborateur à reconnaître la fraude, la corruption, les violations de sanctions, le blanchiment, les fuites de données et les cyberattaques, selon sa fonction, son secteur et son pays, et le documente par des certificats vérifiables par tous.",
-    heroBuy:"Obtenir une licence", heroCheck:"Diagnostic conformité gratuit en 10 minutes",
+    heroBuy:"Obtenir une licence", heroCheck:"Diagnostic conformité gratuit en 10 minutes", heroTrial:"Essai gratuit de 14 jours",
     heroNote:"Licence annuelle à partir de 45 USD par collaborateur. Sans frais de mise en place.",
     rotPre:"Formez chaque équipe contre",
     rotWords:["la fraude","la corruption","les violations de sanctions","le blanchiment","les fuites de données","les cyberattaques"],
@@ -239,7 +256,7 @@ const I18N = {
       ["Comment les collaborateurs accèdent-ils à la plateforme ?", "Vous importez la liste du personnel ou connectez votre SIRH. Les collaborateurs se connectent avec le code entreprise ou leur compte professionnel Microsoft ou Google. Aucune installation n'est nécessaire."],
       ["Quelles langues sont disponibles ?", "Anglais et français. D'autres langues sur demande."],
       ["Comment nos données sont-elles protégées ?", "RALK ne traite que les données nécessaires à la formation et aux certificats, conformément au RGPD et à un accord de traitement des données conclu avec votre organisation. L'accès est réservé à vos administrateurs."],
-      ["Peut-on tester RALK avant ?", "Oui. Le diagnostic conformité gratuit de 10 minutes montre où en est votre organisation et de quels modules vos équipes ont besoin."],
+      ["Peut-on tester RALK avant ?", "Oui. Demandez un essai gratuit de 14 jours pour vous et deux collègues sur ralk.io/trial. Le diagnostic conformité gratuit de 10 minutes montre aussi où en est votre organisation et de quels modules vos équipes ont besoin."],
       ["Comment payer ?", "Par facture et virement bancaire en USD (ou en EUR sur demande). Les factures sont payables sous 14 jours. L'accès est activé à réception du paiement ou, pour les organismes publics, du bon de commande."],
       ["Quelle est la durée de la licence ?", "12 mois. Elle se renouvelle automatiquement, sauf résiliation au moins 30 jours avant la fin de la période."],
       ["Peut-on ajouter des collaborateurs plus tard ?", "Oui. Des places supplémentaires peuvent être ajoutées à tout moment au tarif de votre tranche."],
@@ -270,6 +287,17 @@ const I18N = {
     okTitle:"Merci, votre commande a bien été reçue.",
     okLead:"Nous enverrons votre facture et la confirmation de commande à {email} sous un jour ouvré. Votre accès à app.ralk.io est activé dès réception du paiement (ou de votre bon de commande).",
     okRef:"Référence de commande", okPrint:"Imprimer / enregistrer en PDF", okBack:"Retour à ralk.io",
+    trTitle:"Essayez RALK gratuitement pendant 14 jours",
+    trLead:"Accès complet pour vous et deux collègues : formation selon la fonction, évaluation et certificat, ainsi que le tableau de bord administrateur. Sans moyen de paiement, sans engagement.",
+    trB1:"Accès par e-mail dès que nous avons confirmé votre demande, en général sous un jour ouvré",
+    trB2:"Invitez vous-même deux collègues depuis le tableau de bord",
+    trB3:"L'essai se termine automatiquement après 14 jours. Les licences se commandent en ligne à des prix publics fixes.",
+    fName:"Nom complet", fWorkEmail:"E-mail", fCompany:"Entreprise",
+    trSubmit:"Demander l'essai gratuit",
+    errTrialReq:"Veuillez remplir tous les champs obligatoires.",
+    errTrialSend:"La demande n'a pas pu être envoyée. Veuillez réessayer ou nous écrire à info@ralk.io.",
+    trOkTitle:"Merci, votre demande a bien été reçue.",
+    trOkLead:"Dès sa confirmation, vous recevrez votre accès à {email}, en général sous un jour ouvré.",
     sectors:["Banque","Institution de microfinance","Fintech / PSP / monnaie électronique","Opérateur de mobile money","Transfert d'argent / bureau de change","Assurance","Investissement / gestion d'actifs","Crypto / PSAV","Avocat / notaire / expert-comptable","Régulateur / organisme public","Ordre / association professionnelle","Mines / pétrole & gaz","Télécoms / énergie","BTP / commerce","Entreprise / autre société","ONG / association","Autre"]
   }
 };

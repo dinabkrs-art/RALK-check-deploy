@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RALK — Free 14-day trial</title>
+<meta name="description" content="Try RALK compliance training free for 14 days, for you and two colleagues.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ralk.io/trial">
+<link rel="stylesheet" href="/styles.css">
+<script src="/app.js"></script>
+</head>
+<body>
+<header class="top" id="top"></header>
+
+<main>
+<section style="padding-top:54px">
+  <div class="wrap">
+    <div id="trialView">
+      <div class="order-grid">
+        <div>
+          <h1 style="font-size:clamp(28px,4vw,40px)" data-i18n="trTitle"></h1>
+          <p class="lead" data-i18n="trLead"></p>
+          <ul class="ticks trial-ticks">
+            <li data-i18n="trB1"></li>
+            <li data-i18n="trB2"></li>
+            <li data-i18n="trB3"></li>
+          </ul>
+        </div>
+
+        <form id="trialForm" class="card" novalidate>
+          <div class="field"><label for="name"><span data-i18n="fName"></span> *</label><input type="text" id="name" required maxlength="200" autocomplete="name"></div>
+          <div class="field"><label for="email"><span data-i18n="fWorkEmail"></span> *</label><input type="email" id="email" required maxlength="254" autocomplete="email"></div>
+          <div class="field"><label for="company"><span data-i18n="fCompany"></span> *</label><input type="text" id="company" required maxlength="200" autocomplete="organization"></div>
+          <div class="grid g2" style="gap:14px">
+            <div class="field"><label for="country"><span data-i18n="fCountry"></span> *</label><select id="country" required></select></div>
+            <div class="field"><label for="role" data-i18n="fRole"></label><input type="text" id="role" maxlength="200" autocomplete="organization-title"></div>
+          </div>
+          <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden"><label for="website">Website</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+          <div class="err" id="err" role="alert"></div>
+          <button class="btn" type="submit" id="submitBtn" style="margin-top:6px" data-i18n="trSubmit"></button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Confirmation -->
+    <div id="doneView" hidden style="max-width:760px">
+      <h1 style="font-size:clamp(28px,4vw,40px)" data-i18n="trOkTitle"></h1>
+      <p class="lead" id="okLead"></p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px">
+        <a class="btn ghost" href="/" data-i18n="okBack"></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="foot"></footer>
+
+<script>
+const $ = id => document.getElementById(id);
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+function fillCountries(){
+  const cSel = $("country"), cur = cSel.value;
+  cSel.innerHTML = `<option value=""></option>` + COUNTRIES.map(c => c === "──"
+    ? `<option disabled>──────────</option>` : `<option>${esc(c)}</option>`).join("");
+  cSel.value = cur;
+}
+
+let sentTo = null;
+async function submitTrial(e){
+  e.preventDefault();
+  $("err").textContent = "";
+  const email = $("email").value.trim();
+  const missing = ["name","email","company","country"].filter(id => !String($(id).value).trim());
+  if(missing.length || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ $("err").textContent = t("errTrialReq"); return; }
+  const payload = {
+    full_name: $("name").value.trim(),
+    email,
+    company: $("company").value.trim(),
+    country: $("country").value,
+    role: $("role").value.trim(),
+    language: getLang(),
+    page: location.href.slice(0, 500),
+    website: $("website").value
+  };
+  const btn = $("submitBtn");
+  btn.disabled = true; btn.textContent = t("fSending");
+  try{
+    const r = await fetch(CONFIG.TRIAL_ENDPOINT, {
+      method:"POST", headers:{ "Content-Type":"application/json", "Accept":"application/json" },
+      body: JSON.stringify(payload)
+    });
+    const res = await r.json().catch(() => ({}));
+    if(!r.ok || String(res.success) !== "true") throw new Error("not sent");
+    sentTo = email;
+    $("trialView").hidden = true; $("doneView").hidden = false;
+    renderDone(); window.scrollTo(0,0);
+  }catch(err){
+    $("err").textContent = t("errTrialSend");
+    btn.disabled = false; btn.textContent = t("trSubmit");
+  }
+}
+function renderDone(){ if(sentTo) $("okLead").textContent = t("trOkLead").replace("{email}", sentTo); }
+
+document.addEventListener("ralk:lang", () => { fillCountries(); renderDone(); });
+document.addEventListener("DOMContentLoaded", () => {
+  $("trialForm").addEventListener("submit", submitTrial);
+});
+</script>
+</body>
+</html>

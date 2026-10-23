@@ -5,6 +5,10 @@
     {
       "source": "/api/licence-order",
       "destination": "https://ralk-backend-production.up.railway.app/api/public/licence-order"
+    },
+    {
+      "source": "/api/trial-request",
+      "destination": "https://ralk-backend-production.up.railway.app/api/public/trial-request"
     }
   ],
   "redirects": [
