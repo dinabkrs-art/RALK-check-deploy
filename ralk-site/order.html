@@ -46,6 +46,7 @@
             <div class="field"><label for="phone" data-i18n="fPhone"></label><input type="tel" id="phone" autocomplete="tel"></div>
           </div>
           <div class="field"><label for="po" data-i18n="fPo"></label><input type="text" id="po"></div>
+          <div class="field"><label for="partner" data-i18n="fPartner"></label><input type="text" id="partner" maxlength="40" autocomplete="off"></div>
           <div class="field"><label for="notes" data-i18n="fNotes"></label><textarea id="notes"></textarea></div>
 
           <div class="steps" style="margin-top:10px"><span class="on" data-i18n="oStep3"></span></div>
@@ -160,7 +161,7 @@ async function submitOrder(e){
     email: $("email").value.trim(),
     phone: $("phone").value.trim(),
     purchase_order: $("po").value.trim(),
-    notes: $("notes").value.trim(),
+    notes: [$("partner").value.trim() && `Partner code: ${$("partner").value.trim()}`, $("notes").value.trim()].filter(Boolean).join("\n"),
     licence_terms_version: CONFIG.TERMS_VERSION,
     licence_terms_accepted: "yes",
     withholding_tax_acknowledged: "yes",   // covered by licence terms section 6, accepted with the checkbox above
@@ -226,6 +227,10 @@ document.addEventListener("ralk:lang", () => { fillSelects(); renderDone(); });
 document.addEventListener("DOMContentLoaded", () => {
   const s = new URLSearchParams(location.search).get("seats");
   if(s && /^\d+$/.test(s)) $("seats").value = s;
+  // Partner links: ralk.io/order?partner=CODE (also when the visitor came from ralk.io/?partner=CODE)
+  let pc = new URLSearchParams(location.search).get("partner");
+  if(!pc){ try{ const ref = new URL(document.referrer); if(ref.origin === location.origin) pc = ref.searchParams.get("partner"); }catch(e){} }
+  if(pc) $("partner").value = pc.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 40);
   $("seats").addEventListener("input", updateSummary);
   $("orderForm").addEventListener("submit", submitOrder);
   updateSummary();
