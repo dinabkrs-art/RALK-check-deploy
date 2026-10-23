@@ -60,10 +60,6 @@
 <script>
 const $ = id => document.getElementById(id);
 function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
-// Same list as the backend check (PUBLIC_MAIL_DOMAINS); the server decides, this only saves a round trip.
-const PUBLIC_MAIL = ["gmail.com","googlemail.com","yahoo.com","yahoo.fr","hotmail.com","hotmail.fr","outlook.com","outlook.fr",
-  "live.com","live.fr","icloud.com","me.com","aol.com","gmx.de","gmx.net","web.de","proton.me","protonmail.com",
-  "orange.fr","free.fr","laposte.net","yandex.com","mail.com"];
 
 function fillCountries(){
   const cSel = $("country"), cur = cSel.value;
@@ -79,7 +75,6 @@ async function submitTrial(e){
   const email = $("email").value.trim();
   const missing = ["name","email","company","country"].filter(id => !String($(id).value).trim());
   if(missing.length || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ $("err").textContent = t("errTrialReq"); return; }
-  if(PUBLIC_MAIL.includes(email.split("@").pop().toLowerCase())){ $("err").textContent = t("errWorkEmail"); return; }
   const payload = {
     full_name: $("name").value.trim(),
     email,
@@ -98,13 +93,12 @@ async function submitTrial(e){
       body: JSON.stringify(payload)
     });
     const res = await r.json().catch(() => ({}));
-    if(r.status === 422 && res.detail && res.detail.code === "work_email_required"){ throw new Error("work_email"); }
     if(!r.ok || String(res.success) !== "true") throw new Error("not sent");
     sentTo = email;
     $("trialView").hidden = true; $("doneView").hidden = false;
     renderDone(); window.scrollTo(0,0);
   }catch(err){
-    $("err").textContent = err.message === "work_email" ? t("errWorkEmail") : t("errTrialSend");
+    $("err").textContent = t("errTrialSend");
     btn.disabled = false; btn.textContent = t("trSubmit");
   }
 }
