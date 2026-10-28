@@ -353,7 +353,7 @@ function renderChrome(){
       <nav aria-label="Footer">
         <a href="/licence" data-i18n="footLicence"></a>
         <a href="${CONFIG.CHECK_URL}/terms" data-i18n="footTerms"></a>
-        <a href="${CONFIG.CHECK_URL}/privacy" data-i18n="footPrivacy"></a>
+        <a href="/privacy" data-i18n="footPrivacy"></a>
         <a href="#" data-cookie-settings data-i18n="footCookies"></a>
         <a href="/imprint" data-i18n="footImprint"></a>
         <a href="mailto:${CONFIG.CONTACT_EMAIL}">${CONFIG.CONTACT_EMAIL}</a>
@@ -557,7 +557,7 @@ function consentBanner(){
   b.innerHTML = `<p>${fr
       ? "Nous utilisons des cookies Google Ads pour mesurer l'efficacité de nos annonces. Acceptez-vous ?"
       : "We use Google Ads cookies to measure how well our ads work. Do you accept?"}
-    <a href="${CONFIG.CHECK_URL}/privacy">${fr ? "Confidentialité" : "Privacy"}</a></p>
+    <a href="/privacy">${fr ? "Confidentialité" : "Privacy"}</a></p>
     <div><button type="button" data-c="denied" class="btn ghost">${fr ? "Refuser" : "Decline"}</button>
     <button type="button" data-c="granted" class="btn">${fr ? "Accepter" : "Accept"}</button></div>`;
   b.addEventListener("click", e => {
