@@ -15,11 +15,11 @@ const CONFIG = {
 const PRICING = {
   currency: "USD",
   tiers: [
-    { max: 1000,     rate: 65 },
-    { max: 10000,    rate: 55 },
-    { max: Infinity, rate: 45 }
+    { max: 1000,     rate: 200 },
+    { max: 10000,    rate: 190 },
+    { max: Infinity, rate: 180 }
   ],
-  minimumAnnual: 5000
+  minimumAnnual: 2000
 };
 function tierIndex(n){ return PRICING.tiers.findIndex(t => n <= t.max); }
 function rateFor(n){ return PRICING.tiers[tierIndex(n)].rate; }
@@ -59,7 +59,7 @@ const I18N = {
     heroTitle:"Every employee trained. *Ready for every partner.*",
     heroLead:"Banks, investors, international partners and new markets expect companies with proven compliance. RALK trains every employee to recognise fraud, corruption, sanctions breaches, money laundering, data leaks and cyber attacks, tailored to their role, sector and country, and documents it with certificates anyone can verify.",
     heroBuy:"Get a licence", heroCheck:"Free 10-minute compliance check",
-    heroNote:"Annual licence from USD 45 per employee. No set-up fee.",
+    heroNote:"Annual licence from USD 180 per employee. No set-up fee.",
     rotPre:"Train every team against",
     rotWords:["fraud","corruption","sanctions breaches","money laundering","data leaks","cyber attacks"],
     mockTitle:"Team progress", mockLive:"Live", mockCert:"Certificate verified", mockCertS:"Valid for 12 months, QR check",
@@ -105,7 +105,7 @@ const I18N = {
     bandHead:"Employees", rateHead:"Price per employee / year", upTo:"up to {n}", over:"more than {n}",
     inclTitle:"Included in every licence", incl:["All 9 modules","Role-based training with real scenarios","Certificates & verification","Manager dashboard & reports","HR import","Email support"],
     inclBig:"From 1,001 employees: dedicated onboarding contact",
-    minNote:"Minimum annual licence: USD 5,000. When an organisation grows into a cheaper band, its licence never costs less than the largest organisation of the band below.",
+    minNote:"Minimum annual licence: USD 2,000. When an organisation grows into a cheaper band, its licence never costs less than the largest organisation of the band below.",
     fixedNote:"Fixed published prices, the same for every customer. Volume discounts are already built in; there are no individual discounts.",
     taxNote:"Prices are net amounts in USD. Taxes and levies in the customer's country are added to the price (licence terms, section 6).",
     calcTitle:"Calculate your licence", calcLabel:"Number of employees to train",
@@ -116,7 +116,7 @@ const I18N = {
     cmpLead:"Organisations often pay more for classroom courses that cover fewer topics, reach fewer people and are outdated within months.",
     cmpOldT:"Classroom compliance course", cmpOldP:"≈ USD 460 per participant",
     cmpOld:["One-off, typically 3–5 days","Usually one topic only","Travel and time away from work","Same content for every role","Paper attendance list as evidence"],
-    cmpNewT:"RALK licence", cmpNewP:"USD 45–65 per employee per year",
+    cmpNewT:"RALK licence", cmpNewP:"USD 180–200 per employee per year",
     cmpNew:["All year, short modules on any device","9 financial-crime modules included","No travel, no time away from customers","Adapted to each role, sector and country","Verifiable certificates and audit reports"],
     faqEyebrow:"FAQ", faqTitle:"Questions before you start", faqAll:"Show the {n} questions", faqLess:"Hide questions", carPrev:"Previous topics", carNext:"Next topics",
     faq:[
@@ -171,7 +171,7 @@ const I18N = {
     heroTitle:"Chaque collaborateur formé. *Prêt pour chaque partenaire.*",
     heroLead:"Banques, investisseurs, partenaires internationaux et nouveaux marchés attendent des entreprises une conformité démontrée. RALK forme chaque collaborateur à reconnaître la fraude, la corruption, les violations de sanctions, le blanchiment, les fuites de données et les cyberattaques, selon sa fonction, son secteur et son pays, et le documente par des certificats vérifiables par tous.",
     heroBuy:"Obtenir une licence", heroCheck:"Diagnostic conformité gratuit en 10 minutes",
-    heroNote:"Licence annuelle à partir de 45 USD par collaborateur. Sans frais de mise en place.",
+    heroNote:"Licence annuelle à partir de 180 USD par collaborateur. Sans frais de mise en place.",
     rotPre:"Formez chaque équipe contre",
     rotWords:["la fraude","la corruption","les violations de sanctions","le blanchiment","les fuites de données","les cyberattaques"],
     mockTitle:"Progression de l'équipe", mockLive:"En direct", mockCert:"Certificat vérifié", mockCertS:"Valable 12 mois, contrôle QR",
@@ -217,7 +217,7 @@ const I18N = {
     bandHead:"Collaborateurs", rateHead:"Prix par collaborateur / an", upTo:"jusqu'à {n}", over:"plus de {n}",
     inclTitle:"Inclus dans chaque licence", incl:["Les 9 modules","Formation par fonction avec cas réels","Certificats & vérification","Tableau de bord & rapports","Import RH","Support par e-mail"],
     inclBig:"Dès 1 001 collaborateurs : interlocuteur dédié pour la mise en place",
-    minNote:"Licence annuelle minimale : 5 000 USD. Lorsqu'une organisation passe dans une tranche moins chère, sa licence ne coûte jamais moins que celle de la plus grande organisation de la tranche précédente.",
+    minNote:"Licence annuelle minimale : 2 000 USD. Lorsqu'une organisation passe dans une tranche moins chère, sa licence ne coûte jamais moins que celle de la plus grande organisation de la tranche précédente.",
     fixedNote:"Prix fixes et publics, identiques pour tous les clients. Les remises sur volume sont déjà intégrées ; il n'y a pas de remise individuelle.",
     taxNote:"Prix nets en USD. Les impôts et taxes du pays du client s'ajoutent au prix (conditions de licence, article 6).",
     calcTitle:"Calculez votre licence", calcLabel:"Nombre de collaborateurs à former",
@@ -228,7 +228,7 @@ const I18N = {
     cmpLead:"Les organisations paient souvent davantage pour des formations en salle qui couvrent moins de thèmes, touchent moins de personnes et sont dépassées en quelques mois.",
     cmpOldT:"Formation conformité en salle", cmpOldP:"≈ 460 USD par participant",
     cmpOld:["Ponctuelle, souvent 3 à 5 jours","En général un seul thème","Déplacements et absence du poste","Même contenu pour toutes les fonctions","Feuille de présence papier comme preuve"],
-    cmpNewT:"Licence RALK", cmpNewP:"45–65 USD par collaborateur et par an",
+    cmpNewT:"Licence RALK", cmpNewP:"180–200 USD par collaborateur et par an",
     cmpNew:["Toute l'année, modules courts sur tout appareil","9 modules de criminalité financière inclus","Sans déplacement, sans quitter les clients","Adapté à chaque fonction, secteur et pays","Certificats vérifiables et rapports d'audit"],
     faqEyebrow:"FAQ", faqTitle:"Vos questions avant de commencer", faqAll:"Afficher les {n} questions", faqLess:"Masquer les questions", carPrev:"Thèmes précédents", carNext:"Thèmes suivants",
     faq:[
@@ -353,7 +353,7 @@ function renderChrome(){
       <nav aria-label="Footer">
         <a href="/licence" data-i18n="footLicence"></a>
         <a href="${CONFIG.CHECK_URL}/terms" data-i18n="footTerms"></a>
-        <a href="${CONFIG.CHECK_URL}/privacy" data-i18n="footPrivacy"></a>
+        <a href="/privacy" data-i18n="footPrivacy"></a>
         <a href="#" data-cookie-settings data-i18n="footCookies"></a>
         <a href="/imprint" data-i18n="footImprint"></a>
         <a href="mailto:${CONFIG.CONTACT_EMAIL}">${CONFIG.CONTACT_EMAIL}</a>
@@ -557,7 +557,7 @@ function consentBanner(){
   b.innerHTML = `<p>${fr
       ? "Nous utilisons des cookies Google Ads pour mesurer l'efficacité de nos annonces. Acceptez-vous ?"
       : "We use Google Ads cookies to measure how well our ads work. Do you accept?"}
-    <a href="${CONFIG.CHECK_URL}/privacy">${fr ? "Confidentialité" : "Privacy"}</a></p>
+    <a href="/privacy">${fr ? "Confidentialité" : "Privacy"}</a></p>
     <div><button type="button" data-c="denied" class="btn ghost">${fr ? "Refuser" : "Decline"}</button>
     <button type="button" data-c="granted" class="btn">${fr ? "Accepter" : "Accept"}</button></div>`;
   b.addEventListener("click", e => {

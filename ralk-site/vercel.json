@@ -3,6 +3,10 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/privacy",
+      "destination": "https://check.ralk.io/privacy"
+    },
+    {
       "source": "/api/licence-order",
       "destination": "https://ralk-backend-production.up.railway.app/api/public/licence-order"
     }
@@ -30,7 +34,7 @@
     },
     {
       "source": "/ralk/privacy-policy",
-      "destination": "https://check.ralk.io/privacy",
+      "destination": "/privacy",
       "permanent": true
     },
     {
