@@ -28,8 +28,12 @@
             <div class="field"><label for="country"><span data-i18n="fCountry"></span> *</label><select id="country" required></select></div>
             <div class="field"><label for="sector"><span data-i18n="fSector"></span> *</label><select id="sector" required></select></div>
           </div>
-          <div class="field"><label for="address"><span data-i18n="fAddress"></span> *</label><textarea id="address" required autocomplete="street-address"></textarea></div>
-          <div class="field"><label for="taxid" data-i18n="fTax"></label><input type="text" id="taxid"></div>
+          <div class="field"><label for="street"><span data-i18n="fStreet"></span> *</label><input type="text" id="street" required autocomplete="address-line1"><div class="err" id="err-street"></div></div>
+          <div class="grid g2" style="gap:14px">
+            <div class="field"><label for="postal"><span id="postalLabel" data-i18n="fPostal"></span><span id="postalReq"> *</span></label><input type="text" id="postal" autocomplete="postal-code"><div class="err" id="err-postal_code"></div></div>
+            <div class="field"><label for="city"><span data-i18n="fCity"></span> *</label><input type="text" id="city" required autocomplete="address-level2"><div class="err" id="err-city"></div></div>
+          </div>
+          <div class="field"><label for="taxid"><span data-i18n="fTax"></span> *</label><input type="text" id="taxid" required autocomplete="off"><p class="hint" id="taxHint" hidden></p><div class="err" id="err-tax_id"></div></div>
 
           <div class="steps" style="margin-top:10px"><span class="on" data-i18n="oStep2"></span></div>
           <div class="grid g2" style="gap:14px">
@@ -97,6 +101,69 @@
 const COUNTRIES = ["DR Congo","Kenya","Nigeria","Côte d'Ivoire","Senegal","Cameroon","Ghana","Rwanda","Gabon","Mali","Togo","Republic of the Congo","──","Afghanistan","Albania","Algeria","American Samoa","Andorra","Angola","Anguilla","Antarctica","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Bouvet Island","Brazil","British Indian Ocean Territory","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Canada","Cape Verde","Caribbean NL","Cayman Islands","Central African Rep.","Chad","Chile","China","Christmas Island","Cocos (Keeling) Islands","Colombia","Comoros","Cook Islands","Costa Rica","Croatia","Cuba","Curaçao","Cyprus","Czech Republic","Côte d’Ivoire","Denmark","Djibouti","Dominica","Dominican Republic","East Timor","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Guiana","French Polynesia","French S. Terr.","Gambia","Georgia","Germany","Gibraltar","Greece","Greenland","Grenada","Guadeloupe","Guam","Guatemala","Guernsey","Guinea","Guinea-Bissau","Guyana","Haiti","Heard Island & McDonald Islands","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kiribati","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Madagascar","Malawi","Malaysia","Maldives","Malta","Marshall Islands","Martinique","Mauritania","Mauritius","Mayotte","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands","New Caledonia","New Zealand","Nicaragua","Niger","Niue","Norfolk Island","North Korea","North Macedonia","Northern Mariana Islands","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Pitcairn","Poland","Portugal","Puerto Rico","Qatar","Romania","Russia","Réunion","Samoa","San Marino","Sao Tome & Principe","Saudi Arabia","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Georgia & the South Sandwich Islands","South Korea","South Sudan","Spain","Sri Lanka","St Barthelemy","St Helena","St Kitts & Nevis","St Lucia","St Maarten (Dutch)","St Martin (French)","St Pierre & Miquelon","St Vincent","Sudan","Suriname","Svalbard & Jan Mayen","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Tokelau","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos Islands","Tuvalu","US Virgin Islands","US minor outlying islands","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Wallis & Futuna","Western Sahara","Yemen","Zambia","Zimbabwe","Åland Islands"];
 
 const $ = id => document.getElementById(id);
+
+// Same rules as the backend (RALK-backend order_validation.py, the binding check). Keep both tables in sync.
+// country -> [tax patterns, tax example, postcode pattern or null, postcode required]
+const ID_RULES = {
+  "nigeria": [["\\d{8}-?\\d{4}","\\d{10,13}"], "12345678-0001", "\\d{6}", false],
+  "kenya": [["[AP]\\d{9}[A-Z]"], "P051234567X", "\\d{5}", false],
+  "ghana": [["[PCGQV]\\d{10}","GHA-?\\d{9}-?\\d"], "C0012345678", null, false],
+  "south africa": [["\\d{10}"], "4123456789", "\\d{4}", true],
+  "cameroon": [["[MP]\\d{12}[A-Z]"], "M012345678901A", null, false],
+  "rwanda": [["\\d{9}"], "123456789", null, false],
+  "uganda": [["\\d{10}"], "1000123456", null, false],
+  "tanzania": [["\\d{3}-?\\d{3}-?\\d{3}"], "123-456-789", null, false],
+  "morocco": [["\\d{15}","\\d{7,8}"], "001234567000089", "\\d{5}", true],
+  "tunisia": [["\\d{7}[A-Z](/?[A-Z]){2}/?\\d{3}"], "1234567A/M/000", "\\d{4}", true],
+  "algeria": [["\\d{15}"], "000123456789012", "\\d{5}", true],
+  "germany": [["(DE)?\\d{9}","\\d{2,3}/?\\d{3,4}/?\\d{4,5}"], "DE123456789", "\\d{5}", true],
+  "france": [["FR[0-9A-Z]{2}\\d{9}","\\d{9}","\\d{14}"], "FR12345678901", "\\d{5}", true],
+  "belgium": [["(BE)?[01]\\d{9}"], "BE0123456789", "\\d{4}", true],
+  "luxembourg": [["(LU)?\\d{8}","B\\d{4,6}"], "LU12345678", "(L-?)?\\d{4}", true],
+  "netherlands": [["(NL)?\\d{9}B\\d{2}","\\d{8}"], "NL123456789B01", "\\d{4} ?[A-Z]{2}", true],
+  "austria": [["(AT)?U\\d{8}"], "ATU12345678", "\\d{4}", true],
+  "switzerland": [["CHE[-.]?\\d{3}\\.?\\d{3}\\.?\\d{3}( ?(MWST|TVA|IVA))?"], "CHE-123.456.789", "\\d{4}", true],
+  "united kingdom": [["(GB)?\\d{9}","(GB)?\\d{12}","\\d{10}","[A-Z]{2}\\d{6}","\\d{8}"], "GB123456789", "[A-Z]{1,2}\\d[A-Z\\d]? ?\\d[A-Z]{2}", true],
+  "united states": [["\\d{2}-?\\d{7}"], "12-3456789", "\\d{5}(-\\d{4})?", true]
+};
+const norm = v => String(v || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, " ").trim();
+const full = (p, v) => new RegExp("^(?:" + p + ")$", "i").test(v);
+const rulesFor = c => ID_RULES[norm(c).toLowerCase().replace("&", "and")];
+function looksLikeName(tax, org){
+  const letters = (tax.match(/[A-Za-z]/g) || []).length, digits = (tax.match(/\d/g) || []).length;
+  const words = norm(org).toLowerCase().match(/[a-z]{3,}/g) || [];
+  return digits < 4 || letters > 6 || words.some(w => norm(tax).toLowerCase().includes(w));
+}
+// Returns {field: message}; empty when the billing identity fits the country.
+function checkIdentity(){
+  const fr = getLang() === "fr", country = $("country").value, r = rulesFor(country), e = {};
+  const tax = norm($("taxid").value).toUpperCase(), pc = norm($("postal").value).toUpperCase();
+  if(!tax) e.tax_id = fr ? "Indiquez le numéro fiscal ou le numéro d'immatriculation de votre organisation." : "Enter your organisation's tax ID or company registration number.";
+  else if(r ? (!r[0].some(p => full(p, tax.replace(/ /g, ""))) || looksLikeName(tax, $("org").value)) : (!full("[A-Z0-9][A-Z0-9 ./-]{3,24}", tax) || looksLikeName(tax, $("org").value)))
+    e.tax_id = r ? (fr ? `Ce numéro fiscal ne correspond pas au format utilisé pour ce pays : ${country} (exemple : ${r[1]}).` : `This tax ID does not match the format used in ${country} (example: ${r[1]}).`)
+                 : (fr ? "Indiquez un numéro fiscal ou d'immatriculation d'au moins 4 chiffres, pas un nom." : "Enter a tax ID or registration number with at least 4 digits, not a name.");
+  const street = norm($("street").value);
+  if(street.length < 5 || !/\d/.test(street)) e.street = fr ? "Indiquez la rue avec le numéro (ou le numéro de boîte postale)." : "Enter the street with house or plot number (or a P.O. box number).";
+  if(norm($("city").value).replace(/[^A-Za-z]/g, "").length < 2) e.city = fr ? "Indiquez la ville." : "Enter the city.";
+  if(r && r[2]){
+    if(!pc && r[3]) e.postal_code = fr ? "Indiquez le code postal." : "Enter the postcode.";
+    else if(pc && !full(r[2], pc)) e.postal_code = fr ? `Ce code postal ne correspond pas au format utilisé pour ce pays : ${country}.` : `This postcode does not match the format used in ${country}.`;
+  } else if(pc && !full("[A-Z0-9][A-Z0-9 -]{1,9}", pc)) e.postal_code = fr ? `Ce code postal ne correspond pas au format utilisé pour ce pays : ${country}.` : `This postcode does not match the format used in ${country}.`;
+  return e;
+}
+function showFieldErrors(errs){
+  ["street","postal_code","city","tax_id"].forEach(f => { $("err-" + f).textContent = errs[f] || ""; });
+}
+// Example tax ID and whether the postcode is required, for the chosen country.
+function updateCountryHints(){
+  const r = rulesFor($("country").value);
+  $("taxHint").hidden = !r;
+  if(r) $("taxHint").textContent = t("fTaxHint").replace("{country}", $("country").value).replace("{example}", r[1]);
+  $("taxid").placeholder = r ? r[1] : "";
+  const pcRequired = !!(r && r[2] && r[3]);
+  $("postalReq").hidden = !pcRequired;
+  $("postalLabel").textContent = t(pcRequired ? "fPostal" : "fPostalOpt");
+}
 function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
 
 function fillSelects(){
@@ -128,12 +195,16 @@ function orderRef(){
 async function submitOrder(e){
   e.preventDefault();
   $("err").textContent = "";
-  const req = ["org","country","sector","address","seats","contact","role","email"];
+  const req = ["org","country","sector","street","city","taxid","seats","contact","role","email"];
   const missing = req.filter(id => !String($(id).value).trim());
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($("email").value.trim());
+  // Field hints show at once, also while other required fields are still empty.
+  const idErrors = checkIdentity();
+  showFieldErrors(idErrors);
   if(missing.length || !emailOk || !$("accept").checked || parseInt($("seats").value,10) < 1){
     $("err").textContent = t("errReq"); return;
   }
+  if(Object.keys(idErrors).length){ $("err").textContent = Object.values(idErrors)[0]; return; }
   const q = quote($("seats").value);
   const ref = orderRef();
   const acceptedAt = new Date().toISOString();
@@ -146,7 +217,10 @@ async function submitOrder(e){
     organisation: $("org").value.trim(),
     country: $("country").value,
     sector: sectorLabel,
-    billing_address: $("address").value.trim(),
+    billing_address: [$("street").value.trim(), [$("postal").value.trim(), $("city").value.trim()].filter(Boolean).join(" "), $("country").value].filter(Boolean).join("\n"),
+    street: $("street").value.trim(),
+    postal_code: $("postal").value.trim(),
+    city: $("city").value.trim(),
     tax_id: $("taxid").value.trim(),
     employees: q.seats,
     rate_per_employee_usd: q.rate,
@@ -180,6 +254,16 @@ async function submitOrder(e){
       method:"POST", headers:{ "Content-Type":"application/json", "Accept":"application/json" },
       body: JSON.stringify(payload)
     });
+    if(r.status === 422){
+      // The server checks address and tax ID against the country; show its reasons at the fields.
+      const body = await r.json().catch(() => ({}));
+      const list = (body.detail && body.detail.errors) || [];
+      if(list.length){
+        const errs = {}; list.forEach(x => { errs[x.field] = getLang() === "fr" ? x.fr : x.en; });
+        showFieldErrors(errs); $("err").textContent = Object.values(errs)[0];
+        btn.disabled = false; btn.textContent = t("fSubmit"); return;
+      }
+    }
     if(!r.ok) throw new Error("HTTP " + r.status);
     // The backend answers {success:"true"}; anything else counts as not sent.
     const res = await r.json().catch(() => ({}));
@@ -223,7 +307,7 @@ function renderDone(){
     + `<tr class="total"><td>${esc(t("sumTotal"))}</td><td>${esc(money(p.annual_licence_net_usd))}</td></tr>`;
 }
 
-document.addEventListener("ralk:lang", () => { fillSelects(); renderDone(); });
+document.addEventListener("ralk:lang", () => { fillSelects(); renderDone(); updateCountryHints(); });
 document.addEventListener("DOMContentLoaded", () => {
   const s = new URLSearchParams(location.search).get("seats");
   if(s && /^\d+$/.test(s)) $("seats").value = s;
@@ -232,6 +316,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if(!pc){ try{ const ref = new URL(document.referrer); if(ref.origin === location.origin) pc = ref.searchParams.get("partner"); }catch(e){} }
   if(pc) $("partner").value = pc.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 40);
   $("seats").addEventListener("input", updateSummary);
+  $("country").addEventListener("change", updateCountryHints);
+  updateCountryHints();
   $("orderForm").addEventListener("submit", submitOrder);
   updateSummary();
 });
